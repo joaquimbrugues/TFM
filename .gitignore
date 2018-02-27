@@ -218,3 +218,9 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+# main PDF generated file
+**/main.pdf
+
+#outputs folder
+out/

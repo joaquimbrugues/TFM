@@ -1,0 +1,71 @@
+\ProvidesPackage{TFG}
+
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[all]{xy}	%Diagrames
+
+\usepackage{anysize}
+\marginsize{3 cm}{2.7 cm}{2.7 cm}{2.7 cm}
+
+\newcommand{\con}[1]{\mathbb{#1}}
+\newcommand{\vc}[1]{\mathbf{#1}}
+\newcommand{\R}{\con{R}}
+\newcommand{\N}{\con{N}}
+\newcommand{\C}{\con{C}}		%Nombres complexos
+\newcommand{\Ct}{\mathcal{C}}	%Funcions contínues
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\M}{\mathfrak{M}}	%Espai de caracters
+\newcommand{\limn}{\displaystyle\lim_{n \rightarrow \infty}}
+\newcommand{\suma}{\displaystyle\sum}
+\newcommand{\intt}{\displaystyle\int}
+\newcommand{\unio}{\displaystyle\bigcup}
+\newcommand{\uniod}{\displaystyle\bigsqcup}
+\newcommand{\sumn}{\suma_{n=0}^{\infty}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\de}{\delta}
+\newcommand{\s}{\sigma}
+\newcommand{\ind}{\chi}
+\newcommand{\Par}{\mathcal{P}}
+\newcommand{\dif}{\partial}
+\newcommand{\der}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\quocient}[2]{{\raisebox{.1em}{$#1$}\left/\raisebox{-.1em}{$#2$}\right.}}	%Quocients de conjunts
+%\newcommand{\w}[1]{{#1}^{\wedge}}	%Transformada de Gelfand
+\newcommand{\w}[1]{\widehat{#1}}		%Transformada de Gelfand
+\newcommand{\iv}[1]{{#1}^{\ast}} 	%Involucio
+\newcommand{\Gf}{\mathfrak{G}_A}		%Funcio transformada de Gelfand
+\newcommand{\Ca}{C$^{\ast}$}		%Algebra de Banach amb involucio
+
+%Teoremes, definicions,...
+
+\newtheoremstyle{indented}{\topsep}{\topsep}{\normalfont}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
+\theoremstyle{indented}
+\newtheorem{theo}{Teorema}[chapter]
+\newtheorem{prop}[theo]{Proposició}
+\newtheorem{lema}[theo]{Lema}
+\newtheorem{coro}[theo]{Corol·lari}
+\newtheorem{deff}{Definició}[chapter]
+
+\setlength{\parindent}{12pt}
+
+%Headers
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+%Example counter
+\newcommand{\reiniciar}{\setcounter{example}{0}}
+
+%Format per a l'índex (descomentar si cal)
+%\usepackage{titletoc}
+%\dottedcontents{chapter}[0em]{\bfseries}{2.9em}{1pc}

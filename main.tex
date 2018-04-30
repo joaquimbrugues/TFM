@@ -9,6 +9,22 @@
 \fancyfoot[LE, RO] {\thepage}
 \fancyfoot[C] { }
 
+%Define Therorems, propositions, corollaries...
+\newtheoremstyle{indented}{\topsep}{\topsep}{\normalfont}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
+\theoremstyle{indented}
+\newtheorem{theo}{Theorem}[chapter]
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{lema}[theo]{Lemma}
+\newtheorem{coro}[theo]{Corollary}
+\newtheorem{deff}{Definition}[chapter]
+\newtheorem{rmrk}{Remark}[chapter]
+
+%Some special commands
+\newcommand{\dd}{\operatorname d}
+\newcommand{\straightT}{\operatorname T}
+\newcommand{\straightH}{\operatorname H}
+\newcommand{\crit}{\text{Crit}}
+
 \begin{document}
 
 %----------------- Title page --------------------%
@@ -43,7 +59,16 @@
 
 \mainmatter
 
-%Here we should import the contents from the contents/ folder, structured in chapters
+%Chapter 1, on Morse theory
+\chapter{Fundamentals on Morse theory}
+\fancyhead[LE]{Morse Theory}
+In this chapter, we explain the basic concepts and constructions of Morse theory. The aim is not to get a deep understanding of the theory, but to grasp the way how the results are proved and which kind of tools are used. We do so because Floer homology will use concepts that are analogous to the ones presented here (but, of course, in more complex setting), so it is convenient to be familiar with Morse homology before jumping to the Floer homology.
+
+\fancyhead[RO]{Morse functions}
+\import{contents/}{morse1.tex}
+
+\fancyhead[RO]{Morse Homology}
+ \import{contents/}{morse2.tex}
 
 %----------------- Bibliography --------------------%
 %Here goes the bibliography of the project

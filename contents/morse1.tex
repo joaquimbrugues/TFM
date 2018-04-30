@@ -1,0 +1,106 @@
+\section{Morse functions}
+
+Let us consider a differentiable manifold $M$ without boundary, and a $\mathcal{C}^{\infty}$ - function to $\R$ defined on this manifold. Recall that
+
+\begin{deff}
+	A point $p \in M$ is called a {\bf critical point} of the function $f$ if the tangent map $\dd f_p : \straightT_pM \longrightarrow \straightT\R \cong \R$ is zero. In this case, we sat the $f(p)$ is a {\bf critical value}.
+\end{deff}
+
+To classify the critical points of a function, we will be interested in the directions in which it is convex and the ones in which it is concave. The best way to study the convexity of a function systematically is its Hessian, or second derivative. However, we find ourselves with a constraint: it is not possible to define the Hessian of a function in all points in a way that it is independent of the choice of the coordinate system! Fortunatelly, it is possible to do it at each critical point, as we will show.
+
+\begin{deff}
+	Let $p$ be a critical point of a function $f \in \mathcal{C}^{\infty}(M)$. The {\bf Hessian} of $f$ at $p$ is the bilinear map
+
+\begin{displaymath}
+	\begin{array}{rccc} \straightH_p[f] : & \straightT_pM \times \straightT_pM & \longrightarrow & \R \\ & (u,v) & \longmapsto & v(X_u(f)) \end{array} ,
+\end{displaymath}
+
+where $X_u$ is a vector field extending $u \in \straightT_pM$ locally.
+\end{deff}
+
+To define the extension of a vector to a vector field, we use this lemma
+
+\begin{lema}
+	Let $u \in \straightT_pM$. There is a vector field $X_u \in \mathfrak{X}(M)$ such that $X_u(p) = u$.
+\end{lema}
+
+This lemma can be proved in a straightforward way using a suitable bump function defined inside a local chart of $p$ in $M$.
+
+\begin{lema}
+	The Hessian $\straightH_p[f]$ is well defined (this means, it does not depend on the choice of $X_u$), and it is a bilinear and symmetric map.
+\end{lema}
+
+\begin{proof}
+	First, we show that it is symmetric, from where it will be clear that it is well defined:
+
+$$\straightH_p[f](v,w) - \straightH_p[f](w,v) = v(X_w(f)) - w(X_v(f)) = \left. X_v \right|_p(X_w(f)) - \left. X_w \right|_p (X_v(f)) = $$ 
+$$= \left. [X_v,X_w] \right|_p(f) = \dd_p f \cdot [X_v,X_w](p) = 0 ,$$
+
+where the last term is zero because $\dd_p f = 0$, as $p$ is a critical point for $f$. Thus, if we choose extensions $X_v$ and $X_w$ for $v$ and $w$ (respectivelly), then $\straightH_p[f](v,w) = \straightH_p[f](w,v)$.
+
+Looking again at the intrinsic definition,
+
+$$\straightH_p[f](v,w) = v(X_w(f)),$$
+
+it is obvious that this does not depend on the extension $X_v$ that we choose for $v$, as in the expression only depends on $X_v(p) = v$ regardless of the extension. On the other hand, as we just proved, $\straightH_p[f](v,w) = \straightH_p[f](w,v)$, so, applying the same argument, the Hessian does not depend on the extension chosen for $w$. This proves that the Hessian is well defined.
+
+\
+
+Finally, the Hessian is bilinear, because
+$$H_p[f](\alpha u + \beta v, w) = (\alpha u + \beta v)(X_w(f)) = $$
+$$= \alpha u(X_w(f)) + \beta v(X_w(f)) = \alpha H_p[f](u,w) + \beta H_p[f](v,w) ,$$
+
+and the same argument applies to the second component by symmetry.
+\end{proof}
+
+Notice that the last proof depends on the fact that $p$ is a critical point. This means, in general it is not possible to proof that $\straightH_p[f]$ is well defined, when $p$ is not a critical point.
+
+\begin{rmrk}
+	The local form of the Hessian of a function coincides with the Hessian of the local representation of the function in a chart. If $(x_1,...,x_n)$ is a local chart centered in a point $p \in M$ and $\tilde{f}$ is the local representation of $f$ in this chart, then the local expression of $\straightH_p[f]$ is preciselly the matrix
+
+\begin{displaymath}
+	\tilde{\straightH}_p[f] := \left( \frac{\partial^2 \tilde{f}}{\partial x_i \partial x_j}(p) \right)_{i,j} .
+\end{displaymath}
+\end{rmrk}
+
+As we said before, we are interested in the Hessian of a function at a critical point to, in some way, count the number of directions in which the function is convex. To do so, we need the concepts of index and non-degeneracy.
+
+\begin{deff}
+	We define the
+
+\begin{itemize}
+	\item {\bf Index} of $p$ as the dimension of the maximal subspace $V \subset \straightT_pM$ such that $\left. \straightH_p[f] \right|_V$ is negative definite.
+	\item {\bf Nullity} of $p$ as the dimension of the null-space of $\straightH_p[f]$, this means, the maximal subspace $N \subset \straightT_pM$ such that $\straightH_p[f](N,\cdot) = 0$.
+	\item {Non-degenerate critical points} of $f$ as the points $p$ that have nullity $0$, this means, that the local representation of $\straightH_p[f]$ has maximal rank in any local chart representation.
+\end{itemize}
+\end{deff}
+
+Notice that all the definitions that we just gave are well defined, because the index and nullity of a matrix are independent of the basis chosen to represent the matrix, so they are also independent of any change of coordinates.
+
+Therefore, it makes sense to classify the critical points of a manifold according to their index.
+
+\begin{deff}
+	We say that a function $f \in \mathcal{C}^{\infty}(M)$ that has only non-degenerate critical points is a {\bf Morse function}.
+	If $f$ is a Morse function, we denote
+
+	\begin{displaymath}
+		\crit_k(f) = \{p \in M \ | \text{ $p$ has index $k$}\} ,
+	\end{displaymath}
+	\begin{displaymath}
+		\crit(f) = \bigcup_{k \geq 0} \crit_k(f) .
+	\end{displaymath}
+\end{deff}
+
+Now that we have presented the Morse functions, we are ready to study their behaviour in a neighbourhood of a critical point:
+
+\begin{prop}
+	{\bf (Morse Lemma):} Let $p \in \crit(f)$. Then there is a local coordinate system $(U,(y_1,...,y_n))$ centered on $p$ (this means, with $y_i(p) = 0 \ \forall i$) such that, if $k$ is the index of $p$,
+
+$$\left. f \right|_U = f(p) - y_1^2 - ... - y_k^2 + y_{k+1}^2 + ... + y_n^2 .$$
+\end{prop}
+
+%Here goes the proof...
+
+\begin{coro}
+	There is a unique maximal Morse chart (modulo permutations of the coordinates) for each $p \in \crit_k(f)$.
+\end{coro}

@@ -1,4 +1,6 @@
-\section{Morse functions}
+\section{Morse functions and pseudogradients}
+
+\subsection{Morse functions}
 
 Let us consider a differentiable manifold $M$ without boundary, and a $\mathcal{C}^{\infty}$ - function to $\R$ defined on this manifold. Recall that
 
@@ -99,8 +101,149 @@ Now that we have presented the Morse functions, we are ready to study their beha
 $$\left. f \right|_U = f(p) - y_1^2 - ... - y_k^2 + y_{k+1}^2 + ... + y_n^2 .$$
 \end{prop}
 
-%Here goes the proof...
+\begin{proof} First, notice that, using the fundamental theorem of calculus, a local expression $\tilde{f}$ of $f$ can be written as
+
+$$\tilde{f}(x) = \tilde{f}(0) + \int_0^1 \frac{df(tx_1,...,tx_n)}{dt} dt = f(p) + \int_0^1 \sum_{i=1}^n x_i \der{\tilde{f}}{x_i}(tx_1,...,tx_n) dt .$$
+
+If we take $g_i(x) = \int_0^1 \der{\tilde{f}}{x_i}(tx_1,...,tx_n) dt$, we can write $\tilde{f}$ as
+
+$$\tilde{f}(x) = f(p) + \sum_{i=1}^n x_i g_i(x) .$$
+
+As $g_i(0) = \der{\tilde{f}}{x_i}(0) = 0$, we can apply the same process for each $i$, so there are functions $h_{ij}$ such that
+
+$$g_i(x) = \sum_{j=1}^n x_j h_{ij}(x) ,$$
+$$f(x) = f(p) + \sum_{i,j=0}^n x_i x_j h_{ij}(x) .$$
+
+This functions are defined as
+$$h_{ij}(0) = \frac12 \frac{\partial^2 \tilde{f}}{\partial x_i \partial x_j}(0) ,$$
+
+so $h_{ij} = h_{ji}$.
+
+Then, we can apply inductivelly a change of coordinates, perhaps shrinking the domain of the chart at each transformation. We describe the idea for each step:
+
+We are in the following situation: there is a local coordinate system $(U_1, (u_1,...,u_n))$ (with $U_1 \subset U$) such that
+
+$$f = f(p) \pm u_1^2 \pm ... \pm u_{r-1}^2 + \sum_{i,j \geq r} u_i u_i H_{ij}(u) ,$$
+
+where $(H_{ij})_{i,j}$ form a symmetric matrix and $(H_{ij}(0))_{i,j}$ form a non-degenerate matrix. Therefore, we can apply a linear change of coordinates so that $H_{rr}(0) \neq 0$. Take $S(u) = \sqrt{|H_{rr}(u)|}$, which will be a non-vanishing positive function of $u$ in a neighbourhood $U_2 \subset U_1$ of $0$. Thus, introduce the new local coordinates $(v_1,...,v_n)$ on $U_2$ as
+
+$$v_i = u_i \ \text{ for } i \neq r,$$
+$$v_r(u) = S(u) \left[ u_r + \sum_{i > r} u_i \frac{H_{ir}(u)}{H_{rr}(u)} \right] .$$
+
+Using the inverse function theorem we conclude that $(v_1,...,v_r)$ form an invertible and smooth set of coordinates on a neighbourhood of the origin, $U_3 \subset U_2$. Also, it can be seen that
+
+$$f(v) = f(p) + \sum_{i \leq r} \pm v_i^2 + \sum_{i,j > r} v_i v_j G_{ij}(v) ,$$
+
+where $G_{ij}$ are symmetric and form a non-degenerate matrix at $v = 0$.
+
+This, by induction, concludes the proof.
+\end{proof}
 
 \begin{coro}
-	There is a unique maximal Morse chart (modulo permutations of the coordinates) for each $p \in \crit_k(f)$.
+THe non-degenerate critical points of  a differentiable function are isolated.
 \end{coro}
+
+\begin{rmrk}
+This last corollary is, of course, false for degenerate critical points. Think, for instance, of the function of $\R^2$ defined by $f(x,y) = x^2+y^2+2xy$ in the canonical coordinates. This function has a line of critical points, the one defined by $x + y = 0$, which has no isolated points.
+\end{rmrk}
+
+Having studied some nice properties about the Morse functions, a natural question that arises is if there exists a Morse function for any manifold $M$ that we want to think about, and, if it exists, in some sense how many of such functions are there.
+
+To tackle the first question, which has an affirmative answer, we need two fundamental results of differential geometry:
+
+\begin{theo}
+{\bf (Whitney embedding theorem):} Any smooth manifold of dimension $n$ can be smoothly embedded in $\R^{2n}$, if $n > 0$.
+\end{theo}
+
+\begin{theo}
+{\bf (Sard's theorem):} Let $f : M \rightarrow N$ a smooth map. Then, the set of critical values of $f$ has measure zero.
+\end{theo}
+
+Therefore, we can think of any manifold $M$ as a smooth submanifold of $\R^N$, for some $N$. This allows us to state the following proposition:
+
+\begin{prop}
+Let $M \subset \R^N$ a submanifold. For almost every point $p \in \R^N$, the function
+
+\begin{displaymath}
+	\begin{array}{rccc}f_p : & M & \longrightarrow & \R \\ & x & \longmapsto & \|x-p\|^2 \end{array}
+\end{displaymath}
+
+is a Morse function.
+\end{prop}
+
+\begin{proof} Let $(u_1,...,u_d) \mapsto x(u_1,...,u_d)$ a local parametrization from $\R^d$ into $M \subset \R^N$ in a neighbourhood of a point $p \in M$. In this coordinates, the partial derivatives of the function $f_p$ are
+
+\begin{displaymath}
+\frac{\partial f_p}{\partial u_i} = 2(x-p) \cdot \frac{\partial x}{\partial u_i} ,
+\end{displaymath}
+
+and
+
+\begin{displaymath}
+\frac{\partial^2 f_p}{\partial u_i \partial u_j} = 2 \left(\frac{\partial x}{\partial u_i} \cdot \frac{\partial x}{\partial u_j} + (x-p) \cdot \frac{\partial^2 x}{\partial u_i \partial u_j} \right) .
+\end{displaymath}
+
+The point $x$ is therefore a non-degenerate critical point if and only if $(x-p)$ is orthogonal to $\straightT_xM$ and the matrix $\frac{\partial^2 f_p}{\partial u_i \partial u_j}$ has rank $d$.
+
+To show that $f_p$ is a Morse function for almost all $p \in \R^N$ it suffices to show that that the $p$ that do not satisfy the condition are the critical values of a smooth map, and then apply the Sard's theorem. Consider the normal fiber bundle of the embedding of $M$ into $\R^N$, which is a smooth manifold:
+
+\begin{displaymath}
+N = \{(x,v) \in M \times \R^N \ | \ v \bot \straightT_xM \} ,
+\end{displaymath}
+
+and the map
+
+\begin{displaymath}
+\begin{array}{rccc} E : & N & longrightarrow & \R^N \\ & (x,v) & \longmapsto & x+v \end{array} .
+\end{displaymath}
+
+Then, it sufices to proof the following lemma:
+
+\begin{lema}
+The point $p = x + v$ is a critical value of $E$ if, and only if, the matrix
+
+\begin{displaymath}
+\frac{\partial^2 f_p}{\partial u_i \partial u_j} = 2 \left( \frac{\partial x}{\partial u_i} \cdot \frac{\partial x}{\partial u_j} - v \cdot \frac{\partial^2 x}{\partial u_i \partial u_j} \right)
+\end{displaymath}
+
+is not invertible.
+\end{lema}
+
+\begin{proof}
+Consider, for each point of the local chart $(u_1,...,u_d)$, a orthonormal basis of $(\straightT_xM)^{\bot}$ by the $N-d$ vectors $v_1,...,v_{N-d}$. Then, we have a local parametrization for $N$, given by the map
+
+\begin{displaymath}
+(u_1,...,u_d,t_1,...,t_{N-d}) \longmapsto \left( x(u_1,...,u_d), \sum_{i=1}^{N-d} t_i v_i (u_1,...,u_d) \right) .
+\end{displaymath}
+
+In these coordinates, the partial derivatives of $E$ are
+
+\begin{displaymath}
+\left\{ \begin{array}{l} \frac{\partial E}{\partial u_i} = \frac{\partial x}{\partial u_i} + \sum_{k=1}^{N-d} t_k \frac{\partial v_k}{\partial u_i} \\ \frac{\partial E}{\partial t_j} = v_j \end{array} \right. .
+\end{displaymath}
+
+If we compute the inner products of these $N$ vectors with the $N$ independent vectors $\frac{\partial x}{\partial u_1} , ..., \frac{\partial x}{\partial u_d}, v_1, ..., v_{N-d}$, we get a square matrix that has the same rank as the Jacobian of $E$, and this matrix has the form
+
+\begin{displaymath}
+\begin{pmatrix} \left( \displaystyle\frac{\partial x}{\partial u_i} \cdot \frac{\partial x}{\partial u_j} + \sum_k t_k \frac{\partial v_k}{\partial u_i} \cdot \frac{\partial x}{\partial u_j} \right) & \left( \displaystyle\sum_k \frac{\partial v_k}{\partial u_i} \cdot v_l \right) \\ 0 & \text{Id} \end{pmatrix} .
+\end{displaymath}
+
+But $v_k$ are orthogonal to $\frac{\partial x}{\partial u_j}$, so
+
+\begin{displaymath}
+0 = \frac{\partial}{\partial u_i} \left( v_k \cdot \frac{\partial x}{\partial u_j} \right) = \der{v_k}{u_i} \cdot \der{x}{u_j} + v_k \cdot \frac{\partial^2 x}{\partial u_i \partial u_j} ,
+\end{displaymath}
+
+so
+
+\begin{displaymath}
+\sum_k t_k \der{v_k}{u_i} \cdot \der{x}{u_j} = - \sum_k t_k v_k \frac{\partial^2 x}{\partial u_i \partial u_j} = v \cdot \frac{\partial^2 x}{\partial u_i \partial u_j} .
+\end{displaymath}
+
+And, thus, the lemma is proved.
+\end{proof}
+
+So the proposition is proved.
+\end{proof}
+
+\subsection{Pseudogradients}

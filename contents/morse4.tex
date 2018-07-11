@@ -1,0 +1,95 @@
+\section{Pseudogradients}
+
+In this subsection, we will focus on how we can connect the points of $\crit(f)$ (for a Morse function) between them. The way to do this, in $\R^n$, would be the gradient of the function, this means,
+
+$$\grad f = \left( \der{f}{x_1},...,\der{f}{x_n} \right) .$$
+
+This vector field can be intrinsecally defined on a manifold $M$ using the metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
+
+$$\langle \grad f, Y \rangle = \dd f \cdot Y .$$
+
+For our purposes, we do not need to use precisely the gradient of a function, and sometimes it might not satisfy the properties that we need from the flow, so we introduce the more general concept of {\bf pseudogradient}.
+
+\begin{deff}
+Let $f$ be a Morse function defined on $M$. Then, a vector field $X \in \mathfrak{X}(M)$ is a {\bf pseudogradient} adapted to $f$ if it satisfies the two conditions
+
+\begin{enumerate}
+\item For every $x \in M$ we have $(\dd f)_x \cdot X_x \leq 0$, and the equality holds if and only if $x$ is a critical point for $f$.
+\item For each critical point of $f$, $X$ coincides with the negative gradient defined with the canonical metric defined in $\R^n$ on the domain of the Morse chart.
+\end{enumerate}
+\end{deff}
+
+\begin{rmrk}
+If $(M,g)$ is a manifold with a Riemannian metric, then the vector field $- \grad f$ defined using $g$ is a pseudogradient.
+\end{rmrk}
+
+As with Morse functions, one might ask if pseudogradients do exist. As before, the answer is affirmative:
+
+\begin{prop}
+Let $M$ be a compact and smooth manifold, and $f$ a Morse function on $M$. Then, there exists a pseudogradient field $X$ adapted to $f$.
+\end{prop}
+
+\begin{proof}
+Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many because the non-degenerate critical points are isolated and $M$ is compact), and let $(U_1,h_1),...,(U_r,h_r)$ be Morse charts in the neighbourhoods of these points. We assume that the images of these charts, which we will denote $\Omega_1,...,\Omega_r$, are disjoint. We can add more charts to get a finite open cover of $M$, $\{\Omega_j\}_{1 \leq j \leq m}$. Also, refine the open cover so that each critical point $c_i$ is contained only on its associated open set $\Omega_i$.
+
+For each $\Omega_i$, let $X_i$ be the push-forward of the negative gradient of $\tilde{f}$ in $U_i$ by $h_i$. Also, take a partition of unity associated to $\{\Omega_j\}_{1 \leq j \leq m}$, $\{\varphi_j\}_{1 \leq j \leq m}$. Then, we can define the vector fields
+
+$$\tilde{X}_j(x) = \left\{ \begin{array}{ll} \varphi_j(x) X_j & \text{if } x \in \Omega_j \\ 0 & \text{otherwise} \end{array} \right. ,$$
+
+and
+
+$$X = \sum_{j=1}^m \tilde{X}_j .$$
+
+Then, the two conditions to be a pseudogradient adapted to $f$ are satisfied:
+
+\begin{enumerate}
+\item If we compute
+
+$$\\d f_x \cdot X_x = \sum_{j=1}^m \\d f_x \cdot \tilde{X}_{j,x} \leq 0 ,$$
+
+and the inequality is an equality iff $\varphi_j(x) X_j(x) = 0$ for every $j$, so that either $x$ is a critical point, or $\varphi_j(x)=0$ for all $j$, which is impossible since $\{\varphi_j\}_{1\leq j \leq m}$ form a partition of unity.
+\item Let $c_i$ be a critical point. By construction, $X$ coincides with the image of the negative gradient with the canonical metric over $U_i \bigcap \left( \bigcup_{i \neq j} U_j\right)$, which, also by construction, contains a neighbourhood of $c_i$.
+\end{enumerate}
+\end{proof}
+
+Going back to the question of how to connect two critical points, let us define the stable and unstable manifolds:
+
+\begin{deff}
+Let $a$ be a critical point of $f$, and $X$ a pseudogradient adapted to $f$. We denote by $\varphi^s$ the flow of $X$. We define the {\bf stable manifold} of $a$ as
+
+$$W^s(a) = \left\{ x \in M \ | \ \lim_{s \rightarrow + \infty} \varphi^s(x) = a \right\}, $$
+
+and its {\bf unstable manifold} as
+
+$$W^u(a) = \left\{ x \in M \ | \ \lim_{s \rightarrow - \infty} \varphi^s(x) = a \right\} .$$
+\end{deff}
+
+These are, actually, smooth manifolds, and it can be shown that they are diffeomorphic to open disks. Moreover, we have that
+
+$$\text{dim} W^u(a) = \text{codim} W^s(a) = \text{Ind}(a) .$$
+
+Finally, we want to see that the flow of a pseudogradient does actually connect critical points. To this end, we have the following result:
+
+\begin{prop}
+Let $M$ a compact manifold, $f$ a Morse function and $\gamma : \R \rightarrow M$ a trajectory of a pseudogradient field $X$. Then, there are critical points $a$ and $b$ such that
+
+\begin{displaymath}
+\lim_{s \rightarrow - \infty} \gamma(s) = a \ , \text{ and } \lim_{s \rightarrow + \infty} \gamma(s) = b .
+\end{displaymath}
+\end{prop}
+
+\begin{proof}
+Let us prove this result in the case that $s \rightarrow + \infty$, as the case for $- \infty$ is proved the same way. Suppose that the result is false, so there is a trajectory $\gamma$ such that it has no limit to $+ \infty$. Then, each time that $\gamma$ enters a Morse neighbourhood for any critical point $c_i$, $\Omega_i$, it must leave sometime later, because $f$ is strictly decreasing along the trajectories of a pseudogradient. Thus, there is a time $s_0 > 0$ such that $\forall s > s_0$,
+
+$$\gamma(s) \in M \backslash \bigcup_i \Omega_i ,$$
+
+so $\dd f(\gamma(s)) \cdot X(s) \leq - \e_0$ for some $\e_0 > 0$ and for any $s > s_0$.
+
+Therefore, for any $s > s_0$,
+
+\begin{displaymath}
+f(\gamma(s))-f(\gamma(s_0)) = \int_{s_0}^s \frac{\dd (f \circ \gamma)}{\dd t} \dd t = \int_{s_0}^s \dd f(\gamma(t)) \cdot X(\gamma(t)) \dd t \leq - \e_0 (s-s_0) .
+\end{displaymath}
+
+This leads to the conclusion that $\displaystyle\lim_{s \rightarrow +\infty} f(\gamma(s)) = - \infty$, which is impossible.
+\end{proof}

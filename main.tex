@@ -18,6 +18,7 @@
 \newtheorem{coro}[theo]{Corollary}
 \newtheorem{deff}{Definition}[chapter]
 \newtheorem{rmrk}{Remark}[chapter]
+\newtheorem{exmpl}{Example}[chapter]
 
 %Some special commands
 \newcommand{\dd}{\operatorname d}
@@ -41,7 +42,7 @@
 	{\Large\itshape Joaquim Brugués Mora\par}
 	\vfill
 	advisor\par
-	{\Large\itshape Eva Miranda Galceran\par}
+	{\Large\itshape Eva Miranda Galceran \\ Cédric Oms \par}
 
 	\vfill
 
@@ -61,15 +62,27 @@
 \mainmatter
 
 %Chapter 1, on Morse theory
-\chapter{Fundamentals on Morse theory}
+\chapter{Fundamentals on Morse homology}
 \fancyhead[LE]{Morse Theory}
 In this chapter we explain the basic constructions on Morse theory. Our aim is not to get a deep understanding of the theory, but to get familiar with the way how the results are proved and which kind of tools are used. We do so because Floer homology will use concepts that are analogous to the ones presented here (but, of course, in a more complex setting), so it is convenient to be familiar with Morse homology before jumping to the Floer homology.
 
 \fancyhead[RO]{Morse functions}
 \import{contents/}{morse1.tex}
 
-\fancyhead[RO]{Morse Homology}
+\fancyhead[RO]{The Morse complex}
  \import{contents/}{morse2.tex}
+
+\fancyhead[RO]{Topology nearby a critical point}
+ %\import{contents/}{morse3.tex}
+
+\fancyhead[RO]{Pseudogradients}
+ \import{contents/}{morse4.tex}
+
+\fancyhead[RO]{The differential on the Morse complex}
+ %\import{contents/}{morse5.tex}
+
+\fancyhead[RO]{The Morse homology is well defined}
+ %\import{contents/}{morse6.tex}
 
 %----------------- Bibliography --------------------%
 %Here goes the bibliography of the project

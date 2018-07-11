@@ -2,13 +2,13 @@
 
 \subsection{Morse functions}
 
-Let us consider a differentiable manifold $M$ without boundary, and a $\mathcal{C}^{\infty}$ - function to $\R$ defined on this manifold. Recall that
+Let us consider a differentiable manifold $M$ without boundary, and let $f : M \rightarrow \R$ be a smooth function.
 
 \begin{deff}
-	A point $p \in M$ is called a {\bf critical point} of the function $f$ if the tangent map $\dd f_p : \straightT_pM \longrightarrow \straightT\R \cong \R$ is zero. In this case, we sat the $f(p)$ is a {\bf critical value}.
+	A point $p \in M$ is called a {\bf critical point} of the function $f$ if the tangent map $\dd f_p : \straightT_pM \longrightarrow \straightT\R \cong \R$ is zero. In this case, we say that $f(p)$ is a {\bf critical value}.
 \end{deff}
 
-To classify the critical points of a function, we will be interested in the directions in which it is convex and the ones in which it is concave. The best way to study the convexity of a function systematically is its Hessian, or second derivative. However, we find ourselves with a constraint: it is not possible to define the Hessian of a function on a smooth manifold in all points in a way that it is independent of the choice of the coordinate system! Fortunatelly, it is possible to do it at each critical point, as we will show.
+To classify the critical points of a function, we will be interested in the directions in which it is convex and the ones in which it is concave. The best way to study the convexity of a function systematically is its Hessian, or second derivative. However, we find ourselves with a constraint: it is not possible to define the Hessian of a function on a smooth manifold in all points in a way that it is independent of the choice of the coordinate system. However, it is possible to do it at each critical point, as we will show.
 
 \begin{deff}
 	Let $p$ be a critical point of a function $f \in \mathcal{C}^{\infty}(M)$. The {\bf Hessian} of $f$ at $p$ is the bilinear map
@@ -40,7 +40,7 @@ $$= \left. [X_v,X_w] \right|_p(f) = \dd_p f \cdot [X_v,X_w](p) = 0 ,$$
 
 where the last term is zero because $\dd_p f = 0$, as $p$ is a critical point for $f$. Thus, if we choose extensions $X_v$ and $X_w$ for $v$ and $w$ (respectivelly), then $\straightH_p[f](v,w) = \straightH_p[f](w,v)$.
 
-Looking again at the intrinsic definition,
+Looking again at the definition,
 
 $$\straightH_p[f](v,w) = v(X_w(f)),$$
 
@@ -55,13 +55,13 @@ $$= \alpha u(X_w(f)) + \beta v(X_w(f)) = \alpha H_p[f](u,w) + \beta H_p[f](v,w) 
 and the same argument applies to the second component by symmetry.
 \end{proof}
 
-Notice that the last proof depends on the fact that $p$ is a critical point. This means, in general it is not possible to proof that $\straightH_p[f]$ is well defined, when $p$ is not a critical point.
+Notice that the last proof depends on the fact that $p$ is a critical point. This means, in general it is not possible to prove that $\straightH_p[f]$ is well defined when $p$ is not a critical point.
 
 \begin{rmrk}
 	The local form of the Hessian of a function coincides with the Hessian of the local representation of the function in a chart. If $(x_1,...,x_n)$ is a local chart centered in a point $p \in M$ and $\tilde{f}$ is the local representation of $f$ in this chart, then the local expression of $\straightH_p[f]$ is preciselly the matrix
 
 \begin{displaymath}
-	\tilde{\straightH}_p[f] := \left( \frac{\partial^2 \tilde{f}}{\partial x_i \partial x_j}(p) \right)_{i,j} .
+	\tilde{\straightH}_p[f] := \left( \frac{\partial^2 \tilde{f}}{\partial x_i \partial x_j}(0) \right)_{i,j} .
 \end{displaymath}
 \end{rmrk}
 
@@ -77,7 +77,7 @@ As we said before, we are interested in the Hessian of a function at a critical 
 \end{itemize}
 \end{deff}
 
-Notice that all the definitions that we just gave are well defined, because the index and nullity of a matrix are independent of the basis chosen to represent the matrix, so they are also independent of any change of coordinates.
+Notice that all the definitions that we just outlined are well defined, because the index and nullity of a matrix are independent of the basis chosen to represent it, so they are also independent of any change of coordinates.
 
 Therefore, it makes sense to classify the critical points of a manifold according to their index.
 
@@ -147,7 +147,7 @@ The non-degenerate critical points of  a differentiable function are isolated.
 This last corollary is, of course, false for degenerate critical points. Think, for instance, of the function of $\R^2$ defined by $f(x,y) = x^2+y^2+2xy$ in the canonical coordinates. This function has a line of critical points, the one defined by $x + y = 0$, which has no isolated points.
 \end{rmrk}
 
-Having studied some nice properties about the Morse functions, a natural question that arises is if there exists a Morse function for any manifold $M$ that we want to think about, and, if it exists, in some sense how many of such functions are there.
+After seeing some nice properties about the Morse functions, a natural question that arises is if there exists a Morse function for any manifold $M$ that we want to think about, and, if it exists, in some sense how many of such functions are there.
 
 To tackle the first question, which has an affirmative answer, we need two fundamental results of differential geometry:
 
@@ -194,7 +194,7 @@ N = \{(x,v) \in M \times \R^N \ | \ v \bot \straightT_xM \} ,
 and the map
 
 \begin{displaymath}
-\begin{array}{rccc} E : & N & longrightarrow & \R^N \\ & (x,v) & \longmapsto & x+v \end{array} .
+\begin{array}{rccc} E : & N & \longrightarrow & \R^N \\ & (x,v) & \longmapsto & x+v \end{array} .
 \end{displaymath}
 
 Then, it sufices to proof the following lemma:
@@ -269,7 +269,7 @@ $$g_{c,\e}(x) = \frac1{2c} ((f(x) + c - \e_1)^2 + (h_2(x)-\e_2)^2 + \cdots + (h_
 
 $$= f(x) + \frac{f(x)^2 + \sum h_i(x)^2}{2c} - \frac{\e_1f(x) + \sum \e_ih_i(x)}{c} + \sum \e_i^2 - \e_1 ,$$
 
-so, as claimed, on any compact subset of $M$, $g_{c,\e}$ tends to $f$ and its first $k$ derivatives as $\e \rightarrow 0$ and $c \rightarrow \infty$.
+so, as claimed, on any compact subset of $M$, $g_{c,\e}$ tends to $f$ and its first $k$ derivatives also tend to the first $k$ derivatives of $f$ as $\e \rightarrow 0$ and $c \rightarrow \infty$.
 \end{proof}
 
 Therefore, the Morse functions are actually generic, in the sense that we can approximate any smooth function with Morse functions over compact subsets of $M$.
@@ -280,7 +280,7 @@ In this subsection, we will focus on how we can connect the points of $\crit(f)$
 
 $$\grad f = \left( \der{f}{x_1},...,\der{f}{x_n} \right) .$$
 
-This vector field can be intrinsecally defined in manifolds using the metric $\langle \cdot , \cdot \rangle$ on a manifold $M$, as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
+This vector field can be intrinsecally defined on a manifold $M$ using the metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
 
 $$\langle \grad f, Y \rangle = \dd f \cdot Y .$$
 
@@ -290,7 +290,7 @@ For our purposes, we do not need to use precisely the gradient of a function, an
 Let $f$ be a Morse function defined on $M$. Then, a vector field $X \in \mathfrak{X}(M)$ is a {\bf pseudogradient} adapted to $f$ if it satisfies the two conditions
 
 \begin{enumerate}
-\item For every $x \in M$ we have $(\dd f)_x \cdot X_x \leq 0$, and the equality hold if and only if $x$ is a critical point for $f$.
+\item For every $x \in M$ we have $(\dd f)_x \cdot X_x \leq 0$, and the equality holds if and only if $x$ is a critical point for $f$.
 \item For each critical point of $f$, $X$ coincides with the negative gradient defined with the canonical metric defined in $\R^n$ on the domain of the Morse chart.
 \end{enumerate}
 \end{deff}
@@ -306,7 +306,7 @@ Let $M$ be a compact and smooth manifold, and $f$ a Morse function on $M$. Then,
 \end{prop}
 
 \begin{proof}
-Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many because the non-degenerate critical points are isolated and $M$ is compact), and let $(U_1,h_1),...,(U_r,h_r)$ be Morse charts in the neighbourhoods of these points. We assume that the images of these charts, which we will denote $\Omega_1,...,\Omega_r$, are disjoint. We can add more charts to get a finite open cover of $M$, $\{\Omega_j\}_{1 \leq j \leq m}$. Let us assume that each critical point $c_i$ is contained only on its associated open set $\Omega_i$.
+Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many because the non-degenerate critical points are isolated and $M$ is compact), and let $(U_1,h_1),...,(U_r,h_r)$ be Morse charts in the neighbourhoods of these points. We assume that the images of these charts, which we will denote $\Omega_1,...,\Omega_r$, are disjoint. We can add more charts to get a finite open cover of $M$, $\{\Omega_j\}_{1 \leq j \leq m}$. Also, refine the open cover so that each critical point $c_i$ is contained only on its associated open set $\Omega_i$.
 
 For each $\Omega_i$, let $X_i$ be the push-forward of the negative gradient of $\tilde{f}$ in $U_i$ by $h_i$. Also, take a partition of unity associated to $\{\Omega_j\}_{1 \leq j \leq m}$, $\{\varphi_j\}_{1 \leq j \leq m}$. Then, we can define the vector fields
 
@@ -353,3 +353,19 @@ Let $M$ a compact manifold, $f$ a Morse function and $\gamma : \R \rightarrow M$
 \lim_{s \rightarrow - \infty} \gamma(s) = a \ , \text{ and } \lim_{s \rightarrow + \infty} \gamma(s) = b .
 \end{displaymath}
 \end{prop}
+
+\begin{proof}
+Let us prove this result in the case that $s \rightarrow + \infty$, as the case for $- \infty$ is proved the same way. Suppose that the result is false, so there is a trajectory $\gamma$ such that it has no limit to $+ \infty$. Then, each time that $\gamma$ enters a Morse neighbourhood for any critical point $c_i$, $\Omega_i$, it must leave sometime later, because $f$ is strictly decreasing along the trajectories of a pseudogradient. Thus, there is a time $s_0 > 0$ such that $\forall s > s_0$,
+
+$$\gamma(s) \in M \backslash \bigcup_i \Omega_i ,$$
+
+so $\dd f(\gamma(s)) \cdot X(s) \leq - \e_0$ for some $\e_0 > 0$ and for any $s > s_0$.
+
+Therefore, for any $s > s_0$,
+
+\begin{displaymath}
+f(\gamma(s))-f(\gamma(s_0)) = \int_{s_0}^s \frac{\dd (f \circ \gamma)}{\dd t} \dd t = \int_{s_0}^s \dd f(\gamma(t)) \cdot X(\gamma(t)) \dd t \leq - \e_0 (s-s_0) .
+\end{displaymath}
+
+This leads to the conclusion that $\displaystyle\lim_{s \rightarrow +\infty} f(\gamma(s)) = - \infty$, which is impossible.
+\end{proof}

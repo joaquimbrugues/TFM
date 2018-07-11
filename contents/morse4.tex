@@ -1,4 +1,6 @@
-\section{Pseudogradients}
+\section{Pseudogradients and the Smale condition}
+
+\subsection{Pseudogradients}
 
 In this subsection, we will focus on how we can connect the points of $\crit(f)$ (for a Morse function) between them. The way to do this, in $\R^n$, would be the gradient of the function, this means,
 
@@ -8,7 +10,7 @@ This vector field can be intrinsecally defined on a manifold $M$ using the metri
 
 $$\langle \grad f, Y \rangle = \dd f \cdot Y .$$
 
-For our purposes, we do not need to use precisely the gradient of a function, and sometimes it might not satisfy the properties that we need from the flow, so we introduce the more general concept of {\bf pseudogradient}.
+For our purposes, we do not need to use precisely the gradient of a function, and sometimes it might not satisfy the properties that we need for the flow, so we introduce the more general concept of {\bf pseudogradient}.
 
 \begin{deff}
 Let $f$ be a Morse function defined on $M$. Then, a vector field $X \in \mathfrak{X}(M)$ is a {\bf pseudogradient} adapted to $f$ if it satisfies the two conditions
@@ -93,3 +95,68 @@ f(\gamma(s))-f(\gamma(s_0)) = \int_{s_0}^s \frac{\dd (f \circ \gamma)}{\dd t} \d
 
 This leads to the conclusion that $\displaystyle\lim_{s \rightarrow +\infty} f(\gamma(s)) = - \infty$, which is impossible.
 \end{proof}
+
+\subsection{The Smale condition}
+
+The notion of connecting critical points between them needs to be complemented by the fact that the intersection of the unstable and stable manifolds is good enough, in the sense that it is regular. In particular, the notion that we need is the following.
+
+\begin{deff}
+Let $M$ a smooth manifold, and $S, T \subset M$ smooth submanifolds. We say that $S$ and $T$ {\bf intersect transversally} if, $\forall p \in L \bigcap T$,
+
+$$\straightT_pM = \straightT_pS + \straightT_pT .$$
+
+Notice that the sum in the definition does not need to be direct, so it is possible that $\text{dim}(S)+\text{dim}(T) \geq \text{dim}(M)$.
+
+If $S$ and $T$ intersect transversally, we denote it as $S \pitchfork T$.
+\end{deff}
+
+It can be proved that, if $S$ and $T$ intersect transversally, then:
+
+\begin{enumerate}
+	\item $S \cap T$ is a submanifold of $M$.
+	\item $\text{dim}(M) = \text{dim}(S) + \text{dim}(T) - \text{dim}(S \cap T)$.
+\end{enumerate}
+
+\begin{deff}
+We say that a pseudogradient $X$ adapted to $f$ satisfies the {\bf Palais-Smale condition} if, for any $a,b \in \crit(f)$,
+
+$$W^u(a) \pitchfork W^s(b) .$$
+\end{deff}
+
+\begin{rmrk}
+If $X$ satisfies the Palais-Smale condition, then for any pair of critical points $a$ and $b$, we have that
+
+\begin{equation} \label{eq:dimIntersect}
+\text{dim}(W^u(a) \cap W^s(b)) = \text{Ind}(a) - \text{Ind}(b) .
+\end{equation}
+\end{rmrk}
+
+%TODO: Prove existence and genericness of such pseudogradients.
+%TODO: Provide the lemma that says that for each pseudogradient there is another one satisfying P-S.
+
+Let $\mathcal{M}(a,b) := W^u(a) \cap W^s(b)$. It is the space of the trajectories going from $a$ to $b$. The group $\R$ acts freely and transitivelly on $\mathcal{M}(a,b)$ by
+
+\begin{displaymath}
+t \cdot p = \varphi_X^t(p) .
+\end{displaymath}
+
+\begin{deff}
+Let $\mathcal{L}(a,b)$ denote the {\bf space of trajectories} between $a$ and $b$, that we define as
+
+\begin{displaymath}
+\mathcal{L}(a,b) := \quocient{\mathcal{M}(a,b)}{\R} .
+\end{displaymath}
+\end{deff}
+
+%TODO: reference this correctly
+\begin{rmrk}
+As a consequence of formula \ref{eq:dimIntersect}, the dimension of the space of trajectories is
+
+\begin{displaymath}
+\text{dim}(\mathcal{L}(a,b)) = \text{Ind}(a) - \text{Ind}(b) - 1 .
+\end{displaymath}
+\end{rmrk}
+
+\begin{coro}
+If $\text{Ind}(a)-\text{Ind}(b) = 1$, then the set $\mathcal{L}(a,b)$ is finite.
+\end{coro}

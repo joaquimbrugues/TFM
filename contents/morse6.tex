@@ -1,0 +1,222 @@
+\section{The Morse homology is well defined}
+
+Our goal in this chapter is to prove that the Morse homology is independent of the choice of the Morse function used to define it, and of the pseudogradient field used to define the differential. The whole section is dedicated to prove the following theorem:
+
+\begin{theo}
+Let $M$ be a compact manifold, and $f_0, f_1 : M \rightarrow \R$ Morse functions. Let $X_0, X_1$ be pseudogradients adapted to $f_0$ and $f_1$, respectively, satisfying the Palais-Smale condition.
+
+Then, there exists a morphism of complexes
+
+\begin{equation} \label{morphism}
+\begin{array}{rccc} \Phi_{\ast} : & (C_{\ast}(f_0), X_0) & \longrightarrow & (C_{\ast}(f_1), X_1) \end{array}
+\end{equation}
+
+such that it induces an isomorphism in the homology.
+\end{theo}
+
+\begin{proof}
+Consider an homopy
+
+\begin{displaymath}
+\begin{array}{rccc} F : & M \times [0,1] & \longrightarrow & \R \\ & (x,s) & \longmapsto & F_s(x) \end{array}
+\end{displaymath}
+
+such that
+
+\begin{equation} \label{constant}
+\left\{ \begin{array}{lc} F_s = f_0 & \forall s \in \left[ 0, \frac13 \right] \\ F_s = f_1 & \forall s \in \left[ \frac23, 1 \right] \end{array} \right. .
+\end{equation}
+
+To prove the result we will proceed as follows:
+
+\begin{enumerate}
+	\item Use $F$ to construct a morphism $\begin{array}{rccc} \Phi^F : & (C_{\ast}(f_0),\partial_{X_0}) & \rightarrow & (C_{\ast}(f_1),\partial_{X_1}) \end{array}$.
+	\item Prove that if $I$ is the constant homotopy from a map to itself (this means, $I_s(x) = f_0(x) \ \forall (x,s) \in M \times [0,1]$), then $\Phi^I = \Id_{(C_{\ast}(f_0),\partial_{X_0})}$.
+	\item Prove functioriality in the homology: Let $f_0,f_1,f_2$ be Morse functions in $M$, and let $X_0,X_1,X_2$ be pseudogradients adapted to each Morse function and satisfying the Palais-Smale condition. Let $F, G, H$ be homotopies defined as $F$, this means, satisfying \ref{constant}, with $F$ going from $f_0$ to $f_1$, G going from $f_1$ to $f_2$, and $H$ going from $f_0$ to $f_2$. Then, the morphisms induced in the homology by these homotopies satisfy that $\widetilde{\Phi^G} \circ \widetilde{\Phi^F} = \widetilde{\Phi^H}$.
+\end{enumerate}
+
+{\bf Proof of (1):} Consider an extension of $F$ to $\left[ - \frac13 , \frac43 \right]$ such that
+
+\begin{equation} \label{constant2}
+\left\{ \begin{array}{lc} F_s = f_0 & \forall s \in \left[ - \frac13, \frac13 \right] \\ F_s = f_1 & \forall s \in \left[ \frac23, \frac43 \right] \end{array} \right.
+\end{equation}
+
+Take $g : \left[-\frac13,\frac43\right] \rightarrow \R$ a Morse function such that
+
+\begin{enumerate}
+	\item Its only critical points are $0$ (a maximum) and $1$ (a minimum).
+	\item $g'(x) > 0$ for $x < 0$ and for $x > 1$.
+	\item For all $x \in M$ and $s \in (0,1)$, $\frac{\partial F}{\partial s}(x,s) + g'(s) < 0$.
+\end{enumerate}
+
+Take $\tilde{F} = F + g$. We are going to use the information about the Morse complex in the manifold $M \times \left[-\frac13,\frac43\right]$ to deduce the desired morphism. Notice that
+
+\begin{displaymath}
+\dd\tilde{F} = \dd_xF + \left( \frac{\partial F}{\partial s} + g' \right) \dd s ,
+\end{displaymath}
+
+so the second term can only be $0$ when $s=0$ or $s=1$, because of the properties of $g$ and the fact that $F$ is constant in the direction of $s$ in both points, because of \ref{constant2}. By this argument, we deduce that $\crit(\tilde{F}) = \crit(f_0) \times \{0\} \cup \crit(f_1) \times \{1\}$.
+
+Moreover, as $0$ is the unique maximum of $g$ and $1$ is its unique minimum, we deduce that
+
+\begin{itemize}
+	\item $\forall a \in \crit(f_0), \ \indx_{\tilde{F}}((a,0)) = \indx_{f_0}(a) + 1$.
+	\item $\forall b \in \crit(f_1), \ \indx_{\tilde{F}}((b,1)) = \indx_{f_1}(b)$.
+\end{itemize}
+
+Take $\tilde{X}$ a pseudogradient field adapted to $\tilde{F}$ such that
+
+\begin{enumerate}
+	\item It coincides with $X_0 - \grad g$ on $M \times \left[-\frac13,\frac13\right]$.
+	\item It coincides with $X_1 - \grad g$ on $M \times \left[\frac23,\frac43\right]$.
+	\item It satisfies the Palais-Smale condition.
+	\item It is transversal to the sections $M \times \{s\}$ for $s \in \left\{-\frac13,\frac13,\frac23,\frac43\right\}$.
+\end{enumerate}
+
+Then, we can deduce that
+
+\begin{displaymath}
+\left(C_{\ast}\left(\left.\tilde{F}\right|_{M\times \left[-\frac13,\frac13\right]}\right), \partial_{\tilde{X}}\right) =
+\left(C_{\ast}(f_0+\left.g\right|_{\left[-\frac13,\frac13\right]}), \partial_{X_0 - \grad g}\right) =
+\left(C_{\ast + 1}(f_0), \partial_{X_0}\right) ,
+\end{displaymath}
+
+and
+
+\begin{displaymath}
+\left(C_{\ast}\left(\left.\tilde{F}\right|_{M\times \left[\frac23,\frac43\right]}\right), \partial_{\tilde{X}}\right) =
+\left(C_{\ast}(f_1+\left.g\right|_{\left[\frac23,\frac43\right]}), \partial_{X_1 - \grad g}\right) =
+\left(C_{\ast}(f_1), \partial_{X_1}\right) .
+\end{displaymath}
+
+From this, we deduce that
+
+\begin{displaymath}
+\left\{ \begin{array}{l} C_0(\tilde{F}) = C_0(f_1) \\ C_k(\tilde{F}) = C_{k-1}(f_0) \oplus C_k(f_1) \end{array} \right. ,
+\end{displaymath}
+
+so, for $k > 0$,
+
+\begin{displaymath}
+\begin{array}{rccc} \partial_{\tilde{X}} : & C_k(f_0) \oplus C_{k+1}(f_1) & \longrightarrow C_{k-1}(f_0) \oplus C_k(f_1) \end{array} ,
+\end{displaymath}
+
+and
+
+\begin{displaymath}
+\partial_{\tilde{X}} =
+\begin{pmatrix}
+\partial_{X_0} & 0 \\
+\Phi^F & \partial_{X_1}
+\end{pmatrix} .
+\end{displaymath}
+
+In this last equality we already used the map $\Phi^F$, which can be defined over the generators of $C_k(f_0)$ by
+
+\begin{equation}\label{defmorphism}
+\Phi^F(a) := \sum_{b \in \crit_k(f_1)} n_{\tilde{X}}(a,b) b ,
+\end{equation}
+
+where $n_{\tilde{X}}(a,b)$ denotes the number of trajectories of $\tilde{X}$ connecting a critical point $a \in M \times \{0\} \cap \crit(\tilde{F})$ to $b \in M \times \{1\} \cap \crit(\tilde{F})$, modulo 2.
+
+The complex $\left(C_{\ast}(\tilde{F}),\partial_{\tilde{X}}\right)$ is well defined, so, in particular, we have that $\partial_{\tilde{X}}^2 = 0$. In the component in the first column of the second row, this reads as
+
+\begin{displaymath}
+\Phi^F \circ \partial_{X_0} + \partial_{X_1} \circ \Phi^F = 0 \Rightarrow \Phi^F \circ \partial_{X_0} = \partial_{X_1} \circ \Phi^F ,
+\end{displaymath}
+
+which implies that $\Phi^F$ is indeed a morphism of complexes, as we wanted to see.
+
+\
+
+{\bf Proof of (2):} Consider the constant homotopy $I$ extended to $\left[-\frac13, \frac43\right]$ in the obvious way, and take $g$ as in the previous proof.
+
+Then, the vector field $X := X_0 - \grad g$ is a pseudogradient adapted to $I$ and satisfies the Palais-Smale condition. Moreover, for each $a \in \crit(f_0)$ there is a unique trajectory of $X$ that connects $(a,0)$ to the section $M \times \{1\}$, which is the constant (in the projection to $M$) trajectory $\gamma(u) := (a,u)$. Therefore, $\Phi^I = \Id$.
+
+\begin{rmrk}
+There a unique trajectory from $(a,0)$ to $(a,1)$ because we are not accepting homoclinic trajectories, so $\mathcal{L}(a,a) = \emptyset$, because of the Palais-Smale transversality condition.
+\end{rmrk}
+
+\
+
+{\bf Proof of (3):} Consider the homotopies $F : f_0 \rightarrow f_1$, $G : f_1 \rightarrow f_2$ and $H : f_0 \rightarrow f_2$ extended with a constant map to the interval $\left[-\frac13,\frac43\right]$. Choose a "double" homotopy
+
+\begin{displaymath}
+\begin{array}{rccc} K : & M \times \left[-\frac13, \frac43\right] \times \left[-\frac13, \frac43\right] & \longrightarrow & \R \\ & (x,s,t) & \longmapsto & K_{s,t}(x) \end{array}
+\end{displaymath}
+
+satisfying
+
+\begin{itemize}
+	\item $K_{s,t} = H_t \ \forall s \in \left[-\frac13,\frac13\right]$.
+	\item $K_{s,t} = G_t \ \forall s \in \left[\frac23,\frac43\right]$.
+	\item $K_{s,t} = F_s \ \forall t \in \left[-\frac13,\frac13\right]$.
+	\item $K_{s,t} = f_2 \ \forall t \in \left[\frac23,\frac43\right]$.
+\end{itemize}
+
+Choose $g$ a Morse function as in the first proof, but with the requirement that
+
+\begin{displaymath}
+\frac{\partial K}{\partial s}(x,s,t) + g'(s) < 0 \ \ \forall (x,s,t) \in M \times (0,1) \times \left[\frac13,\frac43\right] ,
+\end{displaymath}
+
+and
+
+\begin{displaymath}
+\frac{\partial K}{\partial t}(x,s,t) + g'(t) < 0 \ \ \forall (x,s,t) \in M \times \left[\frac13,\frac43\right] \times (0,1) .
+\end{displaymath}
+
+Then, take $\tilde{K}(x,s,t) = K(x,s,t) + g(s) + g(t)$. With this choice, we get that
+
+\begin{eqnarray*}
+\crit(\tilde{K}) = (\crit(f_0)\times \{0\} \times \{0\}) \cup (\crit(f_1) \times \{1\} \times \{0\}) \cup \\ (\crit(f_2) \times \{0\} \times \{1\}) \cup (\crit(f_2) \times \{1\} \times \{1\}) .
+\end{eqnarray*}
+
+And
+
+\begin{itemize}
+	\item For all $a \in \crit(f_0)$, $\indx_{\tilde{K}}((a,0,0)) = \indx_{f_0}(a) + 2$.
+	\item For all $b \in \crit(f_1)$, $\indx_{\tilde{K}}((b,1,0)) = \indx_{f_1}(b) + 1$.
+	\item For all $c \in \crit(f_2)$, $\indx_{\tilde{K}}((c,0,1)) = \indx_{f_2}(c) + 1$ and $\indx_{\tilde{K}}((c,1,1)) = \indx_{f_2}(c)$.
+\end{itemize}
+
+To connect the critical points, consider $X$ a pseudogradient adapted to $F$, $Y$ a pseudogradient adapted to $G$, and $Z$ adapted to $H + g$. Then, consider a pseudogradient $\mathcal{X}$ adapted to $\tilde{K}$ such that
+
+\begin{enumerate}
+	\item For all $s \in \left[-\frac13,\frac13\right]$, $\mathcal{X}(x,s,t) = Z(x,t) - \grad_sg$.
+	\item For all $s \in \left[\frac23,\frac43\right]$, $\mathcal{X}(x,s,t) = Y(x,t) - \grad_tg$.
+	\item For all $t \in \left[-\frac13,\frac13\right]$, $\mathcal{X}(x,s,t) = X(x,s) - \grad_tg$.
+	\item For all $t \in \left[\frac23,\frac43\right]$, $\mathcal{X}(x,s,t) = X_2(x) - \grad_tg - \grad_sg$, where $X_2$ is the pseudogradient adapted to $f_2$.
+	\item It satisfies the Palais-Smale condition.
+\end{enumerate}
+
+In this case, we have that
+
+\begin{displaymath}
+C_{k+2}(\tilde{K}) = C_k(f_0) \oplus C_{k+1}(f_1) \oplus C_{k+1}(f_2) \oplus C_{k+2}(f_2) ,
+\end{displaymath}
+
+and the differential map satisfies that
+
+\begin{displaymath}
+\partial_{\mathcal{X}} = \begin{pmatrix} \partial_{X_0} & 0 & 0 & 0 \\ \Phi^F & \partial_{X_1} & 0 & 0 \\ \Phi^H & 0 & \partial_{X_2} & 0 \\ S & \Phi^G & \Id & \partial_{X_2} \end{pmatrix} ,
+\end{displaymath}
+
+where $S : C_{k-1}(f_0) \longrightarrow C_k(f_2)$ can be defined over the generators as
+
+\begin{displaymath}
+S(a) = \sum_{b \in \crit_k(f_2)} n_{\mathcal{X}}(a,b) b ,
+\end{displaymath}
+
+where $n_{\mathcal{X}}(a,b)$ counts the trajectories of $\mathcal{X}$ from $(a,0,0)$ to $(b,1,1)$ modulo 2.
+
+Therefore, the condition $\partial_{\mathcal{X}}^2 = 0$ implies that
+
+\begin{eqnarray*}
+S \circ \partial_{X_0} + \Phi^G \circ \Phi^F + \Phi^H + \partial_{X_2} \circ S \Rightarrow \\
+\Phi^G \circ \Phi^F - \Phi^H = S \circ \partial_{X_0} + \partial_{X_2} \circ S \Rightarrow \\
+\widetilde{\Phi^G} \circ \widetilde{\Phi^F} = \widetilde{\Phi^H} .
+\end{eqnarray*}
+
+as we wanted to see.
+\end{proof}

@@ -6,7 +6,7 @@ In this section we will focus on how we can connect the points of $\crit(f)$ (fo
 
 $$\grad f = \left( \der{f}{x_1},...,\der{f}{x_n} \right) .$$
 
-This vector field can be intrinsecally defined on a manifold $M$ using the metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
+This vector field can be intrinsecally defined on a manifold $M$ using a metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
 
 $$\langle \grad f, Y \rangle = \dd f \cdot Y .$$
 
@@ -36,18 +36,18 @@ Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many because
 
 For each $\Omega_i$, let $X_i$ be the push-forward of the negative gradient of $\tilde{f}$ in $U_i$ by $h_i$. Also, take a partition of unity associated to $\{\Omega_j\}_{1 \leq j \leq m}$, $\{\varphi_j\}_{1 \leq j \leq m}$. Then, we can define the vector fields
 
-$$\tilde{X}_j(x) = \left\{ \begin{array}{ll} \varphi_j(x) X_j & \text{if } x \in \Omega_j \\ 0 & \text{otherwise} \end{array} \right. ,$$
+$$\widetilde{X}_j(x) = \left\{ \begin{array}{ll} \varphi_j(x) X_j & \text{if } x \in \Omega_j \\ 0 & \text{otherwise} \end{array} \right. ,$$
 
 and
 
-$$X = \sum_{j=1}^m \tilde{X}_j .$$
+$$X = \sum_{j=1}^m \widetilde{X}_j .$$
 
 Then, the two conditions to be a pseudogradient adapted to $f$ are satisfied:
 
 \begin{enumerate}
 \item If we compute
 
-$$\\d f_x \cdot X_x = \sum_{j=1}^m \\d f_x \cdot \tilde{X}_{j,x} \leq 0 ,$$
+$$\\d f_x \cdot X_x = \sum_{j=1}^m \\d f_x \cdot \widetilde{X}_{j,x} \leq 0 ,$$
 
 and the inequality is an equality iff $\varphi_j(x) X_j(x) = 0$ for every $j$, so that either $x$ is a critical point, or $\varphi_j(x)=0$ for all $j$, which is impossible since $\{\varphi_j\}_{1\leq j \leq m}$ form a partition of unity.
 \item Let $c_i$ be a critical point. By construction, $X$ coincides with the image of the negative gradient with the canonical metric over $U_i \bigcap \left( \bigcup_{i \neq j} U_j\right)$, which, also by construction, contains a neighbourhood of $c_i$.

@@ -1,0 +1,21 @@
+\section{The differential on the Morse complex} \label{section:morse_differential}
+
+Continuing with the program sketched in section \ref{section:morse_complex}, we are to define a differential on the Morse complex using a pseudogradient adapted to our Morse function $f$ and satisfying the Palais-Smale property, as explained in section \ref{section:pseudogradients}. More precisely, we are going to use the flow of our pseudogradient to define the differential, and then to prove that it is a differential (in the sense that $\partial^2 = 0$).
+
+\subsection{Definition of the differential}
+
+Let $f$ a Morse function, and $X$ a pseudogradient adapted to it and satisfying the Smale condition. Then, we can define for each pair of critical points $a, b \in \crit(f)$, the manifold $\mathcal{L}(a,b)$. Recall that, when $\text{Ind}(a) \leq \text{Ind}(b)$, this manifold is empty. Moreover, if $\text{Ind}(a) = \text{Ind}(b) + 1$, it is discrete. In this section we are going to show that, in fact, it must be finite, so it makes sense to define
+
+$$n_X(a,b) := \# \mathcal{L}(a,b) ,$$
+
+which denotes the number of trajectories of the flow of $X$ which go from $a$ to $b$ (in infinite time!). With this in mind, we can propose the following definition:
+
+\begin{deff}
+The {\bf differential of the Morse complex} with function $f$ and pseudogradient $X$ can be defined over the generators of $C_k(M,f,X)$ (this means, $a \in \crit_k(f)$) as
+
+\begin{displaymath}
+\partial_X (a) = \sum_{b \in \crit_{k-1}(f)} n_X(a,b) b .
+\end{displaymath}
+\end{deff}
+
+Our aim in this section will be to prove that it is well defined (this means, that $n_X(a,b)$ is well defined), and to show that $\partial_X^2 = 0$. To do that, we will need to study the space of broken trajectories.

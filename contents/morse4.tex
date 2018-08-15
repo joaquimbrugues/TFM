@@ -1,0 +1,52 @@
+\section{Applications to topology} \label{section:morse_topology}
+
+In this section we are going to review some theorems on how to characterize the topology of a manifold using a Morse function or, more specifically, the critical points of a Morse function.
+
+\subsection{Critical points and adjunction of $k$-cells}
+
+First of all, let us reduce to the simplest case, when the have a part of a manifold without critical points:
+
+\begin{theo}
+Let $M$ be a smooth manifold, and $f : M \rightarrow \R$ a smooth function. Consider $a, b \in \R$ such that $f^{-1}([a,b]) \subset M$ is compact and does not contain any critical point. Let $M_a := \{x \in M \ | \ f(x) \leq a\}$ and $M_b$ defined analogously. Then, $M_a$ is a deformation retract of $M_b$ and, moreover, $M_a \cong M_b$, this means, they are diffeomorphic.
+\end{theo}
+
+\begin{proof}
+Let $W \subset M$ the (open) set of non-critical points of $f$, and consider $g$ a riemannian metric on $M$. We are going to use $g$ to construct a vector field that yields an appropriate flow, which will serve to construct our desired diffeomorphism.
+
+Take $X = \frac1{\|\text{grad}f\|^2}\text{grad}f \in \mathfrak{X}(W)$, and let $\gamma : I \rightarrow M$ be a maximal integral curve of $X$. As a consequence of the definition, we have that
+
+$$\frac{\dd}{\dd t} f(\gamma(t)) = \dd f(\gamma(t)) \cdot \gamma'(t) = \dd f(\gamma(t)) \cdot X(\gamma(t)) =$$
+$$g\left(\text{grad}f(\gamma(t)),X(\gamma(t))\right) = \frac1{\|\text{grad} f(\gamma(t))\|^2} g(\text{grad} f(\gamma(t)),\text{grad} f(\gamma(t))) = 1 .$$
+
+Therefore, if we assume $0 \in I$, we have that $f(\gamma(t)) = f(\gamma(0)) + t$.
+
+Let $K = f^{-1}([a,b]) \subset W$, which is compact by hypothesis. Take the initial condition $\gamma(0) \in f^{-1}(a)$. There are two cases in which we can find ourselves: either $\gamma(t) \in K \ \forall t \in I, t > 0$, or the solution goes out of $K$ after some time:
+
+\begin{itemize}
+	\item If $\gamma(t) \in K \ \forall t > 0$, then the solution is defined inside a compact set. Therefore, it is defined for all positive time, so $[0,+\infty) \subset I$. In particular, the solution is defined for $b-a$.
+	\item If there is $s \in I, s > 0$ such that $\gamma(s) \notin K$, then $b < f(\gamma(s)) = f(\gamma(0)) + s = a+s$, so $s > b-a$. Therefore, $[0,b-a] \subset I$.
+\end{itemize}
+
+Moreover, we can extend $X$ to the whole manifold without losing the properties that we just announced. Just take a suitable bump function $\psi : M \rightarrow \R$, such that
+
+\begin{enumerate}
+	\item $\left. \psi \right|_K = 1$.
+	\item Its support is contained in $W$.
+\end{enumerate}
+
+Then, we can construct the vector field $Y$ on the whole manifold by
+
+$$Y = \left\{ \begin{array}{ll} \psi(x) X(x) & \text{if } x \in W \\ 0 & \text{otherwise} \end{array} \right. ,$$
+
+and it coincides with $X$ at $K$, so all the results that we proved remain true. Let $\phi^t$ be the flow of $Y$. If necessary, we can shrink the support of $\psi$ to guarantee that the flow is defined up to time $b-a$, so $\phi^{b-a}$ is a well defined diffeomorphism on $M$ that sends $M_a$ onto $M_b$. Thus concludes the proof that $M_a \cong M_b$.
+
+To prove that $M_a$ is a deformation retract of $M_b$, consider the collection of maps
+
+$$\begin{array}{rccc} r : & M_b \times [0,1] & \longrightarrow & M_b \end{array}$$
+
+defined by
+
+$$r(x,t) = \left\{ \begin{array}{ll} x & \text{if } f(x) \leq a \\ \phi^{t(a-f(x))}(x) & \text{if } a \leq f(x) \leq b \end{array} \right. ,$$
+
+which induce the desired retraction.
+\end{proof}

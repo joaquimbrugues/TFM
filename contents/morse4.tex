@@ -4,11 +4,13 @@ In this section we are going to review some theorems on how to characterize the 
 
 \subsection{Critical points and adjunction of $k$-cells}
 
-First of all, let us reduce to the simplest case, when the have a part of a manifold without critical points:
+First of all, let us reduce to the simplest case, when the have a part of a manifold without critical points.
 
-\begin{theo}
-Let $M$ be a smooth manifold, and $f : M \rightarrow \R$ a smooth function. Consider $a, b \in \R$ such that $f^{-1}([a,b]) \subset M$ is compact and does not contain any critical point. Let $M_a := \{x \in M \ | \ f(x) \leq a\}$ and $M_b$ defined analogously. Then, $M_a$ is a deformation retract of $M_b$ and, moreover, $M_a \cong M_b$, this means, they are diffeomorphic.
-\end{theo}
+Let $M$ be a smooth manifold, and $f : M \rightarrow \R$ a smooth function. For $x \in \R$, let $M_x := \{p \in M \ | \ f(p) \leq x\}$.
+
+\begin{prop} \label{nocriticalpoints}
+Consider $a, b \in \R$ such that $f^{-1}([a,b]) \subset M$ is compact and does not contain any critical point. Then, $M_a$ is a deformation retract of $M_b$ and, moreover, $M_a \cong M_b$, this means, they are diffeomorphic.
+\end{prop}
 
 \begin{proof}
 Let $W \subset M$ the (open) set of non-critical points of $f$, and consider $g$ a riemannian metric on $M$. We are going to use $g$ to construct a vector field that yields an appropriate flow, which will serve to construct our desired diffeomorphism.
@@ -49,4 +51,175 @@ defined by
 $$r(x,t) = \left\{ \begin{array}{ll} x & \text{if } f(x) \leq a \\ \phi^{t(a-f(x))}(x) & \text{if } a \leq f(x) \leq b \end{array} \right. ,$$
 
 which induce the desired retraction.
+\end{proof}
+
+There is an inmediate corollary to this proposition, that is also a classic theorem on differential geometry.
+
+\begin{coro} {\bf (Reeb's theorem):} Let $M$ be a compact smooth manifold. Suppose that there is a Morse function $f : M \rightarrow \R$ that has only two critical points. Then, $M$ is homeomorphic to a sphere.\end{coro}
+
+\begin{rmrk} Notice that a smooth function over a compact manifold must always have at least two critical points (the maximum and the minimum). The theorem, in a way, strengthens this assertion: the {\it only} (up to homeomorphism) manifolds that admit functions with only two critical points are the spheres.
+\end{rmrk}
+
+\begin{proof}
+Normalize the function such that $f(M) = [0,1]$. By the Morse lemma (\ref{morselemma}), there is $\e > 0$ small enough so that $f^{-1}([0,\e]) = M_{\e}$ and $f^-1([1-\e,1])$ are diffeomorphic to disks in $\R^n$ (with $n$ the dimension of the manifold).
+
+By the proposition that we have just proved, we know that $M_{\e}$ is diffeomorphic to $M_{1-\e}$, so it is also an open disk. Therefore, $M$ is diffeomorphic to two disks glued together by their boundaries.
+
+Let $\varphi$ denote the gluing map between the boundaries of the disks, so we may write $M \cong \con{D}^n \cup_{\varphi} \con{D}^n$. Then, if we denote the standard sphere by $\con{S}^n = \con{D}^n \cup_{\text{Id}} \con{D}$ (this means, the standard sphere is the result of gluing two disks together with a trivial gluing map), we can construct an explicit homeomorphism
+
+$$\begin{array}{rccc} h : & \con{D}_1^n \cup_{\text{Id}} \con{D}_2^n & \longrightarrow & \con{D}_1^n \cup_{\varphi} \con{D}_2^n \end{array}$$
+
+by
+
+$$h(z) = \left\{ \begin{array}{ll} z & \text{ if } z \in \con{D}_1^n \\ \|z\| \varphi\left( \frac{z}{\|z\|} \right) & \text{ if } z \in \con{D}_2^n \backslash \{0\} \\ 0 & z = 0 \in \con{D}_2^n \end{array} \right. .$$
+\end{proof}
+
+Now we can move to a more interesting result, that describes the topology of a manifold when crossing a critical point:
+
+\begin{theo}
+Let $p \in M$ be a non-degenerate critical point of a smooth function $f : M \rightarrow \R$. Let $k$ be its index, and let $c = f(p)$. Take $\e > 0$ small enough such that $f^{-1}([c-\e,c+\e])$ is compact and does not contain any critical point different of $p$.
+
+Then, $M_{c+\e} \simeq M_{c-\e} \cup \con{D}^k$, this means, $M_{c+\e}$ is homotopically equivalent to $M_{c-\e}$ with a $k$-cell adjointed.
+\end{theo}
+
+\begin{proof}
+First of all we will construct a function $F$ with $F < f$ in a neighbourhood of $p$ and such that it coincides with $f$ elsewhere.
+
+Let $(U,u_1,...,u_n)$ be a Morse chart centered on $p$, so the function $f$ is
+
+$$\left. f \right|_U = c - u_1^2 - \cdots - u_k^2 + u_{k+1}^2 + \cdots + u_n^2 .$$
+
+We can take a chart and $\e$ such that the image of $U$ under the chart contains the closed ball $B = \{(u_1,...,u_n) \in \R^n \ | \ u_1^2 + \cdots + u_n^2 \leq 2\e\}$. On the other hand, consider the $k$-disk inside $B$,
+
+$$e^k = \{ (u_1,...,u_n) \in \R^n \ | \ u_1^2 + \cdot + u_k^2 \leq \e \text{ and } u_{k+1} = \cdots = u_n = 0 \} .$$
+
+We will use $e^k$ to denote both the disk as we have defined it and its preimage by the chart $\mathbf{u}$. Thus, $e^k$ is precisely a cell attached to $M_{c-\e}$, because $M_{c-\e} \cap e^k = \partial e^k$. What we need to prove, then, is that $M_{c-\e} \cup e^k$ is a deformation retract of $M_{c+\e}$.
+
+Let
+
+$$\xi = u_1^2 + \cdots + u_k^2$$
+$$\eta = u_{k+1}^2 + \cdots + u_n^2$$
+
+so that
+
+$$\left. f \right|_U = c - \xi + \eta .$$
+
+We will use this decomposition to define a function F as we said before. To this end, take $\mu : [0,+\infty) \rightarrow \R$ a smooth function such that
+
+\begin{enumerate}
+	\item $\mu(0) > \e$.
+	\item $\mu(t) = 0 \ \forall t \geq 2\e$.
+	\item $-1 < \frac{\dd \mu}{\dd t}(t) \leq 0 \ \forall t \in (0,+\infty)$.
+\end{enumerate}
+
+Then, let $F$ be defined by
+
+$$F(q) = \left\{ \begin{array}{ll} f(q) & \text{if } q \notin U \\ f(q) - \mu(\xi(q) + 2\eta(q)) & \text{if } q \in U \end{array} \right. ,$$
+
+so
+
+$$\left. F \right|_U = c - \xi + \eta - \mu(\xi + 2\eta) .$$
+
+$F$ is well defined, because $U$ contains the closed ball $\{ \xi + \eta \leq 2\e \}$.
+
+Let us break the rest of the proof in 4 steps.
+
+{\bf Step 1:} See that $F^{-1}((-\infty,c+\e]) = M_{c+\e} \ \left( = f^{-1}((-\infty,c+\e]) \right)$.
+
+Notice, first of all, that $F$ and $f$ coincide outside of the region $E:=\{ \xi + 2\eta \leq 2\e\}$, so it suffices to show that $F^{-1}((-\infty,c+\e]) \cap E = f^{-1}((-\infty,c+\e]) \cap E$. But notice that, if $q \in E$,
+
+$$F(q) \leq f(q) = c - \xi + \eta \leq c + \frac12 \xi + \eta = c + \frac12 (\xi + 2\eta) \leq c + \e ,$$
+
+so, in fact, $E \subset F^{-1}((-\infty,c+\e])$, and $F^{-1}((-\infty,c+\e]) \subset f^{-1}((-\infty,c+\e])$. Therefore, $F^{-1}((-\infty,c+\e]) = f^{-1}((-\infty,c+\e])$.
+
+{\bf Step 2:} See that $F$ and $f$ have exactly the same critical points.
+
+We can express $F$ as a function of $\xi$ and $\eta$, so we can say that
+
+$$\dd F = \frac{\partial F}{\partial \xi} \dd \xi + \frac{\partial F}{\partial \eta} \dd \eta .$$
+
+Where
+
+\begin{enumerate}
+	\item $\frac{\partial F}{\partial \xi} = -1 - \mu'(\xi+2\eta) < 0$ by the definition of $\mu$.
+	\item $\frac{\partial F}{\partial \eta} = 1 - 2 \mu'(\xi+2\eta) \geq 0$ by the definition of $\mu$.
+	\item $\dd \xi$ and $\dd \eta$ are simultaneously zero if and only if $\xi = \eta = 0$, this means, at $p$.
+\end{enumerate}
+
+Therefore, the only critical point of $F$ in $U$ is $p$, so $F$ and $f$ have exactly the same critical points.
+
+{\bf Step 3:} See that $F^{-1}((-\infty,c-\e])$ is a deformation retract of $f^{-1}((-\infty,c+\e])$.
+
+The fact that $F \leq f$, together with the claim proved in step 1, allows us to deduce that $F^{-1}([c-\e,c+\e]) \subset f^{-1}([c-\e,c+\e])$. In particular, this means that $F^{-1}([c-\e,c+\e])$ is compact. Moreover, notice that the critical value of $F$ at $p$ satisfies that
+
+$$F(p) = c - \mu(0) < c - \e ,$$
+
+because of the definition of $\mu$. Therefore, $p \notin F^{-1}([c-\e,c+\e])$, so this set does not contain critical points. With all these considerations, we see that we are under the hypothesis of proposition \ref{nocriticalpoints}. This means that $F^{-1}((-\infty,c-\e])$ is a deformation retract of $F^{-1}((-\infty,c+\e]) = f^{-1}((-\infty,c+\e]) = M_{c+\e}$ (and, in fact, they are diffeomorphic).
+
+Let $H = \overline{F^{-1}((-\infty,c-\e]) \backslash M_{c-\e}}$. With this notation, $F^{-1}((-\infty,c-\e]) = M_{c-\e} \cup H$.
+
+Actually, we have seen that $M_{c+\e} \simeq M_{c-\e} \cup H$.
+
+{\bf Step 4:} See that $M_{c-\e} \cup e^k$ is a deformation retract of $M_{c-\e} \cup H$.
+
+In the variables $(\xi, \eta)$ the disk $e^k$ in $M$ can be expressed as $e^k = \{q \in U \ | \ \xi(q) \leq \e \text{ and } \eta(q) = 0\}$. We claim that $e^k \subset H$.
+
+First of all, $e^k \subset F^{-1}((-\infty,c-\e])$. This can be seen because, if $q \in e^k$,
+
+$$F(q) = c -\xi(q) - \mu(\xi(q)) \leq c - \mu(0) \leq c - \e .$$
+
+In the first inequality we have used the fact that $\xi \geq 0$ and that $\mu$ is a decreasing function. In the second inequality we used that $\mu(0) \geq \e$.
+
+On the other hand, $f(q) = c - \xi \geq c - \e$, with an equality only when $\xi = \e$, this means, at $\partial e^k$. Therefore, as we claimed, $e^k \subset H$.
+
+Now we can construct a retraction of $M_{c-\e} \cup H$ onto $M_{c-\e} \cup e^k$. Let us call it $r_t$. Let $r_t$ be the identity ouside of $U$ for all $t$, and separate $U \cap \left( M_{c-\e} \cup H \right)$ in three regions:
+
+$$C_1 = \{ q \ | \ \xi(q) \leq \e \} ,$$
+
+$$C_2 = \{ q \ | \ \e \leq \xi(q) \leq \eta(q) + \e \} ,$$
+
+$$C_3 = \{ q \ | \ \eta(q) + \e \leq \xi(q) \Leftrightarrow f(q) \leq c - \e \} .$$
+
+We will construct $r_t$ separately on each of these three regions, and we will prove that it is the desired retraction.
+
+\begin{itemize}
+	\item $r_t$ on $C_1$. We define
+
+	$$r_t(u_1,...,u_k,u_{k+1},...,u_n) = (u_1,...,u_k,tu_{k+1},...,tu_n) ,$$
+
+	or, equivalently, $r_t(\xi,\eta) = (\xi,t^2\eta)$. It is clear that $r_1$ is the identity, and that $r_0$ is a projection onto $e^k$. Moreover, $F(r_t(q)) \leq c - \e$, because $\frac{\partial F}{\partial \eta} > 0$.
+	\item $r_t$ on $C_2$. We define
+
+	$$r_t(u_1,...,u_n) = (u_1,...,u_k,s_tu_{k+1},...,s_tu_n) ,$$
+
+	or, as before, $r_t(\xi,\eta) = (\xi, s_t^2 \eta)$. We define
+
+	$$s_t = t + (1-t) \sqrt{\frac{\xi-\e}{\eta}}$$
+
+	It is clear that $r_1$ is the identity. On the other hand, notice that
+
+	$$f(r_0(q)) = f(\xi,s_0^2\eta) c - \xi + s_0^2 \eta = c - \xi + \xi - \e = c -\e,$$
+
+	so $r_0$ maps all of $C_2$ onto the boundary of $M_{c-\e}$.
+	\item On $C_3$, we let $r_t = \text{Id}$ for all $t$. When $\xi - \e = \eta$, it coincides with the last definition.
+\end{itemize}
+
+We need to check that $r_t$ is continuous. In particular, we need to check it when $\xi \rightarrow \e$ and $\eta \rightarrow 0$. First of all, notice that
+
+\begin{itemize}
+	\item When $\xi = \e$, $s_t = t$.
+	\item When $\xi - \e = \eta$, $s_t = 1$.
+\end{itemize}
+
+Thus, the only points where it is not clear if $r_t$ is continuous are those such that $\xi = \e$ and $\eta = 0$. In particular, we are to check the continuity in the region $C_2$. In this case, however, we have that
+
+$$\xi - \e \leq \eta \Rightarrow 0 \leq \frac{\xi - \e}{\eta} \leq 1,$$
+
+so $s_t$ stays bounded in the whole $C_2$. Moreover, for each $i > k$, the coordinate $u_i$ is mapped as $u_i \mapsto s_t u_i$. In addition, $|u_i| \leq \eta$. Taking all of this into account, we deduce that
+
+$$0 \leq |s_tu_i| \leq s_t\eta \xrightarrow[\eta \rightarrow 0, \xi \rightarrow \e]{} 0 ,$$
+
+so, in particular, $s_tu_i \xrightarrow[\eta \rightarrow 0, \xi \rightarrow \e]{} 0$, as we wanted to see.
+
+Thus, $r_t$ is continuous, so it is a retraction from $M_{c-\e} \cup H$ onto $M_{c-\e} \cup e^k$. This concludes the proof.
 \end{proof}

@@ -140,3 +140,45 @@ has a finite number of products, so a infinite number of terms of the sequence $
 
 Thus, $l_n = (l_n^1,...,l_n^{m-1}) \in \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b)$. If we apply the previous argument to each of the $(l_n^i)_n$, we can construct a subsequence and a broken trajectory $\mu$ such that $l_n \xrightarrow[n \rightarrow \infty]{} \mu$.
 \end{proof}
+
+From here we can start deducing the results that we announced at the beginning of the section:
+
+\begin{coro}
+The set $\mathcal{L}(a,b)$ is finite when $\text{Ind}(a)-\text{Ind}(b) = 1$.
+\end{coro}
+
+\begin{proof}
+The proof is straighforward: in one hand, $\text{dim} \mathcal{L}(a,b) = 0$, so it is a discrete set. On the other hand, $\mathcal{L}(a,b) = \overline{\mathcal{L}}(a,b)$, so it is compact. Therefore, it must be finite.
+\end{proof}
+
+To attack the proof that $\partial_X^2 = 0$ is more delicate.
+%TODO: Add bibliography reference here
+The theorem that we use says that
+
+\begin{theo}
+If $a, b \in \crit(f)$ and $\text{Ind}(a)-\text{Ind}(b) = 2$, then $\overline{\mathcal{L}}(a,b)$ is a compact manifold with boundary.
+\end{theo}
+
+If we suppose this to be true, by the theorem \ref{1dimensional} we have that $\overline{\mathcal{L}}(a,b)$ must be diffeomorphic either to $\con{S}^1$ or to $[0,1]$. Furthermore, the set
+
+$$\bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b)$$
+
+is precisely the boundary of $\overline{\mathcal{L}}(a,b)$.
+
+\begin{coro}
+$\partial_X^2 = 0$
+\end{coro}
+
+\begin{proof}
+Take $a \in \crit_k(f)$. Then,
+
+$$\partial_X (\partial_X a) = \sum_{b \in \crit_{k-2}(f)} \sum_{c \in \crit_{k-1}(f)} n_X(a,c) n_X(c,b) b =$$
+
+$$= \sum_{b \in \crit_{k-1}(f)} \left( \sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) \right) b .$$
+
+However, we can see that
+
+$$\sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) = \# \left\{ \bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b) \right\} \quad (\text{mod } 2).$$
+
+As we just said, the term on the right is the boundary of a 1-dimensional compact manifold with boundary, so it either has 0 or 2 points. Therefore, its cardinal modulo 2 must be 0.
+\end{proof}

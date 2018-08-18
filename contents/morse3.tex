@@ -160,3 +160,47 @@ As a consequence of formula \ref{eq:dimIntersect}, the dimension of the space of
 \begin{coro}
 If $\text{Ind}(a)-\text{Ind}(b) = 1$, then the set $\mathcal{L}(a,b)$ is discrete.
 \end{coro}
+
+\subsection{Critical points of compact 1-dimensional manifolds}
+
+Here, we are going to use what we learned about Morse functions and pseudogradients to prove a classification theorem for compact 1-dimensional manifolds that will be important in the following section.
+
+First of all, we need to define the notion of incoming vector field of a manifold with boundary.
+
+\begin{deff}
+Consider $M$ a manifold with boundary, and let $X$ be a vector field defined on $M$. We say that $X$ is {\bf incoming} on the boundary of $M$ if, for any chart covering a part of $\partial M$, the local representation of $X$ is
+
+$$\tilde{X} = \sum_{i=1}^n a_i \frac{\partial}{\partial x_i} ,$$
+
+with $a_i$ functions such that $a_i(\varphi^{-1}(q)) < 0 \ \forall q \in \partial M$.
+\end{deff}
+
+\begin{lema} \label{incomingadapted}
+For any manifold with boundary $M$, we can construct a pair $(f,X)$ of Morse function and pseudogradient adapted to it such that $X$ is incoming.
+\end{lema}
+
+\begin{theo} \label{1dimensional}
+Let $M$ be a compact and connected manifold of dimension 1. Then, $M$ is diffeomorphic to $\con{S}^1$ if it has no boundary, and to $[0,1]$ otherwise.
+\end{theo}
+
+\begin{proof}
+First of all, construct a pair $(f,X)$ of Morse function and incoming pseudogradient adapted to $f$ as indicated in lemma \ref{incomingadapted}. As $M$ is 1-dimensional, the critical points of $f$ can only be local minima and maxima. Let $c_1,...,c_k$ be the minima of $f$. Notice that there has to be a finite number of critical points of $f$ in $M$, because critical points of a Morse function must be isolated and $M$ is compact.
+
+By definition, the stable manifold of $c_i$, $W^s(c_i)$, is an open interval embedded in $M$. Let $A_i$ be the closure of this stable manifold. Then, we are adding the starting points of the trajectories of $W^s(c_i)$. There are two options:
+
+\begin{itemize}
+	\item They are both local maxima (they may or may not coincide).
+	\item At least one of them is a boundary point of $M$, so the points must be distinct.
+\end{itemize}
+
+Also, note that $M = \bigcup_i A_i$. Therefore, if $x \in M$ there are two options: either $x \in W^s(c_i)$ for some minimum $c_i$, or $x$ is a local maximum, but then it belongs to the closure of a stable manifold.
+
+If $k=1$, the theorem is already proved, so consider $k \geq 2$. As $M$ is connected, there is some $i \geq 2$ such that $A_1 \cap A_i \neq \emptyset$. The intesection may only contain local maxima that are not boundary points, because they are points from which the trajectories reach different minimum points. Thus, $\partial M \cap (A_1 \cap A_i) = \emptyset$. There are two options:
+
+\begin{itemize}
+	\item The intesection contains two points. Then, they are both local maxima, $A_1 \cup A_i \cong \con{S}^1$ and we are done.
+	\item The intersection contains a single point. Then, $A_1 \cup A_i \cong [0,1]$. If $A_1 \cup A_i = M$, we are done.
+\end{itemize}
+
+Otherwise, we can replace $A_1$ by $A_1 \cup A_i$ in the collection of closed sets $\{A_i\}_i$, and remove $A_i$ from this list. Then, we can repeat the same argument with the collection $\{A_1,...,A_{i-1},A_{i+1},...,A_k\}$, which contains $k-1$ sets. Therefore, we may apply the process a finite number of times, and end up with one of the cases above.
+\end{proof}

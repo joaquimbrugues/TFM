@@ -51,7 +51,7 @@ Suppose that $\text{Ind}(a) - \text{Ind}(b) = 2$, and take $k = \text{Ind}(a)$. 
 
 $$\overline{\mathcal{L}}(a,b) = \mathcal{L}(a,b) \bigcup \left[ \bigcup_{c \in \crit_{k-1}} \mathcal{L}(a,c) \times \mathcal(c,b) \right] .$$
 
-We can see that in the above union, the dimension of $\mathcal{L}(a,b)$ is $1$, whereas $\text{dim} \mathcal{L}(a,c) = \text{dim} \mathcal{L}(c,b) = 0$ for all $c \in \crit_k(f)$. Thus, we are adding some points to a 1-dimensional manifold.
+We can see that in the above union, the dimension of $\mathcal{L}(a,b)$ is $1$, whereas $\text{dim} \mathcal{L}(a,c) = \text{dim} \mathcal{L}(c,b) = 0$ for all $c \in \crit_{k-1}(f)$. Thus, we are adding some points to a 1-dimensional manifold.
 \end{rmrk}
 
 With this definition, we can introduce a topology on the space of broken trajectories.
@@ -94,9 +94,11 @@ The space $\overline{\mathcal{L}}(a,b)$ is compact.
 \begin{proof}
 We will prove that $\overline{\mathcal{L}}(a,b)$ is sequentially compact, this means, that for any sequence $(l_n)_n$ we can extract a subsequence that is convergent to some $l \in \overline{\mathcal{L}}(a,b)$.
 
-First of all, let $(l_n)_n \subset \mathcal{L}(a,b)$. The general case will follow from the proof for the sequence of trajectories. Let $l_n^{-}$ denote the exit point of the trajectory $l_n$ from $\Omega(a)$. As $l_n^- \in \partial \Omega(a)$, which is compact, we can extract a subsequence such that $l_{n_k}^- \xrightarrow[k \rightarrow \infty]{} a^-$, with $a^- \in \partial \Omega(a)$ and $a^- \in W^u(a)$.
+First of all, let $(l_n)_n \subset \mathcal{L}(a,b)$. The general case will follow from this one.
 
-Let $\gamma(t) = \varphi^t_X(a^-)$ be the trajectory of $X$ through $a^-$. Then, $c_1 = \lim_{t \rightarrow \infty} \gamma(t)$ is a critical point, and $\gamma \in \mathcal{L}(a,c_1)$. Let $d^+$ denote the entry point of $\gamma$ into $\Omega(c_1)$. By the theorem of dependence of solutions of differential equations on the initial conditions, $l_n$ must also (at least for $n$ large enough) enter $\Omega(c_1)$ through a point $d_n^+$. We have that $\lim_{n \rightarrow \infty} d_n^+ = d^+$ by the following lemma:
+Let $l_n^{-}$ denote the exit point of the trajectory $l_n$ from $\Omega(a)$. As $l_n^- \in \partial \Omega(a)$, which is compact, we can extract a subsequence such that $l_{n_k}^- \xrightarrow[k \rightarrow \infty]{} a^-$, with $a^- \in \partial \Omega(a)$ and $a^- \in W^u(a)$.
+
+Let $\gamma(t) = \varphi^t_X(a^-)$ be the trajectory of $X$ through $a^-$. Then, $c_1 = \displaystyle\lim_{t \rightarrow \infty} \gamma(t)$ is a critical point, and $\gamma \in \mathcal{L}(a,c_1)$. Let $d^+$ denote the entry point of $\gamma$ into $\Omega(c_1)$. By the theorem of dependence of solutions of differential equations on the initial conditions, $l_n$ must also (at least for $n$ large enough) enter $\Omega(c_1)$ through a point $d_n^+$. We have that $\displaystyle\lim_{n \rightarrow \infty} d_n^+ = d^+$ by the following lemma:
 
 \begin{lema}
 Let $x \in M \backslash \crit(f)$, and $(x_n)_n$ a sequence that tends to $x$. Let $y_n$ a sequence of points such that $y_n$ and $x_n$ belong in the same trajectory of $X$ for each $n$, and $y$ belonging to the same trajectory as $x$. Moreover, suppose that $f(y_n) = f(y)$. Then,
@@ -121,16 +123,16 @@ and
 
 $$y = \psi^{f(x)-f(y)}(x) .$$
 
-So $\lim_{n \rightarrow \infty} y_n = y$.
+So $\displaystyle\lim_{n \rightarrow \infty} y_n = y$.
 \end{proof}
 
-If $c_1 = b$ then $\lim_{n \rightarrow \infty} l_n = \gamma \in \mathcal{L}(a,b)$, so $(l_n)_n$ has a convergent subsequence. Suppose that $c_1 \neq b$.
+If $c_1 = b$ then $\displaystyle\lim_{n \rightarrow \infty} l_n = \gamma \in \mathcal{L}(a,b)$, so $(l_n)_n$ has a convergent subsequence. Suppose that $c_1 \neq b$.
 
-The points $d_n^+$ do not belong to $W^s(c_1)$ (because, otherwise, we would have that $l_n \in \mathcal{L}(a,c_1)$, which is false). Therefore, $l_n$ exits $\Omega(c_1)$ through a point $d_n^-$. As before, we can extract a subsequence such that $\lim_{n \rightarrow \infty} d_n^- = d^-$.
+The points $d_n^+$ do not belong to $W^s(c_1)$ (because, otherwise, we would have that $l_n \in \mathcal{L}(a,c_1)$, which is false). Therefore, $l_n$ exits $\Omega(c_1)$ through a point $d_n^-$. As before, we can extract a subsequence such that $\displaystyle\lim_{n \rightarrow \infty} d_n^- = d^-$.
 
 We claim that $d^- \in W^u(c_1)$. Suppose that it is not the case. Let $\mu$ denote the trajectory of $X$ passing through $d^-$. If $d^- \notin W^u(c_1)$, there must be a point $d_{\ast}$ such that $f(d_{\ast}) = f(d_n^+)$. By the lemma that we just proved, $d_n^+ \xrightarrow[n \rightarrow \infty]{} d_{\ast}$, so $d_{\ast} = d^+$. Therefore, $d_{\ast} \in W^s(c_1)$. However, this is a contradiction, because $\mu$ passes through $d_{\ast}$ and exits $\Omega(c_1)$ through $d^-$. Therefore, we have proved that $d^- \in W^u(c_1)$.
 
-If we repeat this process a finite number of times (as there is a finite number of critical points), we will be able to construct a subsequence $(l_n)_n$ and a broken trajectory $\lambda = (\lambda_1,...,\lambda_m)$ such that $\lim_{n \rightarrow \infty} l_n = \lambda$.
+If we repeat this process a finite number of times (as there is a finite number of critical points), we will be able to construct a subsequence $(l_n)_n$ and a broken trajectory $\lambda = (\lambda_1,...,\lambda_m)$ such that $\displaystyle\lim_{n \rightarrow \infty} l_n = \lambda$.
 
 Let us consider the general case of a sequence of $\overline{\mathcal{L}}(a,b)$. We can extract a subsequence $(l_n)_n$ such that there are critical points $c_1,...,c_{m-1}$ with $l_n \in \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b)$. We can do this because the union
 
@@ -144,7 +146,7 @@ Thus, $l_n = (l_n^1,...,l_n^{m-1}) \in \mathcal{L}(a,c_1) \times \cdots \times \
 From here we can start deducing the results that we announced at the beginning of the section:
 
 \begin{coro}
-The set $\mathcal{L}(a,b)$ is finite when $\text{Ind}(a)-\text{Ind}(b) = 1$.
+If $\text{Ind}(a)-\text{Ind}(b) = 1$, the set $\mathcal{L}(a,b)$ is finite.
 \end{coro}
 
 \begin{proof}
@@ -156,17 +158,16 @@ To attack the proof that $\partial_X^2 = 0$ is more delicate.
 The theorem that we use says that
 
 \begin{theo}
-If $a, b \in \crit(f)$ and $\text{Ind}(a)-\text{Ind}(b) = 2$, then $\overline{\mathcal{L}}(a,b)$ is a compact manifold with boundary.
-\end{theo}
-
-If we suppose this to be true, by the theorem \ref{1dimensional} we have that $\overline{\mathcal{L}}(a,b)$ must be diffeomorphic either to $\con{S}^1$ or to $[0,1]$. Furthermore, the set
+If $a, b \in \crit(f)$ and $\text{Ind}(a)-\text{Ind}(b) = 2$, then $\overline{\mathcal{L}}(a,b)$ is a compact manifold with boundary. In addition, the set
 
 $$\bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b)$$
 
 is precisely the boundary of $\overline{\mathcal{L}}(a,b)$.
+\end{theo}
 
-\begin{coro}
-$\partial_X^2 = 0$
+If we suppose this to be true, by the theorem \ref{1dimensional} we have that each connected component of $\overline{\mathcal{L}}(a,b)$ must be diffeomorphic to $\con{S}^1$ or to $[0,1]$. From this, we are able to prove the following result:
+
+\begin{coro} The differential of the Morse complex satisfies that $\partial_X^2 = 0$.
 \end{coro}
 
 \begin{proof}
@@ -180,5 +181,5 @@ However, we can see that
 
 $$\sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) = \# \left\{ \bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b) \right\} \quad (\text{mod } 2).$$
 
-As we just said, the term on the right is the boundary of a 1-dimensional compact manifold with boundary, so it either has 0 or 2 points. Therefore, its cardinal modulo 2 must be 0.
+As we just said, the term on the right is the boundary of a 1-dimensional compact manifold with boundary, so it has an even number of points. Therefore, its cardinal modulo 2 must be 0.
 \end{proof}

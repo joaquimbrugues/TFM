@@ -100,7 +100,7 @@ Let $l_n^{-}$ denote the exit point of the trajectory $l_n$ from $\Omega(a)$. As
 
 Let $\gamma(t) = \varphi^t_X(a^-)$ be the trajectory of $X$ through $a^-$. Then, $c_1 = \displaystyle\lim_{t \rightarrow \infty} \gamma(t)$ is a critical point, and $\gamma \in \mathcal{L}(a,c_1)$. Let $d^+$ denote the entry point of $\gamma$ into $\Omega(c_1)$. By the theorem of dependence of solutions of differential equations on the initial conditions, $l_n$ must also (at least for $n$ large enough) enter $\Omega(c_1)$ through a point $d_n^+$. We have that $\displaystyle\lim_{n \rightarrow \infty} d_n^+ = d^+$ by the following lemma:
 
-\begin{lema}
+\begin{lema} \label{morse_sequences}
 Let $x \in M \backslash \crit(f)$, and $(x_n)_n$ a sequence that tends to $x$. Let $y_n$ a sequence of points such that $y_n$ and $x_n$ belong in the same trajectory of $X$ for each $n$, and $y$ belonging to the same trajectory as $x$. Moreover, suppose that $f(y_n) = f(y)$. Then,
 
 $$\lim_{n \rightarrow \infty} y_n = y .$$
@@ -157,7 +157,7 @@ To attack the proof that $\partial_X^2 = 0$ is more delicate.
 %TODO: Add bibliography reference here
 The theorem that we use says that
 
-\begin{theo}
+\begin{theo} \label{morse_brokenboundary}
 If $a, b \in \crit(f)$ and $\text{Ind}(a)-\text{Ind}(b) = 2$, then $\overline{\mathcal{L}}(a,b)$ is a compact manifold with boundary. In addition, the set
 
 $$\bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b)$$

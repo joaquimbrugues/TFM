@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{import}
 \usepackage{styles/TFG}
+\usepackage{styles/TFM}
 \usepackage[pdfauthor={Joaquim Brugues Mora},pdftitle={Master thesis Floer Homology},pdftex]{hyperref}
 
 %Headers and footers
@@ -86,9 +87,27 @@ In this chapter we explain the basic constructions on Morse theory. Our aim is n
 \fancyhead[RO]{The Morse homology is well defined}
  \import{contents/}{morse6.tex}
 
+ %TODO: Add figures to Chapter 1, and revise everything.
+
+ %TODO: Chapter on symplectic geometry and Arnold' conjecture
+
+ %TODO: Chapter with the action functional and deduction of the Floer equation
+
+ %TODO: Chapter about the Conley-Zehnder index
+
+ %TODO: Apendix with the proof that broken trajectories are the boundary
+
+ %TODO: Apendix with the proof that Morse homology is equivalent to cellular homology
+
+%----------------- Appendices ---------------------%
+\begin{appendices}
+\chapter{Additional results on Morse theory}
+\import{contents/}{morse7.tex}
+\end{appendices}
+
 %----------------- Bibliography --------------------%
 %Here goes the bibliography of the project
-\addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{alpha}
 \bibliography{references}
+\addcontentsline{toc}{chapter}{Bibliography}
 \end{document}

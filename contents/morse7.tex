@@ -1,0 +1,110 @@
+In this chapter we are going to provide some proofs that were not included in Chapter 1 because they were rather too technical, and including them would not help to our principal goal to focus on the scheme of the proof rather than going into the details of the theory. However, these results are important enough to be written in this appendix
+
+\section{The broken trajectories are the boundary in dimension 1}
+
+In this section, we are going to focus on the proof of theorem \ref{morse_brokenboundary}. This theorem is fundamental to the construction of the Morse complex, because it is, ultimately, the proof that it is indeed a complex, this means, that $\partial_X^2 = 0$. Let us restate it here, with more precision. Recall that we have a triple $(M, f, X)$, where $M$ is a compact smooth manifold, $f$ is a Morse function defined on $M$, and $X$ is a pseudogradient adapted to $f$ and satisfying the Smale condition.
+
+\begin{theo}
+Let $a \in \crit_{k+1}(f), b \in \crit_k(f), c \in \crit_{k-1}(f)$. For all $(\lambda_1,\lambda_2) \in \mathcal{L}(a,b) \times \mathcal{L}(b,c)$, $\exists \psi : [0,\delta) \rightarrow \overline{\mathcal{L}}(a,c)$ (for some $\delta > 0$) such that
+
+\begin{enumerate}
+	\item $\psi(0) = (\lambda_1,\lambda_2)$.
+	\item $\psi(t) \in \mathcal{L}(a,c) \ \forall t > 0$.
+	\item $\left. \psi \right|_{\{t > 0\}} : (0,\delta) \rightarrow \mathcal{L}(a,c)$ is an embedding.
+	\item For all $(l_n)_n \subset \mathcal{L}(a,c)$ with $l_n \xrightarrow[n \rightarrow \infty]{} (\lambda_1, \lambda_2)$ in $\overline{\mathcal{L}}(a,c)$, $l_n \in \psi((0,\delta)) \ \forall n$ (at least, for $n$ large enough).
+\end{enumerate}
+
+This means that $\overline{\mathcal{L}}(a,c)$ is a finite union of compact and connected smooth manifolds with boundary.
+\end{theo}
+
+\begin{proof}
+Take $\alpha = f(b)$. Let $\Omega(b) \subset M$ be a Morse chart for $(f,X)$, such that $\partial\Omega(b)$ coincides with $f^{-1}(\alpha+\e)$ in a neighbourhood of $W^s(b) \cap \partial\Omega(b)$ and with $f^{-1}(\alpha-\e)$ in a neighbourhood of $W^u(b) \cap \partial\Omega(b)$ for some $\e > 0$.
+
+Let $b^- = \partial\Omega(b) \cap \lambda_1$ be the entry point of $\lambda_1$ into $\Omega(b)$, and $b^+ = \partial\Omega(b) \cap \lambda_2$ be the exit point of $\lambda_2$. Take $U \subset \partial\Omega(b)$ a neighbourhood of $b^-$. Notice that $U$ is diffeomorphic to an open disk of dimension $n-1$. Let us define the following sets, all of them in $\partial\Omega(b)$:
+
+\begin{itemize}
+	\item $P := U \cap W^u(a)$. The unstable manifold meets $f^{-1}(\alpha+\e)$ transversally, so $P$ is diffeomorphic to an open disk of dimension $\text{dim}(P) = \text{dim}(U) + \text{dim}(W^u(a)) - \text{dim}(M) = k$.
+	\item $S_+(b) = U \cap W^s(b)$. For the same reason, $\text{dim}(S_+(b)) = n - k - 1$, and it is diffeomorphic to a sphere.
+	\item $S_-(b) = W^u(b) \cap f^{-1}(\alpha-\e)$. It is diffeomorphic to a sphere of dimension $k-1$.
+\end{itemize}
+
+As $X$ satisfies the Smale condition, we know that $W^u(a) \pitchfork W^s(b)$. Therefore, $P \pitchfork S_+(b)$ in $U$, so $\text{dim}(P \cap S_+(b)) = 0$. Therefore, (shrinking $U$ if necessary) we can assume that $P \cap S_+(b) = \{b^-\}$.
+
+Take $D = P \backslash \{b^-\}$. It is diffeomorphic to $\{x \in \R^{k-1} \ | \ 0 < \|x\| < 1\}$, a punctured open disk. Notice that, by definition, $D \cap W^s(b) = \emptyset$. Therefore, the flux of $X$ starting at any point of $D$ will eventually leave $\Omega(b)$, so we can define the embedding
+
+$$\begin{array}{rccc} \Phi : & D & \longrightarrow & \partial\Omega(b) \end{array}$$
+
+induced by this flux.
+
+Let us consider the set $Q = \text{Im} \Phi \cup S_-(b) \subset f^{-1}(\alpha-\e)$. The key to prove this theorem is contained in the following proposition:
+
+\begin{prop} \label{morse_propappendix}
+Q is a $k$-dimensional manifold with boundary, and $\partial Q = S_-(b)$.
+\end{prop}
+
+Let us suppose that it is true. Using the Smale transversality condition of $X$ in $W^u(a) \cap W^s(c)$ and in $W^u(b) \cap W^s(c)$, we can see that, as $\text{Im}\Phi \subset W^u(a) \cap f^{-1}(\alpha-\e)$ and $S_-(b) = W^u(b) \cap f^{-1}(\alpha-\e)$,
+
+$$\text{dim}(\text{Im}\Phi \cap W^s(c)) = 1 ,$$
+
+$$\text{dim}(S_-(b) \cap W^s(c)) = 0 .$$
+
+Therefore, $Q \cap W^s(c)$ is a 1-dimensional manifold with boundary, and its boundary is, by the proposition \ref{morse_propappendix},
+
+$$\partial Q \cap W^s(c) = S_-(b) \cap W^s(c) = W^u(b) \cap W^s(c) \cap f^{-1}(\alpha-\e) \cong \mathcal{L}(b,c) ,$$
+
+and $b^+ \in \partial Q \cap W^s(c)$. Now, consider $\chi$ a local parametrization of this manifold in a neighbourhood of $b^+$, this means, an embedding
+
+$$\begin{array}{rccc} \chi : & [0,\delta) & \longrightarrow & Q \cap W^s(c) \end{array} ,$$
+
+with $\chi(0) = b^+$. Then, we can consider the diffeomorphism
+
+$$\begin{array}{rccc} \Phi^{-1} \circ \chi : & (0,\delta) & \longrightarrow & W^s(c) \cap D \end{array}$$
+
+(it is well defined because $\Phi$ is defined following the flow lines of $X$, so $W^s(c)$ is invariant under its action). We can use the lemma \ref{morse_sequences} to deduce that
+
+$$\lim_{t \searrow 0} (\Phi^{-1} \circ \chi)(t) = b^- ,$$
+
+so we can extend $\Phi^{-1} \circ \chi$ continuously to a map
+
+$$\begin{array}{rccc} \psi : & [0,\delta) & \longrightarrow & \left( W^s(c) \cap P \right) \cup \{b^-\} \end{array}$$
+
+with $\psi(0) = b^-$. We can see that
+
+$$W^s(c) \cap P = W^s(c) \cap W^u(a) \cap f^{-1}(\alpha+\e) \cong \mathcal{L}(a,c) ,$$
+
+and $b^-$ is a natural representation of $(\lambda_1,\lambda_2) \in \mathcal{L}(a,b) \times \mathcal{L}(b,c)$, so we can rewrite the definition of $\psi$ as
+
+$$\begin{array}{rccc} \psi : & [0,\delta) & \longrightarrow & \overline{\mathcal{L}}(a,c) \end{array} .$$
+
+Moreover, we see that:
+
+\begin{itemize}
+	\item $\psi(0) = (\lambda_1,\lambda_2)$.
+	\item $\psi(t) \in \mathcal{L}(a,c)$ for $t > 0$.
+	\item $\left. \psi \right|_{\{t > 0\}}$ is an embedding.
+\end{itemize}
+
+We just need to prove the property 4 to conclude the proof of the theorem.
+
+Consider $l_n \xrightarrow[n \rightarrow \infty]{} (\lambda_1,\lambda_2)$, with $l_n \in \mathcal{L}(a,c) \ \forall n$. For $n$ sufficiently large, $l_n$ enters $\Omega(b)$ through $U$, and exits it through a neighbourhood of $b^+$ in $f^{-1}(\alpha-\e)$. Let $l_n^-$ denote the entry points, and $l_n^+$ the exit points. By the lemma \ref{morse_sequences}, $l_n^- \xrightarrow[n \rightarrow \infty]{} b^-$, and $l_n^+ \xrightarrow[n \rightarrow \infty]{} b^+$.
+
+For $n$ large enough, $l_n^- \in D$, so it is in the domain of $\Phi$. Thus, $l_n^+ = \Phi(l_n^-) \in Q \cap W^s(c)$, and therefore $l_n^+ \in \text{Im} \chi$. Then, it is clear that $l_n \in \text{Im} \psi$, as we wanted to see.
+\end{proof}
+
+Now let us prove the proposition \ref{morse_propappendix}. We want to conclude that $Q$ is a $k$-dimensional manifold with boundary, and its boundary is precisely $S_-(b)$.
+
+\begin{proof}
+Recall that $Q = \text{Im}\Phi \cup S_-(b)$, with $\Phi : D \rightarrow f^{-1}(\alpha-\e)$ an embedding. Also, $D = P \backslash \{b^-\}$ is diffeomorphic to a punctured open disk of dimension $k-1$. This means that we can take $D \cong (0,1) \times \con{S}^{k-1}$, and $\text{Im} \Phi \cong (0,1) \times \con{S}^{k-1}$. Therefore, we can take coordinates $(t,z)$ in $D$ and $(s,w)$ in $\text{Im} \Phi$ in such a way that $\Phi((t,z)) = (t,z)$, this means, $\Phi$ is the identity in these coordinates\footnote{We can construct the coordinates just in $D$, and then push them forward to $\text{Im}\Phi$ with $\Phi$, using the fact that it is an embedding.}.
+
+We can see that $\displaystyle\lim_{t \searrow 0} (t,z) = b^-$ in $P$ for all $z \in \con{S}^{k-1}$. We want to show that, on the other hand, $\displaystyle\lim_{s \searrow 0} (s,w) \in S_-(b) \ \forall w \in \con{S}^{k-1}$. Let $d^+ = \displaystyle\lim_{s \searrow 0} (s,w)$ for some $w \in \con{S}^{k-1}$. It is clear that $f(d^+) = \alpha - \e$ because $f$ is continuous, so we need to show that $d^+ \in W^u(b)$.
+
+Suppose that it is false, so $d^+ \notin W^u(b)$. Therefore, if we take the flow of $- X$ starting at $d^+$, we must exit the chart $\Omega(b)$ at some point $d^-$ with $f(d^-) = \alpha + \e$. Let $(x_n)_n$ a sequence in $\text{Im}\Phi$ such that $\limn x_n = d^+$. Take $y_n = \Phi^{-1}(x_n)$ for each $n$. We know that $f(y_n) = \alpha + \e \ \forall n$, so, applying the lemma \ref{morse_sequences}, we deduce that $y_n \xrightarrow[n \rightarrow \infty]{} d^-$. However, we can see that $y_n \xrightarrow[n \rightarrow \infty]{} b^-$ because the first component tends to $0$. Therefore, we conclude that $b^- = d^-$. But we can see that, if $\varphi_X^t$ denotes the flow of $X$,
+
+$$f(\varphi_X^t(b^-)) \xrightarrow[t \rightarrow \infty]{} \alpha ,$$
+
+so $f(\varphi_X^t(b^-)) \geq \alpha \ \forall t > 0$. On the other hand, $f(d^+) = \alpha - \e < \alpha$ and $d^+ = \varphi_X^{t_0}(d^-)$ for some $t_0 > 0$. Thus, we reach a contradiction.
+
+This way, we have proved that $\displaystyle\lim_{s \searrow 0} (s,w) \in S_(b) \ \forall w \in \con{S}^{k-1}$.
+
+We know that $S_-(b) \cong \con{S}^{k-1}$, so we can identify $Q$ with $[0,1) \times \con{S}^{k-1}$ and $S_-(b)$ with $\{0\} \times \con{S}^{k-1}$ with the same coordinates as before. Then, it is clear that the map $w \mapsto (0,w) \in S_-(b)$ is injective and, therefore, is a homeomorphism. Thus, we have shown that $Q \cong [0,1) \times \con{S}^{k-1}$ a manifold with boundary, with $S_-(b)$ being its boundary, as we wanted to see. 
+\end{proof}

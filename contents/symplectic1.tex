@@ -1,13 +1,13 @@
 \section{A toolkit of symplectic geometry}
 
-In this section we will recall the main constructions in symplectic geometry, focussing in the ones that will be relevant to define the Floer complex. Let us begin with the deffinition of a symplectic manifold.
+In this section we will recall the main constructions in symplectic geometry, focussing in the ones that will be relevant to define the Floer complex. We will announce several theorems, but in general we are not providing a proof for any of them. All the results explained in this chaper are proved in \cite{da2001lectures}. Let us begin with the definition of a symplectic manifold.
 
 \begin{deff}
 Let $M$ be a smooth manifold. We say that a form $\omega \in \Omega^2(M)$ is {\bf symplectic} if
 
 \begin{itemize}
 	\item It is closed, so $\dd \omega = 0$,
-	\item It is non-degenerate, so for each $p \in M$, $\omega_p : \straightT_pM \times \straightT_pM \rightarrow \R$ is a non-degenerate, skew-symmetric and biliniear map.
+	\item It is non-degenerate, so for each $p \in M$, $\omega_p : T_pM \times T_pM \rightarrow \R$ is a non-degenerate, skew-symmetric and biliniear map.
 \end{itemize}
 \end{deff}
 
@@ -30,7 +30,7 @@ $$\frac{\dd p_i}{\dd t} = - \frac{\partial H}{\partial q_i} .$$
 Thus, symplectic geometry does generalize the notion of a Hamiltonian system, as we claimed before.
 
 \begin{deff}
-A diffeomorphism $\varphi : M \rightarrow M$ is called a {\bf symplectomorphism} if $\varphi^{\ast} \omega = \omega$, this means, if, for any $p \in M$ and $v, w \in \straightT_pM$,
+A diffeomorphism $\varphi : M \rightarrow M$ is called a {\bf symplectomorphism} if $\varphi^{\ast} \omega = \omega$, this means, if, for any $p \in M$ and $v, w \in T_pM$,
 
 $$\omega_{\varphi(p)}(\straightT_p \varphi \cdot v, \straightT_p \varphi \cdot w) = \omega_p(v,w) .$$
 \end{deff}
@@ -55,7 +55,17 @@ $$\mathcal{L}_{X_H} \omega = \dd i_{X_H} \omega + i_{X_H} \dd \omega = \dd (- \d
 where we used both the fact that $\omega$ is closed and the deffinition of $X_H$.
 \end{proof}
 
-Going back to the deffinition of symplectic manifold, we can see that there are some topological constraints in $M$ to accept such an structure, namely:
+Going back to the definition of symplectic manifold, we may want to understand the relationship between the topology of a manifold and the possible symplectic structures on it. To this end, the first result is the following:
+
+\begin{theo}
+{\bf (Darboux):} Let $(M,\omega)$ be a symplectic manifold, and take $p \in M$. There is a chart $(U;x_1,...,x_n,y_1,...,y_n)$ centered at $p$ such that
+
+$$\left. \omega \right|_U = \sum_{i=1}^n \dd x_i \wedge \dd y_i .$$
+\end{theo}
+
+From this theorem we deduce that all symplectic structures on a manifold are locally essentially the same.
+
+However, the symplectic structure may give global information about the manifold $M$. On the topology constraints, we can notice the most inmediate ones:
 
 \begin{enumerate}
 	\item As $\omega$ must be non-degenerate, we must have $\text{dim}M = 2n$.
@@ -68,3 +78,60 @@ This last result can be further strenghtened into the following theorem:
 \begin{theo}
 {\bf (Moser):} Two symplectic structures $(M,\omega_1)$ and $(M,\omega_2)$ are equivalent if, and only if, $[\omega_1] = [\omega_2]$ in the second De Rham cohomology group, this means, there is a diffeomorphism $\varphi : M \rightarrow M$ with $\varphi^{\ast}\omega_2 = \omega_1$.
 \end{theo}
+
+The next thing that interests us is the relationship between the symplectic structure on a manifold and other present structures. In particular, we are thinking about riemannian structures and almost-complex structures.
+
+\begin{deff}
+A section of $T^{\ast}M \otimes T^{\ast}M$ $g$ is a {\bf riemannian metric} if it is bilinear and positive definite at each point.
+\end{deff}
+
+A riemannian metric generalizes the concept of scalar product in an euclidean space. From this, we may define the norm and the distance in the tangent spaces, as well as the connection associated to $g$, from which curvature and parallel transport can be studied.
+
+\begin{deff}
+A section of $TM \otimes T^{\ast}M$ $J$ induces an {\bf almost complex structure} on $M$ if $J^2 = - \text{Id}$.
+\end{deff}
+
+As in the case of Riemannian manifolds, this construction generalizes a concept in real vector spaces, namely the identification of $\R^{2n}$ with $\C^n$, where the isomorphism $J$ may be regarded as multiplication with the imaginary unit $i$. We did not put the condition that $M$ has even dimension because, as it is the case with symplectic geometry, it becomes a consequence of the construction.
+
+The compatibility condition between these three structures can be defined as follows:
+
+\begin{deff}
+Let $(M,\omega)$ a symplectic manifold, and let $J$ be an almost complex structure. We say that $J$ {\bf is calibrated} by $\omega$ if
+
+\begin{enumerate}
+	\item For all $p \in M$, $v,w \in T_pM$, $\omega(Jv,Jw) = \omega(v,w)$ (so $J$ behaves as a symplectomorphism).
+	\item For all $p \in M$, the bilinear map in $T_pM$ defined by $(v,w) \mapsto \omega_p(v,Jw)$ is positive definite.
+\end{enumerate}
+\end{deff}
+
+It can be easily checked that, under these conditions, the bilinear map $(v,w) \mapsto \omega_p(v,Jw)$ is symmetric. Therefore, it defines a riemannian metric $g$ over $M$, such that $J$ is an isometry and $J^{\ast} = - J$.
+
+Of course, the first question one may ask is whether these calibrated almost-complex structures do exist for any symplectic manifold. The answer, as we are going to enounce, is affirmative.
+
+\begin{prop} Let $(M,\omega)$ be a symplectic manifold. Then,
+
+\begin{enumerate}
+	\item The space of almost complex structures calibrated by $\omega$ is nonempty and contractible.
+	\item For any riemannian metric $g$ defined on $M$, there is a calibrated complex structure $J$ such that the metric induced by $\omega$ and $J$ coincide.
+\end{enumerate}
+\end{prop}
+
+Recall that, in a riemannian manifold $(M,g)$, any function $H \in \mathcal{C}^{\infty}(M)$ has a vector field associated to it, called its gradient, defined by
+
+$$g(\text{grad}H, X) = \dd H \cdot X \ \ \ \ \forall X \in \mathfrak{X}(M) .$$
+
+In the case of a symplectic manifold, the mapping $H \mapsto X_H$ follows the same idea of associating a vector field to a function. In this case, a relationship between these two correspondences can be obtained, using the calibrated almost complex structure:
+
+\begin{prop}
+For any smooth function $H$ defined on $M$, we have that
+
+$$X_H = J \text{grad}H .$$
+\end{prop}
+
+\begin{proof}
+We have that
+
+$$\omega(X_H,Y) = - \dd H \cdot Y = - g(\text{grad}H,Y) = - \omega(\text{grad}H,JY) = \omega(J \text{grad}H, Y) ,$$
+
+where we have used the properties of a calibrated almost complex structure. As $\omega$ is non-degenerate and the equality holds for all $Y \in \mathfrak{X}(M)$, we deduce that $X_H = J \text{grad}H$, as we wanted to prove.
+\end{proof}

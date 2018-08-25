@@ -1,11 +1,70 @@
-\section{Introduction to symplectic manifolds}
+\section{A toolkit of symplectic geometry}
 
-Let $(\vc{q},\vc{p})$ denote the coordinates of the real space $\R^{2n}$. Consider $H : \R^{2n} \rightarrow \R$ a smooth function. The Hamiltonian system induced by the function $H$ is the system of differential equations
+In this section we will recall the main constructions in symplectic geometry, focussing in the ones that will be relevant to define the Floer complex. Let us begin with the deffinition of a symplectic manifold.
 
-$$\frac{\dd p_i}{\dd t} = - \frac{\partial H}{\partial q_i}$$
+\begin{deff}
+Let $M$ be a smooth manifold. We say that a form $\omega \in \Omega^2(M)$ is {\bf symplectic} if
 
-$$\frac{\dd q_i}{\dd t} = \frac{\partial H}{\partial p_i} \end{array} .$$
+\begin{itemize}
+	\item It is closed, so $\dd \omega = 0$,
+	\item It is non-degenerate, so for each $p \in M$, $\omega_p : \straightT_pM \times \straightT_pM \rightarrow \R$ is a non-degenerate, skew-symmetric and biliniear map.
+\end{itemize}
+\end{deff}
 
-This systems of equations arise naturally in many problems of applied mathematics. An start point of symplectic geometry consists in attempting to generalize this kind of construction to smooth manifolds, and to do so in well defined way (this means, independent of the choice of coordinates).
+In particular, non-degeneracy implies that $\omega$ induces an isomorphism between $1$-forms and vector fields. This way, from any function $H \in \mathcal{C}^{\infty}(M)$ we can retrieve a vector field $X_H \in \mathfrak{X}(M)$ such that
 
-Let $M$ be a smooth manifold, which we will assume to be $2n$-dimensional for reasons that will be clear soon.
+$$\omega(X_H,Y) = - \dd H \cdot Y$$
+
+for any $Y \in \mathfrak{X}(M)$.
+
+In particular, if we take the coordinates $(\mathbf{q},\mathbf{p})$ in $\R^{2n}$ and consider $\omega = \dd p_1 \wedge \dd q_1 + \cdots + \dd p_n \wedge \dd q_n$, then for any function $H \in \mathcal{C}^{\infty}(\R^{2n})$ we have that
+
+$$X_H = - \frac{\partial H}{\partial q_1} \frac{\partial}{\partial p_1} - \cdots - \frac{\partial H}{\partial q_n} \frac{\partial}{\partial p_n} + \frac{\partial H}{\partial p_1} \frac{\partial}{\partial q_1} + \cdots + \frac{\partial H}{\partial p_n} \frac{\partial}{\partial q_n} .$$
+
+This leads to the equations of the flow of a Hamiltonian system, this means, the system of differential equations that an integral curve $(\mathbf{q}(t),\mathbf{p}(t))$ of $X_H$ must satisfy:
+
+$$\frac{\dd q_i}{\dd t} = \frac{\partial H}{\partial p_i}$$
+
+$$\frac{\dd p_i}{\dd t} = - \frac{\partial H}{\partial q_i} .$$
+
+Thus, symplectic geometry does generalize the notion of a Hamiltonian system, as we claimed before.
+
+\begin{deff}
+A diffeomorphism $\varphi : M \rightarrow M$ is called a {\bf symplectomorphism} if $\varphi^{\ast} \omega = \omega$, this means, if, for any $p \in M$ and $v, w \in \straightT_pM$,
+
+$$\omega_{\varphi(p)}(\straightT_p \varphi \cdot v, \straightT_p \varphi \cdot w) = \omega_p(v,w) .$$
+\end{deff}
+
+It is clear that symplectomorphisms are crucial to understand the nature of a symplectic manifold, as they define its group of structure-preserving transformations.
+
+The first natural question that arises is if there is a relation between symplectomorphisms and the vector fields from Hamiltonian functions, and the answer is affirmative:
+
+\begin{prop}
+For any $H \in \mathcal{C}^{\infty}(M)$, the flow of $X_H$ is a symplectomorphism at any time.
+\end{prop}
+
+\begin{proof}
+Let $\varphi_{X_H}^t$ denote the flow of $X_H$ at time $t$. It is clear that $\varphi_{X_H}^0 = \text{Id}$, so it is a symplectomorphism. On the other hand, we can see that
+
+$$\frac{\dd}{\dd t} (\varphi_{X_H}^t)^{\ast} \omega = \mathcal{L}_{X_H} \omega ,$$
+
+and, by Cartan's formula,
+
+$$\mathcal{L}_{X_H} \omega = \dd i_{X_H} \omega + i_{X_H} \dd \omega = \dd (- \dd H) = 0 ,$$
+
+where we used both the fact that $\omega$ is closed and the deffinition of $X_H$.
+\end{proof}
+
+Going back to the deffinition of symplectic manifold, we can see that there are some topological constraints in $M$ to accept such an structure, namely:
+
+\begin{enumerate}
+	\item As $\omega$ must be non-degenerate, we must have $\text{dim}M = 2n$.
+	\item $\omega$ being non-degenerate is equivalent to $\omega^n$ being a volume form in $M$. Thus, $M$ must be orientable.
+	\item If $M$ is compact and without boundary, then $\omega$ cannot be exact. This means, $\omega$ has a non-trivial representative class in $H^2(M)$ (in the De Rham cohomology). In particular, the second cohomology group cannot be trivial.
+\end{enumerate}
+
+This last result can be further strenghtened into the following theorem:
+
+\begin{theo}
+{\bf (Moser):} Two symplectic structures $(M,\omega_1)$ and $(M,\omega_2)$ are equivalent if, and only if, $[\omega_1] = [\omega_2]$ in the second De Rham cohomology group, this means, there is a diffeomorphism $\varphi : M \rightarrow M$ with $\varphi^{\ast}\omega_2 = \omega_1$.
+\end{theo}

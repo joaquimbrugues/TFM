@@ -2,3 +2,28 @@
 
 \usepackage[toc]{appendix}
 \renewcommand{\appendixname}{Appendix}
+
+%Some special commands
+\newcommand{\dd}{\operatorname d}
+\newcommand{\straightT}{\operatorname T}
+\newcommand{\straightH}{\operatorname H}
+\newcommand{\crit}{\text{Crit}}
+\newcommand{\grad}{\text{grad}}
+\newcommand{\indx}{\text{Ind}}
+\newcommand{\Id}{\text{Id}}
+
+%Define Therorems, propositions, corollaries...
+\newtheoremstyle{indented}{\topsep}{\topsep}{\normalfont}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
+\theoremstyle{indented}
+\newtheorem{theo}{Theorem}[chapter]
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{lema}[theo]{Lemma}
+\newtheorem{coro}[theo]{Corollary}
+\newtheorem{deff}{Definition}[chapter]
+\newtheorem{rmrk}{Remark}[chapter]
+\newtheorem{exmpl}{Example}[chapter]
+\newtheorem{assump}{Assumption}[chapter]
+
+%Headers and footers
+\fancyfoot[LE, RO] {\thepage}
+\fancyfoot[C] { }

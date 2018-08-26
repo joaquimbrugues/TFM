@@ -6,30 +6,6 @@
 \usepackage{styles/TFM}
 \usepackage[pdfauthor={Joaquim Brugues Mora},pdftitle={Master thesis Floer Homology},pdftex]{hyperref}
 
-%Headers and footers
-\fancyfoot[LE, RO] {\thepage}
-\fancyfoot[C] { }
-
-%Define Therorems, propositions, corollaries...
-\newtheoremstyle{indented}{\topsep}{\topsep}{\normalfont}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
-\theoremstyle{indented}
-\newtheorem{theo}{Theorem}[chapter]
-\newtheorem{prop}[theo]{Proposition}
-\newtheorem{lema}[theo]{Lemma}
-\newtheorem{coro}[theo]{Corollary}
-\newtheorem{deff}{Definition}[chapter]
-\newtheorem{rmrk}{Remark}[chapter]
-\newtheorem{exmpl}{Example}[chapter]
-
-%Some special commands
-\newcommand{\dd}{\operatorname d}
-\newcommand{\straightT}{\operatorname T}
-\newcommand{\straightH}{\operatorname H}
-\newcommand{\crit}{\text{Crit}}
-\newcommand{\grad}{\text{grad}}
-\newcommand{\indx}{\text{Ind}}
-\newcommand{\Id}{\text{Id}}
-
 \begin{document}
 
 %----------------- Title page --------------------%
@@ -98,6 +74,9 @@ We will also present the first motivation for the development of Floer theory, w
 
 \fancyhead[RO]{The Arnold conjecture}
 \import{contents/}{symplectic2.tex}
+
+\fancyhead[RO]{The conditions on the manifold}
+\import{contents/}{symplectic3.tex}
 
  %TODO: Add figures to Chapter 1, and revise everything.
 

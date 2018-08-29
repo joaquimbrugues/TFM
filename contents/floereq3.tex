@@ -19,3 +19,15 @@ so
 
 $$\int_0^1 g_{x(t)}(\text{grad}_xF(t),Y(t)) = \dd F(x) \cdot Y .$$
 \end{deff}
+
+In the case of the action functional, its gradient (if it exists) satisfies that
+
+$$\dd \mathcal{A}_H(x) \cdot Y = \langle \text{grad}\mathcal{A}_H, Y \rangle_x = \int_0^1 g_{x(t)}(\text{grad}_x\mathcal{A}_H(t),Y(t)) \dd t ,$$
+
+and
+
+$$\dd \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t)-X_H,Y(t)) \dd t ,$$
+
+and, as $g(v,w) = \omega(v,Jw)$, we deduce that
+
+$$\text{grad}_x\mathcal{A}_H = J\dot{x} - J X_H$$

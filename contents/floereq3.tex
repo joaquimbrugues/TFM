@@ -1,0 +1,21 @@
+\section{The Floer equation}
+
+In this section we are going to introduce the analogous concept to the one of a pseudogradient of a function in Morse homology. In particular, it will be enough for us to construct the gradient of the action functional. However, this will not be as easy as the case of finite dimensions.
+
+Take, for the compact symplectic manifold $(M,\omega)$, an almost complex structure $J$ calibrated by $\omega$, as defined in \ref{definition:calibrated_almost_complex}. This induces a riemannian metric $g$ on $M$. We can use it to induce an inner product on each fiber of $T\mathcal{L}M$, by
+
+$$\langle X, Y \rangle_x = \int_0^1 g_{x(t)} (X(t), Y(t)) \dd t,$$
+
+for $X,Y \in T_x\mathcal{L}M$.
+
+Take into account that the tangent spaces are not complete, so this inner product does not induce a structure of Hilbert space on each fiber $T_x\mathcal{L}M$. Nonetheless, we will define the gradient of a functional.
+
+\begin{deff}
+Let $F : \mathcal{L}M \rightarrow \R$ a functional. The {\bf gradient} of $F$, if it exists, is the vector field $\text{grad}F \in \mathfrak{X}(\mathcal{L}M)$ such that, for every loop $x \in \mathcal{L}M$ and every $Y \in \mathfrak{X}(\mathcal{L}M)$,
+
+$$\langle \text{grad}F, Y \rangle_x = \dd F(x) \cdot Y ,$$
+
+so
+
+$$\int_0^1 g_{x(t)}(\text{grad}_xF(t),Y(t)) = \dd F(x) \cdot Y .$$
+\end{deff}

@@ -1,0 +1,85 @@
+\section{The action functional}
+
+Now that we have defined the space of interest, this means, $\mathcal{L}M$, we need a way to emulate the constructions in Morse theory. In Morse theory we were studying a Morse function $f$ on $M$, graduated by its index and connecting the critical points via a pseudogradient adapted to $f$. Here, we want to provide a smooth functional\footnote{We always call {\it functionals} the functions defined in a space of infinite dimensions} from $\mathcal{L}M$ to $\R$ such that its critical points are the 1-periodic solutions of $X_{H_t}$. This will be precisely the action functional.
+
+\begin{rmrk}
+Take $x \in \mathcal{L}M$ a contractible loop, and let $u : \con{D}^2 \rightarrow M$ a smooth map such that $\left. u \right|_{\con{S}^1} = x$. Then, we can define the quantity
+
+$$\int_{\con{D}^2} u^{\ast}\omega .$$
+
+Assumption \ref{assumption1} guarantees that this number does not depend on the extension $u$ that we choose for $x$, but only on the loop. Indeed, if we take two extensions $u, \tilde{u} : \con{D}^2 \rightarrow M$, we can glue them along the boundary, so we get a continuous map $\psi : \con{S}^2 \rightarrow M$. Then,
+
+$$\int_{\con{D}^2} u^{\ast} \omega - \int_{\con{D}^2} \tilde{u}^{\ast} \omega = \int_{\con{S}^2} \psi^{\ast} \omega = 0 .$$
+\end{rmrk}
+
+With this remark, we can proceed to define the action functional:
+
+\begin{deff}
+Let $H_t$ a 1-periodic Hamiltonian. The {\bf action functional} is the map $\mathcal{A}_H : \mathcal{L}M \rightarrow \R$ defined by
+
+$$\mathcal{A}_H(x) = \int_0^1 H_t(x(t)) \dd t - \int_{\con{D}^2} u^{\ast} \omega ,$$
+
+where $u$ is any extension of $x$ into the disk.
+\end{deff}
+
+As we just saw, this is well defined, because it does not depend on $u$.
+
+For instance, if we take $M = \R^{2n}$ (not compact, but good enough for the present example) with the symplectic structure $\omega = \sum \dd p_i \wedge \dd q_i$, we know that $\omega = \dd \alpha$, with $\alpha = \sum p_i \dd q_i$, so, for any $u : \con{D}^2 \rightarrow \R^{2n}$ extending the loop $x$, we have that
+
+$$\int_{\con{D}^2} u^{\ast} \omega = \int_{\con{D}^2}  u^{\ast} \dd \alpha = \int_{\con{S}^1} x^{\ast} \alpha .$$
+
+Thus, in this case, the action functional is
+
+$$\mathcal{A}_H (x) = \int_{\con{S}^1} \left( H_t \dd t - p \dd q \right) .$$
+
+Going back to the general case, let us state the lemma that underlines the importance of the action functional for our purposes, this means, studying the 1-periodic solutions of $X_H$:
+
+\begin{prop}
+A loop $x \in \mathcal{L}M$ is a critical point of $\mathcal{A}_H$ if, and only if, $x$ is a 1-periodic orbit of $X_H$.
+\end{prop}
+
+\begin{proof}
+Let us compute the differential of $\mathcal{A}_H$ at $x$ along $Y \in T_x\mathcal{L}M$. We need to extend $x$ to a curve through $x$. More precisely, we need to define $z : (-\e,\e) \times \con{S}^1 \rightarrow M$ such that
+
+\begin{itemize}
+	\item $z(0,t) = x(t)$.
+	\item $\left. \frac{\dd}{\dd s} \right|_{s=0} z(s,t) = Y(t)$.
+\end{itemize}
+
+Moreover, we need to take $u : \con{D}^2 \rightarrow M$ an extension of $x$ to the disk, and take $\tilde{u} : (-\e,\e) \times \con{D}^2 \rightarrow M$ such that
+
+\begin{itemize}
+	\item $\tilde{u}(s,e^{it}) = z(s,e^{it})$.
+	\item $\tilde{u}(0,p) = u(p)$.
+\end{itemize}
+
+We can then extend $Y$ to $\con{D}^2$ by setting
+
+$$Y(p) = \frac{\partial \tilde{u}}{\partial s} (0,p) .$$
+
+Then,
+
+$$\dd \mathcal{A}_H(x) \cdot Y = \left. \frac{\dd}{\dd s} \right|_{s=0} \mathcal{A}_H(z(s)) = \left. \frac{\dd}{\dd s} \right|_{s=0} \left( \int_0^1 H_t(z(s,t) \dd t - \int_{\con{D}^2} \tilde{u}_s^{\ast} \omega \right) .$$
+
+Differentiating the second term we get
+
+$$- \int_{\con{D}^2} \left( \left. \frac{\dd}{\dd s} \right|_{s=0} \tilde{u}_s^{\ast} \omega \right) = - \int_{\con{D}^2} u^{\ast} \left( \mathcal{L}_{Y(p)} \omega \right) =$$
+
+(and, applying Cartan's formula)
+
+$$= - \int_{\con{D}^2} u^{\ast} \left( \dd i_{Y(p)} \omega \right) = - \int_{\con{S}^1} x^{\ast} \left( i_{Y(t)} \omega \right) = \int_0^1 \omega(\dot{x}(t),Y(t)) \dd t .$$
+
+On the other hand, if we differentiate the first term,
+
+$$\int_0^1 \left. \frac{\partial}{\partial s} \right|_{s=0} H_t(z(s,t)) \dd t = \int_0^1 \dd H_t(x(t)) \cdot Y(t) \dd t ,$$
+
+and, by the definition of $X_H$, this is equal to
+
+$$- \int_0^1 \omega(X_{H_t},Y(t)) \dd t .$$
+
+Therefore,
+
+$$\dd \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t) - X_{H_t}(x(t)), Y(t)) \dd t .$$
+
+Then, $x$ is a critical point if and only if this expression is $0$ for all $Y \in T_x\mathcal{L}M$ and, by the non-degeneracy of $\omega$, this happens if and only if $\dot{x}(t) = X_{H_t}(x(t))$, so it is a periodic solution to the system.
+\end{proof}

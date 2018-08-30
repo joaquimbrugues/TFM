@@ -30,4 +30,46 @@ $$\dd \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t)-X_H,Y(t)) \dd t ,$$
 
 and, as $g(v,w) = \omega(v,Jw)$, we deduce that
 
-$$\text{grad}_x\mathcal{A}_H = J\dot{x} - J X_H$$
+$$\text{grad}_x\mathcal{A}_H = J\dot{x} - J X_H .$$
+
+Let $\mathcal{X}_H$ denote the negative gradient, so $\mathcal{X}_H = - \text{grad}\mathcal{A}_H = J X_H - J \dot{x}$. Recall that, by proposition \ref{prop:symplectic_gradient}, $X_H = J \text{grad} H$. Therefore, we get that
+
+$$\mathcal{X}_H(x)(t) = - \text{grad}H(x(t)) - J_{x(t)} \dot{x}(t) .$$
+
+Let us consider $u : (-\e,\e) \rightarrow \mathcal{L}M$ an integral curve of this vector field. In other words, $u : (-\e,\e) \times \con{S}^1 \rightarrow M$ is a smooth map with
+
+$$\frac{\partial u}{\partial s} (s,t) = \mathcal{X}_H(u(s,\cdot)) (t) .$$
+
+From this, we are in position to define the {\bf Floer equation}:
+
+\begin{equation} \label{equation:floer_equation}
+\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} + \text{grad}H(u) = 0 .
+\end{equation}
+
+If we write all the variables we see that it is a non-linear partial differential equation:
+
+$$\frac{\partial u}{\partial s}(s,t) + J_{u(s,t)} \frac{\partial u}{\partial t}(s,t) + \text{grad}H(u(s,t)) = 0 .$$
+
+This equation will be our main focus to study, since its solutions (if there are any) are the flow lines of the negative gradient of the action functional, in the same way that we studied the trajectories of the negative gradient flow in the Morse case.
+
+Let us begin with some remarks on the equation. In particular, its "degenerate" cases:
+
+\begin{rmrk}
+If $H$ is a constant function (so $\text{grad}H = 0$), then the equations are the Cauchy-Riemann equations (for almost complex structures):
+
+$$\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} = 0$$
+\end{rmrk}
+
+\begin{rmrk}
+The only stationary solutions (such that $\partial_s u = 0$) of the equation are the 1-periodic orbits of $X_H$:
+
+$$0 = J \frac{\partial u}{\partial t} + \text{grad}H \Rightarrow \frac{\partial u}{\partial t} = X_H ,$$
+
+where we used proposition \ref{prop:symplectic_gradient} again.
+\end{rmrk}
+
+\begin{rmrk}
+If we assume that a solution does not depend on $t$ (this means, $u(s,t) = u(s)$, so all the points are degenerate loops, this means, points in $M$), then we find ourselves in the case of Morse theory of critical points again, because Floer equation reads
+
+$$\frac{\partial u}{\partial s} = - \text{grad}H .$$
+\end{rmrk}

@@ -6,23 +6,18 @@ Our goal in this chapter is to prove that the Morse homology is independent of t
 Let $M$ be a compact manifold, and $f_0, f_1 : M \rightarrow \R$ Morse functions. Let $X_0, X_1$ be pseudogradients adapted to $f_0$ and $f_1$, respectively, satisfying the Palais-Smale condition.
 
 Then, there exists a morphism of complexes
-
 \begin{equation} \label{morphism}
 \begin{array}{rccc} \Phi_{\ast} : & (C_{\ast}(f_0), X_0) & \longrightarrow & (C_{\ast}(f_1), X_1) \end{array}
 \end{equation}
-
 such that it induces an isomorphism in the homology.
 \end{theo}
 
 \begin{proof}
 Consider an homopy
-
 \begin{displaymath}
 \begin{array}{rccc} F : & M \times [0,1] & \longrightarrow & \R \\ & (x,s) & \longmapsto & F_s(x) \end{array}
 \end{displaymath}
-
 such that
-
 \begin{equation} \label{constant}
 \left\{ \begin{array}{lc} F_s = f_0 & \forall s \in \left[ 0, \frac13 \right] \\ F_s = f_1 & \forall s \in \left[ \frac23, 1 \right] \end{array} \right. .
 \end{equation}
@@ -36,11 +31,9 @@ To prove the result we will proceed as follows:
 \end{enumerate}
 
 {\bf Proof of (1):} Consider an extension of $F$ to $\left[ - \frac13 , \frac43 \right]$ such that
-
 \begin{equation} \label{constant2}
 \left\{ \begin{array}{lc} F_s = f_0 & \forall s \in \left[ - \frac13, \frac13 \right] \\ F_s = f_1 & \forall s \in \left[ \frac23, \frac43 \right] \end{array} \right.
 \end{equation}
-
 Take $g : \left[-\frac13,\frac43\right] \rightarrow \R$ a Morse function such that
 
 \begin{enumerate}
@@ -50,11 +43,9 @@ Take $g : \left[-\frac13,\frac43\right] \rightarrow \R$ a Morse function such th
 \end{enumerate}
 
 Take $\tilde{F} = F + g$. We are going to use the information about the Morse complex in the manifold $M \times \left[-\frac13,\frac43\right]$ to deduce the desired morphism. Notice that
-
 \begin{displaymath}
 \dd\tilde{F} = \dd_xF + \left( \frac{\partial F}{\partial s} + g' \right) \dd s ,
 \end{displaymath}
-
 so the second term can only be $0$ when $s=0$ or $s=1$, because of the properties of $g$ and the fact that $F$ is constant in the direction of $s$ in both points, because of \ref{constant2}. By this argument, we deduce that $\crit(\tilde{F}) = \crit(f_0) \times \{0\} \cup \crit(f_1) \times \{1\}$.
 
 Moreover, as $0$ is the unique maximum of $g$ and $1$ is its unique minimum, we deduce that
@@ -74,15 +65,12 @@ Take $\tilde{X}$ a pseudogradient field adapted to $\tilde{F}$ such that
 \end{enumerate}
 
 Then, we can deduce that
-
 \begin{displaymath}
 \left(C_{\ast}\left(\left.\tilde{F}\right|_{M\times \left[-\frac13,\frac13\right]}\right), \partial_{\tilde{X}}\right) =
 \left(C_{\ast}(f_0+\left.g\right|_{\left[-\frac13,\frac13\right]}), \partial_{X_0 - \grad g}\right) =
 \left(C_{\ast + 1}(f_0), \partial_{X_0}\right) ,
 \end{displaymath}
-
 and
-
 \begin{displaymath}
 \left(C_{\ast}\left(\left.\tilde{F}\right|_{M\times \left[\frac23,\frac43\right]}\right), \partial_{\tilde{X}}\right) =
 \left(C_{\ast}(f_1+\left.g\right|_{\left[\frac23,\frac43\right]}), \partial_{X_1 - \grad g}\right) =
@@ -90,19 +78,14 @@ and
 \end{displaymath}
 
 From this, we deduce that
-
 \begin{displaymath}
 \left\{ \begin{array}{l} C_0(\tilde{F}) = C_0(f_1) \\ C_k(\tilde{F}) = C_{k-1}(f_0) \oplus C_k(f_1) \end{array} \right. ,
 \end{displaymath}
-
 so, for $k > 0$,
-
 \begin{displaymath}
 \begin{array}{rccc} \partial_{\tilde{X}} : & C_k(f_0) \oplus C_{k+1}(f_1) & \longrightarrow C_{k-1}(f_0) \oplus C_k(f_1) \end{array} ,
 \end{displaymath}
-
 and
-
 \begin{displaymath}
 \partial_{\tilde{X}} =
 \begin{pmatrix}
@@ -110,21 +93,16 @@ and
 \Phi^F & \partial_{X_1}
 \end{pmatrix} .
 \end{displaymath}
-
 In this last equality we already used the map $\Phi^F$, which can be defined over the generators of $C_k(f_0)$ by
-
 \begin{equation}\label{defmorphism}
 \Phi^F(a) := \sum_{b \in \crit_k(f_1)} n_{\tilde{X}}(a,b) b ,
 \end{equation}
-
 where $n_{\tilde{X}}(a,b)$ denotes the number of trajectories of $\tilde{X}$ connecting a critical point $a \in M \times \{0\} \cap \crit(\tilde{F})$ to $b \in M \times \{1\} \cap \crit(\tilde{F})$, modulo 2.
 
 The complex $\left(C_{\ast}(\tilde{F}),\partial_{\tilde{X}}\right)$ is well defined, so, in particular, we have that $\partial_{\tilde{X}}^2 = 0$. In the component in the first column of the second row, this reads as
-
 \begin{displaymath}
 \Phi^F \circ \partial_{X_0} + \partial_{X_1} \circ \Phi^F = 0 \Rightarrow \Phi^F \circ \partial_{X_0} = \partial_{X_1} \circ \Phi^F ,
 \end{displaymath}
-
 which implies that $\Phi^F$ is indeed a morphism of complexes, as we wanted to see.
 
 \
@@ -139,12 +117,10 @@ There a unique trajectory from $(a,0)$ to $(a,1)$ because we are not accepting h
 
 \
 
-{\bf Proof of (3):} Consider the homotopies $F : f_0 \rightarrow f_1$, $G : f_1 \rightarrow f_2$ and $H : f_0 \rightarrow f_2$ extended with a constant map to the interval $\left[-\frac13,\frac43\right]$. Choose a "double" homotopy
-
+{\bf Proof of (3):} Consider the homotopies $F : f_0 \rightarrow f_1$, $G : f_1 \rightarrow f_2$ and $H : f_0 \rightarrow f_2$ extended with a constant map to the interval $\left[-\frac13,\frac43\right]$. Choose a ``double'' homotopy
 \begin{displaymath}
 \begin{array}{rccc} K : & M \times \left[-\frac13, \frac43\right] \times \left[-\frac13, \frac43\right] & \longrightarrow & \R \\ & (x,s,t) & \longmapsto & K_{s,t}(x) \end{array}
 \end{displaymath}
-
 satisfying
 
 \begin{itemize}
@@ -155,25 +131,18 @@ satisfying
 \end{itemize}
 
 Choose $g$ a Morse function as in the first proof, but with the requirement that
-
 \begin{displaymath}
 \frac{\partial K}{\partial s}(x,s,t) + g'(s) < 0 \ \ \forall (x,s,t) \in M \times (0,1) \times \left[\frac13,\frac43\right] ,
 \end{displaymath}
-
 and
-
 \begin{displaymath}
 \frac{\partial K}{\partial t}(x,s,t) + g'(t) < 0 \ \ \forall (x,s,t) \in M \times \left[\frac13,\frac43\right] \times (0,1) .
 \end{displaymath}
-
 Then, take $\tilde{K}(x,s,t) = K(x,s,t) + g(s) + g(t)$. With this choice, we get that
-
 \begin{eqnarray*}
 \crit(\tilde{K}) = (\crit(f_0)\times \{0\} \times \{0\}) \cup (\crit(f_1) \times \{1\} \times \{0\}) \cup \\ (\crit(f_2) \times \{0\} \times \{1\}) \cup (\crit(f_2) \times \{1\} \times \{1\}) .
 \end{eqnarray*}
-
 And
-
 \begin{itemize}
 	\item For all $a \in \crit(f_0)$, $\indx_{\tilde{K}}((a,0,0)) = \indx_{f_0}(a) + 2$.
 	\item For all $b \in \crit(f_1)$, $\indx_{\tilde{K}}((b,1,0)) = \indx_{f_1}(b) + 1$.
@@ -191,33 +160,25 @@ To connect the critical points, consider $X$ a pseudogradient adapted to $F$, $Y
 \end{enumerate}
 
 In this case, we have that
-
 \begin{displaymath}
 C_{k+2}(\tilde{K}) = C_k(f_0) \oplus C_{k+1}(f_1) \oplus C_{k+1}(f_2) \oplus C_{k+2}(f_2) ,
 \end{displaymath}
-
 and the differential map satisfies that
-
 \begin{displaymath}
 \partial_{\mathcal{X}} = \begin{pmatrix} \partial_{X_0} & 0 & 0 & 0 \\ \Phi^F & \partial_{X_1} & 0 & 0 \\ \Phi^H & 0 & \partial_{X_2} & 0 \\ S & \Phi^G & \Id & \partial_{X_2} \end{pmatrix} ,
 \end{displaymath}
-
 where $S : C_{k-1}(f_0) \longrightarrow C_k(f_2)$ can be defined over the generators as
-
 \begin{displaymath}
 S(a) = \sum_{b \in \crit_k(f_2)} n_{\mathcal{X}}(a,b) b ,
 \end{displaymath}
-
 where $n_{\mathcal{X}}(a,b)$ counts the trajectories of $\mathcal{X}$ from $(a,0,0)$ to $(b,1,1)$ modulo 2.
 
 Therefore, the condition $\partial_{\mathcal{X}}^2 = 0$ implies that
-
 \begin{eqnarray*}
 S \circ \partial_{X_0} + \Phi^G \circ \Phi^F + \Phi^H + \partial_{X_2} \circ S \Rightarrow \\
 \Phi^G \circ \Phi^F - \Phi^H = S \circ \partial_{X_0} + \partial_{X_2} \circ S \Rightarrow \\
 \widetilde{\Phi^G} \circ \widetilde{\Phi^F} = \widetilde{\Phi^H} .
 \end{eqnarray*}
-
 as we wanted to see.
 
 From here it is clear that the Morse homology does not depend on the Morse function nor the pseudogradient chosen to define it. To prove it, let $(f_0,X_0)$ and $(f_1,X_1)$ two pairs of a Morse functions with their adapted pseudogradients, and let $F$ be a deformation from $f_0$ to $f_1$ and $G$ a deformation from $f_1$ to $f_0$. Also, take $H$ to be the constant interpolation from $f_0$ to itself. Then, after we apply the properties, it is clear that $F$ and $G$ induce the morphisms $\Phi^F$ and $\Phi^G$, and that they are each others inverses.

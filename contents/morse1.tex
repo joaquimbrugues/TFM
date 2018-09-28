@@ -11,10 +11,7 @@ To classify the critical points of a function, we will be interested in the dire
 \begin{deff}
 	Let $p$ be a critical point of a function $f \in \mathcal{C}^{\infty}(M)$. The {\bf Hessian} of $f$ at $p$ is the bilinear map
 
-\begin{displaymath}
-	\begin{array}{rccc} \straightH_p[f] : & \straightT_pM \times \straightT_pM & \longrightarrow & \R \\ & (u,v) & \longmapsto & v(X_u(f)) \end{array} ,
-\end{displaymath}
-
+$$\begin{array}{rccc} \straightH_p[f] : & \straightT_pM \times \straightT_pM & \longrightarrow & \R \\ & (u,v) & \longmapsto & v(X_u(f)) \end{array} ,$$
 where $X_u$ is a vector field extending $u \in \straightT_pM$ locally.
 \end{deff}
 
@@ -32,16 +29,12 @@ This lemma can be proved in a straightforward way using a suitable bump function
 
 \begin{proof}
 	First, we show that it is symmetric, from where it will be clear that it is well defined:
-
 $$\straightH_p[f](v,w) - \straightH_p[f](w,v) = v(X_w(f)) - w(X_v(f)) = \left. X_v \right|_p(X_w(f)) - \left. X_w \right|_p (X_v(f)) = $$ 
-$$= \left. [X_v,X_w] \right|_p(f) = \dd_p f \cdot [X_v,X_w](p) = 0 ,$$
-
+$$= \left. [X_v,X_w] \right|_p(f) = \dd_p f \cdot [X_v,X_w] = 0 ,$$
 where the last term is zero because $\dd_p f = 0$, as $p$ is a critical point for $f$. Thus, if we choose extensions $X_v$ and $X_w$ for $v$ and $w$ (respectivelly), then $\straightH_p[f](v,w) = \straightH_p[f](w,v)$.
 
 Looking again at the definition,
-
 $$\straightH_p[f](v,w) = v(X_w(f)),$$
-
 it is obvious that this does not depend on the extension $X_v$ that we choose for $v$, as in the expression only depends on $X_v(p) = v$ regardless of the extension. On the other hand, as we just proved, $\straightH_p[f](v,w) = \straightH_p[f](w,v)$, so, applying the same argument, the Hessian does not depend on the extension chosen for $w$. This proves that the Hessian is well defined.
 
 \
@@ -49,7 +42,6 @@ it is obvious that this does not depend on the extension $X_v$ that we choose fo
 Finally, the Hessian is bilinear, because
 $$H_p[f](\alpha u + \beta v, w) = (\alpha u + \beta v)(X_w(f)) = $$
 $$= \alpha u(X_w(f)) + \beta v(X_w(f)) = \alpha H_p[f](u,w) + \beta H_p[f](v,w) ,$$
-
 and the same argument applies to the second component by symmetry.
 \end{proof}
 
@@ -95,45 +87,32 @@ The first interesting thing to study about the Morse functions is their behaviou
 
 \begin{prop} \label{morselemma}
 	{\bf (Morse Lemma):} Let $p \in \crit_k(f)$. Then there is a local coordinate system $(U,(y_1,...,y_n))$ centered on $p$ (this means, with $y_i(p) = 0 \ \forall i$) such that
-
 $$\left. f \right|_U = f(p) - y_1^2 - ... - y_k^2 + y_{k+1}^2 + ... + y_n^2 .$$
 \end{prop}
 
 \begin{proof} First, notice that, using the fundamental theorem of calculus, a local expression $\tilde{f}$ of $f$ can be written as
-
 $$\tilde{f}(x) = \tilde{f}(0) + \int_0^1 \frac{df(tx_1,...,tx_n)}{dt} dt = f(p) + \int_0^1 \sum_{i=1}^n x_i \der{\tilde{f}}{x_i}(tx_1,...,tx_n) dt .$$
 
 If we take $g_i(x) = \int_0^1 \der{\tilde{f}}{x_i}(tx_1,...,tx_n) dt$, we can write $\tilde{f}$ as
-
 $$\tilde{f}(x) = f(p) + \sum_{i=1}^n x_i g_i(x) .$$
 
 As $g_i(0) = \der{\tilde{f}}{x_i}(0) = 0$, we can apply the same process for each $i$, so there are functions $h_{ij}$ such that
-
 $$g_i(x) = \sum_{j=1}^n x_j h_{ij}(x) ,$$
-$$f(x) = f(p) + \sum_{i,j=0}^n x_i x_j h_{ij}(x) .$$
-
-This functions satisfy that
+$$\tilde{f}(x) = f(p) + \sum_{i,j=0}^n x_i x_j h_{ij}(x) .$$
+These functions satisfy that
 $$h_{ij}(0) = \frac12 \frac{\partial^2 \tilde{f}}{\partial x_i \partial x_j}(0) ,$$
-
 and
-
 $$h_{ij} = h_{ji} .$$
-
 Then, we can apply inductivelly a change of coordinates, maybe shrinking the domain of the chart at each transformation. We describe the idea for each step:
 
 Suppose that we are in the following situation: there is a local coordinate system $(U_1, (u_1,...,u_n))$ (with $U_1 \subset U$) such that
-
 $$f = f(p) \pm u_1^2 \pm ... \pm u_{r-1}^2 + \sum_{i,j \geq r} u_i u_i H_{ij}(u) ,$$
-
 where $(H_{ij})_{i,j}$ form a symmetric matrix and $(H_{ij}(0))_{i,j}$ form a non-degenerate matrix. Therefore, we can apply a linear change of coordinates so that $H_{rr}(0) \neq 0$, and we suppose that it is already the case. Take $S(u) = \sqrt{|H_{rr}(u)|}$, which will be a non-vanishing positive function of $u$ in a neighbourhood $U_2 \subset U_1$ of $0$. Thus, introduce the new local coordinates $(v_1,...,v_n)$ on $U_2$ as
-
 $$v_i = u_i \ \text{ for } i \neq r,$$
 $$v_r(u) = S(u) \left[ u_r + \sum_{i > r} u_i \frac{H_{ir}(u)}{H_{rr}(u)} \right] .$$
 
 Using the inverse function theorem we conclude that $(v_1,...,v_r)$ form an invertible and smooth set of coordinates on a neighbourhood of the origin, $U_3 \subset U_2$. Also, it can be seen that
-
 $$f(v) = f(p) + \sum_{i \leq r} \pm v_i^2 + \sum_{i,j > r} v_i v_j G_{ij}(v) ,$$
-
 where $G_{ij}$ are symmetric and form a non-degenerate matrix at $v = 0$.
 
 Therefore, applying inductively these steps we can construct the coordinate system that we claimed in some neighbourhood $U$ of $p$.

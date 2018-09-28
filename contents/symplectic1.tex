@@ -1,6 +1,6 @@
 \section{A toolkit of symplectic geometry}
 
-In this section we will recall the main constructions in symplectic geometry, focussing in the ones that will be relevant to define the Floer complex. We will announce several theorems, but in general we are not providing a proof for any of them. All the results explained in this chaper are proved in \cite{da2001lectures}. Let us begin with the definition of a symplectic manifold.
+In this section we will recall the main constructions in symplectic geometry, focusing in the ones that will be relevant to define the Floer complex. We will announce several theorems, but in general we are not providing a proof for any of them. All the results explained in this chaper are proved in \cite{da2001lectures}. Let us begin with the definition of a symplectic manifold.
 
 \begin{deff}
 Let $M$ be a smooth manifold. We say that a form $\omega \in \Omega^2(M)$ is {\bf symplectic} if
@@ -12,26 +12,19 @@ Let $M$ be a smooth manifold. We say that a form $\omega \in \Omega^2(M)$ is {\b
 \end{deff}
 
 In particular, non-degeneracy implies that $\omega$ induces an isomorphism between $1$-forms and vector fields. This way, from any function $H \in \mathcal{C}^{\infty}(M)$ we can retrieve a vector field $X_H \in \mathfrak{X}(M)$ such that
-
 $$\omega(X_H,Y) = - \dd H \cdot Y$$
-
 for any $Y \in \mathfrak{X}(M)$.
 
-In particular, if we take the coordinates $(\mathbf{q},\mathbf{p})$ in $\R^{2n}$ and consider $\omega = \dd p_1 \wedge \dd q_1 + \cdots + \dd p_n \wedge \dd q_n$, then for any function $H \in \mathcal{C}^{\infty}(\R^{2n})$ we have that
-
+In particular, if we take the coordinates $(\mathbf{q},\mathbf{p})$ in $\R^{2n}$ and consider the symplectic structure induced by $\omega = \dd p_1 \wedge \dd q_1 + \cdots + \dd p_n \wedge \dd q_n$, then for any function $H \in \mathcal{C}^{\infty}(\R^{2n})$ we have that
 $$X_H = - \frac{\partial H}{\partial q_1} \frac{\partial}{\partial p_1} - \cdots - \frac{\partial H}{\partial q_n} \frac{\partial}{\partial p_n} + \frac{\partial H}{\partial p_1} \frac{\partial}{\partial q_1} + \cdots + \frac{\partial H}{\partial p_n} \frac{\partial}{\partial q_n} .$$
 
 This leads to the equations of the flow of a Hamiltonian system, this means, the system of differential equations that an integral curve $(\mathbf{q}(t),\mathbf{p}(t))$ of $X_H$ must satisfy:
-
 $$\frac{\dd q_i}{\dd t} = \frac{\partial H}{\partial p_i}$$
-
 $$\frac{\dd p_i}{\dd t} = - \frac{\partial H}{\partial q_i} .$$
-
 Thus, symplectic geometry does generalize the notion of a Hamiltonian system, as we claimed before.
 
 \begin{deff}
 A diffeomorphism $\varphi : M \rightarrow M$ is called a {\bf symplectomorphism} if $\varphi^{\ast} \omega = \omega$, this means, if, for any $p \in M$ and $v, w \in T_pM$,
-
 $$\omega_{\varphi(p)}(\straightT_p \varphi \cdot v, \straightT_p \varphi \cdot w) = \omega_p(v,w) .$$
 \end{deff}
 
@@ -45,27 +38,22 @@ For any $H \in \mathcal{C}^{\infty}(M)$, the flow of $X_H$ is a symplectomorphis
 
 \begin{proof}
 Let $\varphi_{X_H}^t$ denote the flow of $X_H$ at time $t$. It is clear that $\varphi_{X_H}^0 = \text{Id}$, so it is a symplectomorphism. On the other hand, we can see that
-
 $$\frac{\dd}{\dd t} (\varphi_{X_H}^t)^{\ast} \omega = \mathcal{L}_{X_H} \omega ,$$
-
 and, by Cartan's formula,
-
 $$\mathcal{L}_{X_H} \omega = \dd i_{X_H} \omega + i_{X_H} \dd \omega = \dd (- \dd H) = 0 ,$$
-
-where we used both the fact that $\omega$ is closed and the deffinition of $X_H$.
+where we used both the fact that $\omega$ is closed and the definition of $X_H$.
 \end{proof}
 
 Going back to the definition of symplectic manifold, we may want to understand the relationship between the topology of a manifold and the possible symplectic structures on it. To this end, the first result is the following:
 
 \begin{theo}
 {\bf (Darboux):} Let $(M,\omega)$ be a symplectic manifold, and take $p \in M$. There is a chart $(U;x_1,...,x_n,y_1,...,y_n)$ centered at $p$ such that
-
 $$\left. \omega \right|_U = \sum_{i=1}^n \dd x_i \wedge \dd y_i .$$
 \end{theo}
 
 From this theorem we deduce that all symplectic structures on a manifold are locally essentially the same.
 
-However, the symplectic structure may give global information about the manifold $M$. On the topology constraints, we can notice the most inmediate ones:
+However, the symplectic structure may give global information about the manifold $M$. On the topology constraints, we can notice the most immediate ones:
 
 \begin{enumerate}
 	\item As $\omega$ must be non-degenerate, we must have $\text{dim}M = 2n$.
@@ -79,7 +67,7 @@ This last result can be further strenghtened into the following theorem:
 {\bf (Moser):} Two symplectic structures $(M,\omega_1)$ and $(M,\omega_2)$ are equivalent if, and only if, $[\omega_1] = [\omega_2]$ in the second De Rham cohomology group, this means, there is a diffeomorphism $\varphi : M \rightarrow M$ with $\varphi^{\ast}\omega_2 = \omega_1$.
 \end{theo}
 
-The next thing that interests us is the relationship between the symplectic structure on a manifold and other present structures. In particular, we are thinking about riemannian structures and almost-complex structures.
+The next thing that interests us is the relationship between the symplectic structure on a manifold and other geometric structures. In particular, we are thinking about riemannian structures and almost-complex structures.
 
 \begin{deff}
 A section of $T^{\ast}M \otimes T^{\ast}M$ $g$ is a {\bf riemannian metric} if it is bilinear and positive definite at each point.
@@ -117,21 +105,16 @@ Of course, the first question one may ask is whether these calibrated almost-com
 \end{prop}
 
 Recall that, in a riemannian manifold $(M,g)$, any function $H \in \mathcal{C}^{\infty}(M)$ has a vector field associated to it, called its gradient, defined by
-
 $$g(\text{grad}H, X) = \dd H \cdot X \ \ \ \ \forall X \in \mathfrak{X}(M) .$$
-
-In the case of a symplectic manifold, the mapping $H \mapsto X_H$ follows the same idea of associating a vector field to a function. In this case, a relationship between these two correspondences can be obtained, using the calibrated almost complex structure:
+In the case of a symplectic manifold, the mapping $H \mapsto X_H$ follows the same idea of associating a vector field to a function. A relationship between these two correspondences can be obtained, using the calibrated almost complex structure:
 
 \begin{prop} \label{prop:symplectic_gradient}
 For any smooth function $H$ defined on $M$, we have that
-
 $$X_H = J \text{grad}H .$$
 \end{prop}
 
 \begin{proof}
 We have that
-
 $$\omega(X_H,Y) = - \dd H \cdot Y = - g(\text{grad}H,Y) = - \omega(\text{grad}H,JY) = \omega(J \text{grad}H, Y) ,$$
-
 where we have used the properties of a calibrated almost complex structure. As $\omega$ is non-degenerate and the equality holds for all $Y \in \mathfrak{X}(M)$, we deduce that $X_H = J \text{grad}H$, as we wanted to prove.
 \end{proof}

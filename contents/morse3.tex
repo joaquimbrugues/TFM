@@ -3,11 +3,8 @@
 \subsection{Pseudogradients}
 
 In this section we will focus on how we can connect the points of $\crit(f)$ (for a Morse function) between them. The way to do this, in $\R^n$, would be the gradient of the function, this means,
-
 $$\grad f = \left( \der{f}{x_1},...,\der{f}{x_n} \right) .$$
-
 This vector field can be intrinsecally defined on a manifold $M$ using a metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
-
 $$\langle \grad f, Y \rangle = \dd f \cdot Y .$$
 
 For our purposes, we do not need to use precisely the gradient of a function, and sometimes it might not satisfy the properties that we need for the flow, so we introduce the more general concept of {\bf pseudogradient}.
@@ -35,20 +32,14 @@ Let $M$ be a compact and smooth manifold, and $f$ a Morse function on $M$. Then,
 Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many because the non-degenerate critical points are isolated and $M$ is compact), and let $(U_1,h_1),...,(U_r,h_r)$ be Morse charts in the neighbourhoods of these points. We assume that the images of these charts, which we will denote $\Omega_1,...,\Omega_r$, are disjoint. We can add more charts to get a finite open cover of $M$, $\{\Omega_j\}_{1 \leq j \leq m}$. Also, refine the open cover so that each critical point $c_i$ is contained only on its associated open set $\Omega_i$.
 
 For each $\Omega_i$, let $X_i$ be the push-forward of the negative gradient of $\tilde{f}$ in $U_i$ by $h_i$. Also, take a partition of unity associated to $\{\Omega_j\}_{1 \leq j \leq m}$, $\{\varphi_j\}_{1 \leq j \leq m}$. Then, we can define the vector fields
-
 $$\widetilde{X}_j(x) = \left\{ \begin{array}{ll} \varphi_j(x) X_j & \text{if } x \in \Omega_j \\ 0 & \text{otherwise} \end{array} \right. ,$$
-
 and
-
 $$X = \sum_{j=1}^m \widetilde{X}_j .$$
-
-Then, the two conditions to be a pseudogradient adapted to $f$ are satisfied:
+In this case, the two conditions to be a pseudogradient adapted to $f$ are satisfied:
 
 \begin{enumerate}
 \item If we compute
-
 $$\\d f_x \cdot X_x = \sum_{j=1}^m \\d f_x \cdot \widetilde{X}_{j,x} \leq 0 ,$$
-
 and the inequality is an equality iff $\varphi_j(x) X_j(x) = 0$ for every $j$, so that either $x$ is a critical point, or $\varphi_j(x)=0$ for all $j$, which is impossible since $\{\varphi_j\}_{1\leq j \leq m}$ form a partition of unity.
 \item Let $c_i$ be a critical point. By construction, $X$ coincides with the image of the negative gradient with the canonical metric over $U_i \bigcap \left( \bigcup_{i \neq j} U_j\right)$, which, also by construction, contains a neighbourhood of $c_i$.
 \end{enumerate}
@@ -58,23 +49,18 @@ Going back to the question of how to connect two critical points, let us define 
 
 \begin{deff}
 Let $a$ be a critical point of $f$, and $X$ a pseudogradient adapted to $f$. We denote by $\varphi^s$ the flow of $X$. We define the {\bf stable manifold} of $a$ as
-
 $$W^s(a) = \left\{ x \in M \ | \ \lim_{s \rightarrow + \infty} \varphi^s(x) = a \right\}, $$
-
 and its {\bf unstable manifold} as
-
 $$W^u(a) = \left\{ x \in M \ | \ \lim_{s \rightarrow - \infty} \varphi^s(x) = a \right\} .$$
 \end{deff}
 
 These are, actually, smooth manifolds, and it can be shown that they are diffeomorphic to open disks. Moreover, we have that
-
 $$\text{dim} W^u(a) = \text{codim} W^s(a) = \text{Ind}(a) .$$
 
 Finally, we want to see that the flow of a pseudogradient does actually connect critical points. To this end, we have the following result:
 
 \begin{prop} \label{prop:connect_critical_points}
 Let $M$ a compact manifold, $f$ a Morse function and $\gamma : \R \rightarrow M$ a trajectory of a pseudogradient field $X$. Then, there are critical points $a$ and $b$ such that
-
 \begin{displaymath}
 \lim_{s \rightarrow - \infty} \gamma(s) = a \ , \text{ and } \lim_{s \rightarrow + \infty} \gamma(s) = b .
 \end{displaymath}
@@ -82,17 +68,13 @@ Let $M$ a compact manifold, $f$ a Morse function and $\gamma : \R \rightarrow M$
 
 \begin{proof}
 Let us prove this result in the case that $s \rightarrow + \infty$, as the case for $- \infty$ is proved the same way. Suppose that the result is false, so there is a trajectory $\gamma$ such that it has no limit to $+ \infty$. Then, each time that $\gamma$ enters a Morse neighbourhood for any critical point $c_i$, $\Omega_i$, it must leave sometime later, because $f$ is strictly decreasing along the trajectories of a pseudogradient. Thus, there is a time $s_0 > 0$ such that $\forall s > s_0$,
-
 $$\gamma(s) \in M \backslash \bigcup_i \Omega_i ,$$
-
 so $\dd f(\gamma(s)) \cdot X(s) \leq - \e_0$ for some $\e_0 > 0$ and for any $s > s_0$.
 
 Therefore, for any $s > s_0$,
-
 \begin{displaymath}
 f(\gamma(s))-f(\gamma(s_0)) = \int_{s_0}^s \frac{\dd (f \circ \gamma)}{\dd t} \dd t = \int_{s_0}^s \dd f(\gamma(t)) \cdot X(\gamma(t)) \dd t \leq - \e_0 (s-s_0) .
 \end{displaymath}
-
 This leads to the conclusion that $\displaystyle\lim_{s \rightarrow +\infty} f(\gamma(s)) = - \infty$, which is impossible.
 \end{proof}
 
@@ -102,9 +84,7 @@ The notion of connecting critical points between them needs to be complemented b
 
 \begin{deff}
 Let $M$ a smooth manifold, and $S, T \subset M$ smooth submanifolds. We say that $S$ and $T$ {\bf intersect transversally} if, $\forall p \in L \bigcap T$,
-
 $$\straightT_pM = \straightT_pS + \straightT_pT .$$
-
 Notice that the sum in the definition does not need to be direct, so it is possible that $\text{dim}(S)+\text{dim}(T) \geq \text{dim}(M)$.
 
 If $S$ and $T$ intersect transversally, we denote it as $S \pitchfork T$.
@@ -119,13 +99,11 @@ It can be proved that, if $S$ and $T$ intersect transversally, then:
 
 \begin{deff}
 We say that a pseudogradient $X$ adapted to $f$ satisfies the {\bf Palais-Smale condition} if, for any $a,b \in \crit(f)$,
-
 $$W^u(a) \pitchfork W^s(b) .$$
 \end{deff}
 
 \begin{rmrk}
 If $X$ satisfies the Palais-Smale condition, then for any pair of critical points $a$ and $b$, we have that
-
 \begin{equation} \label{eq:dimIntersect}
 \text{dim}(W^u(a) \cap W^s(b)) = \text{Ind}(a) - \text{Ind}(b) .
 \end{equation}
@@ -135,23 +113,19 @@ If $X$ satisfies the Palais-Smale condition, then for any pair of critical point
 %TODO: Provide the lemma that says that for each pseudogradient there is another one satisfying P-S.
 
 Let $\mathcal{M}(a,b) := W^u(a) \cap W^s(b)$. It is the space of the trajectories going from $a$ to $b$. The group $\R$ acts freely and transitivelly on $\mathcal{M}(a,b)$ by
-
 \begin{displaymath}
 t \cdot p = \varphi_X^t(p) .
 \end{displaymath}
 
 \begin{deff}
 Let $\mathcal{L}(a,b)$ denote the {\bf space of trajectories} between $a$ and $b$, that we define as
-
 \begin{displaymath}
 \mathcal{L}(a,b) := \quocient{\mathcal{M}(a,b)}{\R} .
 \end{displaymath}
 \end{deff}
 
-%TODO: reference this correctly
 \begin{rmrk}
 As a consequence of formula \ref{eq:dimIntersect}, the dimension of the space of trajectories is
-
 \begin{displaymath}
 \text{dim}(\mathcal{L}(a,b)) = \text{Ind}(a) - \text{Ind}(b) - 1 .
 \end{displaymath}
@@ -168,10 +142,8 @@ Here, we are going to use what we learned about Morse functions and pseudogradie
 First of all, we need to define the notion of incoming vector field of a manifold with boundary.
 
 \begin{deff}
-Consider $M$ a manifold with boundary, and let $X$ be a vector field defined on $M$. We say that $X$ is {\bf incoming} on the boundary of $M$ if, for any chart covering a part of $\partial M$, the local representation of $X$ is
-
+Consider $M$ a manifold with boundary, and let $X$ be a vector field defined on $M$. We say that $X$ is {\bf incoming} on the boundary of $M$ if, for any chart $(U,\varphi)$ covering a part of $\partial M$, the local representation of $X$ is
 $$\tilde{X} = \sum_{i=1}^n a_i \frac{\partial}{\partial x_i} ,$$
-
 with $a_i$ functions such that $a_i(\varphi^{-1}(q)) < 0 \ \forall q \in \partial M$.
 \end{deff}
 

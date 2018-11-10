@@ -221,9 +221,12 @@ For $n$ large enough, $l_n^- \in D$, so it is in the domain of $\Phi$. Thus, $l_
 Now let us prove the proposition \ref{morse_propappendix}. We want to conclude that $Q$ is a $k$-dimensional manifold with boundary, and its boundary is precisely $S_-(b)$.
 
 \begin{proof}
-Recall that $Q = \text{Im}\Phi \cup S_-(b)$, with $\Phi : D \rightarrow f^{-1}(\alpha-\e)$ an embedding. Also, $D = P \backslash \{b^-\}$ is diffeomorphic to a punctured open disk of dimension $k-1$. This means that we can take $D \cong (0,1) \times \con{S}^{k-1}$, and $\text{Im} \Phi \cong (0,1) \times \con{S}^{k-1}$. Therefore, we can take coordinates $(t,z)$ in $D$ and $(s,w)$ in $\text{Im} \Phi$ in such a way that $\Phi((t,z)) = (t,z)$, this means, $\Phi$ is the identity in these coordinates\footnote{We can construct the coordinates just in $D$, and then push them forward to $\text{Im}\Phi$ with $\Phi$, using the fact that it is an embedding.}.
+{\it (Proposition \ref{morse_propappendix}):} Recall that $Q = \text{Im}\Phi \cup S_-(b)$, with $\Phi : D \rightarrow f^{-1}(\alpha-\e)$ an embedding. Also, $D = P \backslash \{b^-\}$ is diffeomorphic to a punctured open disk of dimension $k-1$. This means that we can take $D \cong (0,1) \times \con{S}^{k-1}$. Therefore, we can take coordinates $(t,z)$ in $D$, with $t \in (0,1)$ and $z \in \con{S}^{k-1}$. We can construct this coordinates in a way that $\displaystyle\lim_{t \searrow 0} (t,z) = b^-$ in $P$ for all $z \in \con{S}^{k-1}$.
 
-We can see that $\displaystyle\lim_{t \searrow 0} (t,z) = b^-$ in $P$ for all $z \in \con{S}^{k-1}$. We want to show that, on the other hand, $\displaystyle\lim_{s \searrow 0} (s,w) \in S_-(b) \ \forall w \in \con{S}^{k-1}$. Let $d^+ = \displaystyle\lim_{s \searrow 0} (s,w)$ for some $w \in \con{S}^{k-1}$. It is clear that $f(d^+) = \alpha - \e$ because $f$ is continuous, so we need to show that $d^+ \in W^u(b)$.
+We want to show that, on the other hand,
+$$\displaystyle\lim_{t \searrow 0} \Phi((t,z)) \in S_-(b) \ \forall z \in \con{S}^{k-1}. $$
+
+Let $d^+ = \displaystyle\lim_{s \searrow 0} (s,w)$ for some $w \in \con{S}^{k-1}$. It is clear that $f(d^+) = \alpha - \e$ because $f$ is continuous, so we need to show that $d^+ \in W^u(b)$.
 
 Suppose that it is false, so $d^+ \notin W^u(b)$. Therefore, if we take the flow of $- X$ starting at $d^+$, we must exit the chart $\Omega(b)$ at some point $d^-$ with $f(d^-) = \alpha + \e$. Let $(x_n)_n$ a sequence in $\text{Im}\Phi$ such that $\limn x_n = d^+$. Take $y_n = \Phi^{-1}(x_n)$ for each $n$. We know that $f(y_n) = \alpha + \e \ \forall n$, so, applying the lemma \ref{morse_sequences}, we deduce that $y_n \xrightarrow[n \rightarrow \infty]{} d^-$. However, we can see that $y_n \xrightarrow[n \rightarrow \infty]{} b^-$ because the first component tends to $0$. Therefore, we conclude that $b^- = d^-$. But we can see that, if $\varphi_X^t$ denotes the flow of $X$,
 
@@ -231,7 +234,25 @@ $$f(\varphi_X^t(b^-)) \xrightarrow[t \rightarrow \infty]{} \alpha ,$$
 
 so $f(\varphi_X^t(b^-)) \geq \alpha \ \forall t > 0$. On the other hand, $f(d^+) = \alpha - \e < \alpha$ and $d^+ = \varphi_X^{t_0}(d^-)$ for some $t_0 > 0$. Thus, we reach a contradiction.
 
-This way, we have proved that $\displaystyle\lim_{s \searrow 0} (s,w) \in S_-(b) \ \forall w \in \con{S}^{k-1}$.
+We know that $S_-(b) \cong \con{S}^{k-1}$, so we can identify $Q$ with $[0,1) \times \con{S}^{k-1}$ and $S_-(b)$ with $\{0\} \times \con{S}^{k-1}$ with the same coordinates as before. We just showed that we can define the map
+$$\begin{array}{rccc}\rho : & \con{S}^{k-1} & \longrightarrow & S_-(b) \\ & z & \longmapsto & \displaystyle\lim_{t \searrow 0} \Phi((t,z)) \end{array}$$
 
-We know that $S_-(b) \cong \con{S}^{k-1}$, so we can identify $Q$ with $[0,1) \times \con{S}^{k-1}$ and $S_-(b)$ with $\{0\} \times \con{S}^{k-1}$ with the same coordinates as before. Then, it is clear that the map $w \mapsto (0,w) \in S_-(b)$ is injective and, therefore, is a homeomorphism. Thus, we have shown that $Q \cong [0,1) \times \con{S}^{k-1}$ a manifold with boundary, with $S_-(b)$ being its boundary, as we wanted to see. 
+and it is indeed well defined. If we show that $\rho$ is bijective, we will be able to conclude that $S_-(b)$ is precisely the boundary of the manifold $Q$, and we will be done. In fact, as $S_-(b) \cong \con{S}^{k-1}$, it sufices to show that $\rho$ is injective.
+
+To do this, we need to use the fact that $\Omega(b)$ is a Morse chart and, by the Morse Lemma \ref{morselemma}, it admits a coordinate system $(x_-,x_+)$\footnote{This means, with $(x_-,x_+)=(x_-^1,...,x_-^k,x_+^1,...,x_+^{n-k})$.} such that $f(x_-,x_+) = c - \|x_-\|^2 + \|x_+\|^2$. Then, it can be easily proved that the flow of $X$ (which coincides with that of $-\text{grad}f$ in $\Omega(b)$ because of the definition of a pseudogradient adapted to $f$) takes the form
+$$\varphi_X^s(x_-,x_+) = (e^{2s}x_-,e^{-2s}x_+) .$$
+
+On the other hand, we can see that, for some $\delta > 0$,
+$$Q = \{(x_-,x_+) \ | \ \|x_-\|^2 = \e, 0 \leq \|x_+\| < \delta\}, $$
+
+and that
+$$D = \{(x_-,x_+) \ | \ \|x_+\|^2 = \e, 0 < \|x_-\|^2 < \delta' \}$$
+
+for some $\delta'$ that depends on $\delta$, as we are going to show. With all of this, it is possible to compute the $s$ such that $\varphi_X^s(x) \in \text{Im}\Phi$ for a given $x \in D$, so we can deduce the form of $\Phi$ in these coordinates:
+\[\Phi((x_-,x_+)) = \left(\frac{\|x_+\|}{\|x_-\|} x_-, \frac{\|x_-\|}{\|x_+\|} x_+\right) .\]
+
+This way, if we let $(x_-,x_+) \in D$, we have that $(x_-,x_+) = ((t,z), \sqrt{\e})$ (where $\sqrt{\e}$ denotes the vector with all the coordinates equal to $\sqrt{\e}$, and $(t,z)$ are the polar coordinates that we introduced before). Then, we conclude that
+\[\Phi((t,z)) = (\sqrt{\e} z, t) .\]
+
+Therefore, $\rho(z) = \displaystyle\lim_{t \searrow 0} \Phi((t,z)) = (\sqrt{\e} z, 0)$, so the map $\rho$ is injective, as we wanted to prove.
 \end{proof}

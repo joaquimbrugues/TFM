@@ -1,0 +1,22 @@
+\section{The rotation map}
+
+The index that we define in this chapter has an intuitive interpretation in terms of the topology of $Sp(\R^{2n},\Omega_0)$. In particular, it relies in the fact (that we will prove) that $\pi_1(Sp(\R^{2n},\Omega_0)) \cong \con{Z}$. In particular, we will see that $Sp(\R^{2n},\Omega_0)$ can always be regarded as the topological product of $\con{S}^1$ with a simply connected space. From this we will produce a map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1$, the rotation map, that will allow us to define the Conley-Zehnder index in terms of the degree of a map from $\con{S}^1$ to itself.
+
+\subsection{The topology of $Sp(\R^{2n},\Omega_0)$}
+
+Recall that the symplectic group of dimension $2n$ is the subgroup of $GL(\R^{2n})$ defined by
+\[Sp(\R^{2n}, \Omega_0) = \{A \in GL(\R^{2n} \ | \ A^T \Omega_0 A = \Omega_0\} ,\]
+
+where
+\[\Omega_0 = \begin{pmatrix} 0 & \Id \\ - \Id & 0 \end{pmatrix} .\]
+
+We have the following result about the structure of this group:
+
+\begin{theo} Let $A \in GL(\R^{2n})$ be an invertible matrix. Then, there exists a unique decomposition $A = OP$ such that $O$ is orthogonal and $P$ is symmetric and positive definite. Moreover, if $A$ is symplectic, then both $O$ and $P$ are symplectic, so $O \in U(n)$ (the complex unitary matrix group of dimension $n$), and $P = \text{exp}(S)$ for some symmetric matrix in the Lie algebra of $Sp(\R^{2n},\Omega_0)$.
+
+If we denote $V = \mathfrak{sp}(\R^{2n},\Omega_0) \bigcap \text{Sym}(\R^{2n})$, then we deduce that this decomposition induces a topological factorization
+
+\[Sp(\R^{2n}, \Omega_0) \cong U(n) \times V ,\]
+
+where $V$ is a vector space, so $Sp(\R^{2n},\Omega_0) \sim U(n)$.
+\end{theo}

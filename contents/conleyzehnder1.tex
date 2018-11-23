@@ -1,0 +1,23 @@
+\section{Introduction}
+
+Let us recall the program sketched in section \ref{section:morse_complex}. In order to define the Floer homology, we need to define some sort of index that allows us to classify the critical points of the action functional, this means, the periodic orbits of a given Hamiltonian system with some Hamiltonian $H_t$ depending on time.
+
+Let $x$ be such a solution, so
+\[\dot{x}(t) = X_t(x(t)) ,\]
+
+and let us assume that it is non-degenerate, this means, that
+\[\text{det}(\straightT_{x(0)} \varphi^1 - \text{Id}) \neq 0 .\]
+
+Let $Z(t)$ a simplectic frame of $TM$ along $x$, this means, that $Z(t)$ is a basis of $T_{x(t)}M$ for each $t \in \con{S}^1$ varying smoothly. Then, we can define the map
+
+\[\begin{array}{rccc} A : & [0,1] & \longrightarrow & Sp(\R^{2n},\Omega_0) \end{array}\]
+
+such that $A(t)$ is $\dd_{x(t)} \varphi_{X_t}^t$ expressed in the basis $Z(t)$ (where $\varphi_{X_t}^t$ denotes the flow of the vector field $X_t$). Under these conditions, it is clear that $A(0) = \Id$ and that $A(1)$ does not have $1$ as an eigenvalue. Therefore, we can define the set of paths of matrices that will interest us in the following sections:
+
+\[SP(n) = \left\{ \psi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0) \ \bigg| \begin{array}{l} \ \psi(0) = \Id \\ \psi(1) \text{ does not have 1 as an eigenvalue} \end{array} \right\} .\]
+
+The goal of this chapter, therefore, is to define some map
+
+\[\begin{array}{rccc} \mu : & SP(n) & \longrightarrow & \con{Z} \end{array}\]
+
+that allows us to classify the periodic orbits.

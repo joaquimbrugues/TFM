@@ -6,10 +6,8 @@ The index that we define in this chapter has an intuitive interpretation in term
 
 Recall that the symplectic group of dimension $2n$ is the subgroup of $GL(\R^{2n})$ defined by
 \[Sp(\R^{2n}, \Omega_0) = \{A \in GL(\R^{2n} \ | \ A^T \Omega_0 A = \Omega_0\} ,\]
-
 where
 \[\Omega_0 = \begin{pmatrix} 0 & \Id \\ - \Id & 0 \end{pmatrix} .\]
-
 We have the following result about the structure of this group:
 
 \begin{theo} Let $A \in GL(\R^{2n})$ be an invertible matrix. Then, there exists a unique decomposition $A = OP$ such that $O$ is orthogonal and $P$ is symmetric and positive definite. Moreover, if $A$ is symplectic, then both $O$ and $P$ are symplectic, so $O \in U(n)$ (the complex unitary matrix group of dimension $n$), and $P = \text{exp}(S)$ for some symmetric matrix in the Lie algebra of $Sp(\R^{2n},\Omega_0)$.
@@ -17,6 +15,49 @@ We have the following result about the structure of this group:
 If we denote $V = \mathfrak{sp}(\R^{2n},\Omega_0) \bigcap \text{Sym}(\R^{2n})$, then we deduce that this decomposition induces a topological factorization
 
 \[Sp(\R^{2n}, \Omega_0) \cong U(n) \times V ,\]
-
-where $V$ is a vector space, so $Sp(\R^{2n},\Omega_0) \sim U(n)$.
+where $V$ is a vector space, so $Sp(\R^{2n},\Omega_0) \simeq U(n)$.
 \end{theo}
+
+\begin{proof}
+The matrix $A^TA$ is symmetric and positive definite, so there is an orthogonal matrix $Q$ such that $QA^TAQ^T = \text{diag}(a_1,...,a_{2n})$ with all the $a_i$ real and strictly positive. Let us define the matrices
+
+\[P = Q^T\text{diag}(\sqrt{a_1},...,\sqrt{a_{2n}}) Q, \]
+\[S = Q^T\text{diag}(\ln(a_1),...,\ln(a_{2n})) Q ,\]
+so they are the unique matrices such that $P^2 = A^TA$ and $\text{exp}(S) = A^TA$. Then, we define $O = AP^{-1}$. It is an orthogonal matrix, because
+
+\[O^TO = P^{-1}A^TAP^{-1} = P^{-1} P^2 P^{-1} = \text{Id} .\]
+Moreover, it is a symplectic matrix, because, as $A$ is symplectic,
+\[A = \Omega_0^{-1} (A^T)^{-1} \Omega_0,\]
+so\footnote{Here we use several times the fact that $\Omega_0^{-1} = -\Omega_0$.}
+\[OP = \Omega_0^{-1}((OP)^T)^{-1} \Omega_0 = \Omega_0^{-1} (O^T)^{-1} (P^T)^{-1} \Omega_0 = \Omega_0^{-1} (O^T)^{-1} \Omega_0 \Omega_0^{-1} (P^T)^{-1} \Omega_0\]
+and, by the uniqueness of the decomposition, $O = \Omega_0^{-1} O \Omega_0$ and $P = \Omega_0^{-1} P \Omega_0$.
+
+On the other hand, we have that $P = \text{exp}(\frac12 S)$ and, as $P$ is symplectic, we know that $S \in \mathfrak{sp}(\R^{2n},\Omega_0)$.
+
+Therefore, we have shown that $Sp(\R^{2n}, \Omega_0) \cong U(n) \times V$.
+\end{proof}
+
+\begin{prop}
+The complex unitary group is homeomorphic to the product $\con{S}^1 \times SU(n)$ (the special unitary group). Moreover, $SU(n)$ is simply connected. Therefore, $\pi_1(U(n)) = \con{Z}$, so $\pi_1(Sp(\R^{2n},\Omega_0)) = \con{Z}$.
+\end{prop}
+
+\begin{proof}
+The bijection between $U(n)$ and $\con{S}^1 \times SU(n)$ is easily stablished by the map
+\[\begin{array}{ccc} \con{S}^1 \times SU(n) & \longrightarrow & U(n) \\ (e^{\varphi i}, O) & \longmapsto & \text{diag}(e^{\varphi i},1,...,1) O \end{array}\]
+whose inverse associates to a unitary matrix $O$ its determinant $\text{det}(O) = e^{\varphi i}$ and the special unitary matrix $\text{diag}(e^{-\varphi i},1,...,1) O$.
+
+To prove that $SU(n)$ is simply connected we can use its action on the sphere $\con{S}^{2n-1} = \{z \in \con{C} \ | \ |z|^2 = 1\}$. This action is transitive, and the isotropy group at $(1,0,...,0)$ is $SU(n-1)$. Therefore, we get that
+\[\quocient{SU(n)}{SU(n-1)} \cong \con{S}^{2n-1} .\]
+The long exact sequence of this quotient gives that
+\[\cdots \rightarrow \pi_2(\con{S}^{2n-1}) \rightarrow \pi_1(SU(n-1)) \rightarrow \pi_1(SU(n)) \rightarrow \pi_1(\con{S}^{2n-1}) .\]
+If $n > 1$ then $\pi_2(\con{S}^{2n-1}) = 0$ and $\pi_1(\con{S}^{2n-1})=0$. Moreover, $SU(1)=\{1\}$. Therefore,
+\[\pi_1(SU(n)) \cong \pi_1(SU(n-1)) \cong \cdots \cong \pi_1(SU(1)) = \pi_1(\{1\}) = 0,\]
+and therefore $SU(n)$ is simply connected $\forall n \geq 1$.
+\end{proof}
+
+This fact provides an idea of how to proceed: we can define a map $f : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}$ such that $\f_{\ast} : \pi_1(Sp(\R^{2n},\Omega_0)) \rightarrow \pi_1(\con{S}^1)$ is an isomorphism. When we restrict to $Sp(\R^{2n},\Omega_0) \cap O(2n) = U(n)$, we can simply use the complex determinant $\text{det}_{\con{C}}$ of the matrix, so we just need to extent it in a way to the whole of $Sp(\R^{2n},\Omega_0)$ to get the desired map.
+
+On the other hand, to each path $\gamma : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ we can associate the path $f \circ \gamma : [0,1] \rightarrow \con{S}^1$ which, under the appropriate conditions, may be regarded as a closed path, so we get $\tilde{f} \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$. Therefore, we can compute the degree of this path, which in turn will allow us to graduate the original path.
+
+\subsection{The rotation map of a simplectic matrix}
+

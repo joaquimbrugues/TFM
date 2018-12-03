@@ -102,5 +102,17 @@ This way, we can classify the behaviour in the following cases:
 	\[\rho(A) = \left\{ \begin{array}{lc} 1 & \text{if tr}(A) > 2 \\ -1 & \text{if tr}(A) < -2 \end{array} \right. .\]
 	\item $|\text{tr}(A)| < 2$: this implies that $\Delta < 0$, so the matrix has two distinct complex eigenvalues, $\alpha$ and $\overline{\alpha}$, with $\alpha\overline{\alpha} = 1$. Therefore, $\alpha = e^{\varphi i}$ for some $\varphi \in \R$. We may therefore choose coordinates such that
 	\[A = \begin{pmatrix} \cos(\varphi) & -\sin(\varphi) \\ \sin(\varphi) & \cos(\varphi) \end{pmatrix} ,\]
-	so the rotation map.
+	so
+	\[\rho(A) = e^{\pm \varphi i} .\]
+	To determine the sign in the above expression, one must take into account the orientation of the basis $(v,w)$ that one chooses to represent $A$ as stated earlier. The one that is consistent with the naturality condition is the choice of $\varphi$ such that $Az = e^{\varphi i} z$, where $z = v - iw$ with $\Omega_0(v,w) > 0$.
+	\item $\text{tr}(A) = \pm 2$: this implies that $\Delta = 0$ and that $A$ has a double eigenvalue $\alpha = \pm 1$. In consequence, we can choose coordinates such that
+	\[A = \begin{pmatrix} \pm 1 & 1 \\ 0 & \pm 1 \end{pmatrix} .\]
+	By the continuity of $\rho$, $\rho(A)$ is the same as the limit of $\rho(A_t)$ for any continuous path that tends towards $A$. Therefore, we may choose the path of symplectic matrices
+	\[A_t = \begin{pmatrix} \pm e^t & e^t \\ 0 & \pm e^{-t} \end{pmatrix} ,\]
+	so
+	\[\rho(A) = \lim_{t \rightarrow 0} \rho(A_t) = \pm 1 ,\]
+	and we conclude that
+	\[\rho(A) = \left\{ \begin{array}{lc} 1 & \text{if tr}(A) = 2 \\ -1 & \text{if tr}(A) = -2 \end{array} \right. .\]
 \end{enumerate}
+
+In the general case, one must use the product property and appropriate forms of $A$ to construct the rotation map for any symplectic matrix.

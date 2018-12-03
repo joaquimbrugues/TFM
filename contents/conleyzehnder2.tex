@@ -61,7 +61,7 @@ On the other hand, to each path $\gamma : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)
 
 \subsection{The rotation map}
 
-In this section we will describe the map representing the "rotation" part of the symplectic group as we hinted previously. Rather than constructing the map (which is a cumbersome process carried on in \cite{gutt2012conley}), we will present the properties that this map satisfies. Using them, we will then construct it in the particular case of $\R^2$ as an example.
+In this section we will describe the map representing the "rotation" part of the symplectic group as we hinted previously. Rather than constructing the map (which is a cumbersome process carried on in \cite{gutt2012conley}, where the uniqueness of such a map is also proved), we will present the properties that this map satisfies. Using them, we will then construct it in the particular case of $\R^2$ as an example.
 
 \begin{theo}
 There exists a continuous map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1$ satisfying the following conditions:
@@ -84,3 +84,23 @@ There exists a continuous map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1
 \end{enumerate}
 
 \end{theo}
+
+We will not prove this theorem in general, but we will show the proof for the case of dimension 2. The general process, as we said earlier, can be seen at \cite{gutt2012conley}.
+
+{\bf Construction of the rotation map in dimension 2:}
+
+Consider $A \in Sp(\R^2,\Omega_0)$. By the properties of the rotation map, we see that the eigenvalues play a crucial role to understand its behaviour, and, in dimension 2, the eigenvalues of $A$ may simply be understood via the characteristic polynomial of $A$, that has the form
+\[p_A(\lambda) = \lambda^2 - \text{tr}(A) \lambda + \text{det}(A) ,\]
+and, as $A$ is symplectic, $\text{det}(A) = 1$. Therefore, the discriminant of $p_A(\lambda)$ is
+\[\Delta = \text{tr}(A)^2 - 4 .\]
+This way, we can classify the behaviour in the following cases:
+
+\begin{enumerate}
+	\item $|\text{tr}(A)| > 2$: this implies that $\Delta > 0$, so the matrix has two distinct real eigenvalues, $\alpha$ and $\alpha^{-1}$, which must have the same sign. Applying the normalization property, we deduce that
+	\[\rho\left(\begin{pmatrix}\alpha & 0 \\ 0 & \alpha^{-1}\end{pmatrix}\right) = \left\{ \begin{array}{lc} 1 & \text{if } \alpha > 0 \\ -1 & \text{if } \alpha < 0 \end{array} \right. .\]
+	If we also apply the naturality property of $\rho$, we deduce that
+	\[\rho(A) = \left\{ \begin{array}{lc} 1 & \text{if tr}(A) > 2 \\ -1 & \text{if tr}(A) < -2 \end{array} \right. .\]
+	\item $|\text{tr}(A)| < 2$: this implies that $\Delta < 0$, so the matrix has two distinct complex eigenvalues, $\alpha$ and $\overline{\alpha}$, with $\alpha\overline{\alpha} = 1$. Therefore, $\alpha = e^{\varphi i}$ for some $\varphi \in \R$. We may therefore choose coordinates such that
+	\[A = \begin{pmatrix} \cos(\varphi) & -\sin(\varphi) \\ \sin(\varphi) & \cos(\varphi) \end{pmatrix} ,\]
+	so the rotation map.
+\end{enumerate}

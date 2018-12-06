@@ -43,8 +43,8 @@ The complex unitary group is homeomorphic to the product $\con{S}^1 \times SU(n)
 
 \begin{proof}
 The bijection between $U(n)$ and $\con{S}^1 \times SU(n)$ is easily stablished by the map
-\[\begin{array}{ccc} \con{S}^1 \times SU(n) & \longrightarrow & U(n) \\ (e^{\varphi i}, O) & \longmapsto & \text{diag}(e^{\varphi i},1,...,1) O \end{array}\]
-whose inverse associates to a unitary matrix $O$ its determinant $\text{det}(O) = e^{\varphi i}$ and the special unitary matrix $\text{diag}(e^{-\varphi i},1,...,1) O$.
+\[\begin{array}{ccc} \con{S}^1 \times SU(n) & \longrightarrow & U(n) \\ (e^{i \varphi}, O) & \longmapsto & \text{diag}(e^{i \varphi},1,...,1) O \end{array}\]
+whose inverse associates to a unitary matrix $O$ its determinant $\text{det}(O) = e^{i \varphi}$ and the special unitary matrix $\text{diag}(e^{-i \varphi},1,...,1) O$.
 
 To prove that $SU(n)$ is simply connected we can use its action on the sphere $\con{S}^{2n-1} = \{z \in \con{C} \ | \ |z|^2 = 1\}$. This action is transitive, and the isotropy group at $(1,0,...,0)$ is $SU(n-1)$. Therefore, we get that
 \[\quocient{SU(n)}{SU(n-1)} \cong \con{S}^{2n-1} .\]
@@ -102,11 +102,11 @@ This way, we can classify the behaviour in the following cases:
 	\[\rho\left(\begin{pmatrix}\alpha & 0 \\ 0 & \alpha^{-1}\end{pmatrix}\right) = \left\{ \begin{array}{lc} 1 & \text{if } \alpha > 0 \\ -1 & \text{if } \alpha < 0 \end{array} \right. .\]
 	If we also apply the naturality property of $\rho$, we deduce that
 	\[\rho(A) = \left\{ \begin{array}{lc} 1 & \text{if tr}(A) > 2 \\ -1 & \text{if tr}(A) < -2 \end{array} \right. .\]
-	\item $|\text{tr}(A)| < 2$: this implies that $\Delta < 0$, so the matrix has two distinct complex eigenvalues, $\alpha$ and $\overline{\alpha}$, with $\alpha\overline{\alpha} = 1$. Therefore, $\alpha = e^{\varphi i}$ for some $\varphi \in \R$. We may therefore choose coordinates such that
+	\item $|\text{tr}(A)| < 2$: this implies that $\Delta < 0$, so the matrix has two distinct complex eigenvalues, $\alpha$ and $\overline{\alpha}$, with $\alpha\overline{\alpha} = 1$. Therefore, $\alpha = e^{i \varphi}$ for some $\varphi \in \R$. We may therefore choose coordinates such that
 	\[A = \begin{pmatrix} \cos(\varphi) & -\sin(\varphi) \\ \sin(\varphi) & \cos(\varphi) \end{pmatrix} ,\]
 	so
-	\[\rho(A) = e^{\pm \varphi i} .\]
-	To determine the sign in the above expression, one must take into account the orientation of the basis $(v,w)$ that one chooses to represent $A$ as stated earlier. The one that is consistent with the naturality condition is the choice of $\varphi$ such that $Az = e^{\varphi i} z$, where $z = v - iw$ with $\Omega_0(v,w) > 0$.
+	\[\rho(A) = e^{\pm i \varphi} .\]
+	To determine the sign in the above expression, one must take into account the orientation of the basis $(v,w)$ that one chooses to represent $A$ as stated earlier. The one that is consistent with the naturality condition is the choice of $\varphi$ such that $Az = e^{i \varphi} z$, where $z = v - iw$ with $\Omega_0(v,w) > 0$.
 	\item $\text{tr}(A) = \pm 2$: this implies that $\Delta = 0$ and that $A$ has a double eigenvalue $\alpha = \pm 1$. In consequence, we can choose coordinates such that
 	\[A = \begin{pmatrix} \pm 1 & 1 \\ 0 & \pm 1 \end{pmatrix} .\]
 	By the continuity of $\rho$, $\rho(A)$ is the same as the limit of $\rho(A_t)$ for any continuous path that tends towards $A$. Therefore, we may choose the path of symplectic matrices

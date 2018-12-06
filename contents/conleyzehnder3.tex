@@ -16,7 +16,7 @@ We can easily compute $\rho$ in this matrices, as they are diagonal:
 
 The idea is to associate to each $\psi \in SP(n)$ an extended path $\widetilde{\psi} : [0,2] \rightarrow Sp(\R^{2n},\Omega_0)$ such that $\left. \widetilde{\psi} \right|_{[1,2]} \subset Sp(2n)^{\pm}$ and $\widetilde{\psi}(2) = W^{\pm}$. The main issue with this is that we can extend the same path $\psi$ in a lot of ways (even though the endpoint must always be $W^+$ or $W^-$ if $\psi(1) \in Sp(2n)^+$ or $\psi(1) \in Sp(2n)^-$, respectively). However, it can be proved that all the extensions of the same path are homotopically equivalent. To show this, we will prove the following theorem:
 
-\begin{theo}
+\begin{theo} \label{sppmcontractible}
 Any continuous loop in $Sp(2n)^+$ or $Sp(2n)^-$ is contractible. 
 \end{theo}
 
@@ -34,4 +34,54 @@ It can be seen that, if $\gamma(t) \in Sp(2n)^+$, then the number of $\Lambda_i(
 Thus, if $\gamma : \con{S}^1 \rightarrow Sp(2n)^{\pm}$, its image by each of the $\alpha_i$ is a loop $\alpha_i \circ \gamma : \con{S}^1 \rightarrow [0,2\pi]$ and therefore contractible. This means that
 \[\rho(\gamma(t)) = e^{i \sum_{j=1}^n \alpha_j(t)}\]
 is a contractible map, and, by our first observation in this proof, $\gamma$ is contractible.
+\end{proof}
+
+Therefore, if $\widetilde{\psi_1}$ and $\widetilde{\psi_2}$ are extensions of the same path $\psi \in SP(n)$, then $\widetilde{\psi_1} \simeq \widetilde{\psi_2}$.
+
+Now we are ready to define the Conley-Zehnder index and to prove its most interesting properties.
+
+\begin{deff}
+Let $\psi \in SP(n)$. Its {\bf Conley-Zehnder index} is
+\[\mu_{CZ}(\psi) = \text{deg}(\rho^2 \circ \widetilde{\psi}) ,\]
+where $\rho^2$ means the product of $\rho$ with itself. The reason for this square is the need of having a map from $\con{S}^1$ to itself. We know that $\rho \circ \widetilde{\psi} : [0,2] \rightarrow \con{S}^1$ and that $(\rho \circ \widetilde{\psi})(2) = \pm 1$. As we need to have a periodic map to compute its degree, we square the result.
+\end{deff}
+
+\begin{rmrk}
+The map is well defined, this means, it does not depend on the extension $\widetilde{\psi}$ chosen for $\psi$. This is a consequence of theorem \ref{sppmcontractible}, because any two such extensions are homotopic, so their compositions with $\rho^2$ are also homotopic, and therefore they have the same degree.
+\end{rmrk}
+
+\begin{prop} The Conley-Zehnder index has the following properties:
+\begin{enumerate}
+	\item {\bf Naturality:} For any path $\psi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$,
+	\[\mu_{CZ}(\phi \psi \phi^{-1}) = \mu_{CZ}(\psi) .\]
+	\item {\bf Homotopy:} If $\psi_0 \simeq \psi_1$, then $\mu_{CZ}(\psi_0) = \mu_{CZ}(\psi_1)$.
+	\item {\bf Zero property:} If $\psi(s)$ has no eigenvalue on the circle for $s > 0$, then
+	\[\mu_{CZ}(\psi) = 0 .\]
+	\item {\bf Product property:} If
+	\[\psi_1 \oplus \psi_2 = \begin{pmatrix} \psi_1 & 0 \\ 0 & \psi_2 \end{pmatrix} \in Sp(\R^{2n},\Omega_0),\]
+	then
+	\[\mu_{CZ}(\psi_1 \oplus \psi_2) = \mu_{CZ}(\psi_1) + \mu_{CZ}(\psi_2) .\]
+	\item {\bf Loop:} If $\phi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ with $\phi(0) = \phi(1) = \Id$, then
+	\[\mu_{CZ}(\phi \psi) = \mu_{CZ}(\psi) + 2 \text{deg}(\rho \circ \phi) .\]
+	\item {\bf Signature:} If $S$ is a symmetric $2n \times 2n$ matrix with all eigenvalues satisfying $|\lambda_i| < 2\pi$ and $\psi(t) = \text{exp}(J_0St)$, then
+	\[\mu_{CZ}(\psi) = \frac12 \text{Sign}(S),\]
+	where $\text{Sign}$ denotes the signature of $S$.
+	\item {\bf Determinant:} If $\psi \in SP(n)$,
+	\[(-1)^{n-\mu_{CZ}(\psi)} = \text{sign} \left( \text{det}(\Id - \psi(1)) \right) .\]
+	\item {\bf Inverse:}
+	\[\mu_{CZ}(\psi^{-1}) = \mu_{CZ}(\psi^T) = - \mu_{CZ}(\psi) .\]
+\end{enumerate}
+\end{prop}
+
+\begin{proof} {\it (Naturality):} Let $\widetilde{\phi}$ be an extension of $\phi$ to $[0,2]$ such that $\phi(t) \in Sp(\R^{2n},\Omega_0)$ for all $t$ and $\phi(2) = \Id$. Then, $\widetilde{\psi}' = \widetilde{\phi} \widetilde{\psi} \widetilde{\phi}^{-1}$ is a path connecting the identity with $W^{\pm}$, so we can compute
+\[\text{deg}(\rho^2 \circ \widetilde{\psi}'),\]
+and, by the naturality property of $\rho$, $\rho(\widetilde{\psi}'(t)) = \rho(\widetilde{\psi}(t))$ for all $t$, so
+\[\mu_{CZ}(\phi\psi\phi^{-1}) = \text{deg}(\rho^2 \circ \widetilde{\psi}') = \text{deg}(\rho^2 \circ \widetilde{\psi}) = \mu_{CZ}(\psi) .\]
+\end{proof}
+
+\begin{proof} {\it (Homotopy):} We consider that $\psi_0 \simeq \psi_1$ in $SP(n)$, so there is a map $\psi : [0,1] \times [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ with $\psi_s(1) \in Sp(2n)^{\pm}$ for all $s \in [0,1]$.
+Let $\widetilde{\psi_0}$ be an extension of $\psi_0$, and consider the extension $\widetilde{\psi_s}$ of $\psi_s$ defined by
+\[\widetilde{\psi_s}(t) = \left\{ \begin{array}{lc} \psi_s(t) & 0 \leq t \leq 1 \\ \psi_{s(3-2t)}(1) & 1 \leq t \leq \frac32 \\ \widetilde{\psi_0}(2t-2) & \frac32 \leq t \leq 2 \end{array} \right. ,\]
+which is continuous and defines a homotopy between $\widetilde{\psi_0}$ and $\widetilde{\psi_1}$. Therefore,
+\[\mu_{CZ}(\psi_0) = \mu_{CZ}(\psi_1) .\]
 \end{proof}

@@ -87,6 +87,8 @@ There exists a continuous map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1
 
 We will not prove this theorem in general, but we will show the proof for the case of dimension 2. The general process, as we said earlier, can be seen at \cite{gutt2012conley}.
 
+\
+
 {\bf Construction of the rotation map in dimension 2:}
 
 Consider $A \in Sp(\R^2,\Omega_0)$. By the properties of the rotation map, we see that the eigenvalues play a crucial role to understand its behaviour, and, in dimension 2, the eigenvalues of $A$ may simply be understood via the characteristic polynomial of $A$, that has the form
@@ -116,3 +118,19 @@ This way, we can classify the behaviour in the following cases:
 \end{enumerate}
 
 In the general case, one must use the product property and appropriate forms of $A$ to construct the rotation map for any symplectic matrix.
+
+To end this section we provide a formula for $\rho$ that will be useful in the following results.
+
+\begin{lema} \label{rotationformula}
+Let $A \in Sp(\R^{2n},\Omega_0)$, and let $\lambda_1,...,\lambda_{2n}$ be its eigenvalues, repeated according to their multiplicity. The eigenvalues of first kind of $A$ are the union of the following subsets of $\{\lambda_1,...,\lambda_{2n}\}$:
+\begin{enumerate}
+	\item Eigenvalues with $|\lambda_i| < 1$.
+	\item We know that the number of eigenvalues equal to $1$ is even, and so is the number of eigenvalues equal to $-1$. Thus, we take half of each set of eigenvalues as of first kind.
+	\item If $\lambda_i = e^{i \varphi} \neq \pm 1$, then $\lambda_i^{-1}, \overline{\lambda_i}$ and $\overline{\lambda_i^{-1}}$ are also eigenvalues of $A$. Let $E_{\lambda}$ denote the sum of their (complex) eigenspaces, and let $Q$ be the quadratic form defined by
+	\[\begin{array}{rccc} Q : & E_{\lambda} \times E_{\lambda} & \longrightarrow & \C \\ & (v,w) & \longmapsto & \text{Im}(\Omega_0(v,\overline{w})) \end{array} .\]
+	The signature of $Q$ is $(2r,2s)$, and we take $r$ times the eigenvalue $\lambda_i$ as of the first kind.
+\end{enumerate}
+
+Then, the rotation map of $A$ can be computed as
+\[\rho(A) = \prod_{\lambda_i \text{ of first kind}} \frac{\lambda_i}{|\lambda_i|} .\]
+\end{lema}

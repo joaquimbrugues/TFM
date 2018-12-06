@@ -7,3 +7,31 @@ that allows us to classify the paths of symplectic matrices according to their r
 \begin{deff} The positive (resp. negative) components of $Sp(\R^{2n},\Omega_0)$ are
 \[Sp(2n)^{\pm} = \{A \in Sp(\R^{2n},\Omega_0) \ | \ \text{det}(A - \text{Id}) \gtrless 0 \} .\]
 \end{deff}
+
+It can be seen that both $Sp(2n)^+$ and $Sp(2n)^-$ are path-connected. Therefore, it is possible for us to choose a "representative" element in each connected component,
+\[W^+ = - \Id, \ \ \ W^- = \left( \begin{array}{c|c} \begin{array}{cc} 2 & 0 \\ 0 & \frac12 \end{array} & 0 \\ \hline 0 & - \Id \end{array} \right) .\]
+We can easily compute $\rho$ in this matrices, as they are diagonal:
+\[\rho(W^+) = \rho(- \Id) = \rho\left( \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \right) = (-1)^n ,\]
+\[\rho(W^-) = \rho\left( \begin{pmatrix} 2 & 0 \\ 0 & \frac12 \end{pmatrix} \right) \rho\left(\begin{pmatrix}-1&0\\0&-1\end{pmatrix}\right)^{n-1} = (-1)^{n-1} .\]
+
+The idea is to associate to each $\psi \in SP(n)$ an extended path $\widetilde{\psi} : [0,2] \rightarrow Sp(\R^{2n},\Omega_0)$ such that $\left. \widetilde{\psi} \right|_{[1,2]} \subset Sp(2n)^{\pm}$ and $\widetilde{\psi}(2) = W^{\pm}$. The main issue with this is that we can extend the same path $\psi$ in a lot of ways (even though the endpoint must always be $W^+$ or $W^-$ if $\psi(1) \in Sp(2n)^+$ or $\psi(1) \in Sp(2n)^-$, respectively). However, it can be proved that all the extensions of the same path are homotopically equivalent. To show this, we will prove the following theorem:
+
+\begin{theo}
+Any continuous loop in $Sp(2n)^+$ or $Sp(2n)^-$ is contractible. 
+\end{theo}
+
+\begin{proof}
+A loop $\gamma : \con{S}^1 \rightarrow Sp(\R^{2n},\Omega_0)$ is contractible if, and only if, its image by $\rho$ is contractible. It is because $\rho$ induces an isomorphism $\rho_{\ast}$ between the fist homotopy groups. Therefore, it suffices to see that $\rho \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$ is contractible.
+
+In the last section we introduced the formula \ref{rotationformula} for $\rho$. Let us consider the map that sends each symplectic matrix $A$ to the set of its eigenvalues of first kind:
+\[\begin{array}{ccc} Sp(2n)^{\pm} & \longrightarrow & \Lambda_n = \quocient{\C^n}{\text{permutations of the elements}} \\ A & \longmapsto & \{\lambda_1,...,\lambda_n\} \end{array} ,\]
+which is a continuous map. In other words, we can define the continuous maps $\Lambda_1,...,\Lambda_n : [0,1] \rightarrow \C$ such that $\Lambda_i(t)$ is the $i$-th eigenvalue of first kind of $\gamma(t)$. We want to define continuous maps $\alpha_i : [0,1] \rightarrow [0,2\pi]$ such that
+\[e^{i \alpha_i(t)} = \frac{\Lambda_i(t)}{|\Lambda_i(t)|} ,\]
+which is well defined whenever $\frac{\Lambda_i(t)}{|\Lambda_i(t)|} \neq 1$. In the case that $\frac{\Lambda_i(t)}{|\Lambda_i(t)|} = 1$, this means, that $\Lambda_i(t)$ is real and positive, we need to provide a consistent definition of $\alpha_i(t)$.
+
+It can be seen that, if $\gamma(t) \in Sp(2n)^+$, then the number of $\Lambda_i(t)$ that are real and positive is even, and, conversely, it is odd when $\gamma(t) \in Sp(2n)^-$. Therefore, if the number is $2k$ (resp. $2k+1$), we can take $k$ (resp. $k+1$) of the $\alpha_i(t)$ to be $\alpha_i(t) = 2\pi$, and the remaining $k$ to be $\alpha_i(t) = 0$. It can be proved that this results in a set of continuous maps $\alpha_1,...,\alpha_n$.
+
+Thus, if $\gamma : \con{S}^1 \rightarrow Sp(2n)^{\pm}$, its image by each of the $\alpha_i$ is a loop $\alpha_i \circ \gamma : \con{S}^1 \rightarrow [0,2\pi]$ and therefore contractible. This means that
+\[\rho(\gamma(t)) = e^{i \sum_{j=1}^n \alpha_j(t)}\]
+is a contractible map, and, by our first observation in this proof, $\gamma$ is contractible.
+\end{proof}

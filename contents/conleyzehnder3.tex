@@ -85,3 +85,27 @@ Let $\widetilde{\psi_0}$ be an extension of $\psi_0$, and consider the extension
 which is continuous and defines a homotopy between $\widetilde{\psi_0}$ and $\widetilde{\psi_1}$. Therefore,
 \[\mu_{CZ}(\psi_0) = \mu_{CZ}(\psi_1) .\]
 \end{proof}
+
+\begin{proof} {\it (Zero property):} By the normalization property and the continuity of $\rho$ we deduce that $\rho(\psi(t)) = 1 \ \forall t \in [0,1]$. Moreover, it is possible to construct an extension of $\psi$ such that its eigenvalues are outside of the circle for $t < 2$. Thus, we get that $\rho^2(\widetilde{\psi}(t)) = 1 \ \forall t \in [0,2]$. We conclude that $\mu_{CZ}(\psi) = \text{deg}(\rho^2 \circ \widetilde{\psi}) = 0$.
+\end{proof}
+
+\begin{proof} {\it (Product):} We will use the product property of $\rho$. Consider $\widetilde{\psi}_1$ and $\widetilde{\psi}_2$ the extensions of $\psi_1$ and $\psi_2$. If one (or both) of $\widetilde{\psi}_i(2)$ is equal to $W^-$, then $(\widetilde{\psi}_1 \oplus \widetilde{\psi}_2)(2) = W^{\pm}$. On the other hand, if $(\widetilde{\psi}_1 = W^+$ and $\widetilde{\psi}_2)(2) = W^+$ then $(\widetilde{\psi}_1 \oplus \widetilde{\psi}_2)(2)$ is homotopically equivalent to $W^+$, so we can find some path $\widetilde{\psi}' \simeq \widetilde{\psi}_1 \oplus \widetilde{\psi}_2$ with $\widetilde{\psi}'(2) = W^+$ and such that $\left. \widetilde{\psi}' \right|_{[0,1]} = \psi_1 \oplus \psi_2$. Therefore,
+\[\mu_{CZ}(\psi_1 \oplus \psi_2) = \text{deg}(\rho^2 \circ \widetilde{\psi}') = \text{deg}(\rho^2 \circ (\widetilde{\psi}_1 \oplus \widetilde{\psi}_2)) =\]
+\[= \text{deg}((\rho^2 \circ \widetilde{\psi}_1) \cdot (\rho^2 \circ \widetilde{\psi}_1)) = \text{deg}(\rho^2 \circ \psi_1) + \text{deg}(\rho^2 \circ \psi_2) = \mu_{CZ}(\psi_1) + \mu_{CZ}(\psi_2) .\]
+\end{proof}
+
+\begin{lema} Consider $\varphi, \psi : [0,T] \rightarrow Sp(\R^{2n},\Omega_0)$ two paths of symplectic matrices with $\varphi(0) = \psi(0) = \Id$. Then, the product path $\psi\varphi$ is homotopic to the path
+\[(\psi \diamond \varphi)(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{T}2 \\ \psi\left( 2 \left( t - \frac{T}2 \right) \right) \varphi(T) & t \geq \frac{T}2 \end{array} \right. ,\]
+so $\psi\varphi \simeq \psi \diamond \varphi$.
+\end{lema}
+
+\begin{proof} {\it (Lemma):} Consider the homotopy $\chi : [0,1] \times [0,T] \rightarrow Sp(\R^2,\Omega_0)$ defined by
+\[\chi_s(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{sT}2 \\ \psi\left( \frac2{2-s} \left( t - \frac{sT}2 \right) \right) \varphi\left( sT + \frac{2(1-s)}{2-s} \left( t - \frac{sT}2 \right) \right) & t \geq \frac{sT}2 \end{array} \right. .\]
+It is continuous, because $\chi_s\left( \frac{sT}2 \right) = \varphi(sT) \ \forall s$, and
+\[\chi_0(t) = \psi(t)\varphi(t) ,\]
+\[\chi_1(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{T}2 \\ \psi\left( 2 \left( t - \frac{T}2 \right) \right) \varphi(T) & t \geq \frac{T}2 \end{array} \right. .\]
+\end{proof}
+
+\begin{proof} {\it (Loop):} As $\phi(0) = \phi(1) = \Id$ and $\psi \in SP(n)$, we can apply the lemma, so $\phi\psi \simeq \phi \diamond \psi$. Thus,
+\[\mu_{CZ}(\phi\psi) = \text{deg}(\rho^2 \circ (\widetilde{\psi} \diamond \phi)) = \text{deg}(\rho^2 \circ \widetilde{\psi}) + \text{deg}(\rho^2 \circ \phi) = \mu_{CZ}(\psi) + 2\text{deg}(\rho \circ \phi) .\]
+\end{proof}

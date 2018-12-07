@@ -76,9 +76,7 @@ There exists a continuous map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1
 	\[A = \begin{pmatrix} X & -Y \\ Y & X \end{pmatrix}.\]
 	In particular, this implies that $\rho$ induces an isomorphism on the first homotopy groups:
 	\[\begin{array}{rccc} \rho_{\ast} : & \pi_1(Sp(\R^{2n},\Omega_0)) & \longrightarrow & \pi_1(\con{S}^1) \end{array} .\]
-	\item {\bf Normalization:} If all the eigenvalues of $A$ are real, then
-	\[\rho(A) = (-1)^{\frac{m_{-}}2},\]
-	where $m_{-}$ denotes the sum of the multiplicity of all the negative eigenvalues\footnote{$m_{-}$ must always be even because all the elements of $Sp(\R^{2n},\Omega_0)$ have determinant 1}.
+	\item {\bf Normalization:} If $A$ has no eigenvalues in the unit circle, then $\rho(A) = \pm 1$.
 	\item {\bf Conjugation:} For all $A \in Sp(\R^{2n},\Omega_0)$, we have that
 	\[\rho(A^T) = \rho(A^{-1}) = \overline{\rho(A)} .\]
 \end{enumerate}
@@ -98,7 +96,9 @@ and, as $A$ is symplectic, $\text{det}(A) = 1$. Therefore, the discriminant of $
 This way, we can classify the behaviour in the following cases:
 
 \begin{enumerate}
-	\item $|\text{tr}(A)| > 2$: this implies that $\Delta > 0$, so the matrix has two distinct real eigenvalues, $\alpha$ and $\alpha^{-1}$, which must have the same sign. Applying the normalization property, we deduce that
+	\item If $A$ = $\pm \Id$, it is particularly easy to compute the rotation map, because they are both unitary matrices. Applying the determinant property, we find that
+	\[\rho(\pm \Id) = \text{det}_{\C}(\pm 1) = \pm 1 .\]
+	\item $|\text{tr}(A)| > 2$: this implies that $\Delta > 0$, so the matrix has two distinct real eigenvalues, $\alpha$ and $\alpha^{-1}$, which must have the same sign. Applying the normalization property we see that $\rho(A) = \pm 1$. Using the computation that we just did for $\pm \Id$ and the continuity of $\rho$, we deduce that
 	\[\rho\left(\begin{pmatrix}\alpha & 0 \\ 0 & \alpha^{-1}\end{pmatrix}\right) = \left\{ \begin{array}{lc} 1 & \text{if } \alpha > 0 \\ -1 & \text{if } \alpha < 0 \end{array} \right. .\]
 	If we also apply the naturality property of $\rho$, we deduce that
 	\[\rho(A) = \left\{ \begin{array}{lc} 1 & \text{if tr}(A) > 2 \\ -1 & \text{if tr}(A) < -2 \end{array} \right. .\]

@@ -50,7 +50,7 @@ where $\rho^2$ means the product of $\rho$ with itself. The reason for this squa
 The map is well defined, this means, it does not depend on the extension $\widetilde{\psi}$ chosen for $\psi$. This is a consequence of theorem \ref{sppmcontractible}, because any two such extensions are homotopic, so their compositions with $\rho^2$ are also homotopic, and therefore they have the same degree.
 \end{rmrk}
 
-\begin{prop} The Conley-Zehnder index has the following properties:
+\begin{prop} \label{conleyzehnderproperties} The Conley-Zehnder index has the following properties:
 \begin{enumerate}
 	\item {\bf Naturality:} For any path $\psi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$,
 	\[\mu_{CZ}(\phi \psi \phi^{-1}) = \mu_{CZ}(\psi) .\]
@@ -63,7 +63,7 @@ The map is well defined, this means, it does not depend on the extension $\widet
 	\[\mu_{CZ}(\psi_1 \oplus \psi_2) = \mu_{CZ}(\psi_1) + \mu_{CZ}(\psi_2) .\]
 	\item {\bf Loop:} If $\phi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ with $\phi(0) = \phi(1) = \Id$, then
 	\[\mu_{CZ}(\phi \psi) = \mu_{CZ}(\psi) + 2 \text{deg}(\rho \circ \phi) .\]
-	\item {\bf Signature:} If $S$ is a symmetric $2n \times 2n$ matrix with all eigenvalues satisfying $|\lambda_i| < 2\pi$ and $\psi(t) = \text{exp}(J_0St)$, then
+	\item {\bf Signature:} If $S$ is a symmetric non-degenerate $2n \times 2n$ matrix with all eigenvalues satisfying $|\lambda_i| < 2\pi$ and $\psi(t) = \exp(J_0St)$, then
 	\[\mu_{CZ}(\psi) = \frac12 \text{Sign}(S),\]
 	where $\text{Sign}$ denotes the signature of $S$.
 	\item {\bf Determinant:} If $\psi \in SP(n)$,
@@ -109,3 +109,42 @@ It is continuous, because $\chi_s\left( \frac{sT}2 \right) = \varphi(sT) \ \fora
 \begin{proof} {\it (Loop):} As $\phi(0) = \phi(1) = \Id$ and $\psi \in SP(n)$, we can apply the lemma, so $\phi\psi \simeq \phi \diamond \psi$. Thus,
 \[\mu_{CZ}(\phi\psi) = \text{deg}(\rho^2 \circ (\widetilde{\psi} \diamond \phi)) = \text{deg}(\rho^2 \circ \widetilde{\psi}) + \text{deg}(\rho^2 \circ \phi) = \mu_{CZ}(\psi) + 2\text{deg}(\rho \circ \phi) .\]
 \end{proof}
+
+\begin{proof} {\it (Signature):} Since $S$ is a symmetric matrix, there is an orthogonal matrix $P$ of determinant $1$ such that $PSP^T = \text{diag}(a_1,...,a_{2n})$. Our assumptions imply that $a_i \neq 0$ and $|a_i| < 2\pi \ \forall i$, and therefore the eigenvalues of $J_0 S$ all have norm smaller than $2\pi$. This implies that $\exp(J_0S)$ does not admit $1$ as an eigenvalue, so $\exp(tJ_0S) \in SP(n)$.
+
+Consider $P_s$ a path of orthogonal matrices with $P_0=P$ and $P_1=\Id$ with $\|P_sSP_s^T\| < 2\pi$. In this case, $\exp(J_0P_sSP_s^T)$ does not admit the eigenvalue $1$ for any $s$, so $\exp(tJ_0PSP^T) \simeq \exp(tJ_0S)$ in $SP(n)$. Therefore, it is enough to prove the property for the case when $S$ is diagonal.
+
+In this case,
+\[J_0S = \begin{pmatrix} 0 & \text{diag}(-a_{n+1},...,-a_{2n}) \\ \text{diag}(a_1,...,a_n) & 0 \end{pmatrix} , \text{ with } |a_i| < 2\pi .\]
+We can decompose $(\R^{2n},\Omega_0)$ into a sum of $n$ symplectic planes in a way that $\psi$ decomposes in $\psi_i$ in each of the planes, and such that $\mu_{CZ}(\psi)$ is the sum of all the $\mu_{CZ}(\psi_i)$, for
+\[\psi_i(t) = \exp\left(t\begin{pmatrix} 0 & -a_{n+i} \\ a_i & 0 \end{pmatrix}\right) ,\]
+by the product property. The closed formula of $\psi_i$ can be computed from the sign of $a_i,a_{n+i}$ and $a_ia_{n+i}$:
+
+\begin{enumerate}
+	\item If $a_ia_{n+i} > 0$,
+	\[\psi_i(t) = \begin{pmatrix} \cos(\sqrt{a_ia_{n+i}}t) & \mp \sqrt{\frac{a_{n+i}}{a_i}} \sin(\sqrt{a_ia_{n+i}}t) \\ \pm \sqrt{\frac{a_i}{a_{n+i}}} \sin(\sqrt{a_ia_{n+i}}t) & \cos(\sqrt{a_ia_{n+i}}t) \end{pmatrix} \text{ if } a_i \gtrless 0 .\]
+	\item If $a_ia_{n+i} < 0$,
+	\[\psi_i(t) = \begin{pmatrix} \cosh(\sqrt{-a_ia_{n+i}}t) & \pm \sqrt{-\frac{a_{n+i}}{a_i}} \sinh(\sqrt{-a_ia_{n+i}}t) \\ \pm \sqrt{-\frac{a_i}{a_{n+i}}} \sinh(\sqrt{-a_ia_{n+i}}t) & \cosh(\sqrt{-a_ia_{n+i}}t) \end{pmatrix} \text{ if } a_i \gtrless 0 .\]
+\end{enumerate}
+In the second case, $\psi_i(t)$ has no eigenvalues on the circle for $t>0$, so $\mu_{CZ}(\psi_i) = 0$ by the zero property.
+
+Otherwise, the eigenvalues of $\psi_i(t)$ are $\cos(\sqrt{a_ia_{n+i}}t) \pm i \sin(\sqrt{a_ia_{n+i}}t)$ so, rotating the plane if needed, we get that
+\[ \rho(\psi_i(t)) = \left\{ \begin{array}{lc} e^{i \sqrt{a_ia_{n+i}} t} & \text{if } a_i > 0 \\ e^{- i \sqrt{a_ia_{n+i}} t} & \text{if } a_i < 0 \end{array} \right. .\]
+Either way, $\text{det}(\Id - \psi(1)) = 2(1-\cos(a_ia_{n+i})) > 0$, so the extension $\widetilde{\psi_i}$ must end in $W^+ = - \Id$, so $\rho(\widetilde{\psi_i}(2)) = e^{\pm i \pi}$. In the case when $a_i > 0$ $\rho(\widetilde{psi_i}(t))$ goes from $1=e^0$ to $e^{i\pi}$ counterclockwise, so $\mu_{CZ}(\psi_i) = 1$. On the other hand, when $a_i < 0$ $\rho(\widetilde{psi_i}(t))$ goes from $1=e^0$ to $e^{-i\pi}$ clockwise, so $\mu_{CZ}(\psi_i) = -1$. Rephrasing, $\mu_{CZ}(\psi_i) = \text{sign}(a_i)$. Therefore,
+\[\mu_{CZ}(\psi) = \# \{ i \leq n \ | \ a_i > 0, a_ia_{n+i} > 0 \} - \# \{ i \leq n \ | \ a_i < 0, a_ia_{n+i} > 0 \} = \frac12 \text{Sign}(S) .\]
+\end{proof}
+
+\begin{proof} {\it (Determinant):} If $\text{det}(\Id - \psi(1)) > 0$, then $\widetilde{\psi}(2) = W^+$, so $\rho(\widetilde{\psi}(2)) = (-1)^n$. Otherwise, if $\text{det}(\Id - \psi(1)) < 0$, then $\widetilde{\psi}(2) = W^-$ and $\rho(\widetilde{\psi}(2)) = (-1)^{n-1}$. The degree of $\rho^2 \circ \widetilde{\psi}$ is even when $\rho(\widetilde{\psi}) = 1$, and odd when $\rho(\widetilde{\psi}(2)) = -1$. Therefore,
+\[(-1)^{n-\mu_{CZ}(\psi)} = \text{sign} ( \text{det}(\Id - \psi(1))) .\]
+\end{proof}
+
+\begin{proof} {\it (Inverse):} Recall that $A \in Sp(\R^{2n},\Omega_0)$ implies that $A^T = \Omega_0 A^{-1} \Omega_0^T = \Omega_0^{-1} A^{-1} \Omega_0$ so, by the naturality property of $\mu_{CZ}$,
+\[\mu_{CZ}(\psi^T) = \mu_{CZ}(\psi^{-1}) .\]
+Moreover, by the conjugation property of $\rho$ we know that $\rho(A^{-1}) = \overline{\rho(A)} = \rho(A)^{-1}$ for any symplectic matrix. On the other hand, it can be easily checked that $\widetilde{\psi^{-1}} \simeq \widetilde{\psi}^{-1}$. Therefore,
+\[\mu_{CZ}(\psi^{-1}) = \text{deg}(\rho^2 \circ \widetilde{\psi^{-1}}) = \text{deg}(\rho^2 \circ \widetilde{\psi}^{-1}) = \text{deg}((\rho^2 \circ \widetilde{\psi})^{-1}) = - \text{deg}(\rho^2 \circ \widetilde{\psi}) = - \mu_{CZ}(\psi) .\]
+\end{proof}
+
+Now that we have seen quite in detail the properties of the Conley-Zehnder index, a natural question that arises is if there are other maps satisfying similar properties. However, the answer is that the Conley-Zehnder index is completely determined by (some of) its properties:
+
+\begin{theo} Let $\mu' : SP(n) \rightarrow \con{Z}$ satisfying the homotopy, loop and signature properties as in \ref{conleyzehnderproperties}. Then, $\mu'(\psi) = \mu_{CZ}(\psi) \ \forall \psi \in SP(n)$.
+\end{theo}

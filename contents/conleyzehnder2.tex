@@ -1,21 +1,21 @@
 \section{The rotation map}
 
-The index that we define in this chapter has an intuitive interpretation in terms of the topology of $Sp(\R^{2n},\Omega_0)$. In particular, it relies in the fact (that we will prove) that $\pi_1(Sp(\R^{2n},\Omega_0)) \cong \con{Z}$. In particular, we will see that $Sp(\R^{2n},\Omega_0)$ can always be regarded as the topological product of $\con{S}^1$ with a simply connected space. From this we will produce a map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1$, the rotation map, that will allow us to define the Conley-Zehnder index in terms of the degree of a map from $\con{S}^1$ to itself.
+The index that we define in this chapter has an intuitive interpretation in terms of the topology of $\sympl(\R^{2n},\Omega_0)$. In particular, it relies in the fact (that we will prove) that $\pi_1(\sympl(\R^{2n},\Omega_0)) \cong \con{Z}$. In particular, we will see that $\sympl(\R^{2n},\Omega_0)$ can always be regarded as the topological product of $\con{S}^1$ with a simply connected space. From this we will produce a map $\rho : \sympl(\R^{2n},\Omega_0) \rightarrow \con{S}^1$, the rotation map, that will allow us to define the Conley-Zehnder index in terms of the degree of a map from $\con{S}^1$ to itself.
 
-\subsection{The topology of $Sp(\R^{2n},\Omega_0)$}
+\subsection{The topology of $\sympl(\R^{2n},\Omega_0)$}
 
 Recall that the symplectic group of dimension $2n$ is the subgroup of $GL(\R^{2n})$ defined by
-\[Sp(\R^{2n}, \Omega_0) = \{A \in GL(\R^{2n} \ | \ A^T \Omega_0 A = \Omega_0\} ,\]
+\[\sympl(\R^{2n}, \Omega_0) = \{A \in GL(\R^{2n} \ | \ A^T \Omega_0 A = \Omega_0\} ,\]
 where
 \[\Omega_0 = \begin{pmatrix} 0 & \Id \\ - \Id & 0 \end{pmatrix} .\]
 We have the following result about the structure of this group:
 
-\begin{theo} Let $A \in GL(\R^{2n})$ be an invertible matrix. Then, there exists a unique decomposition $A = OP$ such that $O$ is orthogonal and $P$ is symmetric and positive definite. Moreover, if $A$ is symplectic, then both $O$ and $P$ are symplectic, so $O \in U(n)$ (the complex unitary matrix group of dimension $n$), and $P = \text{exp}(S)$ for some symmetric matrix in the Lie algebra of $Sp(\R^{2n},\Omega_0)$.
+\begin{theo} Let $A \in GL(\R^{2n})$ be an invertible matrix. Then, there exists a unique decomposition $A = OP$ such that $O$ is orthogonal and $P$ is symmetric and positive definite. Moreover, if $A$ is symplectic, then both $O$ and $P$ are symplectic, so $O \in U(n)$ (the complex unitary matrix group of dimension $n$), and $P = \exp(S)$ for some symmetric matrix in the Lie algebra of $\sympl(\R^{2n},\Omega_0)$.
 
 If we denote $V = \mathfrak{sp}(\R^{2n},\Omega_0) \bigcap \text{Sym}(\R^{2n})$, then we deduce that this decomposition induces a topological factorization
 
-\[Sp(\R^{2n}, \Omega_0) \cong U(n) \times V ,\]
-where $V$ is a vector space, so $Sp(\R^{2n},\Omega_0) \simeq U(n)$.
+\[\sympl(\R^{2n}, \Omega_0) \cong U(n) \times V ,\]
+where $V$ is a vector space, so $\sympl(\R^{2n},\Omega_0) \simeq U(n)$.
 \end{theo}
 
 \begin{proof}
@@ -23,7 +23,7 @@ The matrix $A^TA$ is symmetric and positive definite, so there is an orthogonal 
 
 \[P = Q^T\text{diag}(\sqrt{a_1},...,\sqrt{a_{2n}}) Q, \]
 \[S = Q^T\text{diag}(\ln(a_1),...,\ln(a_{2n})) Q ,\]
-so they are the unique matrices such that $P^2 = A^TA$ and $\text{exp}(S) = A^TA$. Then, we define $O = AP^{-1}$. It is an orthogonal matrix, because
+so they are the unique matrices such that $P^2 = A^TA$ and $\exp(S) = A^TA$. Then, we define $O = AP^{-1}$. It is an orthogonal matrix, because
 
 \[O^TO = P^{-1}A^TAP^{-1} = P^{-1} P^2 P^{-1} = \text{Id} .\]
 Moreover, it is a symplectic matrix, because, as $A$ is symplectic,
@@ -32,13 +32,13 @@ so\footnote{Here we use several times the fact that $\Omega_0^{-1} = -\Omega_0$.
 \[OP = \Omega_0^{-1}((OP)^T)^{-1} \Omega_0 = \Omega_0^{-1} (O^T)^{-1} (P^T)^{-1} \Omega_0 = \Omega_0^{-1} (O^T)^{-1} \Omega_0 \Omega_0^{-1} (P^T)^{-1} \Omega_0\]
 and, by the uniqueness of the decomposition, $O = \Omega_0^{-1} O \Omega_0$ and $P = \Omega_0^{-1} P \Omega_0$.
 
-On the other hand, we have that $P = \text{exp}(\frac12 S)$ and, as $P$ is symplectic, we know that $S \in \mathfrak{sp}(\R^{2n},\Omega_0)$.
+On the other hand, we have that $P = \exp(\frac12 S)$ and, as $P$ is symplectic, we know that $S \in \mathfrak{sp}(\R^{2n},\Omega_0)$.
 
-Therefore, we have shown that $Sp(\R^{2n}, \Omega_0) \cong U(n) \times V$.
+Therefore, we have shown that $\sympl(\R^{2n}, \Omega_0) \cong U(n) \times V$.
 \end{proof}
 
 \begin{prop}
-The complex unitary group is homeomorphic to the product $\con{S}^1 \times SU(n)$ (the special unitary group). Moreover, $SU(n)$ is simply connected. Therefore, $\pi_1(U(n)) = \con{Z}$, so $\pi_1(Sp(\R^{2n},\Omega_0)) = \con{Z}$.
+The complex unitary group is homeomorphic to the product $\con{S}^1 \times SU(n)$ (the special unitary group). Moreover, $SU(n)$ is simply connected. Therefore, $\pi_1(U(n)) = \con{Z}$, so $\pi_1(\sympl(\R^{2n},\Omega_0)) = \con{Z}$.
 \end{prop}
 
 \begin{proof}
@@ -55,29 +55,29 @@ If $n > 1$ then $\pi_2(\con{S}^{2n-1}) = 0$ and $\pi_1(\con{S}^{2n-1})=0$. Moreo
 and therefore $SU(n)$ is simply connected $\forall n \geq 1$.
 \end{proof}
 
-This fact provides an idea of how to proceed: we can define a map $f : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}$ such that $f_{\ast} : \pi_1(Sp(\R^{2n},\Omega_0)) \rightarrow \pi_1(\con{S}^1)$ is an isomorphism. When we restrict to $Sp(\R^{2n},\Omega_0) \cap O(2n) = U(n)$, we can simply use the complex determinant $\text{det}_{\con{C}}$ of the matrix, so we just need to extent it in a way to the whole of $Sp(\R^{2n},\Omega_0)$ to get the desired map.
+This fact provides an idea of how to proceed: we can define a map $f : \sympl(\R^{2n},\Omega_0) \rightarrow \con{S}$ such that $f_{\ast} : \pi_1(\sympl(\R^{2n},\Omega_0)) \rightarrow \pi_1(\con{S}^1)$ is an isomorphism. When we restrict to $\sympl(\R^{2n},\Omega_0) \cap O(2n) = U(n)$, we can simply use the complex determinant $\text{det}_{\con{C}}$ of the matrix, so we just need to extent it in a way to the whole of $\sympl(\R^{2n},\Omega_0)$ to get the desired map.
 
-On the other hand, to each path $\gamma : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ we can associate the path $f \circ \gamma : [0,1] \rightarrow \con{S}^1$ which, under the appropriate conditions, may be regarded as a closed path, so we get $\tilde{f} \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$. Therefore, we can compute the degree of this path, which in turn will allow us to graduate the original path.
+On the other hand, to each path $\gamma : [0,1] \rightarrow \sympl(\R^{2n},\Omega_0)$ we can associate the path $f \circ \gamma : [0,1] \rightarrow \con{S}^1$ which, under the appropriate conditions, may be regarded as a closed path, so we get $\tilde{f} \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$. Therefore, we can compute the degree of this path, which in turn will allow us to graduate the original path.
 
 \subsection{The rotation map}
 
 In this section we will describe the map representing the "rotation" part of the symplectic group as we hinted previously. Rather than constructing the map (which is a cumbersome process carried on in \cite{gutt2012conley}, where the uniqueness of such a map is also proved), we will present the properties that this map satisfies. Using them, we will then construct it in the particular case of $\R^2$ as an example.
 
 \begin{theo}
-There exists a continuous map $\rho : Sp(\R^{2n},\Omega_0) \rightarrow \con{S}^1$ satisfying the following conditions:
+There exists a continuous map $\rho : \sympl(\R^{2n},\Omega_0) \rightarrow \con{S}^1$ satisfying the following conditions:
 \begin{enumerate}
-	\item {\bf Naturality:} If $A,T \in Sp(\R^{2n},\Omega_0)$, then
+	\item {\bf Naturality:} If $A,T \in \sympl(\R^{2n},\Omega_0)$, then
 	\[\rho(TAT^{-1}) = \rho(A) .\]
-	\item {\bf Product property:} If $A \in Sp(\R^{2n},\Omega_1)$ and $B \in Sp(\R^{2m},\Omega_2)$ (for some $\Omega_1, \Omega_2$ defining symplectic structures in $\R^{2n}, \R^{2m}$ respectively), then
+	\item {\bf Product property:} If $A \in \sympl(\R^{2n},\Omega_1)$ and $B \in \sympl(\R^{2m},\Omega_2)$ (for some $\Omega_1, \Omega_2$ defining symplectic structures in $\R^{2n}, \R^{2m}$ respectively), then
 	\[\rho\left(\begin{pmatrix}A & 0 \\ 0 & B\end{pmatrix}\right) = \rho(A) \rho(B) .\]
-	\item {\bf Determinant property:} If $A \in U(n) = Sp(\R^ {2n},\Omega_0) \cap O(2n)$, then
+	\item {\bf Determinant property:} If $A \in U(n) = \sympl(\R^ {2n},\Omega_0) \cap O(2n)$, then
 	\[\rho(A) = \text{det}_{\con{C}}(X+iY),\]
 	where $X,Y$ are the matrices such that
 	\[A = \begin{pmatrix} X & -Y \\ Y & X \end{pmatrix}.\]
 	In particular, this implies that $\rho$ induces an isomorphism on the first homotopy groups:
-	\[\begin{array}{rccc} \rho_{\ast} : & \pi_1(Sp(\R^{2n},\Omega_0)) & \longrightarrow & \pi_1(\con{S}^1) \end{array} .\]
+	\[\begin{array}{rccc} \rho_{\ast} : & \pi_1(\sympl(\R^{2n},\Omega_0)) & \longrightarrow & \pi_1(\con{S}^1) \end{array} .\]
 	\item {\bf Normalization:} If $A$ has no eigenvalues in the unit circle, then $\rho(A) = \pm 1$.
-	\item {\bf Conjugation:} For all $A \in Sp(\R^{2n},\Omega_0)$, we have that
+	\item {\bf Conjugation:} For all $A \in \sympl(\R^{2n},\Omega_0)$, we have that
 	\[\rho(A^T) = \rho(A^{-1}) = \overline{\rho(A)} .\]
 \end{enumerate}
 
@@ -89,7 +89,7 @@ We will not prove this theorem in general, but we will show the proof for the ca
 
 {\bf Construction of the rotation map in dimension 2:}
 
-Consider $A \in Sp(\R^2,\Omega_0)$. By the properties of the rotation map, we see that the eigenvalues play a crucial role to understand its behaviour, and, in dimension 2, the eigenvalues of $A$ may simply be understood via the characteristic polynomial of $A$, that has the form
+Consider $A \in \sympl(\R^2,\Omega_0)$. By the properties of the rotation map, we see that the eigenvalues play a crucial role to understand its behaviour, and, in dimension 2, the eigenvalues of $A$ may simply be understood via the characteristic polynomial of $A$, that has the form
 \[p_A(\lambda) = \lambda^2 - \text{tr}(A) \lambda + \text{det}(A) ,\]
 and, as $A$ is symplectic, $\text{det}(A) = 1$. Therefore, the discriminant of $p_A(\lambda)$ is
 \[\Delta = \text{tr}(A)^2 - 4 .\]
@@ -122,7 +122,7 @@ In the general case, one must use the product property and appropriate forms of 
 To end this section we provide a formula for $\rho$ that will be useful in the following results.
 
 \begin{lema} \label{rotationformula}
-Let $A \in Sp(\R^{2n},\Omega_0)$, and let $\lambda_1,...,\lambda_{2n}$ be its eigenvalues, repeated according to their multiplicity. The eigenvalues of first kind of $A$ are the union of the following subsets of $\{\lambda_1,...,\lambda_{2n}\}$:
+Let $A \in \sympl(\R^{2n},\Omega_0)$, and let $\lambda_1,...,\lambda_{2n}$ be its eigenvalues, repeated according to their multiplicity. The eigenvalues of first kind of $A$ are the union of the following subsets of $\{\lambda_1,...,\lambda_{2n}\}$:
 \begin{enumerate}
 	\item Eigenvalues with $|\lambda_i| < 1$.
 	\item We know that the number of eigenvalues equal to $1$ is even, and so is the number of eigenvalues equal to $-1$. Thus, we take half of each set of eigenvalues as of first kind.

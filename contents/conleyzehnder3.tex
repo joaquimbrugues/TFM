@@ -1,47 +1,47 @@
 \section{The Conley-Zehnder index}
 
 As we said in the introduction, the ultimate goal of this chapter is defining a map
-\[\begin{array}{rccc} \mu : & SP(n) & \longrightarrow & \con{Z} \end{array}\]
+\[\begin{array}{rccc} \mu : & \text{SP}(n) & \longrightarrow & \con{Z} \end{array}\]
 that allows us to classify the paths of symplectic matrices according to their rotation map.
 
-\begin{deff} The positive (resp. negative) components of $Sp(\R^{2n},\Omega_0)$ are
-\[Sp(2n)^{\pm} = \{A \in Sp(\R^{2n},\Omega_0) \ | \ \text{det}(A - \text{Id}) \gtrless 0 \} .\]
+\begin{deff} The positive (resp. negative) components of $\sympl(\R^{2n},\Omega_0)$ are
+\[\sympl(2n)^{\pm} = \{A \in \sympl(\R^{2n},\Omega_0) \ | \ \text{det}(A - \text{Id}) \gtrless 0 \} .\]
 \end{deff}
 
-It can be seen that both $Sp(2n)^+$ and $Sp(2n)^-$ are path-connected. Therefore, it is possible for us to choose a "representative" element in each connected component,
+It can be seen that both $\sympl(2n)^+$ and $\sympl(2n)^-$ are path-connected. Therefore, it is possible for us to choose a "representative" element in each connected component,
 \[W^+ = - \Id, \ \ \ W^- = \left( \begin{array}{c|c} \begin{array}{cc} 2 & 0 \\ 0 & \frac12 \end{array} & 0 \\ \hline 0 & - \Id \end{array} \right) .\]
 We can easily compute $\rho$ in this matrices, as they are diagonal:
 \[\rho(W^+) = \rho(- \Id) = \rho\left( \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix} \right) = (-1)^n ,\]
 \[\rho(W^-) = \rho\left( \begin{pmatrix} 2 & 0 \\ 0 & \frac12 \end{pmatrix} \right) \rho\left(\begin{pmatrix}-1&0\\0&-1\end{pmatrix}\right)^{n-1} = (-1)^{n-1} .\]
 
-The idea is to associate to each $\psi \in SP(n)$ an extended path $\widetilde{\psi} : [0,2] \rightarrow Sp(\R^{2n},\Omega_0)$ such that $\left. \widetilde{\psi} \right|_{[1,2]} \subset Sp(2n)^{\pm}$ and $\widetilde{\psi}(2) = W^{\pm}$. The main issue with this is that we can extend the same path $\psi$ in a lot of ways (even though the endpoint must always be $W^+$ or $W^-$ if $\psi(1) \in Sp(2n)^+$ or $\psi(1) \in Sp(2n)^-$, respectively). However, it can be proved that all the extensions of the same path are homotopically equivalent. To show this, we will prove the following theorem:
+The idea is to associate to each $\psi \in \text{SP}(n)$ an extended path $\widetilde{\psi} : [0,2] \rightarrow \sympl(\R^{2n},\Omega_0)$ such that $\left. \widetilde{\psi} \right|_{[1,2]} \subset \sympl(2n)^{\pm}$ and $\widetilde{\psi}(2) = W^{\pm}$. The main issue with this is that we can extend the same path $\psi$ in a lot of ways (even though the endpoint must always be $W^+$ or $W^-$ if $\psi(1) \in \sympl(2n)^+$ or $\psi(1) \in \sympl(2n)^-$, respectively). However, it can be proved that all the extensions of the same path are homotopically equivalent. To show this, we will prove the following theorem:
 
 \begin{theo} \label{sppmcontractible}
-Any continuous loop in $Sp(2n)^+$ or $Sp(2n)^-$ is contractible. 
+Any continuous loop in $\sympl(2n)^+$ or $\sympl(2n)^-$ is contractible. 
 \end{theo}
 
 \begin{proof}
-A loop $\gamma : \con{S}^1 \rightarrow Sp(\R^{2n},\Omega_0)$ is contractible if, and only if, its image by $\rho$ is contractible. It is because $\rho$ induces an isomorphism $\rho_{\ast}$ between the fist homotopy groups. Therefore, it suffices to see that $\rho \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$ is contractible.
+A loop $\gamma : \con{S}^1 \rightarrow \sympl(\R^{2n},\Omega_0)$ is contractible if, and only if, its image by $\rho$ is contractible. It is because $\rho$ induces an isomorphism $\rho_{\ast}$ between the fist homotopy groups. Therefore, it suffices to see that $\rho \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$ is contractible.
 
 In the last section we introduced the formula \ref{rotationformula} for $\rho$. Let us consider the map that sends each symplectic matrix $A$ to the set of its eigenvalues of first kind:
-\[\begin{array}{ccc} Sp(2n)^{\pm} & \longrightarrow & \Lambda_n = \quocient{\C^n}{\text{permutations of the elements}} \\ A & \longmapsto & \{\lambda_1,...,\lambda_n\} \end{array} ,\]
+\[\begin{array}{ccc} \sympl(2n)^{\pm} & \longrightarrow & \Lambda_n = \quocient{\C^n}{\text{permutations of the elements}} \\ A & \longmapsto & \{\lambda_1,...,\lambda_n\} \end{array} ,\]
 which is a continuous map. In other words, we can define the continuous maps $\Lambda_1,...,\Lambda_n : [0,1] \rightarrow \C$ such that $\Lambda_i(t)$ is the $i$-th eigenvalue of first kind of $\gamma(t)$. We want to define continuous maps $\alpha_i : [0,1] \rightarrow [0,2\pi]$ such that
 \[e^{i \alpha_i(t)} = \frac{\Lambda_i(t)}{|\Lambda_i(t)|} ,\]
 which is well defined whenever $\frac{\Lambda_i(t)}{|\Lambda_i(t)|} \neq 1$. In the case that $\frac{\Lambda_i(t)}{|\Lambda_i(t)|} = 1$, this means, that $\Lambda_i(t)$ is real and positive, we need to provide a consistent definition of $\alpha_i(t)$.
 
-It can be seen that, if $\gamma(t) \in Sp(2n)^+$, then the number of $\Lambda_i(t)$ that are real and positive is even, and, conversely, it is odd when $\gamma(t) \in Sp(2n)^-$. Therefore, if the number is $2k$ (resp. $2k+1$), we can take $k$ (resp. $k+1$) of the $\alpha_i(t)$ to be $\alpha_i(t) = 2\pi$, and the remaining $k$ to be $\alpha_i(t) = 0$. It can be proved that this results in a set of continuous maps $\alpha_1,...,\alpha_n$.
+It can be seen that, if $\gamma(t) \in \sympl(2n)^+$, then the number of $\Lambda_i(t)$ that are real and positive is even, and, conversely, it is odd when $\gamma(t) \in \sympl(2n)^-$. Therefore, if the number is $2k$ (resp. $2k+1$), we can take $k$ (resp. $k+1$) of the $\alpha_i(t)$ to be $\alpha_i(t) = 2\pi$, and the remaining $k$ to be $\alpha_i(t) = 0$. It can be proved that this results in a set of continuous maps $\alpha_1,...,\alpha_n$.
 
-Thus, if $\gamma : \con{S}^1 \rightarrow Sp(2n)^{\pm}$, its image by each of the $\alpha_i$ is a loop $\alpha_i \circ \gamma : \con{S}^1 \rightarrow [0,2\pi]$ and therefore contractible. This means that
+Thus, if $\gamma : \con{S}^1 \rightarrow \sympl(2n)^{\pm}$, its image by each of the $\alpha_i$ is a loop $\alpha_i \circ \gamma : \con{S}^1 \rightarrow [0,2\pi]$ and therefore contractible. This means that
 \[\rho(\gamma(t)) = e^{i \sum_{j=1}^n \alpha_j(t)}\]
 is a contractible map, and, by our first observation in this proof, $\gamma$ is contractible.
 \end{proof}
 
-Therefore, if $\widetilde{\psi_1}$ and $\widetilde{\psi_2}$ are extensions of the same path $\psi \in SP(n)$, then $\widetilde{\psi_1} \simeq \widetilde{\psi_2}$.
+Therefore, if $\widetilde{\psi_1}$ and $\widetilde{\psi_2}$ are extensions of the same path $\psi \in \text{SP}(n)$, then $\widetilde{\psi_1} \simeq \widetilde{\psi_2}$.
 
 Now we are ready to define the Conley-Zehnder index and to prove its most interesting properties.
 
 \begin{deff}
-Let $\psi \in SP(n)$. Its {\bf Conley-Zehnder index} is
+Let $\psi \in \text{SP}(n)$. Its {\bf Conley-Zehnder index} is
 \[\mu_{CZ}(\psi) = \text{deg}(\rho^2 \circ \widetilde{\psi}) ,\]
 where $\rho^2$ means the product of $\rho$ with itself. The reason for this square is the need of having a map from $\con{S}^1$ to itself. We know that $\rho \circ \widetilde{\psi} : [0,2] \rightarrow \con{S}^1$ and that $(\rho \circ \widetilde{\psi})(2) = \pm 1$. As we need to have a periodic map to compute its degree, we square the result.
 \end{deff}
@@ -52,34 +52,34 @@ The map is well defined, this means, it does not depend on the extension $\widet
 
 \begin{prop} \label{conleyzehnderproperties} The Conley-Zehnder index has the following properties:
 \begin{enumerate}
-	\item {\bf Naturality:} For any path $\psi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$,
+	\item {\bf Naturality:} For any path $\psi : [0,1] \rightarrow \sympl(\R^{2n},\Omega_0)$,
 	\[\mu_{CZ}(\phi \psi \phi^{-1}) = \mu_{CZ}(\psi) .\]
 	\item {\bf Homotopy:} If $\psi_0 \simeq \psi_1$, then $\mu_{CZ}(\psi_0) = \mu_{CZ}(\psi_1)$.
 	\item {\bf Zero property:} If $\psi(s)$ has no eigenvalue on the circle for $s > 0$, then
 	\[\mu_{CZ}(\psi) = 0 .\]
 	\item {\bf Product property:} If
-	\[\psi_1 \oplus \psi_2 = \begin{pmatrix} \psi_1 & 0 \\ 0 & \psi_2 \end{pmatrix} \in Sp(\R^{2n},\Omega_0),\]
+	\[\psi_1 \oplus \psi_2 = \begin{pmatrix} \psi_1 & 0 \\ 0 & \psi_2 \end{pmatrix} \in \sympl(\R^{2n},\Omega_0),\]
 	then
 	\[\mu_{CZ}(\psi_1 \oplus \psi_2) = \mu_{CZ}(\psi_1) + \mu_{CZ}(\psi_2) .\]
-	\item {\bf Loop:} If $\phi : [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ with $\phi(0) = \phi(1) = \Id$, then
+	\item {\bf Loop:} If $\phi : [0,1] \rightarrow \sympl(\R^{2n},\Omega_0)$ with $\phi(0) = \phi(1) = \Id$, then
 	\[\mu_{CZ}(\phi \psi) = \mu_{CZ}(\psi) + 2 \text{deg}(\rho \circ \phi) .\]
 	\item {\bf Signature:} If $S$ is a symmetric non-degenerate $2n \times 2n$ matrix with all eigenvalues satisfying $|\lambda_i| < 2\pi$ and $\psi(t) = \exp(J_0St)$, then
 	\[\mu_{CZ}(\psi) = \frac12 \text{Sign}(S),\]
 	where $\text{Sign}$ denotes the signature of $S$.
-	\item {\bf Determinant:} If $\psi \in SP(n)$,
+	\item {\bf Determinant:} If $\psi \in \text{SP}(n)$,
 	\[(-1)^{n-\mu_{CZ}(\psi)} = \text{sign} \left( \text{det}(\Id - \psi(1)) \right) .\]
 	\item {\bf Inverse:}
 	\[\mu_{CZ}(\psi^{-1}) = \mu_{CZ}(\psi^T) = - \mu_{CZ}(\psi) .\]
 \end{enumerate}
 \end{prop}
 
-\begin{proof} {\it (Naturality):} Let $\widetilde{\phi}$ be an extension of $\phi$ to $[0,2]$ such that $\phi(t) \in Sp(\R^{2n},\Omega_0)$ for all $t$ and $\phi(2) = \Id$. Then, $\widetilde{\psi}' = \widetilde{\phi} \widetilde{\psi} \widetilde{\phi}^{-1}$ is a path connecting the identity with $W^{\pm}$, so we can compute
+\begin{proof} {\it (Naturality):} Let $\widetilde{\phi}$ be an extension of $\phi$ to $[0,2]$ such that $\phi(t) \in \sympl(\R^{2n},\Omega_0)$ for all $t$ and $\phi(2) = \Id$. Then, $\widetilde{\psi}' = \widetilde{\phi} \widetilde{\psi} \widetilde{\phi}^{-1}$ is a path connecting the identity with $W^{\pm}$, so we can compute
 \[\text{deg}(\rho^2 \circ \widetilde{\psi}'),\]
 and, by the naturality property of $\rho$, $\rho(\widetilde{\psi}'(t)) = \rho(\widetilde{\psi}(t))$ for all $t$, so
 \[\mu_{CZ}(\phi\psi\phi^{-1}) = \text{deg}(\rho^2 \circ \widetilde{\psi}') = \text{deg}(\rho^2 \circ \widetilde{\psi}) = \mu_{CZ}(\psi) .\]
 \end{proof}
 
-\begin{proof} {\it (Homotopy):} We consider that $\psi_0 \simeq \psi_1$ in $SP(n)$, so there is a map $\psi : [0,1] \times [0,1] \rightarrow Sp(\R^{2n},\Omega_0)$ with $\psi_s(1) \in Sp(2n)^{\pm}$ for all $s \in [0,1]$.
+\begin{proof} {\it (Homotopy):} We consider that $\psi_0 \simeq \psi_1$ in $\text{SP}(n)$, so there is a map $\psi : [0,1] \times [0,1] \rightarrow \sympl(\R^{2n},\Omega_0)$ with $\psi_s(1) \in \sympl(2n)^{\pm}$ for all $s \in [0,1]$.
 Let $\widetilde{\psi_0}$ be an extension of $\psi_0$, and consider the extension $\widetilde{\psi_s}$ of $\psi_s$ defined by
 \[\widetilde{\psi_s}(t) = \left\{ \begin{array}{lc} \psi_s(t) & 0 \leq t \leq 1 \\ \psi_{s(3-2t)}(1) & 1 \leq t \leq \frac32 \\ \widetilde{\psi_0}(2t-2) & \frac32 \leq t \leq 2 \end{array} \right. ,\]
 which is continuous and defines a homotopy between $\widetilde{\psi_0}$ and $\widetilde{\psi_1}$. Therefore,
@@ -94,25 +94,25 @@ which is continuous and defines a homotopy between $\widetilde{\psi_0}$ and $\wi
 \[= \text{deg}((\rho^2 \circ \widetilde{\psi}_1) \cdot (\rho^2 \circ \widetilde{\psi}_1)) = \text{deg}(\rho^2 \circ \psi_1) + \text{deg}(\rho^2 \circ \psi_2) = \mu_{CZ}(\psi_1) + \mu_{CZ}(\psi_2) .\]
 \end{proof}
 
-\begin{lema} \label{looplemma} Consider $\varphi, \psi : [0,T] \rightarrow Sp(\R^{2n},\Omega_0)$ two paths of symplectic matrices with $\varphi(0) = \psi(0) = \Id$. Then, the product path $\psi\varphi$ is homotopic to the path
+\begin{lema} \label{looplemma} Consider $\varphi, \psi : [0,T] \rightarrow \sympl(\R^{2n},\Omega_0)$ two paths of symplectic matrices with $\varphi(0) = \psi(0) = \Id$. Then, the product path $\psi\varphi$ is homotopic to the path
 \[(\psi \diamond \varphi)(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{T}2 \\ \psi\left( 2 \left( t - \frac{T}2 \right) \right) \varphi(T) & t \geq \frac{T}2 \end{array} \right. ,\]
 so $\psi\varphi \simeq \psi \diamond \varphi$.
 \end{lema}
 
-\begin{proof} {\it (Lemma):} Consider the homotopy $\chi : [0,1] \times [0,T] \rightarrow Sp(\R^2,\Omega_0)$ defined by
+\begin{proof} {\it (Lemma):} Consider the homotopy $\chi : [0,1] \times [0,T] \rightarrow \sympl(\R^2,\Omega_0)$ defined by
 \[\chi_s(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{sT}2 \\ \psi\left( \frac2{2-s} \left( t - \frac{sT}2 \right) \right) \varphi\left( sT + \frac{2(1-s)}{2-s} \left( t - \frac{sT}2 \right) \right) & t \geq \frac{sT}2 \end{array} \right. .\]
 It is continuous, because $\chi_s\left( \frac{sT}2 \right) = \varphi(sT) \ \forall s$, and
 \[\chi_0(t) = \psi(t)\varphi(t) ,\]
 \[\chi_1(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{T}2 \\ \psi\left( 2 \left( t - \frac{T}2 \right) \right) \varphi(T) & t \geq \frac{T}2 \end{array} \right. .\]
 \end{proof}
 
-\begin{proof} {\it (Loop):} As $\phi(0) = \phi(1) = \Id$ and $\psi \in SP(n)$, we can apply the lemma, so $\phi\psi \simeq \phi \diamond \psi$. Thus,
+\begin{proof} {\it (Loop):} As $\phi(0) = \phi(1) = \Id$ and $\psi \in \text{SP}(n)$, we can apply the lemma, so $\phi\psi \simeq \phi \diamond \psi$. Thus,
 \[\mu_{CZ}(\phi\psi) = \text{deg}(\rho^2 \circ (\widetilde{\psi} \diamond \phi)) = \text{deg}(\rho^2 \circ \widetilde{\psi}) + \text{deg}(\rho^2 \circ \phi) = \mu_{CZ}(\psi) + 2\text{deg}(\rho \circ \phi) .\]
 \end{proof}
 
-\begin{proof} {\it (Signature):} Since $S$ is a symmetric matrix, there is an orthogonal matrix $P$ of determinant $1$ such that $PSP^T = \text{diag}(a_1,...,a_{2n})$. Our assumptions imply that $a_i \neq 0$ and $|a_i| < 2\pi \ \forall i$, and therefore the eigenvalues of $J_0 S$ all have norm smaller than $2\pi$. This implies that $\exp(J_0S)$ does not admit $1$ as an eigenvalue, so $\exp(tJ_0S) \in SP(n)$.
+\begin{proof} {\it (Signature):} Since $S$ is a symmetric matrix, there is an orthogonal matrix $P$ of determinant $1$ such that $PSP^T = \text{diag}(a_1,...,a_{2n})$. Our assumptions imply that $a_i \neq 0$ and $|a_i| < 2\pi \ \forall i$, and therefore the eigenvalues of $J_0 S$ all have norm smaller than $2\pi$. This implies that $\exp(J_0S)$ does not admit $1$ as an eigenvalue, so $\exp(tJ_0S) \in \text{SP}(n)$.
 
-Consider $P_s$ a path of orthogonal matrices with $P_0=P$ and $P_1=\Id$ with $\|P_sSP_s^T\| < 2\pi$. In this case, $\exp(J_0P_sSP_s^T)$ does not admit the eigenvalue $1$ for any $s$, so $\exp(tJ_0PSP^T) \simeq \exp(tJ_0S)$ in $SP(n)$. Therefore, it is enough to prove the property for the case when $S$ is diagonal.
+Consider $P_s$ a path of orthogonal matrices with $P_0=P$ and $P_1=\Id$ with $\|P_sSP_s^T\| < 2\pi$. In this case, $\exp(J_0P_sSP_s^T)$ does not admit the eigenvalue $1$ for any $s$, so $\exp(tJ_0PSP^T) \simeq \exp(tJ_0S)$ in $\text{SP}(n)$. Therefore, it is enough to prove the property for the case when $S$ is diagonal.
 
 In this case,
 \[J_0S = \begin{pmatrix} 0 & \text{diag}(-a_{n+1},...,-a_{2n}) \\ \text{diag}(a_1,...,a_n) & 0 \end{pmatrix} , \text{ with } |a_i| < 2\pi .\]
@@ -138,7 +138,7 @@ Either way, $\text{det}(\Id - \psi(1)) = 2(1-\cos(a_ia_{n+i})) > 0$, so the exte
 \[(-1)^{n-\mu_{CZ}(\psi)} = \text{sign} ( \text{det}(\Id - \psi(1))) .\]
 \end{proof}
 
-\begin{proof} {\it (Inverse):} Recall that $A \in Sp(\R^{2n},\Omega_0)$ implies that $A^T = \Omega_0 A^{-1} \Omega_0^T = \Omega_0^{-1} A^{-1} \Omega_0$ so, by the naturality property of $\mu_{CZ}$,
+\begin{proof} {\it (Inverse):} Recall that $A \in \sympl(\R^{2n},\Omega_0)$ implies that $A^T = \Omega_0 A^{-1} \Omega_0^T = \Omega_0^{-1} A^{-1} \Omega_0$ so, by the naturality property of $\mu_{CZ}$,
 \[\mu_{CZ}(\psi^T) = \mu_{CZ}(\psi^{-1}) .\]
 Moreover, by the conjugation property of $\rho$ we know that $\rho(A^{-1}) = \overline{\rho(A)} = \rho(A)^{-1}$ for any symplectic matrix. On the other hand, it can be easily checked that $\widetilde{\psi^{-1}} \simeq \widetilde{\psi}^{-1}$. Therefore,
 \[\mu_{CZ}(\psi^{-1}) = \text{deg}(\rho^2 \circ \widetilde{\psi^{-1}}) = \text{deg}(\rho^2 \circ \widetilde{\psi}^{-1}) = \text{deg}((\rho^2 \circ \widetilde{\psi})^{-1}) = - \text{deg}(\rho^2 \circ \widetilde{\psi}) = - \mu_{CZ}(\psi) .\]
@@ -146,11 +146,11 @@ Moreover, by the conjugation property of $\rho$ we know that $\rho(A^{-1}) = \ov
 
 Now that we have seen quite in detail the properties of the Conley-Zehnder index, a natural question that arises is if there are other maps satisfying similar properties. However, the answer is that the Conley-Zehnder index is completely determined by (some of) its properties:
 
-\begin{theo} Let $\mu' : SP(n) \rightarrow \con{Z}$ satisfying the homotopy, loop and signature properties as in \ref{conleyzehnderproperties}. Then, $\mu'(\psi) = \mu_{CZ}(\psi) \ \forall \psi \in SP(n)$.
+\begin{theo} Let $\mu' : \text{SP}(n) \rightarrow \con{Z}$ satisfying the homotopy, loop and signature properties as in \ref{conleyzehnderproperties}. Then, $\mu'(\psi) = \mu_{CZ}(\psi) \ \forall \psi \in \text{SP}(n)$.
 \end{theo}
 
 \begin{proof}
-Take $\psi \in SP(n)$. As we observed earlier, there exists $\widetilde{\psi} \in SP(n)$ with $\widetilde{\psi} \simeq \psi$ and $\widetilde{\psi}(1) = W^{\pm}$. By the homotopy property, $\mu'(\psi) = \mu'(\widetilde{\psi})$.
+Take $\psi \in \text{SP}(n)$. As we observed earlier, there exists $\widetilde{\psi} \in \text{SP}(n)$ with $\widetilde{\psi} \simeq \psi$ and $\widetilde{\psi}(1) = W^{\pm}$. By the homotopy property, $\mu'(\psi) = \mu'(\widetilde{\psi})$.
 
 Let $S^{\pm}$ be such that $W^{\pm} = \exp(\pi J_0S^{\pm})$. In this case, $S^+=\Id$, and
 \[S^- = \begin{pmatrix} 0 & 0 & -\frac{\ln 2}{\pi} & 0 \\ 0 & \Id_{n-1} & 0 & 0 \\ -\frac{\ln 2}{\pi} & 0 & 0 & 0 \\ 0 & 0 & 0 & \Id_{n-1} \end{pmatrix} .\]

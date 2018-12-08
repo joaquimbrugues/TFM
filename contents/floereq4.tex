@@ -1,0 +1,37 @@
+\section{$\mathcal{M}$ is compact} \label{section:floerq_compact}
+
+In this section we will tackle the first question about $\mathcal{M}$, in particular, its topology. To prove the results in this section and the next one, we will rely in two important results. The first is well known: the Ascoli-Arzelà theorem (in its general version):
+
+\begin{theo} \label{ascoli_arzela}
+{\bf Ascoli-Arzelà:} Let $X$ a localy compact metric space, $V$ a finite dimensional vector space, and $F \subset \mathcal{C}(X,V)$. Then, $F$ is relatively compact in $\mathcal{C}_{\text{loc}}(X,V)$ if, and only if, $F$ is equicontinuous and pointwise bounded.
+
+Recall that $F$ is equicontinuous when, $\forall x \in X, \e > 0$ there is a $\delta > 0$ such that, $\forall y \in X$ with $d(x,y) < \delta$ and $\forall f \in F$, $\|f(x)-f(y)\| < \e$. Pointwise boundedness, on the other hand, means that $\forall x \in X \ \exists K$ such that $\|f(x)\| < M \ \forall f \in F$.
+\end{theo}
+
+In our case, we will take $V = \R^m$, where $m$ is such that $M$ can be compactly embedded into $V$. 
+
+The other result that we will use is one about the elliptic regularity of the Floer equation, which can be checked in \cite{audin2014morse}:
+
+\begin{prop} \label{floereq_ellipticreg}
+If $(u_k)_k$ is a sequence of solutions of the Floer equation and $u_k \xrightarrow[k \rightarrow \infty]{} u_0$ in $\mathcal{C}_{\text{loc}}^0(\R \times \con{S}^1,M)$, then $u_0 \in \mathcal{C}^{\infty}(\R \times \con{S}^1,M)$, $u_0$ is also a solution of the Floer equation, and $u_k \xrightarrow[k \rightarrow \infty]{} u_0$ in the strong sense in $\mathcal{C}^{\infty}(\R \times \con{S}^1,M)$.
+\end{prop}
+
+With these results in hand, we are able to prove the following theorem:
+
+\begin{theo} \label{floer_compact}
+The set of solutions of the Floer equation with finite energy, $\mathcal{M}$, is compact.
+\end{theo}
+
+The whole content of the proof of this fact is in the following proposition:
+
+\begin{prop} \label{floer_compact_prop}
+Under the assumption of asphericallity (\ref{assumption1}), there exists some $A > 0$ such that
+\[\|\text{grad}_{(s,t)}u\| \leq A \ \ \ \forall u \in \mathcal{M}, \forall (s,t) \in \R \times \con{S}^1 .\]
+\end{prop}
+
+We will first prove the theorem using the proposition, and then the proposition itself:
+
+\begin{proof} {\it (Theorem):} By the proposition \ref{floer_compact_prop}, $\mathcal{M}$ is equicontinuous (because the gradients are uniformly bounded). On the other hand, as $M$ is compact, $\|u(s,t)\|$ is uniformly bounded for $u \in \mathcal{M}$. Therefore, by \ref{ascoli_arzela}, $\mathcal{M}$ is relatively compact in $\mathcal{C}_{\text{loc}}^0(\R \times \con{S}^1,M)$.
+
+Let $(u_n)_n \subset \mathcal{M}$ a sequence. As we just observed, it must have some subsequence $(u_{n_k})$ such that $u_{n_k} \xrightarrow[k \rightarrow \infty]{} u_0$ for some $u_0 \in \mathcal{C}^0(\R\times\con{S}^1,M)$ in the $\mathcal{C}_{\text{loc}}^0(\R\times\con{S}^1,M)$ sense. However, by \ref{floereq_ellipticreg} we deduce that $u_0 \in \mathcal{M}$ and that $u_{n_k} \xrightarrow[k\rightarrow \infty]{} u_0$ in the strong sense in $\mathcal{C}^{\infty}(\R \times \con{S}^1,M)$.
+\end{proof}

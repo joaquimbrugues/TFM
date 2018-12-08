@@ -94,7 +94,7 @@ which is continuous and defines a homotopy between $\widetilde{\psi_0}$ and $\wi
 \[= \text{deg}((\rho^2 \circ \widetilde{\psi}_1) \cdot (\rho^2 \circ \widetilde{\psi}_1)) = \text{deg}(\rho^2 \circ \psi_1) + \text{deg}(\rho^2 \circ \psi_2) = \mu_{CZ}(\psi_1) + \mu_{CZ}(\psi_2) .\]
 \end{proof}
 
-\begin{lema} Consider $\varphi, \psi : [0,T] \rightarrow Sp(\R^{2n},\Omega_0)$ two paths of symplectic matrices with $\varphi(0) = \psi(0) = \Id$. Then, the product path $\psi\varphi$ is homotopic to the path
+\begin{lema} \label{looplemma} Consider $\varphi, \psi : [0,T] \rightarrow Sp(\R^{2n},\Omega_0)$ two paths of symplectic matrices with $\varphi(0) = \psi(0) = \Id$. Then, the product path $\psi\varphi$ is homotopic to the path
 \[(\psi \diamond \varphi)(t) = \left\{ \begin{array}{lc} \varphi(2t) & t \leq \frac{T}2 \\ \psi\left( 2 \left( t - \frac{T}2 \right) \right) \varphi(T) & t \geq \frac{T}2 \end{array} \right. ,\]
 so $\psi\varphi \simeq \psi \diamond \varphi$.
 \end{lema}
@@ -148,3 +148,22 @@ Now that we have seen quite in detail the properties of the Conley-Zehnder index
 
 \begin{theo} Let $\mu' : SP(n) \rightarrow \con{Z}$ satisfying the homotopy, loop and signature properties as in \ref{conleyzehnderproperties}. Then, $\mu'(\psi) = \mu_{CZ}(\psi) \ \forall \psi \in SP(n)$.
 \end{theo}
+
+\begin{proof}
+Take $\psi \in SP(n)$. As we observed earlier, there exists $\widetilde{\psi} \in SP(n)$ with $\widetilde{\psi} \simeq \psi$ and $\widetilde{\psi}(1) = W^{\pm}$. By the homotopy property, $\mu'(\psi) = \mu'(\widetilde{\psi})$.
+
+Let $S^{\pm}$ be such that $W^{\pm} = \exp(\pi J_0S^{\pm})$. In this case, $S^+=\Id$, and
+\[S^- = \begin{pmatrix} 0 & 0 & -\frac{\ln 2}{\pi} & 0 \\ 0 & \Id_{n-1} & 0 & 0 \\ -\frac{\ln 2}{\pi} & 0 & 0 & 0 \\ 0 & 0 & 0 & \Id_{n-1} \end{pmatrix} .\]
+Consider $\xi(t) = \exp(t\pi J_0S^+)$ (resp with $S^-$ if $\psi(1)=W^-$), and let $\xi^-(t) = \xi(1-t)$. Take $\phi = \widetilde{\psi} \diamond \xi^-$, which is a continuous loop, because $\phi(0) = \phi(1) = W^{\pm}$.
+
+On the other hand, we know that $\widetilde{\psi} \simeq \phi \diamond \xi$. By the lemma \ref{looplemma}, we know also that $\phi \diamond \xi \simeq \phi\xi$. Therefore, $\mu'(\widetilde{\psi}) = \mu'(\phi\xi)$. If we apply now the loop condition, we see that
+\[\mu'(\phi\xi) = 2\text{deg}(\rho \circ \phi) + \mu'(\xi) ,\]
+and applying the signature condition we see that
+\[\mu'(\xi) = \frac12 \text{Sign}(S^{\pm}) .\]
+Therefore, we conclude that, for any map $\mu'$ satisfying the homotopy, loop and signature conditions,
+\[\mu'(\psi) = 2\text{deg}(\rho \circ \phi) + \frac12 \text{Sign}(S^{\pm}).\]
+However, we would get to this very same expression if $\mu'=\mu_{CZ}$. Therefore,
+\[\mu'(\psi) = \mu_{CZ}(\psi) .\]
+\end{proof}
+
+This is why we can say that the homotopy, loop and signature conditions determine completely the Conley-Zehnder index.

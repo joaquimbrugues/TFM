@@ -60,4 +60,22 @@ because of the remark \ref{remark:floer_limits}, so the energy must also be boun
 \end{proof}
 
 \begin{proof} {\it (Proposition \ref{prop:floer_action_bound}):} Let us prove the case for $s \rightarrow +\infty$, as the case for $-\infty$ is analogous.
+
+As we just showed, the function $s \mapsto \mathcal{A}_H(u_s)$ is decreasing. As it is also continuous, it is enough to prove that there exists some sequence $(s_k)_k$ with $s_k \xrightarrow[k \rightarrow \infty]{} +\infty$ and some $y \in \crit(\mathcal{A}_H)$ with
+\[\lim_{k \rightarrow \infty} \mathcal{A}_H(u_{s_k}) = \mathcal{A}_H(y) .\]
+We will prove this in 3 steps:
+\begin{enumerate}
+	\item There exists a $(s_k)_k$ tending to infinity such that $u_{s_k} \xrightarrow[k\rightarrow \infty]{} y$ in the $\mathcal{C}^0(\con{S}^1,M)$ topology for some $y \in \mathcal{C}^0(\con{S}^1,M)$.
+	\item $y$ is of class $\mathcal{C}^{\infty}$, and $y \in \crit(\mathcal{A}_H)$.
+	\item $\mathcal{A}_H(u_{s_k}) \xrightarrow[k \rightarrow \infty]{} \mathcal{A}_H(y)$.
+\end{enumerate}
+
+{\bf Step 1:} Let $u \in \mathcal{M}$. Its energy is finite, so
+\[\int_{-\infty}^{+\infty} \left( \int_0^1 \left| \frac{\partial u}{\partial t} - X_t(u) \right|^2 dt \right) ds < \infty .\]
+Therefore, there exists some sequence $(s_k)_k$ with $s_k \xrightarrow[k\rightarrow \infty]{} +\infty$ such that
+\[\lim_{k\rightarrow \infty} \left\| \frac{\partial u}{\partial t}(s_k,\cdot) - X_t(u(s_k,\cdot)) \right\|_{L^2}^2 = 0 .\]
+Let $u_k = u(s_k,\cdot)$. Taking an embedding of $M$ into $\R^m$, we can consider that
+\[\lim_{k\rightarrow \infty} \left\| \dot{u}_k - X_t(u_k) \right\|_{L^2(\con{S}^1,\R^m)}^2 = 0 .\]
+$M$ is compact, so $X_t$ is bounded, so there is some $R > 0$ such that $\displaystyle\sup_{p \in M, t \in \con{S}^1} \|X_t(p)\| < R$. Therefore, there is some $B > 0$ with $\|\dot{u}_k\|_{L^2} \leq B$ for all $k$. This implies that $(u_k)_k$ is equicontinuous:
+\[\|u_k(t_1) - u_k(t_0)\|\]
 \end{proof}

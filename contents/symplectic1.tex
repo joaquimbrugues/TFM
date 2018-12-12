@@ -105,16 +105,16 @@ Of course, the first question one may ask is whether these calibrated almost-com
 \end{prop}
 
 Recall that, in a riemannian manifold $(M,g)$, any function $H \in \mathcal{C}^{\infty}(M)$ has a vector field associated to it, called its gradient, defined by
-$$g(\text{grad}H, X) = \dd H \cdot X \ \ \ \ \forall X \in \mathfrak{X}(M) .$$
+$$g(\grad H, X) = \dd H \cdot X \ \ \ \ \forall X \in \mathfrak{X}(M) .$$
 In the case of a symplectic manifold, the mapping $H \mapsto X_H$ follows the same idea of associating a vector field to a function. A relationship between these two correspondences can be obtained, using the calibrated almost complex structure:
 
 \begin{prop} \label{prop:symplectic_gradient}
 For any smooth function $H$ defined on $M$, we have that
-$$X_H = J \text{grad}H .$$
+$$X_H = J \grad H .$$
 \end{prop}
 
 \begin{proof}
 We have that
-$$\omega(X_H,Y) = - \dd H \cdot Y = - g(\text{grad}H,Y) = - \omega(\text{grad}H,JY) = \omega(J \text{grad}H, Y) ,$$
-where we have used the properties of a calibrated almost complex structure. As $\omega$ is non-degenerate and the equality holds for all $Y \in \mathfrak{X}(M)$, we deduce that $X_H = J \text{grad}H$, as we wanted to prove.
+$$\omega(X_H,Y) = - \dd H \cdot Y = - g(\grad H,Y) = - \omega(\grad H,JY) = \omega(J \grad H, Y) ,$$
+where we have used the properties of a calibrated almost complex structure. As $\omega$ is non-degenerate and the equality holds for all $Y \in \mathfrak{X}(M)$, we deduce that $X_H = J \grad H$, as we wanted to prove.
 \end{proof}

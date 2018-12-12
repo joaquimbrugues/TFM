@@ -11,52 +11,52 @@ It is an inner product because $g_x(t)$ is at each $t \in \con{S}^1$, so the bil
 Take into account that the tangent spaces are not complete, so this inner product does not induce a structure of Hilbert space on each fiber $T_x\mathcal{L}M$. Nonetheless, we will define the gradient of a functional.
 
 \begin{deff}
-Let $F : \mathcal{L}M \rightarrow \R$ a functional. The {\bf gradient} of $F$, if it exists, is the vector field $\text{grad}F \in \mathfrak{X}(\mathcal{L}M)$ such that, for every loop $x \in \mathcal{L}M$ and every $Y \in \mathfrak{X}(\mathcal{L}M)$,
-$$\langle \text{grad}F, Y \rangle_x = \dd F(x) \cdot Y ,$$
+Let $F : \mathcal{L}M \rightarrow \R$ a functional. The {\bf gradient} of $F$, if it exists, is the vector field $\grad F \in \mathfrak{X}(\mathcal{L}M)$ such that, for every loop $x \in \mathcal{L}M$ and every $Y \in \mathfrak{X}(\mathcal{L}M)$,
+$$\langle \grad F, Y \rangle_x = \dd F(x) \cdot Y ,$$
 so
-$$\int_0^1 g_{x(t)}(\text{grad}_xF(t),Y(t)) = \dd F(x) \cdot Y .$$
+$$\int_0^1 g_{x(t)}(\grad_xF(t),Y(t)) = \dd F(x) \cdot Y .$$
 \end{deff}
 
 In the case of the action functional, its gradient (if it exists) satisfies that
-$$\dd \mathcal{A}_H(x) \cdot Y = \langle \text{grad}\mathcal{A}_H, Y \rangle_x = \int_0^1 g_{x(t)}(\text{grad}_x\mathcal{A}_H(t),Y(t)) \dd t ,$$
+$$\dd \mathcal{A}_H(x) \cdot Y = \langle \grad\mathcal{A}_H, Y \rangle_x = \int_0^1 g_{x(t)}(\grad_x\mathcal{A}_H(t),Y(t)) \dd t ,$$
 and
 $$\dd \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t)-X_H,Y(t)) \dd t ,$$
 and, as $g(v,w) = \omega(v,Jw)$, we deduce that
-$$\text{grad}_x\mathcal{A}_H = J\dot{x} - J X_H .$$
+$$\grad_x\mathcal{A}_H = J\dot{x} - J X_H .$$
 
-Let $\mathcal{X}_H$ denote the negative gradient, so $\mathcal{X}_H = - \text{grad}\mathcal{A}_H = J X_H - J \dot{x}$. Recall that, by proposition \ref{prop:symplectic_gradient}, $X_H = J \text{grad} H$. Therefore, we get that
-$$\mathcal{X}_H(x)(t) = - \text{grad}H(x(t)) - J_{x(t)} \dot{x}(t) .$$
+Let $\mathcal{X}_H$ denote the negative gradient, so $\mathcal{X}_H = - \grad\mathcal{A}_H = J X_H - J \dot{x}$. Recall that, by proposition \ref{prop:symplectic_gradient}, $X_H = J \grad H$. Therefore, we get that
+$$\mathcal{X}_H(x)(t) = - \grad H(x(t)) - J_{x(t)} \dot{x}(t) .$$
 
 Let us consider $u : (-\e,\e) \rightarrow \mathcal{L}M$ an integral curve of this vector field. In other words, $u : (-\e,\e) \times \con{S}^1 \rightarrow M$ is a smooth map with
 $$\frac{\partial u}{\partial s} (s,t) = \mathcal{X}_H(u(s,\cdot)) (t) .$$
 From this, we are in position to define the {\bf Floer equation}:
 
 \begin{equation} \label{equation:floer_equation}
-\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} + \text{grad}H(u) = 0 .
+\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} + \grad H(u) = 0 .
 \end{equation}
 
 If we write all the variables we see that it is a non-linear partial differential equation:
-$$\frac{\partial u}{\partial s}(s,t) + J_{u(s,t)} \frac{\partial u}{\partial t}(s,t) + \text{grad}H(u(s,t)) = 0 .$$
+$$\frac{\partial u}{\partial s}(s,t) + J_{u(s,t)} \frac{\partial u}{\partial t}(s,t) + \grad H(u(s,t)) = 0 .$$
 
 This equation will be our main focus of study, since its solutions (if there are any) are the flow lines of the negative gradient of the action functional, in the same way that we studied the trajectories of the negative gradient flow in the Morse case.
 
 Let us begin with some remarks on the equation. In particular, its "degenerate" cases:
 
 \begin{rmrk}
-If $H$ is a constant function (so $\text{grad}H = 0$), then the equations are the Cauchy-Riemann equations (for almost complex structures):
+If $H$ is a constant function (so $\grad H = 0$), then the equations are the Cauchy-Riemann equations (for almost complex structures):
 $$\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} = 0$$
 \end{rmrk}
 
 \begin{rmrk}
 The only stationary solutions (such that $\partial_s u = 0$) of the equation are the 1-periodic orbits of $X_H$:
-$$0 = J \frac{\partial u}{\partial t} + \text{grad}H \Rightarrow \frac{\partial u}{\partial t} = X_H ,$$
+$$0 = J \frac{\partial u}{\partial t} + \grad H \Rightarrow \frac{\partial u}{\partial t} = X_H ,$$
 
 where we used proposition \ref{prop:symplectic_gradient} again.
 \end{rmrk}
 
 \begin{rmrk}
 If we assume that a solution does not depend on $t$ (this means, $u(s,t) = u(s)$, so all the points are degenerate loops, this means, points in $M$), then we find ourselves in the case of Morse theory of critical points again, because Floer equation reads
-$$\frac{\partial u}{\partial s} = - \text{grad}H .$$
+$$\frac{\partial u}{\partial s} = - \grad H .$$
 \end{rmrk}
 
 Recall that the negative gradient flow lines in Morse theory are defined in order to connect critical points. However, in the case of the Floer equation, this may not be the case. This means, if $u$ is a solution to the equation, it is not necessarily true that $\displaystyle\lim_{s \rightarrow -\infty} u(s,\cdot)$ or $\displaystyle\lim_{s \rightarrow \infty} u(s,\cdot)$ exist or are critical points of $\mathcal{A}_H$.
@@ -72,7 +72,7 @@ $$E(u) = - \int_{\R} u^{\ast} \dd \mathcal{A}_H = - \int_{\R} \frac{\dd}{\dd s} 
 \end{deff}
 
 If we expand the last term, we get that
-$$E(u) = - \int_{\R} \dd \mathcal{A}_H(u(s)) \cdot \frac{\partial u}{\partial s} \dd s = - \int_{\R} g \left(\text{grad}\mathcal{A}_H(u(s)),\frac{\partial u}{\partial s} \right) \dd s = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 \dd t \dd s .$$
+$$E(u) = - \int_{\R} \dd \mathcal{A}_H(u(s)) \cdot \frac{\partial u}{\partial s} \dd s = - \int_{\R} g \left(\grad\mathcal{A}_H(u(s)),\frac{\partial u}{\partial s} \right) \dd s = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 \dd t \dd s .$$
 Therefore, the space we are interested in is the one of solutions with finite energy:
 
 \begin{deff} \label{definition:finite_energy_space}

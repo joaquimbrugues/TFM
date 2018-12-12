@@ -13,9 +13,9 @@ Consider $a, b \in \R$ such that $f^{-1}([a,b]) \subset M$ is compact and does n
 \begin{proof}
 Let $W \subset M$ the (open) set of non-critical points of $f$, and consider $g$ a riemannian metric on $M$. We are going to use $g$ to construct a vector field that yields an appropriate flow, which will serve to construct our desired diffeomorphism.
 
-Take $X = \frac1{\|\text{grad}f\|^2}\text{grad}f \in \mathfrak{X}(W)$, and let $\gamma : I \rightarrow M$ be a maximal integral curve of $X$. As a consequence of the definition, we have that
+Take $X = \frac1{\|\grad f\|^2}\grad f \in \mathfrak{X}(W)$, and let $\gamma : I \rightarrow M$ be a maximal integral curve of $X$. As a consequence of the definition, we have that
 $$\frac{\dd}{\dd t} f(\gamma(t)) = \dd f(\gamma(t)) \cdot \gamma'(t) = \dd f(\gamma(t)) \cdot X(\gamma(t)) =$$
-$$g\left(\text{grad}f(\gamma(t)),X(\gamma(t))\right) = \frac1{\|\text{grad} f(\gamma(t))\|^2} g(\text{grad} f(\gamma(t)),\text{grad} f(\gamma(t))) = 1 .$$
+$$g\left(\grad f(\gamma(t)),X(\gamma(t))\right) = \frac1{\|\grad f(\gamma(t))\|^2} g(\grad f(\gamma(t)),\grad f(\gamma(t))) = 1 .$$
 Therefore, if we assume $0 \in I$, we have that $f(\gamma(t)) = f(\gamma(0)) + t$.
 
 Let $K = f^{-1}([a,b]) \subset W$, which is compact by hypothesis. Take the initial condition $\gamma(0) \in f^{-1}(a)$. There are two cases in which we can find ourselves: either $\gamma(t) \in K \ \forall t \in I, t > 0$, or the solution goes out of $K$ after some time:

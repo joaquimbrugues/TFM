@@ -1,0 +1,63 @@
+\section{Limit endpoints of elements of $\mathcal{M}$}
+
+We devote this section to prove what we already hinted in the remark \ref{remark:floer_limits}: the elements of $\mathcal{M}$ connect the critical points of the action functional. The precise statement of the theorem is the following:
+
+\begin{theo} \label{theo:floer_endpoints}
+If all the trajectories of $X_t$ are non-degenerate, and under the assumption of asphericallity, then for all $u \in \mathcal{M}$ there are $x, y \in \mathcal{L}M$ critical points of $\mathcal{A}_H$ such that
+\[\lim_{s\rightarrow - \infty} u(s,\cdot) = x \ , \ \ \ \lim_{s\rightarrow +\infty} u(s,\cdot) = y\]
+in the $\mathcal{C}^{\infty}(\con{S}^1,M)$ sense, and
+\[\lim_{s\rightarrow \pm\infty} \frac{\partial u}{\partial s} (s,t) = 0\]
+uniformly in $t$.
+\end{theo}
+
+If we prove this theorem, we will have constructed the analogous as the pseudogradient adapted to a function in a manifold $M$ in Morse theory: a flow that connects critical points in a meaningful way. In the Morse case, this flow appears integrating the pseudogradient flow, but in the Floer case we needed to be a little more subtle and avoid the proper definition of the vector field, defining instead the equation that the flow must satisfy.
+
+First of all, we need a basic lemma on what the nondegeneracy of $X_t$ implies for the critical points of the action functional:
+
+\begin{lema} \label{lema:floer_finite}
+Under the assumption of nondegeneracy, the number of critical points of $\mathcal{A}_H$ (or the number of periodic orbits of $X_t$) is finite.
+\end{lema}
+
+\begin{proof}
+Let us consider the following submanifolds of $M\times M$:
+\begin{itemize}
+	\item The diagonal $\Delta = \{(x,x) \ | \ x \in M\}$.
+	\item The graph of the flow $\varphi_{X_t}^t$ of $X_t$ at time $1$: $F = \left\{\left(x,\varphi_{X_t}^1(x)\right) \ | \ x \in M\right\}$.
+\end{itemize}
+The fact that the periodic orbits of $X_t$ are nondegenerate is equivalent to $\Delta \pitchfork F$. Moreover, $\dim(\Delta) = \dim(F) = 2n$ and $\dim(M\times M) = 4n$, so $\dim(\Delta \cap F) = 0$, so it is a closed submanifold of dimension $0$ of a compact manifold, so it is finite.
+\end{proof}
+
+In order to prove the theorem, we need to begin by proving a certain bound in the energy and the action functional, depending on the critical points of $\mathcal{A}_H$. Let us denote $u_s = u(s,\cdot) \in \mathcal{L}M$.
+
+\begin{prop} \label{prop:floer_action_bound}
+Let $u \in \mathcal{M}$. There exist $x,y \in \crit(\mathcal{A}_H)$ such that
+\[\lim_{s \rightarrow -\infty} \mathcal{A}_H(u_s) = \mathcal{A}_H(x), \ \ \ \lim_{s \rightarrow +\infty} \mathcal{A}_H(u_s) = \mathcal{A}_H(y) .\]
+\end{prop}
+
+This has some immediate consequences:
+
+\begin{coro}
+If $\mathcal{M}$ is nonempty, then $\crit(\mathcal{A}_H)$ is nonempty.
+\end{coro}
+
+This does not even require a proof, as it is an immediate consequence of the proposition.
+
+\begin{coro} \label{coro:floer_energy_bound}
+There exist $C_1, C_2 > 0$ such that
+\[|\mathcal{A}_H(u)| < C_1 , E(u) < C_2 \ \ \ \ \forall u \in \mathcal{M} .\]
+\end{coro}
+
+\begin{proof}
+Because of the lemma \ref{lema:floer_finite}, we know that $\crit(\mathcal{A}_H)$ is finite. Therefore, $\mathcal{A}_H(\crit(\mathcal{A}_H))$ is a bounded set in $\R$. Moreover, the function $s \mapsto \mathcal{A}_H(u_s)$ is decreasing, because
+\[\frac{d}{ds} \mathcal{A}_H(u_s) = \dd_{u_s} \mathcal{A}_H \cdot \frac{\partial u}{\partial s} = g\left( \grad_{u_s} \mathcal{A}_H, \frac{\partial u}{\partial s} \right) = - \left\|\frac{\partial u}{\partial s}\right\|^2 \leq 0 ,\]
+(because $\grad_{u_s}\mathcal{A}_H = - \frac{\partial u}{\partial s}$).
+
+Therefore,
+\[\mathcal{A}_H(y) = \lim_{s \rightarrow +\infty} \mathcal{A}_H(u_s) \leq \mathcal{A}_H(u_s) \leq \lim_{s \rightarrow -\infty} \mathcal{A}_H(u_s) = \mathcal{A}_H(x) ,\]
+from which follows the bound for $\mathcal{A}_H$. To deduce that the energy must be bounded in $\mathcal{M}$, it is enough to consider that
+\[E(u) = \mathcal{A}_H(x) - \mathcal{A}_H(y)\]
+because of the remark \ref{remark:floer_limits}, so the energy must also be bounded.
+\end{proof}
+
+\begin{proof} {\it (Proposition \ref{prop:floer_action_bound}):} Let us prove the case for $s \rightarrow +\infty$, as the case for $-\infty$ is analogous.
+\end{proof}

@@ -82,8 +82,7 @@ Now we will use this limit $v_k \rightarrow v$ to construct something forbidden 
 Consider $B_k = B((s_k',t_k'),\e_k')$. We have that
 \[\int_{B(0,\e_k'R_k)} \|\grad v_k\|^2 = \int_{B_k} \|\grad u_k\| dt ds = \int_{B_k} \left( \left\| \frac{\partial u_k}{\partial s} \right\|^2 + \left\| \frac{\partial u_k}{\partial t} - X_t(u_k) + X_t(u_k) \right\|^2 \right)dt ds \leq\]
 \[\leq \int_{B_k} \left( \left\|\frac{\partial u_k}{\partial s}\right\|^2 + \left\|\frac{\partial u_k}{\partial t} - X_t(u_k) \right\|^2 + \|X_t(u_k)\|^2 \right) dt ds .\]
-%TODO: Add reference to the actual result
-Now let us study separately each of the terms. By the result that we will prove in the next section we know that the energy of $u_k$ is bounded as $k \rightarrow \infty$, so
+Now let us study separately each of the terms. By the corollary \ref{coro:floer_energy_bound} (that we will prove in the next section) we know that the energy of $u_k$ is bounded as $k \rightarrow \infty$, so
 \[\int_{B_k} \left( \left\| \frac{\partial u_k}{\partial s} \right\|^2 + \left\| \frac{\partial u_k}{\partial t} - X_t(u_k) \right\|^2 \right) ds dt \leq 2E(u_k) \leq 2C,\]
 for some $C > 0$. On the other hand,
 \[\int_{B_k} \|X_t(u_k)\|^2 \leq |B_k| \sup_{p \in M} \|X_t(p)\|^2 < +\infty ,\]

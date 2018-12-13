@@ -77,5 +77,46 @@ Therefore, there exists some sequence $(s_k)_k$ with $s_k \xrightarrow[k\rightar
 Let $u_k = u(s_k,\cdot)$. Taking an embedding of $M$ into $\R^m$, we can consider that
 \[\lim_{k\rightarrow \infty} \left\| \dot{u}_k - X_t(u_k) \right\|_{L^2(\con{S}^1,\R^m)}^2 = 0 .\]
 $M$ is compact, so $X_t$ is bounded, so there is some $R > 0$ such that $\displaystyle\sup_{p \in M, t \in \con{S}^1} \|X_t(p)\| < R$. Therefore, there is some $B > 0$ with $\|\dot{u}_k\|_{L^2} \leq B$ for all $k$. This implies that $(u_k)_k$ is equicontinuous:
-\[\|u_k(t_1) - u_k(t_0)\|\]
+\[\|u_k(t_1) - u_k(t_0)\| = \left\| \int_{t_0}^{t_1} \dot{u}_k(t)dt \right\| \leq \|\ind_{[t_0,t_1]}\|_{L^2} \|\dot{u}_k\|_{L^2} = \sqrt{t_1-t_0} B ,\]
+(where we applied the Cauchy-Schwarz inequality). Therefore, applying the theorem \ref{ascoli_arzela} (a subsequence of) $u_k$ has a limit $y$ in the $\mathcal{C}^0(\con{S}^1,\R^m)$ topology or, equivalently, in the $\mathcal{C}^0(\con{S}^1,M)$ topology.
+
+{\bf Step 2:} In order to prove that $y \in \mathcal{C}^{\infty}(\con{S}^1,M)$, we can show that
+\[y(t)-y(0) = \int_0^t X_{\tau}(y(\tau)) d\tau .\]
+In order to prove this, we need to use the convergence of $u_k$:
+\[y(t)-y(0)-\int_0^t X_{\tau}(y(\tau)) d\tau =\]
+\[= \lim_{k\rightarrow\infty} \left( u_k(t) - u_k(0) - \int_0^t X_{\tau}(y(\tau)) d\tau \right) = \lim_{k\rightarrow\infty} \left( \int_0^t \dot{u}_k(\tau)d\tau - \int_0^t X_{\tau}(y(\tau)) d\tau \right) =\]
+\[= \lim_{k\rightarrow\infty} \left( \int_0^t \left( \dot{u}_k(\tau) - X_{\tau}(u_k(\tau)) \right) d\tau \right) + \lim_{k\rightarrow\infty} \left( \int_0^t \left( X_{\tau}(u_k(\tau)) - X_{\tau}(y(\tau)) \right) d\tau \right) .\]
+To prove that the first term converges to zero we can apply the Cauchy-Schwarz inequality and the fact that
+\[\left\|\cdot{u}_k - X_t(u_k)\right\|_{L^2} \xrightarrow[k\rightarrow\infty]{} 0.\]
+On the other hand, to see that se second term converges to zero too we just need to use the $\mathcal{C}^0$ convergence of $(u_k)_k$, which yields
+\[\left| \int_0^t \left( X_{\tau}(u_k(\tau)) - X_{\tau}(y(\tau)) \right) d\tau \right| \leq 2\pi \left\| X_t(u_k) - X_t(y) \right\|_{\mathcal{C}^0} \leq 2\pi R \| u_k - y \|_{\mathcal{C}^0} \xrightarrow[k\rightarrow\infty]{} 0 .\]
+
+Therefore,
+\[y(t) = y(0) + \int_0^t X_{\tau}(y(\tau)) d\tau ,\]
+so $y$ is differentiable, and
+\[\dot{y}(t) = X_t(y(t)) .\]
+This allows us to apply a bootstrapping argument, this means, as $y \in \mathcal{C}^0(\con{S}^1,M)$, by this formula it is clear that $y \in \mathcal{C}^1(\con{S}^1,M)$. However, we can apply this argument to show that $y$ is $\mathcal{C}^2$, $\mathcal{C}^3$, and so on, so actually $y \in \mathcal{C}^{\infty}(\con{S}^1,M)$. With the same argument we can prove that $u_k \xrightarrow[k\rightarrow\infty]{} y$ in the $\mathcal{C}^{\infty}$ topology, because all of its derivatives converge uniformly.
+
+{\bf Step 3:} We want to prove that $\mathcal{A}_H(u_k) \xrightarrow[k\rightarrow\infty]{} \mathcal{A}_H(y)$. First of all, as $u_k$ converges uniformly, $(H_t(u_k))_k$ also converges uniformly, so
+\[\int_0^1 H_t(u_k(t))dt \xrightarrow[k\rightarrow\infty]{} \int_0^1 H_t(y(t))dt .\]
+On the other hand, we need to prove that, if $\widetilde{u_k}$ and $\widetilde{y}$ are extensions to the disk of $u_k$ and $y$ respectively, then
+\[\lim_{k\rightarrow\infty} \left( \int_{\con{D}^2} \widetilde{u_k}^{\ast} \omega - \int_{\con{D}^2} \widetilde{y}^{\ast} \omega \right) = 0 .\]
+To compute this limit we need to use the local exactness of $\omega$ together with the asphericallity condition (\ref{assumption1}) and the $\mathcal{C}^1$ convergence of $(u_k)_k$. Consider $U \subset M$ an open retractible neighbourhood of $y(\con{S}^1)$, so that $\left.\omega\right|_U$ is exact, so $\left.\omega\right|_U = d\lambda$ for some $\lambda \in \Omega^2(U)$. For $k$ large enough, as $u_k$ converges uniformly, $u_k(\con{S}^1) \subset U$. This way, we can construct a sphere gluing together three surfaces:
+\begin{enumerate}
+	\item A cylinder $C \subset U$ defining an homotopy between $u_k$ and $y$. We may parametrize it by a smooth map $\varphi : [0,1] \times \con{S}^1 \rightarrow M$ with $\left.\varphi\right|_0 = u_k$ and $\left.\varphi\right|_1 = y$.
+	\item The disk $\widetilde{u_k}$ with boundary $u_k$.
+	\item The disk $\widetilde{y}$ with boundary $y$.
+\end{enumerate}
+If we denote by $S$ the sphere obtained by gluing these surfaces by the boundary, and applying the assumption \ref{assumption1}, we know that
+\[\int_S i^{\ast} \omega = 0 ,\]
+so
+\[\int_{\con{D}^2} \widetilde{u_k}^{\ast} \omega - \int_{\con{D}^2} \widetilde{y}^{\ast} \omega = - \int_0^1 \int_{\con{S}^1} \varphi_s^{\ast}\omega ds .\]
+Applying the Stokes theorem, and knowing that $\omega$ is exact in $U$, we deduce that
+\[\int_0^1 \int_{\con{S}^1} \varphi_s^{\ast}\omega ds = \int_{\con{S}^1} u_k^{\ast} \lambda - \int_{\con{S}^1} y^{\ast} \lambda = \int_{\con{S}^1} \left( \lambda(\dot{u}_k) - \lambda(\dot{y}) \right) dt =\]
+\[= \int_{\con{S}^1} \lambda\left( \dot{u}_k - X_t(u_k) \right) dt + \int_{\con{S}^1} \lambda\left( X_t(u_k) - X_t(y) \right) dt ,\]
+(where we have applied that $\dot{y} = X_t(y)$).
+
+Let $L = \sup_{p \in C} \|\lambda\|$. Then, the first term of the last expression converges to $0$, because $\dot{u}_k - X_t(u_k)$ converges to $0$. On the other hand,
+\[\left| \int_{\con{S}^1}\lambda \left(X_t(u_k) - X_t(y)\right)dt \right| \leq L \|X_t(u_k) - X_t(y)\|_{L^1} \leq L R \|u_k - y\|_{L^1} \xrightarrow[k\rightarrow\infty]{} 0,\]
+where the last convergence is due to the fact that $u_k$ converges to $y$ uniformly.
 \end{proof}

@@ -120,3 +120,44 @@ Let $L = \sup_{p \in C} \|\lambda\|$. Then, the first term of the last expressio
 \[\left| \int_{\con{S}^1}\lambda \left(X_t(u_k) - X_t(y)\right)dt \right| \leq L \|X_t(u_k) - X_t(y)\|_{L^1} \leq L R \|u_k - y\|_{L^1} \xrightarrow[k\rightarrow\infty]{} 0,\]
 where the last convergence is due to the fact that $u_k$ converges to $y$ uniformly.
 \end{proof}
+
+As the results we have used so far were necessary to prove theorem \ref{floer_compact} we have not alluded to the results in the previous section in our proofs. From now on, however, we can (and will) use the compacity theorem in order to prove theorem \ref{theo:floer_endpoints}.
+
+\begin{rmrk} \label{floer_group_action}
+The additive group $(\R,+)$ acts on the right on $\mathcal{M}$, as $(u \cdot \sigma)(s,t) = u(s+\sigma,t)$ for $s,t,\sigma \in \R$.
+\end{rmrk}
+
+\begin{lema} \label{lema:floer_sequence_limit}
+Let $u \in \mathcal{M}$, and $(s_k)_k$ a sequence of real numbers with $s_k \xrightarrow[k \rightarrow \infty]{} +\infty$. Then, there exists a subsequence $(k_l)_l$ and some $y \in \crit(\mathcal{A}_H)$ such that
+\[u \cdot k_l \xrightarrow[l\rightarrow \infty]{} y .\]
+\end{lema}
+
+\begin{proof}
+Let $u_k = u \cdot s_k$, which is a sequence in $\mathcal{M}$. As this set is compact (by theorem \ref{floer_compact}), there is a subsequence (by abuse of notation we will denote it by $u_k$ as the original sequence) and some element $v \in \mathcal{M}$ such that $u_k \rightarrow v$ in the $\mathcal{C}^{\infty}(\R \times \con{S}^1, M)$ topology. Therefore, for $s \in \R$, and $t \in \con{S}^1$,
+\[\lim_{k\rightarrow \infty} u(s+s_k,t) = v(s,t) .\]
+However, by proposition \ref{prop:floer_action_bound} there exists a $y \in \crit(\mathcal{A}_H)$ such that
+\[\mathcal{A}_H(v(s)) = \lim_{k\rightarrow\infty} \mathcal{A}_H(u(s+s_k,t)) = \lim_{s\rightarrow \infty} \mathcal{A}_H(u(s,t)) = \mathcal{A}_H(y) .\]
+This implies that the function $s \mapsto \mathcal{A}_H(v(s,\cdot))$ is constant. Therefore, by definition, $E(v) = 0$. But, as we saw in the remark \ref{remark:floer_energy_zero}, $v$ has to be a critical point of $\mathcal{A}_H$. Therefore, $v=y$.
+\end{proof}
+
+With this lemma, we can prove the theorem \ref{theo:floer_endpoints}.
+
+\begin{proof} {\it (Theorem \ref{theo:floer_endpoints}):} The topology of $\mathcal{L}M$ is metrizable (see \cite{hirsch2012differential} at chapter 2, section 4 for more information on this fact), so we can choose a metric $d_{\infty}$ in $\mathcal{L}M$ defining its topology. For each $x \in \crit(\mathcal{A}_H)$ we consider the open ball
+\[B(x,\e) = \left\{ \gamma \in \mathcal{L}M \ | \ d_{\infty}(x,\gamma) < \e \right\} .\]
+As  $\crit(\mathcal{A}_H)$ is finite, we can choose $\e > 0$ such that these balls are disjoint. In this case, let
+\[U_{\e} = \bigcup_{x \in \crit(\mathcal{A}_H)} B(x,\e) \subset \mathcal{L}M .\]
+Take some $u \in \mathcal{M}$. For each $\e > 0$ there exists $s_{\e}$ such that $u(s,\cdot) \in U_{\e}$ for all $s > s_{\e}$. If this were not true, then would be able to build a sequence $s_k$ with $u \cdot s_k \notin U_{\e}$ for all $k$, getting a contradiction with lemma \ref{lema:floer_sequence_limit}.
+
+Moreover, again by lemma \ref{lema:floer_sequence_limit}, there exists some $y \in \crit(\mathcal{A}_H)$ such that $u(s,\cdot) \in B(y,\e)$ for all $s > s_{\e}$. However, this is precisely the definition of convergence in a metric space, so
+\[\lim_{s \rightarrow \infty} u(s,\cdot) = y \in \crit(\mathcal{A}_H) .\]
+In addition, by the proposition \ref{floereq_ellipticreg}, we know that
+\[\lim_{s\rightarrow\infty} \frac{\partial u}{\partial t}(s,\cdot) = \dot{y} .\]
+Therefore,
+\[\lim_{s\rightarrow\infty} \frac{\partial u}{\partial s}(s,\cdot) = \lim_{k\rightarrow\infty} \left( - J \frac{\partial u}{\partial t}(s,\cdot) + JX_t(u(s,\cdot)) \right) = -J\cdot{y} + JX_t(y) =\]
+\[= J(X_t(y) - \dot{y}) = 0 .\]
+\end{proof}
+
+\begin{coro} If $u \in \mathcal{M}$ and $1 \leq k \leq m$, then
+\[\lim_{s\rightarrow\infty} \frac{\partial^m u}{\partial^k s \partial^{m-k} t}(s,t) = 0\]
+uniformly in $t$.
+\end{coro}

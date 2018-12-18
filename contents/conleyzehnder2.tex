@@ -55,13 +55,15 @@ If $n > 1$ then $\pi_2(\con{S}^{2n-1}) = 0$ and $\pi_1(\con{S}^{2n-1})=0$. Moreo
 and therefore $SU(n)$ is simply connected $\forall n \geq 1$.
 \end{proof}
 
-This fact provides an idea of how to proceed: we can define a map $f : \sympl(\R^{2n},\Omega_0) \rightarrow \con{S}^1$ such that $f_{\ast} : \pi_1(\sympl(\R^{2n},\Omega_0)) \rightarrow \pi_1(\con{S}^1)$ is an isomorphism. When we restrict to $\sympl(\R^{2n},\Omega_0) \cap O(2n) = U(n)$, we can simply use the complex determinant $\text{det}_{\con{C}}$ of the matrix, so we just need to extent it in a way to the whole of $\sympl(\R^{2n},\Omega_0)$ to get the desired map.
+\begin{rmrk} \label{homotopygroupisomorphism}
+This proposition provides an idea of how to proceed: we can define a map $f : \sympl(\R^{2n},\Omega_0) \rightarrow \con{S}^1$ such that $f_{\ast} : \pi_1(\sympl(\R^{2n},\Omega_0)) \rightarrow \pi_1(\con{S}^1)$ is an isomorphism. When we restrict to $\sympl(\R^{2n},\Omega_0) \cap O(2n) = U(n)$, we can simply use the complex determinant $\text{det}_{\con{C}}$ of the matrix, so we just need to extent it in a way to the whole of $\sympl(\R^{2n},\Omega_0)$ to get the desired map.
 
 On the other hand, to each path $\gamma : [0,1] \rightarrow \sympl(\R^{2n},\Omega_0)$ we can associate the path $f \circ \gamma : [0,1] \rightarrow \con{S}^1$ which, under the appropriate conditions, may be regarded as a closed path, so we get $\tilde{f} \circ \gamma : \con{S}^1 \rightarrow \con{S}^1$. Therefore, we can compute the degree of this path, which in turn will allow us to graduate the original path.
+\end{rmrk}
 
 \subsection{The rotation map}
 
-In this section we will describe the map representing the "rotation" part of the symplectic group as we hinted previously. Rather than constructing the map (which is a cumbersome process \textcolor{red}{carried on} in \cite{gutt2012conley}, where the uniqueness of such a map is also proved), we will present the properties that this map satisfies. Using them, we will then construct it in the particular case of $\R^2$ as an example.
+In this section we will describe the map representing the "rotation" part of the symplectic group as we hinted previously. Rather than constructing the map (which is a cumbersome process conducted in \cite{gutt2012conley}, where the uniqueness of such a map is also proved), we will present the properties that this map satisfies. Using them, we will then construct it in the particular case of $\R^2$ as an example.
 
 \begin{theo}
 There exists a continuous map $\rho : \sympl(\R^{2n},\Omega_0) \rightarrow \con{S}^1$ satisfying the following conditions:
@@ -74,7 +76,7 @@ There exists a continuous map $\rho : \sympl(\R^{2n},\Omega_0) \rightarrow \con{
 	\[\rho(A) = \text{det}_{\con{C}}(X+iY),\]
 	where $X,Y$ are the matrices such that
 	\[A = \begin{pmatrix} X & -Y \\ Y & X \end{pmatrix}.\]
-	In particular, this implies that $\rho$ induces an isomorphism on the first homotopy groups:
+	In particular, as we required in remark \ref{homotopygroupisomorphism}, this implies that $\rho$ induces an isomorphism on the first homotopy groups:
 	\[\begin{array}{rccc} \rho_{\ast} : & \pi_1(\sympl(\R^{2n},\Omega_0)) & \longrightarrow & \pi_1(\con{S}^1) \end{array} .\]
 	\item {\bf Normalization:} If $A$ has no eigenvalues in the unit circle, then $\rho(A) = \pm 1$.
 	\item {\bf Conjugation:} For all $A \in \sympl(\R^{2n},\Omega_0)$, we have that
@@ -121,13 +123,14 @@ In the general case, one must use the product property and appropriate forms of 
 
 To end this section we provide a formula for $\rho$ that will be useful in the following results.
 
+%TODO: Revise this to make it undarstandable
 \begin{lema} \label{rotationformula}
 Let $A \in \sympl(\R^{2n},\Omega_0)$, and let $\lambda_1,...,\lambda_{2n}$ be its eigenvalues, repeated according to their multiplicity. The eigenvalues of first kind of $A$ are the union of the following subsets of $\{\lambda_1,...,\lambda_{2n}\}$:
 \begin{enumerate}
 	\item Eigenvalues with $|\lambda_i| < 1$.
 	\item We know that the number of eigenvalues equal to $1$ is even, and so is the number of eigenvalues equal to $-1$. Thus, we take half of each set of eigenvalues as of first kind.
 	\item If $\lambda_i = e^{i \varphi} \neq \pm 1$, then $\lambda_i^{-1}, \overline{\lambda_i}$ and $\overline{\lambda_i^{-1}}$ are also eigenvalues of $A$. Let $E_{\lambda}$ denote the sum of their (complex) eigenspaces, and let $Q$ be the quadratic form defined by
-	\[\begin{array}{rccc} Q : & E_{\lambda} \times E_{\lambda} & \longrightarrow & \C \\ & (v,w) & \longmapsto & \text{Im}(\Omega_0(v,\overline{w})) \end{array} .\]
+	\[\begin{array}{rccc} Q : & E_{\lambda} \times E_{\lambda} & \longrightarrow & \C \\ & (v,w) & \longmapsto & \mathrm{Im}(\Omega_0(v,\overline{w})) \end{array} .\]
 	The signature of $Q$ is $(2r,2s)$, and we take $r$ times the eigenvalue $\lambda_i$ as of the first kind.
 \end{enumerate}
 

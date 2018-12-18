@@ -14,16 +14,18 @@
 \newcommand{\sympl}{\text{Sp}}
 
 %Define Therorems, propositions, corollaries...
-\newtheoremstyle{indented}{\topsep}{\topsep}{\normalfont}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
-\theoremstyle{indented}
+\newtheoremstyle{indentedit}{\topsep}{\topsep}{\itshape}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
+\theoremstyle{indentedit}
 \newtheorem{theo}{Theorem}[chapter]
 \newtheorem{prop}[theo]{Proposition}
 \newtheorem{lema}[theo]{Lemma}
 \newtheorem{coro}[theo]{Corollary}
+\newtheorem{assump}{Assumption}[chapter]
+\newtheoremstyle{indented}{\topsep}{\topsep}{\normalfont}{12pt}{\bfseries}{}{5pt plus 1pt minus 1pt}{}
+\theoremstyle{indented}
 \newtheorem{deff}{Definition}[chapter]
 \newtheorem{rmrk}{Remark}[chapter]
 \newtheorem{exmpl}{Example}[chapter]
-\newtheorem{assump}{Assumption}[chapter]
 
 %Headers and footers
 \fancyfoot[LE, RO] {\thepage}

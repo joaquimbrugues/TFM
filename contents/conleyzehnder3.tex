@@ -5,7 +5,7 @@ As we said in the introduction, the ultimate goal of this chapter is defining a 
 that allows us to classify the paths of symplectic matrices according to their rotation map.
 
 \begin{deff} The positive (resp. negative) components of $\sympl(\R^{2n},\Omega_0)$ are
-\[\sympl(2n)^{\pm} = \{A \in \sympl(\R^{2n},\Omega_0) \ | \ \text{det}(A - \text{Id}) \gtrless 0 \} .\]
+\[\sympl(2n)^{\pm} = \{A \in \sympl(\R^{2n},\Omega_0) \ | \ \det(A - \text{Id}) \gtrless 0 \} .\]
 \end{deff}
 
 It can be seen that both $\sympl(2n)^+$ and $\sympl(2n)^-$ are path-connected. Therefore, it is possible for us to choose a "representative" element in each connected component,
@@ -64,10 +64,10 @@ The map is well defined, this means, it does not depend on the extension $\widet
 	\item {\bf Loop:} If $\phi : [0,1] \rightarrow \sympl(\R^{2n},\Omega_0)$ with $\phi(0) = \phi(1) = \Id$, then
 	\[\mu_{CZ}(\phi \psi) = \mu_{CZ}(\psi) + 2 \text{deg}(\rho \circ \phi) .\]
 	\item {\bf Signature:} If $S$ is a symmetric non-degenerate $2n \times 2n$ matrix with all eigenvalues satisfying $|\lambda_i| < 2\pi$ and $\psi(t) = \exp(J_0St)$, then
-	\[\mu_{CZ}(\psi) = \frac12 \text{Sign}(S),\]
-	where $\text{Sign}$ denotes the signature of $S$.
+	\[\mu_{CZ}(\psi) = \frac12 \mathrm{Sign}(S),\]
+	where $\mathrm{Sign}$ denotes the signature of $S$.
 	\item {\bf Determinant:} If $\psi \in \text{SP}(n)$,
-	\[(-1)^{n-\mu_{CZ}(\psi)} = \text{sign} \left( \text{det}(\Id - \psi(1)) \right) .\]
+	\[(-1)^{n-\mu_{CZ}(\psi)} = \mathrm{sign} \left( \det(\Id - \psi(1)) \right) .\]
 	\item {\bf Inverse:}
 	\[\mu_{CZ}(\psi^{-1}) = \mu_{CZ}(\psi^T) = - \mu_{CZ}(\psi) .\]
 \end{enumerate}
@@ -130,12 +130,12 @@ In the second case, $\psi_i(t)$ has no eigenvalues on the circle for $t>0$, so $
 
 Otherwise, the eigenvalues of $\psi_i(t)$ are $\cos(\sqrt{a_ia_{n+i}}t) \pm i \sin(\sqrt{a_ia_{n+i}}t)$ so, rotating the plane if needed, we get that
 \[ \rho(\psi_i(t)) = \left\{ \begin{array}{lc} e^{i \sqrt{a_ia_{n+i}} t} & \text{if } a_i > 0 \\ e^{- i \sqrt{a_ia_{n+i}} t} & \text{if } a_i < 0 \end{array} \right. .\]
-Either way, $\text{det}(\Id - \psi(1)) = 2(1-\cos(a_ia_{n+i})) > 0$, so the extension $\widetilde{\psi_i}$ must end in $W^+ = - \Id$, so $\rho(\widetilde{\psi_i}(2)) = e^{\pm i \pi}$. In the case when $a_i > 0$ $\rho(\widetilde{psi_i}(t))$ goes from $1=e^0$ to $e^{i\pi}$ counterclockwise, so $\mu_{CZ}(\psi_i) = 1$. On the other hand, when $a_i < 0$ $\rho(\widetilde{psi_i}(t))$ goes from $1=e^0$ to $e^{-i\pi}$ clockwise, so $\mu_{CZ}(\psi_i) = -1$. Rephrasing, $\mu_{CZ}(\psi_i) = \text{sign}(a_i)$. Therefore,
-\[\mu_{CZ}(\psi) = \# \{ i \leq n \ | \ a_i > 0, a_ia_{n+i} > 0 \} - \# \{ i \leq n \ | \ a_i < 0, a_ia_{n+i} > 0 \} = \frac12 \text{Sign}(S) .\]
+Either way, $\det(\Id - \psi(1)) = 2(1-\cos(a_ia_{n+i})) > 0$, so the extension $\widetilde{\psi_i}$ must end in $W^+ = - \Id$, so $\rho(\widetilde{\psi_i}(2)) = e^{\pm i \pi}$. In the case when $a_i > 0$ $\rho(\widetilde{psi_i}(t))$ goes from $1=e^0$ to $e^{i\pi}$ counterclockwise, so $\mu_{CZ}(\psi_i) = 1$. On the other hand, when $a_i < 0$ $\rho(\widetilde{psi_i}(t))$ goes from $1=e^0$ to $e^{-i\pi}$ clockwise, so $\mu_{CZ}(\psi_i) = -1$. Rephrasing, $\mu_{CZ}(\psi_i) = \mathrm{sign}(a_i)$. Therefore,
+\[\mu_{CZ}(\psi) = \# \{ i \leq n \ | \ a_i > 0, a_ia_{n+i} > 0 \} - \# \{ i \leq n \ | \ a_i < 0, a_ia_{n+i} > 0 \} = \frac12 \mathrm{Sign}(S) .\]
 \end{proof}
 
-\begin{proof} {\it (Determinant):} If $\text{det}(\Id - \psi(1)) > 0$, then $\widetilde{\psi}(2) = W^+$, so $\rho(\widetilde{\psi}(2)) = (-1)^n$. Otherwise, if $\text{det}(\Id - \psi(1)) < 0$, then $\widetilde{\psi}(2) = W^-$ and $\rho(\widetilde{\psi}(2)) = (-1)^{n-1}$. The degree of $\rho^2 \circ \widetilde{\psi}$ is even when $\rho(\widetilde{\psi}) = 1$, and odd when $\rho(\widetilde{\psi}(2)) = -1$. Therefore,
-\[(-1)^{n-\mu_{CZ}(\psi)} = \text{sign} ( \text{det}(\Id - \psi(1))) .\]
+\begin{proof} {\it (Determinant):} If $\det(\Id - \psi(1)) > 0$, then $\widetilde{\psi}(2) = W^+$, so $\rho(\widetilde{\psi}(2)) = (-1)^n$. Otherwise, if $\det(\Id - \psi(1)) < 0$, then $\widetilde{\psi}(2) = W^-$ and $\rho(\widetilde{\psi}(2)) = (-1)^{n-1}$. The degree of $\rho^2 \circ \widetilde{\psi}$ is even when $\rho(\widetilde{\psi}) = 1$, and odd when $\rho(\widetilde{\psi}(2)) = -1$. Therefore,
+\[(-1)^{n-\mu_{CZ}(\psi)} = \mathrm{sign} ( \det(\Id - \psi(1))) .\]
 \end{proof}
 
 \begin{proof} {\it (Inverse):} Recall that $A \in \sympl(\R^{2n},\Omega_0)$ implies that $A^T = \Omega_0 A^{-1} \Omega_0^T = \Omega_0^{-1} A^{-1} \Omega_0$ so, by the naturality property of $\mu_{CZ}$,
@@ -159,9 +159,9 @@ Consider $\xi(t) = \exp(t\pi J_0S^+)$ (resp with $S^-$ if $\psi(1)=W^-$), and le
 On the other hand, we know that $\widetilde{\psi} \simeq \phi \diamond \xi$. By the lemma \ref{looplemma}, we know also that $\phi \diamond \xi \simeq \phi\xi$. Therefore, $\mu'(\widetilde{\psi}) = \mu'(\phi\xi)$. If we apply now the loop condition, we see that
 \[\mu'(\phi\xi) = 2\text{deg}(\rho \circ \phi) + \mu'(\xi) ,\]
 and applying the signature condition we see that
-\[\mu'(\xi) = \frac12 \text{Sign}(S^{\pm}) .\]
+\[\mu'(\xi) = \frac12 \mathrm{Sign}(S^{\pm}) .\]
 Therefore, we conclude that, for any map $\mu'$ satisfying the homotopy, loop and signature conditions,
-\[\mu'(\psi) = 2\text{deg}(\rho \circ \phi) + \frac12 \text{Sign}(S^{\pm}).\]
+\[\mu'(\psi) = 2\text{deg}(\rho \circ \phi) + \frac12 \mathrm{Sign}(S^{\pm}).\]
 However, we would get to this very same expression if $\mu'=\mu_{CZ}$. Therefore,
 \[\mu'(\psi) = \mu_{CZ}(\psi) .\]
 \end{proof}

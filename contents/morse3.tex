@@ -5,7 +5,7 @@
 In this section we will focus on how we can connect the points of $\crit(f)$ (for a Morse function) between them. The way to do this, in $\R^n$, would be the gradient of the function, this means,
 $$\grad f = \left( \der{f}{x_1},...,\der{f}{x_n} \right) .$$
 This vector field can be intrinsecally defined on a manifold $M$ using a metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
-$$\langle \grad f, Y \rangle = \dd f \cdot Y .$$
+$$\langle \grad f, Y \rangle = d f \cdot Y .$$
 
 For our purposes, we do not need to use precisely the gradient of a function, and sometimes it might not satisfy the properties that we need for the flow, so we introduce the more general concept of {\bf pseudogradient}.
 
@@ -13,7 +13,7 @@ For our purposes, we do not need to use precisely the gradient of a function, an
 Let $f$ be a Morse function defined on $M$. Then, a vector field $X \in \mathfrak{X}(M)$ is a {\bf pseudogradient} adapted to $f$ if it satisfies the two conditions
 
 \begin{enumerate}
-\item For every $x \in M$ we have $(\dd f)_x \cdot X_x \leq 0$, and the equality holds if and only if $x$ is a critical point for $f$.
+\item For every $x \in M$ we have $(d f)_x \cdot X_x \leq 0$, and the equality holds if and only if $x$ is a critical point for $f$.
 \item For each critical point of $f$, $X$ coincides with the negative gradient defined with the canonical metric defined in $\R^n$ on the domain of the Morse chart.
 \end{enumerate}
 \end{deff}
@@ -69,11 +69,11 @@ Let $M$ a compact manifold, $f$ a Morse function and $\gamma : \R \rightarrow M$
 \begin{proof}
 Let us prove this result in the case that $s \rightarrow + \infty$, as the case for $- \infty$ is proved the same way. Suppose that the result is false, so there is a trajectory $\gamma$ such that it has no limit to $+ \infty$. Then, each time that $\gamma$ enters a Morse neighbourhood for any critical point $c_i$, $\Omega_i$, it must leave sometime later, because $f$ is strictly decreasing along the trajectories of a pseudogradient. Thus, there is a time $s_0 > 0$ such that $\forall s > s_0$,
 $$\gamma(s) \in M \backslash \bigcup_i \Omega_i ,$$
-so $\dd f(\gamma(s)) \cdot X(s) \leq - \e_0$ for some $\e_0 > 0$ and for any $s > s_0$.
+so $d f(\gamma(s)) \cdot X(s) \leq - \e_0$ for some $\e_0 > 0$ and for any $s > s_0$.
 
 Therefore, for any $s > s_0$,
 \begin{displaymath}
-f(\gamma(s))-f(\gamma(s_0)) = \int_{s_0}^s \frac{\dd (f \circ \gamma)}{\dd t} \dd t = \int_{s_0}^s \dd f(\gamma(t)) \cdot X(\gamma(t)) \dd t \leq - \e_0 (s-s_0) .
+f(\gamma(s))-f(\gamma(s_0)) = \int_{s_0}^s \frac{d (f \circ \gamma)}{d t} d t = \int_{s_0}^s d f(\gamma(t)) \cdot X(\gamma(t)) d t \leq - \e_0 (s-s_0) .
 \end{displaymath}
 This leads to the conclusion that $\displaystyle\lim_{s \rightarrow +\infty} f(\gamma(s)) = - \infty$, which is impossible.
 \end{proof}

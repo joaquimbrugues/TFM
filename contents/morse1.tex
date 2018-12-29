@@ -3,7 +3,7 @@
 Let us consider a differentiable manifold $M$ without boundary, and let $f : M \rightarrow \R$ be a smooth function.
 
 \begin{deff}
-	A point $p \in M$ is called a {\bf critical point} of the function $f$ if the tangent map $\dd f_p : \straightT_pM \longrightarrow \straightT\R \cong \R$ is zero. In this case, we say that $f(p)$ is a {\bf critical value}.
+	A point $p \in M$ is called a {\bf critical point} of the function $f$ if the tangent map $df_p : \straightT_pM \longrightarrow \straightT\R \cong \R$ is zero. In this case, we say that $f(p)$ is a {\bf critical value}.
 \end{deff}
 
 To classify the critical points of a function, we will be interested in the directions in which it is convex and the ones in which it is concave. The best way to study the convexity of a function systematically is its Hessian, or second derivative. However, we find ourselves with a constraint: it is not possible to define the Hessian of a function on a smooth manifold in all points in a way that it is independent of the choice of the coordinate system. However, it is possible to do it at each critical point, as we will show.
@@ -30,8 +30,8 @@ This lemma can be proved in a straightforward way using a suitable bump function
 \begin{proof}
 	First, we show that it is symmetric, from where it will be clear that it is well defined:
 $$\straightH_p[f](v,w) - \straightH_p[f](w,v) = v(X_w(f)) - w(X_v(f)) = \left. X_v \right|_p(X_w(f)) - \left. X_w \right|_p (X_v(f)) = $$ 
-$$= \left. [X_v,X_w] \right|_p(f) = \dd_p f \cdot [X_v,X_w] = 0 ,$$
-where the last term is zero because $\dd_p f = 0$, as $p$ is a critical point for $f$. Thus, if we choose extensions $X_v$ and $X_w$ for $v$ and $w$ (respectivelly), then $\straightH_p[f](v,w) = \straightH_p[f](w,v)$.
+$$= \left. [X_v,X_w] \right|_p(f) = d_p f \cdot [X_v,X_w] = 0 ,$$
+where the last term is zero because $d_p f = 0$, as $p$ is a critical point for $f$. Thus, if we choose extensions $X_v$ and $X_w$ for $v$ and $w$ (respectivelly), then $\straightH_p[f](v,w) = \straightH_p[f](w,v)$.
 
 Looking again at the definition,
 $$\straightH_p[f](v,w) = v(X_w(f)),$$
@@ -76,7 +76,7 @@ Therefore, it makes sense to classify the critical points of a manifold accordin
 	If $f$ is a Morse function, we denote
 
 	\begin{displaymath}
-		\crit(f) = \{ p \in M \ | \dd f_p = 0 \} ,
+		\crit(f) = \{ p \in M \ | d f_p = 0 \} ,
 	\end{displaymath}
 	\begin{displaymath}
 		\crit_k(f) = \{p \in \crit(f) \ | \text{ $p$ has index $k$}\} .

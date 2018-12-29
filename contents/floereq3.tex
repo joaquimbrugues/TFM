@@ -3,7 +3,7 @@
 In this section we are going to introduce the analogous concept to the one of a pseudogradient of a function in Morse homology. In particular, it will be enough for us to construct the gradient of the action functional. However, this will not be as easy as the case of finite dimensions.
 
 Take, for the compact symplectic manifold $(M,\omega)$, an almost complex structure $J$ calibrated by $\omega$, as defined in \ref{definition:calibrated_almost_complex}. This induces a riemannian metric $g$ on $M$. We can use it to induce an inner product on each fiber of $T\mathcal{L}M$, by
-$$\langle X, Y \rangle_x = \int_0^1 g_{x(t)} (X(t), Y(t)) \dd t,$$
+$$\langle X, Y \rangle_x = \int_0^1 g_{x(t)} (X(t), Y(t)) d t,$$
 for $X,Y \in T_x\mathcal{L}M$.
 
 It is an inner product because $g_x(t)$ is at each $t \in \con{S}^1$, so the bilinearity, symmetry and positive definition are preserved.
@@ -12,15 +12,15 @@ Take into account that the tangent spaces are not complete, so this inner produc
 
 \begin{deff}
 Let $F : \mathcal{L}M \rightarrow \R$ a functional. The {\bf gradient} of $F$, if it exists, is the vector field $\grad F \in \mathfrak{X}(\mathcal{L}M)$ such that, for every loop $x \in \mathcal{L}M$ and every $Y \in \mathfrak{X}(\mathcal{L}M)$,
-$$\langle \grad F, Y \rangle_x = \dd F(x) \cdot Y ,$$
+$$\langle \grad F, Y \rangle_x = d F(x) \cdot Y ,$$
 so
-$$\int_0^1 g_{x(t)}(\grad_xF(t),Y(t)) = \dd F(x) \cdot Y .$$
+$$\int_0^1 g_{x(t)}(\grad_xF(t),Y(t)) = d F(x) \cdot Y .$$
 \end{deff}
 
 In the case of the action functional, its gradient (if it exists) satisfies that
-$$\dd \mathcal{A}_H(x) \cdot Y = \langle \grad\mathcal{A}_H, Y \rangle_x = \int_0^1 g_{x(t)}(\grad_x\mathcal{A}_H(t),Y(t)) \dd t ,$$
+$$d \mathcal{A}_H(x) \cdot Y = \langle \grad\mathcal{A}_H, Y \rangle_x = \int_0^1 g_{x(t)}(\grad_x\mathcal{A}_H(t),Y(t)) d t ,$$
 and
-$$\dd \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t)-X_H,Y(t)) \dd t ,$$
+$$d \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t)-X_H,Y(t)) d t ,$$
 and, as $g(v,w) = \omega(v,Jw)$, we deduce that
 $$\grad_x\mathcal{A}_H = J\dot{x} - J X_H .$$
 
@@ -62,17 +62,17 @@ $$\frac{\partial u}{\partial s} = - \grad H .$$
 Recall that the negative gradient flow lines in Morse theory are defined in order to connect critical points. However, in the case of the Floer equation, this may not be the case. This means, if $u$ is a solution to the equation, it is not necessarily true that $\displaystyle\lim_{s \rightarrow -\infty} u(s,\cdot)$ or $\displaystyle\lim_{s \rightarrow \infty} u(s,\cdot)$ exist or are critical points of $\mathcal{A}_H$.
 
 Nonetheless, we just need to add a condition to our equation in order to have this property. In order to justify it, recall that when we proved proposition \ref{prop:connect_critical_points} (which is the analogous result in Morse theory) we used the energy of a trajectory $\gamma$ in order to prove our result:
-$$E(\gamma) = - \int_{\R} \gamma^{\ast} \dd f = \int_{+\infty}^{-\infty} \frac{\dd}{\dd t} (f \circ \gamma) \dd t .$$
+$$E(\gamma) = - \int_{\R} \gamma^{\ast} d f = \int_{+\infty}^{-\infty} \frac{d}{d t} (f \circ \gamma) d t .$$
 
 This can be defined analogously in the case of the solutions of the Floer equation that are defined for all $s \in \R$:
 
 \begin{deff} \label{definition:floer_energy}
 Let $u : \R \times \con{S}^1 \rightarrow M$ a solution of the Floer equation. Its energy (which may be infinite) is the integral
-$$E(u) = - \int_{\R} u^{\ast} \dd \mathcal{A}_H = - \int_{\R} \frac{\dd}{\dd s} \left( \mathcal{A}_H \circ u \right) \dd s .$$
+$$E(u) = - \int_{\R} u^{\ast} d \mathcal{A}_H = - \int_{\R} \frac{d}{d s} \left( \mathcal{A}_H \circ u \right) d s .$$
 \end{deff}
 
 If we expand the last term, we get that
-$$E(u) = - \int_{\R} \dd \mathcal{A}_H(u(s)) \cdot \frac{\partial u}{\partial s} \dd s = - \int_{\R} g \left(\grad\mathcal{A}_H(u(s)),\frac{\partial u}{\partial s} \right) \dd s = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 \dd t \dd s .$$
+$$E(u) = - \int_{\R} d \mathcal{A}_H(u(s)) \cdot \frac{\partial u}{\partial s} d s = - \int_{\R} g \left(\grad\mathcal{A}_H(u(s)),\frac{\partial u}{\partial s} \right) d s = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 d t d s .$$
 Therefore, the space we are interested in is the one of solutions with finite energy:
 
 \begin{deff} \label{definition:finite_energy_space}

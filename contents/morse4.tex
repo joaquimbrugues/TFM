@@ -14,7 +14,7 @@ Consider $a, b \in \R$ such that $f^{-1}([a,b]) \subset M$ is compact and does n
 Let $W \subset M$ the (open) set of non-critical points of $f$, and consider $g$ a riemannian metric on $M$. We are going to use $g$ to construct a vector field that yields an appropriate flow, which will serve to construct our desired diffeomorphism.
 
 Take $X = \frac1{\|\grad f\|^2}\grad f \in \mathfrak{X}(W)$, and let $\gamma : I \rightarrow M$ be a maximal integral curve of $X$. As a consequence of the definition, we have that
-$$\frac{\dd}{\dd t} f(\gamma(t)) = \dd f(\gamma(t)) \cdot \gamma'(t) = \dd f(\gamma(t)) \cdot X(\gamma(t)) =$$
+$$\frac{d}{d t} f(\gamma(t)) = d f(\gamma(t)) \cdot \gamma'(t) = d f(\gamma(t)) \cdot X(\gamma(t)) =$$
 $$g\left(\grad f(\gamma(t)),X(\gamma(t))\right) = \frac1{\|\grad f(\gamma(t))\|^2} g(\grad f(\gamma(t)),\grad f(\gamma(t))) = 1 .$$
 Therefore, if we assume $0 \in I$, we have that $f(\gamma(t)) = f(\gamma(0)) + t$.
 
@@ -91,7 +91,7 @@ We will use this decomposition to define a function F as we said before. To this
 \begin{enumerate}
 	\item $\mu(0) > \e$.
 	\item $\mu(t) = 0 \ \forall t \geq 2\e$.
-	\item $-1 < \frac{\dd \mu}{\dd t}(t) \leq 0 \ \forall t \in (0,+\infty)$.
+	\item $-1 < \frac{d \mu}{d t}(t) \leq 0 \ \forall t \in (0,+\infty)$.
 \end{enumerate}
 
 Then, let $F$ be defined by
@@ -115,13 +115,13 @@ so, in fact, $E \subset F^{-1}((-\infty,c+\e])$, and $F^{-1}((-\infty,c+\e]) \su
 {\bf Step 2:} See that $F$ and $f$ have exactly the same critical points.
 
 We can express $F$ as a function of $\xi$ and $\eta$, so we can say that
-$$\dd F = \frac{\partial F}{\partial \xi} \dd \xi + \frac{\partial F}{\partial \eta} \dd \eta .$$
+$$d F = \frac{\partial F}{\partial \xi} d \xi + \frac{\partial F}{\partial \eta} d \eta .$$
 Where
 
 \begin{enumerate}
 	\item $\frac{\partial F}{\partial \xi} = -1 - \mu'(\xi+2\eta) < 0$ by the definition of $\mu$.
 	\item $\frac{\partial F}{\partial \eta} = 1 - 2 \mu'(\xi+2\eta) \geq 0$ by the definition of $\mu$.
-	\item $\dd \xi$ and $\dd \eta$ are simultaneously zero if and only if $\xi = \eta = 0$, this means, at $p$.
+	\item $d \xi$ and $d \eta$ are simultaneously zero if and only if $\xi = \eta = 0$, this means, at $p$.
 \end{enumerate}
 
 Therefore, the only critical point of $F$ in $U$ is $p$, so $F$ and $f$ have exactly the same critical points.

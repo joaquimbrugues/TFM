@@ -114,13 +114,13 @@ h(x) = (f(x),h_2(x),...,h_N(x)) .
 
 Choose $c$ a (large) real number. By the proposition \ref{existenceMorse}, for almost all point $p = (-c+\e_1,\e_2,...,\e_N)$ the function $f_p$ is a Morse function, so the function
 
-$$g_{c,\e}(x) = \frac{f_p(x)-c^2}{2c}$$
+\[g_{c,\e}(x) = \frac{f_p(x)-c^2}{2c}\]
 
 is also a Morse function. Moreover, notice that
 
-$$g_{c,\e}(x) = \frac1{2c} \left((f(x) + c - \e_1)^2 + (h_2(x)-\e_2)^2 + \cdots + (h_N(x)-\e_N)^2 - c^2 \right) =$$
+\[g_{c,\e}(x) = \frac1{2c} \left((f(x) + c - \e_1)^2 + (h_2(x)-\e_2)^2 + \cdots + (h_N(x)-\e_N)^2 - c^2 \right) =\]
 
-$$= f(x) + \frac{f(x)^2 + \sum h_i(x)^2}{2c} - \frac{\e_1f(x) + \sum \e_ih_i(x)}{c} + \sum \e_i^2 - \e_1 ,$$
+\[= f(x) + \frac{f(x)^2 + \sum h_i(x)^2}{2c} - \frac{\e_1f(x) + \sum \e_ih_i(x)}{c} + \sum \e_i^2 - \e_1 ,\]
 
 so, as claimed, on any compact subset of $M$, $g_{c,\e}$ tends to $f$ and its first $k$ derivatives also tend to the first $k$ derivatives of $f$ as $\e \rightarrow 0$ and $c \rightarrow \infty$.
 \end{proof}
@@ -159,7 +159,7 @@ As $X$ satisfies the Smale condition, we know that $W^u(a) \pitchfork W^s(b)$. T
 
 Take $D = P \backslash \{b^-\}$. It is diffeomorphic to $\{x \in \R^{k-1} \ | \ 0 < \|x\| < 1\}$, a punctured open disk. Notice that, by definition, $D \cap W^s(b) = \emptyset$. Therefore, the flux of $X$ starting at any point of $D$ will eventually leave $\Omega(b)$, so we can define the embedding
 
-$$\begin{array}{rccc} \Phi : & D & \longrightarrow & \partial\Omega(b) \end{array}$$
+\[\begin{array}{rccc} \Phi : & D & \longrightarrow & \partial\Omega(b) \end{array}\]
 
 induced by this flux.
 
@@ -171,37 +171,37 @@ Q is a $k$-dimensional manifold with boundary, and $\partial Q = S_-(b)$.
 
 Let us suppose that it is true. Using the Smale transversality condition of $X$ in $W^u(a) \cap W^s(c)$ and in $W^u(b) \cap W^s(c)$, we can see that, as $\text{Im}\Phi \subset W^u(a) \cap f^{-1}(\alpha-\e)$ and $S_-(b) = W^u(b) \cap f^{-1}(\alpha-\e)$,
 
-$$\text{dim}(\text{Im}\Phi \cap W^s(c)) = 1 ,$$
+\[\text{dim}(\text{Im}\Phi \cap W^s(c)) = 1 ,\]
 
-$$\text{dim}(S_-(b) \cap W^s(c)) = 0 .$$
+\[\text{dim}(S_-(b) \cap W^s(c)) = 0 .\]
 
 Therefore, $Q \cap W^s(c)$ is a 1-dimensional manifold with boundary, and its boundary is, by the proposition \ref{morse_propappendix},
 
-$$\partial Q \cap W^s(c) = S_-(b) \cap W^s(c) = W^u(b) \cap W^s(c) \cap f^{-1}(\alpha-\e) \cong \mathcal{L}(b,c) ,$$
+\[\partial Q \cap W^s(c) = S_-(b) \cap W^s(c) = W^u(b) \cap W^s(c) \cap f^{-1}(\alpha-\e) \cong \mathcal{L}(b,c) ,\]
 
 and $b^+ \in \partial Q \cap W^s(c)$. Now, consider $\chi$ a local parametrization of this manifold in a neighbourhood of $b^+$, this means, an embedding
 
-$$\begin{array}{rccc} \chi : & [0,\delta) & \longrightarrow & Q \cap W^s(c) \end{array} ,$$
+\[\begin{array}{rccc} \chi : & [0,\delta) & \longrightarrow & Q \cap W^s(c) \end{array} ,\]
 
 with $\chi(0) = b^+$. Then, we can consider the diffeomorphism
 
-$$\begin{array}{rccc} \Phi^{-1} \circ \chi : & (0,\delta) & \longrightarrow & W^s(c) \cap D \end{array}$$
+\[\begin{array}{rccc} \Phi^{-1} \circ \chi : & (0,\delta) & \longrightarrow & W^s(c) \cap D \end{array}\]
 
 (it is well defined because $\Phi$ is defined following the flow lines of $X$, so $W^s(c)$ is invariant under its action). We can use the lemma \ref{morse_sequences} to deduce that
 
-$$\lim_{t \searrow 0} (\Phi^{-1} \circ \chi)(t) = b^- ,$$
+\[\lim_{t \searrow 0} (\Phi^{-1} \circ \chi)(t) = b^- ,\]
 
 so we can extend $\Phi^{-1} \circ \chi$ continuously to a map
 
-$$\begin{array}{rccc} \psi : & [0,\delta) & \longrightarrow & \left( W^s(c) \cap P \right) \cup \{b^-\} \end{array}$$
+\[\begin{array}{rccc} \psi : & [0,\delta) & \longrightarrow & \left( W^s(c) \cap P \right) \cup \{b^-\} \end{array}\]
 
 with $\psi(0) = b^-$. We can see that
 
-$$W^s(c) \cap P = W^s(c) \cap W^u(a) \cap f^{-1}(\alpha+\e) \cong \mathcal{L}(a,c) ,$$
+\[W^s(c) \cap P = W^s(c) \cap W^u(a) \cap f^{-1}(\alpha+\e) \cong \mathcal{L}(a,c) ,\]
 
 and $b^-$ is a natural representation of $(\lambda_1,\lambda_2) \in \mathcal{L}(a,b) \times \mathcal{L}(b,c)$, so we can rewrite the definition of $\psi$ as
 
-$$\begin{array}{rccc} \psi : & [0,\delta) & \longrightarrow & \overline{\mathcal{L}}(a,c) \end{array} .$$
+\[\begin{array}{rccc} \psi : & [0,\delta) & \longrightarrow & \overline{\mathcal{L}}(a,c) \end{array} .\]
 
 Moreover, we see that:
 
@@ -224,29 +224,29 @@ Now let us prove the proposition \ref{morse_propappendix}. We want to conclude t
 {\it (Proposition \ref{morse_propappendix}):} Recall that $Q = \text{Im}\Phi \cup S_-(b)$, with $\Phi : D \rightarrow f^{-1}(\alpha-\e)$ an embedding. Also, $D = P \backslash \{b^-\}$ is diffeomorphic to a punctured open disk of dimension $k-1$. This means that we can take $D \cong (0,1) \times \con{S}^{k-1}$. Therefore, we can take coordinates $(t,z)$ in $D$, with $t \in (0,1)$ and $z \in \con{S}^{k-1}$. We can construct this coordinates in a way that $\displaystyle\lim_{t \searrow 0} (t,z) = b^-$ in $P$ for all $z \in \con{S}^{k-1}$.
 
 We want to show that, on the other hand,
-$$\displaystyle\lim_{t \searrow 0} \Phi((t,z)) \in S_-(b) \ \forall z \in \con{S}^{k-1}. $$
+\[\displaystyle\lim_{t \searrow 0} \Phi((t,z)) \in S_-(b) \ \forall z \in \con{S}^{k-1}. \]
 
 Let $d^+ = \displaystyle\lim_{s \searrow 0} (s,w)$ for some $w \in \con{S}^{k-1}$. It is clear that $f(d^+) = \alpha - \e$ because $f$ is continuous, so we need to show that $d^+ \in W^u(b)$.
 
 Suppose that it is false, so $d^+ \notin W^u(b)$. Therefore, if we take the flow of $- X$ starting at $d^+$, we must exit the chart $\Omega(b)$ at some point $d^-$ with $f(d^-) = \alpha + \e$. Let $(x_n)_n$ a sequence in $\text{Im}\Phi$ such that $\limn x_n = d^+$. Take $y_n = \Phi^{-1}(x_n)$ for each $n$. We know that $f(y_n) = \alpha + \e \ \forall n$, so, applying the lemma \ref{morse_sequences}, we deduce that $y_n \xrightarrow[n \rightarrow \infty]{} d^-$. However, we can see that $y_n \xrightarrow[n \rightarrow \infty]{} b^-$ because the first component tends to $0$. Therefore, we conclude that $b^- = d^-$. But we can see that, if $\varphi_X^t$ denotes the flow of $X$,
 
-$$f(\varphi_X^t(b^-)) \xrightarrow[t \rightarrow \infty]{} \alpha ,$$
+\[f(\varphi_X^t(b^-)) \xrightarrow[t \rightarrow \infty]{} \alpha ,\]
 
 so $f(\varphi_X^t(b^-)) \geq \alpha \ \forall t > 0$. On the other hand, $f(d^+) = \alpha - \e < \alpha$ and $d^+ = \varphi_X^{t_0}(d^-)$ for some $t_0 > 0$. Thus, we reach a contradiction.
 
 We know that $S_-(b) \cong \con{S}^{k-1}$, so we can identify $Q$ with $[0,1) \times \con{S}^{k-1}$ and $S_-(b)$ with $\{0\} \times \con{S}^{k-1}$ with the same coordinates as before. We just showed that we can define the map
-$$\begin{array}{rccc}\rho : & \con{S}^{k-1} & \longrightarrow & S_-(b) \\ & z & \longmapsto & \displaystyle\lim_{t \searrow 0} \Phi((t,z)) \end{array}$$
+\[\begin{array}{rccc}\rho : & \con{S}^{k-1} & \longrightarrow & S_-(b) \\ & z & \longmapsto & \displaystyle\lim_{t \searrow 0} \Phi((t,z)) \end{array}\]
 
 and it is indeed well defined. If we show that $\rho$ is bijective, we will be able to conclude that $S_-(b)$ is precisely the boundary of the manifold $Q$, and we will be done. In fact, as $S_-(b) \cong \con{S}^{k-1}$, it sufices to show that $\rho$ is injective.
 
 To do this, we need to use the fact that $\Omega(b)$ is a Morse chart and, by the Morse Lemma \ref{morselemma}, it admits a coordinate system $(x_-,x_+)$\footnote{This means, with $(x_-,x_+)=(x_-^1,...,x_-^k,x_+^1,...,x_+^{n-k})$.} such that $f(x_-,x_+) = c - \|x_-\|^2 + \|x_+\|^2$. Then, it can be easily proved that the flow of $X$ (which coincides with that of $-\grad f$ in $\Omega(b)$ because of the definition of a pseudogradient adapted to $f$) takes the form
-$$\varphi_X^s(x_-,x_+) = (e^{2s}x_-,e^{-2s}x_+) .$$
+\[\varphi_X^s(x_-,x_+) = (e^{2s}x_-,e^{-2s}x_+) .\]
 
 On the other hand, we can see that, for some $\delta > 0$,
-$$Q = \{(x_-,x_+) \ | \ \|x_-\|^2 = \e, 0 \leq \|x_+\| < \delta\}, $$
+\[Q = \{(x_-,x_+) \ | \ \|x_-\|^2 = \e, 0 \leq \|x_+\| < \delta\}, \]
 
 and that
-$$D = \{(x_-,x_+) \ | \ \|x_+\|^2 = \e, 0 < \|x_-\|^2 < \delta' \}$$
+\[D = \{(x_-,x_+) \ | \ \|x_+\|^2 = \e, 0 < \|x_-\|^2 < \delta' \}\]
 
 for some $\delta'$ that depends on $\delta$, as we are going to show. With all of this, it is possible to compute the $s$ such that $\varphi_X^s(x) \in \text{Im}\Phi$ for a given $x \in D$, so we can deduce the form of $\Phi$ in these coordinates:
 \[\Phi((x_-,x_+)) = \left(\frac{\|x_+\|}{\|x_-\|} x_-, \frac{\|x_-\|}{\|x_+\|} x_+\right) .\]

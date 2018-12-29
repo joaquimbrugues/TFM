@@ -5,9 +5,9 @@ Continuing with the program sketched in Section \ref{section:morse_complex}, we 
 \subsection{Definition of the differential}
 
 Let $f$ a Morse function, and $X$ a pseudogradient adapted to it and satisfying the Smale condition. Then, we can define for each pair of critical points $a, b \in \crit(f)$, the manifold $\mathcal{L}(a,b)$. Recall that, when $\text{Ind}(a) \leq \text{Ind}(b)$, this manifold is empty. Moreover, if $\text{Ind}(a) = \text{Ind}(b) + 1$, it is discrete. This is because
-$$\text{dim} \mathcal{L}(a,b) = \text{Ind}(a) - \text{Ind}(b) - 1 .$$
+\[\text{dim} \mathcal{L}(a,b) = \text{Ind}(a) - \text{Ind}(b) - 1 .\]
 In this Section we are going to show that, in fact, $\mathcal{L}(a,b)$ must be finite when $\text{Ind}(a) = \text{Ind}(b) + 1$, so it makes sense to define
-$$n_X(a,b) := \# \mathcal{L}(a,b) \quad (\text{mod } 2),$$
+\[n_X(a,b) := \# \mathcal{L}(a,b) \quad (\text{mod } 2),\]
 which denotes the number of trajectories of the flow of $X$ which go from $a$ to $b$ (in infinite time!). We are taking it modulo $2$ because our homology groups are defined over $\Z_2$. It is posible to define the Morse homology over $\Z$ also, but then orientations must be introduced. To keep it simple, we restrict ourselves to the case with $\Z_2$.
 
 With this in mind, we can propose the following definition:
@@ -29,7 +29,7 @@ Instead of studying how to compactify the space $\mathcal{L}(a,b)$, we will intr
 
 \begin{deff}
 The {\bf space of broken trajectories} from $a$ to $b$ is the disjoint union
-$$\overline{\mathcal{L}}(a,b) := \bigcup_{c_1,...,c_{m-1} \in \crit(f)} \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b) ,$$
+\[\overline{\mathcal{L}}(a,b) := \bigcup_{c_1,...,c_{m-1} \in \crit(f)} \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b) ,\]
 where the union spans all the tuples of critical points, regardless of the size of the tuple. In particular, $\mathcal{L}(a,b) \subset \overline{\mathcal{L}}(a,b)$.
 
 Notice that the only tuples of critical points contributing to the union are the ones such that $\text{Ind}(a) > \text{Ind}(c_1) > ... > \text{Ind}(c_{m-1}) > \text{Ind}(b)$.
@@ -41,7 +41,7 @@ When $\text{Ind}(a) - \text{Ind}(b) = 1$, we have that $\overline{\mathcal{L}}(a
 
 \begin{rmrk}
 Suppose that $\text{Ind}(a) - \text{Ind}(b) = 2$, and take $k = \text{Ind}(a)$. Then,
-$$\overline{\mathcal{L}}(a,b) = \mathcal{L}(a,b) \bigcup \left[ \bigcup_{c \in \crit_{k-1}} \mathcal{L}(a,c) \times \mathcal(c,b) \right] .$$
+\[\overline{\mathcal{L}}(a,b) = \mathcal{L}(a,b) \bigcup \left[ \bigcup_{c \in \crit_{k-1}} \mathcal{L}(a,c) \times \mathcal(c,b) \right] .\]
 We can see that in the union above, the dimension of $\mathcal{L}(a,b)$ is $1$, whereas $\text{dim} \mathcal{L}(a,c) = \text{dim} \mathcal{L}(c,b) = 0$ for all $c \in \crit_{k-1}(f)$. Thus, we are adding some points to a 1-dimensional manifold.
 \end{rmrk}
 
@@ -50,7 +50,7 @@ With this definition, we can introduce a topology on the space of broken traject
 For each $p \in \crit(f)$, let $\Omega(p) \subset M$ denote the domain of the Morse chart centered in $p$. If necessary, shrink some of these domains to guarantee that $\Omega(p) \cap \Omega(q) = \emptyset$ for each pair $p \neq q \in \crit(f)$.
 
 Let $\lambda \in \overline{\mathcal{L}}(a,b)$. Then, $\lambda = (\lambda_1,...,\lambda_m)$ for some trajectories $\lambda_i$. Consider $a = c_0, c_1, ..., c_{m-1}, c_m = b$ the critical points connected by these trajectories. Let $U_{i-1}^{-}$ be a neighbourhood of the exit point of $\lambda_i$ from the set $\Omega(c_{i-1})$ taken to lie in a level set of $f$. Similarly, take $U_i^+$ a neighbourhood of the entry point of $\lambda_i$ into the set $\Omega(c_i)$, also lying in a level set of $f$. Then, we have a family of sets, which we will denote by
-$$\mathcal{W}(\lambda; U_0^{-}, U_1^{\pm},...,U_{m-1}^{\pm},U_m^{+}) .$$
+\[\mathcal{W}(\lambda; U_0^{-}, U_1^{\pm},...,U_{m-1}^{\pm},U_m^{+}) .\]
 Thus, we get a set of families, spanning all the broken trajectories $\lambda \in \overline{\mathcal{L}}(a,b)$ and the neighbourhoods $U_i^{\pm}$ that we just described. With all of this, we can define a topology on $\overline{\mathcal{L}}(a,b)$:
 
 \begin{deff}
@@ -91,18 +91,18 @@ Let $\gamma(t) = \varphi^t_X(a^-)$ be the trajectory of $X$ through $a^-$. Then,
 
 \begin{lema} \label{morse_sequences}
 Let $x \in M \backslash \crit(f)$, and $(x_n)_n$ a sequence that tends to $x$. Let $y_n$ a sequence of points such that $y_n$ and $x_n$ belong in the same trajectory of $X$ for each $n$, and $y$ belonging to the same trajectory as $x$. Moreover, suppose that $f(y_n) = f(y)$. Then,
-$$\lim_{n \rightarrow \infty} y_n = y .$$
+\[\lim_{n \rightarrow \infty} y_n = y .\]
 \end{lema}
 
 \begin{proof}
 Consider $U$ an open subset of $M \backslash \crit(f)$ such that it contains $x,y, x_n$ and $y_n$ (at least for $n$ sufficiently large). On $U$ we can define the vector field
-$$Y = - \frac1{d f(X)} X .$$
+\[Y = - \frac1{d f(X)} X .\]
 Let $\psi^t$ be its flow. $Y$ and $X$ are colinear at each point, so they have the same trajectories. In addition,
-$$f(\psi^t(z)) = f(z) - t .$$
+\[f(\psi^t(z)) = f(z) - t .\]
 Therefore, we can express $y_n$ as
-$$y_n = \psi^{f(x_n)-f(y_n)}(x_n) = \psi^{f(x_n)-f(y)}(x_n) ,$$
+\[y_n = \psi^{f(x_n)-f(y_n)}(x_n) = \psi^{f(x_n)-f(y)}(x_n) ,\]
 and
-$$y = \psi^{f(x)-f(y)}(x) .$$
+\[y = \psi^{f(x)-f(y)}(x) .\]
 So $\displaystyle\lim_{n \rightarrow \infty} y_n = y$.
 \end{proof}
 
@@ -115,7 +115,7 @@ We claim that $d^- \in W^u(c_1)$. Suppose that it is not the case. Let $\mu$ den
 If we repeat this process a finite number of times (as there is a finite number of critical points), we will be able to construct a subsequence $(l_n)_n$ and a broken trajectory $\lambda = (\lambda_1,...,\lambda_m)$ such that $\displaystyle\lim_{n \rightarrow \infty} l_n = \lambda$.
 
 Let us consider the general case of a sequence of $\overline{\mathcal{L}}(a,b)$. We can extract a subsequence $(l_n)_n$ such that there are critical points $c_1,...,c_{m-1}$ with $l_n \in \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b)$. We can do this because the union
-$$\overline{\mathcal{L}}(a,b) = \bigcup \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{q-1},b)$$
+\[\overline{\mathcal{L}}(a,b) = \bigcup \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{q-1},b)\]
 has a finite number of products, so a infinite number of terms of the sequence $(l_n)_n$ must lie in one of the products.
 
 Thus, $l_n = (l_n^1,...,l_n^{m-1}) \in \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b)$. If we apply the previous argument to each of the $(l_n^i)_n$, we can construct a subsequence and a broken trajectory $\mu$ such that $l_n \xrightarrow[n \rightarrow \infty]{} \mu$.
@@ -138,7 +138,7 @@ The theorem that we use says that
 \begin{theo} \label{morse_brokenboundary}
 If $a, b \in \crit(f)$ and $\text{Ind}(a)-\text{Ind}(b) = 2$, then $\overline{\mathcal{L}}(a,b)$ is a compact manifold with boundary. In addition, the set
 
-$$\bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b)$$
+\[\bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b)\]
 
 is precisely the boundary of $\overline{\mathcal{L}}(a,b)$.
 \end{theo}
@@ -150,10 +150,10 @@ This theorem is proved in Appendix \ref{appendix:brokenboundary}. Assuming that 
 
 \begin{proof}
 Take $a \in \crit_k(f)$. Then,
-$$\partial_X (\partial_X a) = \sum_{b \in \crit_{k-2}(f)} \sum_{c \in \crit_{k-1}(f)} n_X(a,c) n_X(c,b) b =$$
-$$= \sum_{b \in \crit_{k-1}(f)} \left( \sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) \right) b .$$
+\[\partial_X (\partial_X a) = \sum_{b \in \crit_{k-2}(f)} \sum_{c \in \crit_{k-1}(f)} n_X(a,c) n_X(c,b) b =\]
+\[= \sum_{b \in \crit_{k-1}(f)} \left( \sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) \right) b .\]
 However, we can see that
-$$\sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) = \# \left\{ \bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b) \right\} \quad (\text{mod } 2).$$
+\[\sum_{c \in \crit_{k-2}(f)} n_X(a,c) n_X(c,b) = \# \left\{ \bigcup_{c \in \crit(f)} \mathcal{L}(a,c) \times \mathcal{L}(c,b) \right\} \quad (\text{mod } 2).\]
 
 As we just said, the term on the right is the boundary of a 1-dimensional compact manifold with boundary, so it has an even number of points. Therefore, its cardinal modulo 2 must be 0.
 \end{proof}

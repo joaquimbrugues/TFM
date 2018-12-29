@@ -3,7 +3,7 @@
 With all the concepts introduced in Section \ref{section:morse_functions}, we are able to construct the Morse complex. From now on, consider $M$ to be a compact smooth manifold.
 
 \begin{deff}
-Recall that a {\bf complex} over a ring $R$ is a sequence of modules $\{ C_k \}_{k \in \N}$ over $R$ and a sequence of morphisms $\partial_k : C_k \rightarrow C_{k-1}$ such that $\partial_{k-1} \circ \partial_k = 0$.
+A {\bf complex} over a ring $R$ is a sequence of modules $\{ C_k \}_{k \in \N}$ over $R$ and a sequence of morphisms $\partial_k : C_k \rightarrow C_{k-1}$ such that $\partial_{k-1} \circ \partial_k = 0$.
 \end{deff}
 
 In the case of the complexes defined in this thesis, the ring that we are taking is $\con{Z}_2$. In this Section we are defining the modules of the Morse complex, and the differential (which is the usual name for the maps $\partial_{\bullet}$) will be defined properly later.
@@ -15,19 +15,23 @@ C_k(M,f) := \langle \crit_k(f) \rangle_{\con{Z}_2} .
 \end{displaymath}
 \end{deff}
 
+\begin{rmrk} \label{rmrk:finitecritial}
+The number of critical points of $f$ in $M$ has to be finite, because critical points are isolated (as we commented in corollary \ref{morselemma_coro}) and $M$ is compact. Therefore, the module $C_k(M,f)$ is finitely generated.
+\end{rmrk}
+
 \begin{exmpl}
 Let $\con{S}^2 \subset \R^3$ be the 2-sphere seen as a submanifold of $\R^3$, and consider the height function $h(x,y,z) = z$ in $\R^3$, but restricted to $\con{S}^2$. Then, it can be checked easily that the only critical points of $h$ are the north and south poles, $N = (0,0,1)$ and $S = (0,0,-1)$, and that the index of $h$ is respectively $2$ and $0$. Therefore, the Morse complex is isomorphic to
 \[C_k(\con{S}^2,h) \cong \left\{ \begin{array}{lc} \con{Z}_2 & \text{if } k = 0, 2 \\ 0 & \text{otherwise} \end{array}\right. .\]
 \end{exmpl}
 
-Let us take a moment to outline the key steps to define the Morse complex. It is worth stopping for a global picture before continuing, because these are the same steps that we will have to follow to define the Floer complex. The reader will notice that some of the points have already been discussed:
+Let us take a moment to outline the key steps to define the Morse complex. It is worth stopping for a global picture before continuing, because these are the same steps that we will have to follow to define the Floer complex. Some of the points have already been discussed:
 
 \begin{enumerate}
 \item Identify the object to study and its regularity conditions. In our case, the critical points of a Morse function, which has been studied in Section \ref{section:morse_functions}.
 \item Define a way to graduate the objects to study (in order to define the graduation in the complex). In our case, the index of the critical points, as has also been discussed in Section \ref{section:morse_functions}.
-\item Find a way to "connect" the objects being studied. In our case, this will be accomplished using the flow of a certain vector field that we will call pseudogradient, in the Section \ref{section:pseudogradients}.
+\item Find a way to "connect" the objects being studied. In our case, this will be accomplished using the flow of a certain vector field that we will call pseudogradient, in Section \ref{section:pseudogradients}.
 \item Use the connection that we just defined to provide a differential map $\partial$ in the complex. We will tackle this issue in Section \ref{section:morse_differential}.
-\item Prove that $\partial^2 = 0$, so we have indeed a complex and this defines an homology.
+\item Prove that $\partial^2 = 0$, so we have indeed a complex and it defines an homology.
 \item Prove that the homology is well defined. In our case, this means proving that the homology depends only on the manifold being studied, and neither on the particular Morse function used to define the Morse complex nor on the pseudogradient that we choose. This is proved in Section \ref{section:morse_well_defined}.
 \item Understand the resulting homology. This could imply proving classical results for the Morse homology as the Künneth formula, the Poincaré duality, and the functoriality of the homology.
 \end{enumerate}
@@ -40,10 +44,10 @@ Going a little ahead of ourselves, we can already present the principal result d
 	\item The alternating sum of $c_k$ equals the Euler characteristic of the manifold:
 	\[\sum_k (-1)^{-k}c_k = \chi(M) .\]
 	\item The number of critical points of $f$ is bounded from below by the sum of dimensions of the homology groups:
-	\[\sum_k c_k \geq \sum_k \text{dim} H_k(M) .\]
-	\item ({\bf Morse Inequalities}): If we take $\beta_k = \text{dim} H_k(M)$ the $k$-th Betti number, then
+	\[\sum_k c_k \geq \sum_k \mathrm{dim} H_k(M) .\]
+	\item ({\bf Morse Inequalities}): If we take $\beta_k = \mathrm{dim} H_k(M)$ the $k$-th Betti number, then
 	\[c_k \geq \beta_k .\]
 \end{itemize}
 \end{theo}
 
-In particular, what this theorem is showing is that Morse functions (or, more precisely, the critical points of Morse functions) are constrained by the topology of the manifold in which we define them.
+In particular, this theorem shows that Morse functions (or, more precisely, the critical points of Morse functions) are constrained by the topology of the manifold in which we define them.

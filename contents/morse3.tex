@@ -4,8 +4,8 @@
 
 In this section we will focus on how we can connect the points of $\crit(f)$ (for a Morse function) between them. The way to do this, in $\R^n$, would be the gradient of the function, this means,
 \[\grad f = \left( \der{f}{x_1},...,\der{f}{x_n} \right) .\]
-This vector field can be intrinsecally defined on a manifold $M$ using a metric $\langle \cdot , \cdot \rangle$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
-\[\langle \grad f, Y \rangle = d f \cdot Y .\]
+This vector field can be intrinsecally defined on a manifold $M$ using a Riemannian metric $g$ as the only vector field that satisfies that, for any vector field $Y \in \mathfrak{X}(M)$,
+\[g(\grad f, Y) = d f \cdot Y .\]
 
 For our purposes, we do not need to use precisely the gradient of a function, and sometimes it might not satisfy the properties that we need for the flow, so we introduce the more general concept of {\bf pseudogradient}.
 
@@ -13,7 +13,7 @@ For our purposes, we do not need to use precisely the gradient of a function, an
 Let $f$ be a Morse function defined on $M$. Then, a vector field $X \in \mathfrak{X}(M)$ is a {\bf pseudogradient} adapted to $f$ if it satisfies the two conditions
 
 \begin{enumerate}
-\item For every $x \in M$ we have $(d f)_x \cdot X_x \leq 0$, and the equality holds if and only if $x$ is a critical point for $f$.
+\item For every $p \in M$ we have $(d f)_p \cdot X_p \leq 0$, and the equality holds if and only if $x$ is a critical point for $f$.
 \item For each critical point of $f$, $X$ coincides with the negative gradient defined with the canonical metric defined in $\R^n$ on the domain of the Morse chart.
 \end{enumerate}
 \end{deff}
@@ -29,7 +29,7 @@ Let $M$ be a compact and smooth manifold, and $f$ a Morse function on $M$. Then,
 \end{prop}
 
 \begin{proof}
-Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many because the non-degenerate critical points are isolated and $M$ is compact), and let $(U_1,h_1),...,(U_r,h_r)$ be Morse charts in the neighbourhoods of these points. We assume that the images of these charts, which we will denote $\Omega_1,...,\Omega_r$, are disjoint. We can add more charts to get a finite open cover of $M$, $\{\Omega_j\}_{1 \leq j \leq m}$. Also, refine the open cover so that each critical point $c_i$ is contained only on its associated open set $\Omega_i$.
+Let $c_1,...,c_r$ be the critical points of $f$ (there are finitely many as we saw in remark \ref{rmrk:finitecritial}), and let $(U_1,h_1),...,(U_r,h_r)$ be Morse charts in the neighbourhoods of these points. We assume that the images of these charts, which we will denote $\Omega_1,...,\Omega_r$, are disjoint. We can add more charts to get a finite open cover of $M$, $\{\Omega_j\}_{1 \leq j \leq m}$. Also, refine the open cover so that each critical point $c_i$ is contained only on its associated open set $\Omega_i$.
 
 For each $\Omega_i$, let $X_i$ be the push-forward of the negative gradient of $\tilde{f}$ in $U_i$ by $h_i$. Also, take a partition of unity associated to $\{\Omega_j\}_{1 \leq j \leq m}$, $\{\varphi_j\}_{1 \leq j \leq m}$. Then, we can define the vector fields
 \[\widetilde{X}_j(x) = \left\{ \begin{array}{ll} \varphi_j(x) X_j & \text{if } x \in \Omega_j \\ 0 & \text{otherwise} \end{array} \right. ,\]

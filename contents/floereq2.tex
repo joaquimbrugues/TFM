@@ -1,6 +1,6 @@
 \section{The action functional}
 
-Now that we have defined the space of interest, this means, $\mathcal{L}M$, we need a way to emulate the constructions in Morse theory. In Morse theory we were studying a Morse function $f$ on $M$, graduated by its index and connecting the critical points via a pseudogradient adapted to $f$. Here, we want to provide a smooth functional\footnote{We always call {\it functionals} the functions defined in a space of infinite dimensions} from $\mathcal{L}M$ to $\R$ such that its critical points are the 1-periodic solutions of $X_{H_t}$. This will be precisely the action functional.
+Now that we have defined the space of interest, this means, $\mathcal{L}M$, we need a way to emulate the constructions in Morse theory. In Morse theory we were studying a Morse function $f$ on $M$, graduated by its index and connecting the critical points via a pseudogradient adapted to $f$. Here, we want to provide a smooth functional\footnote{We call {\it functionals} the functions defined in a space of infinite dimensions} from $\mathcal{L}M$ to $\R$ such that its critical points are the 1-periodic solutions of $X_{H_t}$. This will be precisely the action functional.
 
 \begin{rmrk}
 Take $x \in \mathcal{L}M$ a contractible loop, and let $u : \con{D}^2 \rightarrow M$ a smooth map such that $\left. u \right|_{\con{S}^1} = x$. Then, we can define the quantity
@@ -52,7 +52,7 @@ Then,
 \[d \mathcal{A}_H(x) \cdot Y = \left. \frac{d}{d s} \right|_{s=0} \mathcal{A}_H(z(s)) = \left. \frac{d}{d s} \right|_{s=0} \left( \int_0^1 H_t(z(s,t) d t - \int_{\con{D}^2} \tilde{u}_s^{\ast} \omega \right) .\]
 Differentiating the second term we get
 \[- \int_{\con{D}^2} \left( \left. \frac{d}{d s} \right|_{s=0} \tilde{u}_s^{\ast} \omega \right) = - \int_{\con{D}^2} u^{\ast} \left( \mathcal{L}_{Y(p)} \omega \right) =\]
-(and, applying Cartan's formula)
+(applying Cartan's formula, and then Stoke's theorem)
 \[= - \int_{\con{D}^2} u^{\ast} \left( d i_{Y(p)} \omega \right) = - \int_{\con{S}^1} x^{\ast} \left( i_{Y(t)} \omega \right) = \int_0^1 \omega(\dot{x}(t),Y(t)) d t .\]
 
 On the other hand, if we differentiate the first term,
@@ -62,5 +62,5 @@ and, by the definition of $X_H$, this is equal to
 Therefore,
 \[d \mathcal{A}_H(x) \cdot Y = \int_0^1 \omega(\dot{x}(t) - X_{H_t}(x(t)), Y(t)) d t .\]
 
-Then, $x$ is a critical point if and only if this expression is $0$ for all $Y \in T_x\mathcal{L}M$ and, by the non-degeneracy of $\omega$, this happens if and only if $\dot{x}(t) = X_{H_t}(x(t))$, so it is a periodic solution to the system.
+Then, $x$ is a critical point of $\mathcal{A}_H$ if and only if this expression is $0$ for all $Y \in T_x\mathcal{L}M$ and, by the non-degeneracy of $\omega$, this happens if and only if $\dot{x}(t) = X_{H_t}(x(t))$, so it is a periodic solution to the system.
 \end{proof}

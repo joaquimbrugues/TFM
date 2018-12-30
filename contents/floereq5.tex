@@ -1,4 +1,4 @@
-\section{Limit endpoints of elements of $\mathcal{M}$}
+\section{Limit endpoints of elements of $\mathcal{M}$} \label{section:floer5}
 
 We devote this section to prove what we already hinted in the remark \ref{remark:floer_limits}: the elements of $\mathcal{M}$ connect the critical points of the action functional. The precise statement of the theorem is the following:
 
@@ -10,7 +10,7 @@ in the $\mathcal{C}^{\infty}(\con{S}^1,M)$ sense, and
 uniformly in $t$.
 \end{theo}
 
-If we prove this theorem, we will have constructed the analogous as the pseudogradient adapted to a function in a manifold $M$ in Morse theory: a flow that connects critical points in a meaningful way. In the Morse case, this flow appears integrating the pseudogradient flow, but in the Floer case we needed to be a little more subtle and avoid the proper definition of the vector field, defining instead the equation that the flow must satisfy.
+If we prove this theorem, we will have constructed the analogous to the pseudogradient adapted to a function in a manifold $M$ in Morse theory: a flow that connects critical points in a meaningful way. In the Morse case, this flow appears integrating the pseudogradient flow, but in the Floer case we needed to be a little more subtle and avoid the proper definition of the vector field, defining instead the equation that the flow must satisfy.
 
 First of all, we need a basic lemma on what the nondegeneracy of $X_t$ implies for the critical points of the action functional:
 
@@ -24,7 +24,7 @@ Let us consider the following submanifolds of $M\times M$:
 	\item The diagonal $\Delta = \{(x,x) \ | \ x \in M\}$.
 	\item The graph of the flow $\varphi_{X_t}^t$ of $X_t$ at time $1$: $F = \left\{\left(x,\varphi_{X_t}^1(x)\right) \ | \ x \in M\right\}$.
 \end{itemize}
-The fact that the periodic orbits of $X_t$ are nondegenerate is equivalent to $\Delta \pitchfork F$. Moreover, $\dim(\Delta) = \dim(F) = 2n$ and $\dim(M\times M) = 4n$, so $\dim(\Delta \cap F) = 0$, so it is a closed submanifold of dimension $0$ of a compact manifold, so it is finite.
+The fact that the periodic orbits of $X_t$ are nondegenerate is equivalent to $\Delta \pitchfork F$. Moreover, $\dim(\Delta) = \dim(F) = 2n$ and $\dim(M\times M) = 4n$, so $\dim(\Delta \cap F) = 0$, so it is a submanifold of dimension $0$ of a compact manifold, and therefore it is finite.
 \end{proof}
 
 In order to prove the theorem, we need to begin by proving a certain bound in the energy and the action functional, depending on the critical points of $\mathcal{A}_H$. Let us denote $u_s = u(s,\cdot) \in \mathcal{L}M$.
@@ -87,7 +87,7 @@ In order to prove this, we need to use the convergence of $u_k$:
 \[= \lim_{k\rightarrow\infty} \left( u_k(t) - u_k(0) - \int_0^t X_{\tau}(y(\tau)) d\tau \right) = \lim_{k\rightarrow\infty} \left( \int_0^t \dot{u}_k(\tau)d\tau - \int_0^t X_{\tau}(y(\tau)) d\tau \right) =\]
 \[= \lim_{k\rightarrow\infty} \left( \int_0^t \left( \dot{u}_k(\tau) - X_{\tau}(u_k(\tau)) \right) d\tau \right) + \lim_{k\rightarrow\infty} \left( \int_0^t \left( X_{\tau}(u_k(\tau)) - X_{\tau}(y(\tau)) \right) d\tau \right) .\]
 To prove that the first term converges to zero we can apply the Cauchy-Schwarz inequality and the fact that
-\[\left\|\cdot{u}_k - X_t(u_k)\right\|_{L^2} \xrightarrow[k\rightarrow\infty]{} 0.\]
+\[\left\|\dot{u}_k - X_t(u_k)\right\|_{L^2} \xrightarrow[k\rightarrow\infty]{} 0.\]
 On the other hand, to see that se second term converges to zero too we just need to use the $\mathcal{C}^0$ convergence of $(u_k)_k$, which yields
 \[\left| \int_0^t \left( X_{\tau}(u_k(\tau)) - X_{\tau}(y(\tau)) \right) d\tau \right| \leq 2\pi \left\| X_t(u_k) - X_t(y) \right\|_{\mathcal{C}^0} \leq 2\pi R \| u_k - y \|_{\mathcal{C}^0} \xrightarrow[k\rightarrow\infty]{} 0 .\]
 
@@ -142,7 +142,7 @@ This implies that the function $s \mapsto \mathcal{A}_H(v(s,\cdot))$ is constant
 
 With this lemma, we can prove the theorem \ref{theo:floer_endpoints}.
 
-\begin{proof} {\it (Theorem \ref{theo:floer_endpoints}):} The topology of $\mathcal{L}M$ is metrizable (see \cite{hirsch2012differential} at chapter 2, section 4 for more information on this fact), so we can choose a metric $d_{\infty}$ in $\mathcal{L}M$ defining its topology. For each $x \in \crit(\mathcal{A}_H)$ we consider the open ball
+\begin{proof} {\it (Theorem \ref{theo:floer_endpoints}):} The topology of $\mathcal{L}M$ is metrizable (see \cite{hirsch2012differential} at Chapter 2, Section 4 for more information on this fact), so we can choose a metric $d_{\infty}$ in $\mathcal{L}M$ defining its topology. For each $x \in \crit(\mathcal{A}_H)$ we consider the open ball
 \[B(x,\e) = \left\{ \gamma \in \mathcal{L}M \ | \ d_{\infty}(x,\gamma) < \e \right\} .\]
 As  $\crit(\mathcal{A}_H)$ is finite, we can choose $\e > 0$ such that these balls are disjoint. In this case, let
 \[U_{\e} = \bigcup_{x \in \crit(\mathcal{A}_H)} B(x,\e) \subset \mathcal{L}M .\]

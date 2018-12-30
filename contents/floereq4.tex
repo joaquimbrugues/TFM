@@ -10,7 +10,7 @@ Recall that $F$ is equicontinuous when, $\forall x \in X, \e > 0$ there is a $\d
 
 In our case, we will take $V = \R^m$, where $m$ is such that $M$ can be compactly embedded into $V$. 
 
-The other result that we will use is one about the elliptic regularity of the Floer equation, which can be checked in \cite{audin2014morse}:
+The other result that we will use is one about the elliptic regularity of the Floer equation, which can be found in the Chapter 12 of \cite{audin2014morse}:
 
 \begin{prop} \label{floereq_ellipticreg}
 If $(u_k)_k$ is a sequence of solutions of the Floer equation and $u_k \xrightarrow[k \rightarrow \infty]{} u_0$ in $\mathcal{C}_{\text{loc}}^0(\R \times \con{S}^1,M)$, then $u_0 \in \mathcal{C}^{\infty}(\R \times \con{S}^1,M)$, $u_0$ is also a solution of the Floer equation, and $u_k \xrightarrow[k \rightarrow \infty]{} u_0$ in the strong sense in $\mathcal{C}^{\infty}(\R \times \con{S}^1,M)$.
@@ -22,7 +22,7 @@ With these results in hand, we are able to prove the following theorem:
 The set of solutions of the Floer equation with finite energy, $\mathcal{M}$, is compact.
 \end{theo}
 
-The whole content of the proof of this fact is in the following proposition:
+The whole content of the proof lies in the following proposition:
 
 \begin{prop} \label{floer_compact_prop}
 Under the assumption of asphericallity (\ref{assumption1}), there exists some $A > 0$ such that
@@ -31,7 +31,7 @@ Under the assumption of asphericallity (\ref{assumption1}), there exists some $A
 
 We will first prove the theorem using the proposition, and then the proposition itself:
 
-\begin{proof} {\it (Theorem):} By the proposition \ref{floer_compact_prop}, $\mathcal{M}$ is equicontinuous (because the gradients are uniformly bounded). On the other hand, as $M$ is compact, $\|u(s,t)\|$ is uniformly bounded for $u \in \mathcal{M}$. Therefore, by \ref{ascoli_arzela}, $\mathcal{M}$ is relatively compact in $\mathcal{C}_{\text{loc}}^0(\R \times \con{S}^1,M)$.
+\begin{proof} {\it (Theorem):} By the proposition \ref{floer_compact_prop}, $\mathcal{M}$ is equicontinuous. This is so because we can apply the mean value theorem to any pair of points $x,y$ in $M$, and the bound is uniform in the gradients of elements of $\mathcal{M}$. On the other hand, as $M$ is compact, $\|u(s,t)\|$ is uniformly bounded for $u \in \mathcal{M}$. Therefore, by \ref{ascoli_arzela}, $\mathcal{M}$ is relatively compact in $\mathcal{C}_{\text{loc}}^0(\R \times \con{S}^1,M)$.
 
 Let $(u_n)_n \subset \mathcal{M}$ a sequence. As we just observed, it must have some subsequence $(u_{n_k})$ such that $u_{n_k} \xrightarrow[k \rightarrow \infty]{} u_0$ for some $u_0 \in \mathcal{C}^0(\R\times\con{S}^1,M)$ in the $\mathcal{C}_{\text{loc}}^0(\R\times\con{S}^1,M)$ sense. However, by \ref{floereq_ellipticreg} we deduce that $u_0 \in \mathcal{M}$ and that $u_{n_k} \xrightarrow[k\rightarrow \infty]{} u_0$ in the strong sense in $\mathcal{C}^{\infty}(\R \times \con{S}^1,M)$.
 \end{proof}
@@ -110,7 +110,7 @@ and
 \[\frac{A(k^2)-A(k)}{\ln k} = \frac{A(k^2)-A(k)}{\ln k^2 - \ln k} = \frac{A'(r_k)}{\quocient{1}{r_k}}\]
 for some $k \leq r_k \leq k^2$, by the mean value theorem.
 
-With all the facts that we have proved, we are in the situation to explain the main phenomenon: $v$ forms a "bubble" inside of $M$, to the point that it tends towards a sphere.
+With all the facts that we have proved, we are in the situation to explain the phenomenon: $v$ forms a “bubble” inside of $M$, to the point that it tends towards a sphere.
 
 Let $k$ sufficiently large so that $\gamma = v(\partial B(0,r_k))$ is contained inside a Darboux chart for $\omega$, $U \subset M$. Inside of $U$, we have that $\omega = d\lambda$ for some $1$-form $\lambda$. As $\gamma \subset U$, we can take $D_k$ a closed disk with boundary $\gamma$ inside of $U$. Therefore, $v(B(0,r_k)) \cup D_k$ is a sphere $S_{r_k}^2 \subset M$. By the assumption of asphericallity, we know that
 \[\int_{S_{r_k}^2} i^{\ast} \omega = 0 ,\]
@@ -124,6 +124,6 @@ On the other hand, as $r_k \xrightarrow[k \rightarrow \infty]{} \infty$, the sec
 \[\int_{v(B(0,r_k))} \omega = \int_{B(0,r_k)} v^{\ast} \omega \xrightarrow[k \rightarrow \infty]{} \int_{\R^2} v^{\ast} \omega > 0 .\]
 Therefore,
 \[\lim_{k \rightarrow \infty} \int_{S_{r_k}^2} \omega > 0,\]
-which contradicts our assumption. Therefore, our assumption in this proof must be wrong: there has to be a bound $A$ such that
+which contradicts our assumption. Therefore, the assumption made at the beginning of this proof must be wrong: there has to be a bound $A$ such that
 \[\|\grad_{(s,t)}u\| \leq A \ \ \ \forall u \in \mathcal{M}, (s,t) \in \R \times \con{S}^1 .\]
 \end{proof}

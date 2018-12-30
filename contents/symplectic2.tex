@@ -1,9 +1,9 @@
 \section{The Arnold conjecture}
 
-In this section we focus on the dynamical aspect of symplectic manifolds. In particular, we are going to be interested in fixed points and periodic orbits of the flow for a given hamiltonian function. Let us begin with an elementary result.
+In this section we focus on the dynamical aspect of symplectic manifolds. In particular, we are going to be interested in fixed points and periodic orbits of the flow for a given Hamiltonian function. Let us begin with an elementary result.
 
 \begin{prop}
-$p \in M$ is a fixed point for the flow $\varphi_{X_H}^t$ for all time if and only if it is a critical point of $H$.
+A point $p \in M$ is a fixed point for the flow $\varphi_{X_H}^t$ for all time if and only if it is a critical point of $H$.
 \end{prop}
 
 \begin{proof}
@@ -11,10 +11,10 @@ Let $p$ be a critical point of $H$, so $d H(p) = 0$. As $\omega$ is nondegenerat
 \end{proof}
 
 Using Morse theory, it is then quite clear that, if $H$ is a Morse function, we have that
-\[\# \{\text{Fixed points of } X_H\} \geq \sum_i \text{dim}H_i(M) ,\]
+\[\# \{\text{fixed points of } X_H\} \geq \sum_i \text{dim}H_i(M) ,\]
 because the fixed points of $X_H$ coincide with the critical points of $H$.
 
-Of course, the number of fixed points of a system may be infinite (but only if the manifold is not compact: recall that critical points of a Morse function are isolated by proposition \ref{morselemma}!), but if they are finite there is a constraint on the minimum number of them, and this constraint does not depend on the properties of $H$ but on the topology of the manifold.
+Of course, the number of fixed points of a system may be infinite (but only if the manifold is not compact: recall that critical points of a Morse function are isolated by proposition \ref{morselemma}), but if they are finite there is a constraint on the minimum number of them, and this constraint does not depend on the properties of $H$ but on the topology of the manifold.
 
 The idea of Arnold's conjecture is to translate this result to the 1-periodic orbits of $\varphi_{X_H}^t$, this means, the solutions $x : [0,1] \rightarrow M$ of $\dot{x} = X_H$ such that $x(0) = x(1)$, or, rephrasing,
 \[\varphi_{X_H}^1(x(0)) = x(0) .\]
@@ -27,7 +27,7 @@ The number of periodic orbits of a Hamiltonian system's solution is greater or e
 However, we can ask ourselves a far more general question: does this result still hold when the system is not autonomous? This mean, if we take a time dependent Hamiltonian $H_t(x)$, is there a lower bound on the number of periodic solutions to the system
 \[\dot{x}(t) = X_{H(t)}(x(t)) .\]
 
-Of course, a generalization of the result for fixed points does not make sense anymore: for each symplectic manifold $M$ it is easy to produce some time-dependent Hamiltonian $H_t$ with no fixed points. Nonetheless, the question about the 1-periodic orbits is not so clear. To tackle it, we need to restrict slightly our object of interest to the periodic solutions that are nondegenerate:
+Of course, a generalization of the result for fixed points does not make sense anymore: for each symplectic manifold $M$ it is possible to produce some time-dependent Hamiltonian $H_t$ with no fixed points. Nonetheless, the question about the 1-periodic orbits is not so clear. To tackle it, we need to restrict slightly our object of interest to the periodic solutions that are nondegenerate:
 
 \begin{deff}
 Let $\varphi^t$ the flow of a time-dependent Hamiltonian. Consider $x$ a periodic solution of $X_{H(t)}$. We say that $x$ is a {\bf nondegenerate periodic orbit} if

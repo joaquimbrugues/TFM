@@ -1,8 +1,8 @@
-In this chapter we are going to provide some proofs that were not included in Chapter 1 because they were rather too technical, and including them would not help to our principal goal to focus on the scheme of the proof rather than going into the details of the theory. However, these results are important enough to be written in this appendix
+In this chapter we are going to provide some proofs that were not included in Chapter 1 because they were rather too technical, and including them would not give any additional insight into the theory of Morse homology. However, these results are important enough to be written in this appendix
 
 \section{The Morse functions are generic}
 
-In section \ref{section:morse_functions} we asked ourselves if any manifold $M$ admits Morse functions, and if this functions are generic enough. In this section we will provide an affirmative answer to both questions. To prove the existence, we are going to need two fundamental theorems of differential geometry:
+In section \ref{section:morse_functions} we asked ourselves if any manifold $M$ admits Morse functions, and if this functions are generic in some sense. In this section we will provide an affirmative answer to both questions. To prove the existence, we are going to need two fundamental theorems of differential geometry:
 
 \begin{theo}
 {\bf (Whitney embedding theorem):} Any smooth manifold of dimension $n$ can be smoothly embedded in $\R^{2n}$, if $n > 0$.
@@ -38,7 +38,7 @@ and
 
 The point $x$ is therefore a non-degenerate critical point if and only if $(x-p)$ is orthogonal to $\straightT_xM$ and the matrix $\frac{\partial^2 f_p}{\partial u_i \partial u_j}$ has rank $d$.
 
-To show that $f_p$ is a Morse function for almost all $p \in \R^N$ it suffices to show that that the $p$ that do not satisfy the condition are the critical values of a smooth map, and then apply the Sard's theorem. Consider the normal fiber bundle of the embedding of $M$ into $\R^N$, which is a smooth manifold:
+To show that $f_p$ is a Morse function for almost all $p \in \R^N$ it suffices to show that the points that do not satisfy the condition are the critical values of a smooth map, and then apply Sard's theorem. Consider the normal fiber bundle of the embedding of $M$ into $\R^N$, which is a smooth manifold:
 
 \begin{displaymath}
 N = \{(x,v) \in M \times \R^N \ | \ v \bot \straightT_xM \} ,
@@ -53,7 +53,7 @@ and the map
 Then, it sufices to proof the following lemma:
 
 \begin{lema}
-The point $p = x + v$ is a critical value of $E$ if, and only if, the matrix
+The point $p = x + v$ is a critical value of $E$ if, and only if, the matrix with components
 
 \begin{displaymath}
 \frac{\partial^2 f_p}{\partial u_i \partial u_j} = 2 \left( \frac{\partial x}{\partial u_i} \cdot \frac{\partial x}{\partial u_j} - v \cdot \frac{\partial^2 x}{\partial u_i \partial u_j} \right)
@@ -63,7 +63,7 @@ is not invertible.
 \end{lema}
 
 \begin{proof}
-Consider, for each point of the local chart $(u_1,...,u_d)$, a orthonormal basis of $(\straightT_xM)^{\bot}$ by the $N-d$ vectors $v_1,...,v_{N-d}$. Then, we have a local parametrization for $N$, given by the map
+Consider, for each point of the local chart $(u_1,...,u_d)$, an orthonormal basis of $(\straightT_xM)^{\bot}$ by the $N-d$ vectors $v_1,...,v_{N-d}$. Then, we have a local parametrization for $N$, given by the map
 
 \begin{displaymath}
 (u_1,...,u_d,t_1,...,t_{N-d}) \longmapsto \left( x(u_1,...,u_d), \sum_{i=1}^{N-d} t_i v_i (u_1,...,u_d) \right) .
@@ -71,9 +71,7 @@ Consider, for each point of the local chart $(u_1,...,u_d)$, a orthonormal basis
 
 In these coordinates, the partial derivatives of $E$ are
 
-\begin{displaymath}
-\left\{ \begin{array}{l} \frac{\partial E}{\partial u_i} = \frac{\partial x}{\partial u_i} + \sum_{k=1}^{N-d} t_k \frac{\partial v_k}{\partial u_i} \\ \frac{\partial E}{\partial t_j} = v_j \end{array} \right. .
-\end{displaymath}
+\[\left\{ \begin{array}{l} \frac{\partial E}{\partial u_i} = \frac{\partial x}{\partial u_i} + \sum_{k=1}^{N-d} t_k \frac{\partial v_k}{\partial u_i} \\ \frac{\partial E}{\partial t_j} = v_j \end{array} \right. .\]
 
 If we compute the inner products of these $N$ vectors with the $N$ independent vectors $\frac{\partial x}{\partial u_1} , ..., \frac{\partial x}{\partial u_d}, v_1, ..., v_{N-d}$, we get a square matrix that has the same rank as the Jacobian of $E$, and this matrix has the form
 
@@ -129,7 +127,9 @@ Therefore, the Morse functions are actually generic, in the sense that we can ap
 
 \section{The broken trajectories are the boundary in dimension 1} \label{appendix:brokenboundary}
 
-In this section, we are going to focus on the proof of theorem \ref{morse_brokenboundary}. This theorem is fundamental to the construction of the Morse complex, because it is, ultimately, the proof that it is indeed a complex, this means, that $\partial_X^2 = 0$. Let us restate it here, with more precision. Recall that we have a triple $(M, f, X)$, where $M$ is a compact smooth manifold, $f$ is a Morse function defined on $M$, and $X$ is a pseudogradient adapted to $f$ and satisfying the Smale condition.
+In this section, we are going to focus on the proof of theorem \ref{morse_brokenboundary}. This theorem is fundamental to the construction of the Morse complex, because it is, ultimately, the proof that it is indeed a complex, this means, that $\partial_X^2 = 0$. Let us restate it here, with more precision.
+
+Recall that we have a triple $(M, f, X)$, where $M$ is a compact smooth manifold, $f$ is a Morse function defined on $M$, and $X$ is a pseudogradient adapted to $f$ and satisfying the Smale condition.
 
 \begin{theo}
 Let $a \in \crit_{k+1}(f), b \in \crit_k(f), c \in \crit_{k-1}(f)$. For all $(\lambda_1,\lambda_2) \in \mathcal{L}(a,b) \times \mathcal{L}(b,c)$, $\exists \psi : [0,\delta) \rightarrow \overline{\mathcal{L}}(a,c)$ (for some $\delta > 0$) such that

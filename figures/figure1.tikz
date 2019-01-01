@@ -1,0 +1,30 @@
+%Figure to illustrate the lemma 1.41
+\begin{tikzpicture}
+	\draw [arrows={-latex}] (0,2.75) to [out=330,in=180] (1,2.5)
+to [out=0,in=195] (8,3) to [out=15,in=220] (10,4) ;
+	\draw [fill] (1,2.5) circle [radius=0.05]
+	node [label={[above]$x$}] {};
+	\draw [fill] (8,3) circle [radius=0.05]
+	node [label={[above]$y$}] {};
+
+	\draw [arrows={-latex}] (0,1.6) to [out=355,in=175] (0.9,1.5) to [out=355,in=185] (8,1.5) to [out=5,in=185] (10,1.7);
+	\draw [fill] (0.9,1.5) circle [radius=0.05]
+	node [label={[above,xshift=8]$x_n$}] {};
+	\draw [fill] (8,1.5) circle [radius=0.05]
+	node [label={[above,xshift=8]$y_n$}] {};
+
+	\draw [dotted] (1,2.5) to [out=260,in=92] (0.9,1.5);
+	\draw [dotted] (8,3) to (8,1.5);
+
+	\draw [arrows={-latex}] (0,1.1) to [out=355,in=175] (1,1) to [out=355,in=180] (8,0.8) to [out=0,in=180] (10,0.8);
+	\draw [fill] (1,1) circle [radius=0.05]
+	node [label={[above,yshift=-5,xshift=14]$x_{n-1}$}] {};
+	\draw [fill] (8,0.8) circle [radius=0.05]
+	node [label={[above,yshift=-3,xshift=14]$y_{n-1}$}] {};
+
+	\draw [arrows={-latex}] (0,0.6) to [out=355,in=175] (1,0.5) to [out=355,in=180] (8,0.4) to [out=0,in=183] (10,0.5);
+	\draw [fill] (1,0.5) circle [radius=0.05]
+	node [label={[above,yshift=-6,xshift=16]$x_{n-1}$}] {};
+	\draw [fill] (8,0.4) circle [radius=0.05]
+	node [label={[below,xshift=15,yshift=-3]$y_{n-1}$}] {};
+\end{tikzpicture}

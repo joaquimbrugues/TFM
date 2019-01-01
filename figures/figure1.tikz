@@ -22,8 +22,8 @@ to [out=0,in=195] (8,3) to [out=15,in=220] (10,4) ;
 	\draw [fill] (8,0.8) circle [radius=0.05]
 	node [label={[above,yshift=-3,xshift=14]$y_{n-1}$}] {};
 
-	\draw [arrows={-latex}] (0,0.6) to [out=355,in=175] (1,0.5) to [out=355,in=180] (8,0.4) to [out=0,in=183] (10,0.5);
-	\draw [fill] (1,0.5) circle [radius=0.05]
+	\draw [arrows={-latex}] (0,0.6) to [out=355,in=175] (1.1,0.5) to [out=355,in=180] (8,0.4) to [out=0,in=183] (10,0.5);
+	\draw [fill] (1.1,0.5) circle [radius=0.05]
 	node [label={[above,yshift=-6,xshift=16]$x_{n-1}$}] {};
 	\draw [fill] (8,0.4) circle [radius=0.05]
 	node [label={[below,xshift=15,yshift=-3]$y_{n-1}$}] {};

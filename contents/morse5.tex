@@ -115,7 +115,13 @@ The points $d_n^+$ do not belong to $W^s(c_1)$ (because, otherwise, we would hav
 
 We claim that $d^- \in W^u(c_1)$. Suppose that it is not the case. Let $\mu$ denote the trajectory of $X$ passing through $d^-$. If $d^- \notin W^u(c_1)$, there must be a point $d_{\ast}$ such that $f(d_{\ast}) = f(d_n^+)$. By the lemma that we just proved, $d_n^+ \xrightarrow[n \rightarrow \infty]{} d_{\ast}$, so $d_{\ast} = d^+$. Therefore, $d_{\ast} \in W^s(c_1)$. However, this is a contradiction, because $\mu$ passes through $d_{\ast}$ and exits $\Omega(c_1)$ through $d^-$. Therefore, we have proved that $d^- \in W^u(c_1)$.
 
-If we repeat this process a finite number of times (as there is a finite number of critical points), we will be able to construct a subsequence $(l_n)_n$ and a broken trajectory $\lambda = (\lambda_1,...,\lambda_m)$ such that $\displaystyle\lim_{n \rightarrow \infty} l_n = \lambda$.
+If we repeat this process a finite number of times (as there is a finite number of critical points), we will be able to construct a subsequence $(l_n)_n$ and a broken trajectory $\lambda = (\lambda_1,...,\lambda_m)$ such that $\displaystyle\lim_{n \rightarrow \infty} l_n = \lambda$, as in Figure \ref{figure:limit_trajectories}.
+
+\begin{figure}[h] \label{figure:limit_trajectories}
+	\centering
+	\input{../figures/figure2.tikz}
+	\caption{The trajectories $l_n$ tend to a broken trajectory.}
+\end{figure}
 
 Let us consider the general case of a sequence of $\overline{\mathcal{L}}(a,b)$. We can extract a subsequence $(l_n)_n$ such that there are critical points $c_1,...,c_{m-1}$ with $l_n \in \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{m-1},b)$. We can do this because the union
 \[\overline{\mathcal{L}}(a,b) = \bigcup \mathcal{L}(a,c_1) \times \cdots \times \mathcal{L}(c_{q-1},b)\]

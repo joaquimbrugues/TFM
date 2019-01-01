@@ -1,0 +1,29 @@
+%Figure to illustrate the end of the proof of theorem 1.40
+%label={[label distance=<distance>]<angle>:<label text>}
+\begin{tikzpicture}
+	\draw[arrows={-latex}] (2,2) to [out=250,in=90] (1.7,0.5);
+	\draw[arrows={-latex}] (2,2) to [out=235,in=90] (1.4,0.5);
+	\draw[arrows={-latex}] (2,2) to [out=215,in=90] (1.1,0.5);
+	\draw[fill] (2,2) circle [radius=0.05]
+	node [label={[above,xshift=10]$a$}] {};
+	\draw[fill] (1,1.7) circle [radius=0.05]
+	node [label={[label distance=0.1mm]170:$c_1$}] {};
+	\draw[arrows={-latex}] (2,2) -- (1,1.7);
+	\draw[fill] (0.8,0.6) circle [radius=0.05]
+	node [label={[label distance=0.1mm]180:$c_2$}] {};
+	\draw[arrows={-latex}] (1,1.7) -- (0.8,0.6);
+
+	\draw[fill] (0.8,0) circle [radius=0.05]
+	node [label={[label distance=0.1mm]190:$c_m$}] {};
+	\draw[dotted] (0.8,0.6) -- (0.8,0);
+	\draw[dotted] (1.7,0.5) -- (1.7,0);
+	\draw[dotted] (1.4,0.5) -- (1.4,0);
+	\draw[dotted] (1.1,0.5) -- (1.1,0);
+
+	\draw[fill] (2,-1) circle [radius=0.05]
+	node [label={[label distance=0.1mm]270:$b$}] {};
+	\draw[arrows={-latex}] (0.8,0) -- (2,-1);
+	\draw[arrows={-latex}] (1.7,0) to [out=280,in=130] (2,-1);
+	\draw[arrows={-latex}] (1.4,0) to [out=290,in=135] (2,-1);
+	\draw[arrows={-latex}] (1.1,0) to [out=300,in=135] (2,-1);
+\end{tikzpicture}

@@ -1,0 +1,56 @@
+\section{Examples of the Morse complex} \label{section:morse_examples}
+
+In this section we are going to provide some examples of the Morse complexes constructed in various manifolds these examples are meant to illustrate the properties of the Morse homology, as well as give some sense to how the theory is developed.
+
+\subsection{The sphere}
+
+\begin{exmpl}
+Consider the 2 dimensional sphere embedded inside $\R^3$ and the height function $h(x,y,z) = z$ (restricted to $\con{S}^2$). As we saw in \ref{coro:reeb}, the spheres are the only compact manifolds without boundary that admit only two critical points, and the height function is the prime example of this.
+
+\begin{figure}[h] \label{figure:example1}
+	\centering
+	\input{../figures/example1.tikz}
+	\caption{The critical points of $h$ on $\con{S}^2$.}
+\end{figure}
+
+In this case (see figure \ref{figure:example1}), the complex is easy to construct. The only critical points of $h$ are $S$ (of index 0) and $N$ of index 2, and the vector field $- \grad h$ (defined using the euclidean metric) satisfies the Smale condition, so we can use it to define the differential of the complex. However, we just commented that
+\[C_k(\con{S}^2,h) = \left\{ \begin{array}{lc} \con{Z}_2 S & \text{if } k=0 \\ \con{Z}_2 N & \text{if } k=2 \\ 0 & \text{otherwise} \end{array} \right. ,\]
+so $\partial_k = 0$ for all $k$. Therefore, the homology that results is the one that we might expect:
+\[H_k(\con{S}^2,h) = \left\{ \begin{array}{lc} \con{Z}_2 & \text{if } k=0,2 \\ 0 & \text{otherwise} \end{array} \right. .\]
+\end{exmpl}
+
+\begin{exmpl} Allow us to show a different function on the sphere. This function, $f$ is such that it induces the dynamics shown in Figure \ref{figure:example2}. In particular, it has the following critical points:
+\begin{itemize}
+	\item The local maxima $a_1,a_2$ and $a_3$, which are critical points of index $2$.
+	\item The critical points $b_1$ and $b_2$ of index $1$.
+	\item The absolute minimum $c$, of index $0$.
+\end{itemize}
+
+\begin{figure}[h] \label{figure:example2}
+	\centering
+	\input{../figures/example2.tikz}
+	\caption{The critical points and some trajectories of function $f$ over $\con{S}^2$.}
+\end{figure}
+
+In Figure \ref{figure:example2} we sketch the dynamics induced by this function by plotting the trajectories that connect critical points of consecutive indices (one has to imagine that all the points of $\con{S}^2$ not belonging to any of these trajectories belong to a trajectory connecting a critical point of index $2$ to $c$).
+
+Therefore, we already know that
+\[C_k(\con{S}^2,f) = \left\{ \begin{array}{lc} \langle a_1, a_2, a_3 \rangle_{\con{Z}_2} & \text{if } k=2 \\ \langle b_1,b_2\rangle_{\con{Z}_2} & \text{if } k=1 \\ \langle c \rangle_{\con{Z}_2} & \text{if } k=0 \end{array} \right. ,\]
+this means, $C_2(\con{S}^2,f) \cong \con{Z}_2^3$, $C_1(\con{S}^2,f) \cong \con{Z}_2^2$ and $C_0(\con{S}^2,f) \cong \con{Z}_2$.
+
+Moreover, we can compute the differential over the generators of each group of the complex:
+\[\partial_2 a_1 = b_1+b_2 \, , \, \partial_2 a_2 = b_1 \, , \, \partial_2 a_3 = b_2,\]
+\[\partial_1 b_1 = 2c = 0 \, , \, \partial_1 b_2 = 2c = 0 .\]
+From this, we deduce that $\partial_1 = 0$, and
+\[\partial_2 = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \end{pmatrix} .\]
+This means, $\text{Im}(\partial_2) = C_1(\con{S}^2,f)$, and $\text{Ker}(\partial_2) = \langle a_1+a_2+a_3 \rangle_{\con{Z}_2}$. This gives us a complete description of the homology groups:
+\[H_0(\con{S}^2,f) = \quocient{C_0(\con{S}^2,f)}{\text{Im}(\partial_1)} = \con{Z}_2[c] ,\]
+\[H_1(\con{S}^2,f) = \quocient{\text{Ker}(\partial_1)}{\text{Im}(\partial_2)} = \quocient{C_1(\con{S}^2,f)}{C_1(\con{S}^2,f)} = 0,\]
+\[H_2(\con{S}^2,f) = \quocient{\text{Ker}(\partial_2)}{0} = \con{Z}_2 [a_1+a_2+a_3] .\]
+
+In particular, it is clear that $H_k(\con{S}^2,h) \cong H_k(\con{S}^2,f)$, suggesting that (as we will prove in Section \ref{section:morse_well_defined}) the homology of a manifold does not depend on the function used to define it.
+\end{exmpl}
+
+\subsection{The torus}
+
+

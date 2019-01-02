@@ -1,0 +1,68 @@
+\begin{tikzpicture}
+	%Sphere
+	\draw (-3,0) arc (180:360:3cm and 1.5cm);
+	\draw[dashed] (-3,0) arc (180:0:3cm and 1.5cm);
+	\draw (0,0) circle (3cm);
+	\shade[ball color=gray!10!white,opacity=0.20] (0,0) circle (3cm);
+
+	%Point a_1
+	\draw [fill] (0,3) circle [radius=0.1cm]
+	node [label={[above]$a_1$}] {};
+	%Point a_2
+	\draw [fill] (-2,-1.5) circle [radius=1mm]
+	node [label={[below,xshift=3mm,yshift=-2mm]$a_2$}] {};
+	%Point a_3
+	\draw [fill=gray!90!white,draw=gray!90!white] (2,-1.5) circle [radius=1mm]
+	node [label={[below,xshift=-3mm,yshift=-2mm]$a_3$}] {};
+	%Point b_1
+	\draw [fill] (-2,1.5) circle [radius=0.1cm]
+	node [label={[above,xshift=-0.5mm,yshift=-0.6mm]$b_1$}] {};
+	%Point b_2
+	\draw [fill=gray!90!white,draw=gray!90!white] (2,1.5) circle [radius=0.1cm]
+	node [label={[above,yshift=-0.6mm,xshift=1mm]$b_2$}] {};
+	%Point c
+	\draw [fill] (0,-3) circle [radius=0.1cm]
+	node [label={[below,yshift=-0.2cm]$c$}] {};
+
+	%Trajectory from a_1 to b_1
+	\draw[-{Latex[length=2mm]}] (0,3) to [out=190,in=40] (-1.3,2.4);
+	\draw[] (-1.2,2.5) to [out=220,in=60] (-2,1.5);
+	\draw (-1.1,2.4) node [label={[below]$\lambda_1$}] {};
+
+	%Trajectory from a_1 to b_2
+	\draw[-{Latex[length=2mm]},dashed] (0,3) to [out=350,in=140] (1.3,2.4);
+	\draw[dashed] (1.2,2.5) to [out=320,in=120] (1.95,1.6);
+	\draw (1.1,2.4) node [label={[below]$\lambda_2$}] {};
+
+	%Trajectory from a_2 to b_1
+	\draw[-{Latex[length=2mm]}] (-2,-1.5) to [out=120,in=275] (-2.4,-0.4);
+	\draw[] (-2.4,-0.45) to [out=95,in=240] (-2,1.5);
+	\draw (-2.4,-0.5) node [label={[above,xshift=2.5mm]$\lambda_3$}] {};
+
+	%Trajectory from a_3 to b_2
+	\draw[-{Latex[length=2mm]},dashed] (2,-1.5) to [out=60,in=265] (2.4,-0.4);
+	\draw[dashed] (2.4,-0.45) to [out=85,in=300] (2.05,1.4);
+	\draw (2.4,-0.5) node [label={[above,xshift=-2mm]$\lambda_4$}] {};
+
+	%Trajectory from b_1 to c
+	\draw[-{Latex[length=2mm]}] (-2,1.5) to [out=330,in=110] (-0.49,-0.51);
+	\draw[] (-0.5,-0.5) to [out=290,in=100] (0,-3);
+	\draw (-0.5,-0.5) node [label={[above,xshift=-3.7mm]$\mu_1$}] {};
+
+	%Trajectory from b_2 to c
+	\draw[-{Latex[length=2mm]},dashed] (2,1.5) to [out=210,in=70] (0.5,-0.5);
+	\draw[dashed] (0.5,-0.5) to [out=250,in=80] (0,-3);
+	\draw (0.5,-0.5) node [label={[above,xshift=4mm]$\mu_3$}] {};
+
+	%Trajectory from b_1 to c (behind)
+	\draw[] (-2,1.5) to [out=150,in=80.41] (-2.96,0.5);
+	\draw[-{Latex[length=2mm]},dashed] (-2.96,0.5) to [out=260.41,in=150] (-1.1,-2.6);
+	\draw[dashed] (-1.1,-2.6) to [out=330,in=165] (0,-3);
+	\draw (-1.1,-2.6) node [label={[above,xshift=2mm,yshift=-1.5mm]$\mu_2$}] {};
+
+	%Trajectory from b_2 to c (in front)
+	\draw[dashed] (2,1.5) to [out=30,in=99.59] (2.96,0.5);
+	\draw[-{Latex[length=2mm]}] (2.96,0.5) to [out=279.59,in=30] (1.05,-2.63);
+	\draw[] (1.1,-2.6) to [out=210,in=15] (0,-3);
+	\draw (1.1,-2.6) node [label={[above,xshift=-2mm,yshift=-1.5mm]$\mu_4$}] {};
+\end{tikzpicture}

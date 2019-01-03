@@ -6,22 +6,22 @@
 	\shade[ball color=gray!10!white,opacity=0.20] (0,0) circle (3cm);
 
 	%Point a_1
-	\draw [fill] (0,3) circle [radius=0.1cm]
+	\draw [fill] (0,3) circle [radius=0.75mm]
 	node [label={[above]$a_1$}] {};
 	%Point a_2
-	\draw [fill] (-2,-1.5) circle [radius=1mm]
+	\draw [fill] (-2,-1.5) circle [radius=0.75mm]
 	node [label={[below,xshift=3mm,yshift=-2mm]$a_2$}] {};
 	%Point a_3
-	\draw [fill=gray!90!white,draw=gray!90!white] (2,-1.5) circle [radius=1mm]
+	\draw [fill=gray!90!white,draw=gray!90!white] (2,-1.5) circle [radius=0.75mm]
 	node [label={[below,xshift=-3mm,yshift=-2mm]$a_3$}] {};
 	%Point b_1
-	\draw [fill] (-2,1.5) circle [radius=0.1cm]
+	\draw [fill] (-2,1.5) circle [radius=0.75mm]
 	node [label={[above,xshift=-0.5mm,yshift=-0.6mm]$b_1$}] {};
 	%Point b_2
-	\draw [fill=gray!90!white,draw=gray!90!white] (2,1.5) circle [radius=0.1cm]
+	\draw [fill=gray!90!white,draw=gray!90!white] (2,1.5) circle [radius=0.75mm]
 	node [label={[above,yshift=-0.6mm,xshift=1mm]$b_2$}] {};
 	%Point c
-	\draw [fill] (0,-3) circle [radius=0.1cm]
+	\draw [fill] (0,-3) circle [radius=0.75mm]
 	node [label={[below,yshift=-0.2cm]$c$}] {};
 
 	%Trajectory from a_1 to b_1

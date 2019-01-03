@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+	%Draw the circle
+	\draw[] (0,0) circle [radius=2];
+	%Point a
+	\draw [fill] (0,0) circle [radius=0.75mm]
+	node [label={[below,yshift=-1mm,xshift=2mm]$a$}] {};
+	%Point c (up)
+	\draw [fill] (0,2) circle [radius=0.75mm]
+	node [label={[above]$c$}] {};
+	%Point c (down)
+	\draw [fill] (0,-2) circle [radius=0.75mm]
+	node [label={[below,yshift=-2mm]$c$}] {};
+	%Point b (left)
+	\draw [fill] (-2,0) circle [radius=0.75mm]
+	node [label={[left]$b$}] {};
+	%Point b (right)
+	\draw [fill] (2,0) circle [radius=0.75mm]
+	node [label={[right]$b$}] {};
+
+	%Arrow in c --> b (upper left)
+	\draw[-{Latex[length=2mm]}] (-1.41,1.42) -- (-1.42,1.41);
+	\draw (-1.45,1.4) node [label=$\lambda_1$]{};
+	%Arrow in c --> b (upper right)
+	\draw[-{Latex[length=2mm]}] (1.41,1.42) -- (1.42,1.41);
+	\draw (1.45,1.4) node [label=$\lambda_2$]{};
+	%Arrow in c --> b (lower left)
+	\draw[-{Latex[length=2mm]}] (-1.41,-1.42) -- (-1.42,-1.41);
+	\draw (-1.6,-2.1) node [label=$\lambda_2$]{};
+	%Arrow in c --> b (lower right)
+	\draw[-{Latex[length=2mm]}] (1.41,-1.42) -- (1.42,-1.41);
+	\draw (1.6,-2.1) node [label=$\lambda_1$]{};
+
+	%Arrow c --> a (upper)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,2) to (0,0);
+	%Arrow c --> a (lower)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,-2) to (0,0);
+	%Arrow b --> a (left)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (-2,0) to (0,0);
+	%Arrow b --> a (right)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (2,0) to (0,0);
+
+	%Arrows c --> a (upper right)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,2) to [out=340,in=100] (1.6,0.5) to [out=280,in=10] (0,0);
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,2) to [out=315,in=100] (0.75,0.75) to [out=280,in=20] (0,0);
+	%Arrows c --> a (upper left)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,2) to [out=200,in=80] (-1.6,0.5) to [out=260,in=170] (0,0);
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,2) to [out=225,in=80] (-0.75,0.75) to [out=260,in=160] (0,0);
+	%Arrows c --> a (lower right)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,-2) to [out=20,in=260] (1.6,-0.5) to [out=80,in=350] (0,0);
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,-2) to [out=45,in=280] (0.75,-0.75) to [out=100,in=340] (0,0);
+	%Arrows c --> a (lower left)
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,-2) to [out=160,in=260] (-1.6,-0.5) to [out=80,in=190] (0,0);
+	\path[draw,decoration={markings, mark=at position 0.5 with \arrow{Latex[length=2mm]},},postaction=decorate] (0,-2) to [out=135,in=280] (-0.75,-0.75) to [out=100,in=200] (0,0);
+\end{tikzpicture}

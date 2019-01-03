@@ -3,8 +3,8 @@
 	\draw[dashed] (-2,0) arc (180:0:2cm and 1cm);
 	\draw (0,0) circle (2cm);
 	\shade[ball color=gray!10!white,opacity=0.20] (0,0) circle (2cm);
-	\draw [fill] (0,2) circle [radius=0.1cm]
+	\draw [fill] (0,2) circle [radius=0.75mm]
 	node [label={[above]$N$}] {};
-	\draw [fill] (0,-2) circle [radius=0.1cm]
+	\draw [fill] (0,-2) circle [radius=0.75mm]
 	node [label={[below,yshift=-0.2cm]$S$}] {};
 \end{tikzpicture}

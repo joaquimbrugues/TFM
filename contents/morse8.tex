@@ -7,10 +7,11 @@ In this section we are going to provide some examples of the Morse complexes con
 \begin{exmpl}
 Consider the 2 dimensional sphere embedded inside $\R^3$ and the height function $h(x,y,z) = z$ (restricted to $\con{S}^2$). As we saw in \ref{coro:reeb}, the spheres are the only compact manifolds without boundary that admit only two critical points, and the height function is the prime example of this.
 
-\begin{figure}[h] \label{figure:example1}
+\begin{figure}[h]
 	\centering
 	\input{../figures/example1.tikz}
 	\caption{The critical points of $h$ on $\con{S}^2$.}
+	\label{figure:example1}
 \end{figure}
 
 In this case (see figure \ref{figure:example1}), the complex is easy to construct. The only critical points of $h$ are $S$ (of index 0) and $N$ of index 2, and the vector field $- \grad h$ (defined using the euclidean metric) satisfies the Smale condition, so we can use it to define the differential of the complex. However, we just commented that
@@ -19,23 +20,24 @@ so $\partial_k = 0$ for all $k$. Therefore, the homology that results is the one
 \[H_k(\con{S}^2,h) = \left\{ \begin{array}{lc} \con{Z}_2 & \text{if } k=0,2 \\ 0 & \text{otherwise} \end{array} \right. .\]
 \end{exmpl}
 
-\begin{exmpl} Allow us to show a different function on the sphere. This function, $f$ is such that it induces the dynamics shown in Figure \ref{figure:example2}. In particular, it has the following critical points:
+\begin{exmpl} Let us think about a different function on the sphere. This function, $f$ is such that it induces the dynamics shown in Figure \ref{figure:example2}. In particular, it has the following critical points:
 \begin{itemize}
 	\item The local maxima $a_1,a_2$ and $a_3$, which are critical points of index $2$.
 	\item The critical points $b_1$ and $b_2$ of index $1$.
 	\item The absolute minimum $c$, of index $0$.
 \end{itemize}
 
-\begin{figure}[h] \label{figure:example2}
+\begin{figure}[h]
 	\centering
 	\input{../figures/example2.tikz}
 	\caption{The critical points and some trajectories of function $f$ over $\con{S}^2$.}
+	\label{figure:example2}
 \end{figure}
 
 In Figure \ref{figure:example2} we sketch the dynamics induced by this function by plotting the trajectories that connect critical points of consecutive indices (one has to imagine that all the points of $\con{S}^2$ not belonging to any of these trajectories belong to a trajectory connecting a critical point of index $2$ to $c$).
 
 Therefore, we already know that
-\[C_k(\con{S}^2,f) = \left\{ \begin{array}{lc} \langle a_1, a_2, a_3 \rangle_{\con{Z}_2} & \text{if } k=2 \\ \langle b_1,b_2\rangle_{\con{Z}_2} & \text{if } k=1 \\ \langle c \rangle_{\con{Z}_2} & \text{if } k=0 \end{array} \right. ,\]
+\[C_k(\con{S}^2,f) = \left\{ \begin{array}{lc} a_1\con{Z}_2 \oplus a_2\con{Z}_2 \oplus a_3\con{Z}_2 & \text{if } k=2 \\ b_1\con{Z}_2 \oplus b_2\con{Z}_2 & \text{if } k=1 \\ c\con{Z}_2 & \text{if } k=0 \end{array} \right. ,\]
 this means, $C_2(\con{S}^2,f) \cong \con{Z}_2^3$, $C_1(\con{S}^2,f) \cong \con{Z}_2^2$ and $C_0(\con{S}^2,f) \cong \con{Z}_2$.
 
 Moreover, we can compute the differential over the generators of each group of the complex:
@@ -53,4 +55,82 @@ In particular, it is clear that $H_k(\con{S}^2,h) \cong H_k(\con{S}^2,f)$, sugge
 
 \subsection{The torus}
 
+\begin{exmpl} Consider the torus embedded in $\R^3$ as shown in figure \ref{figure:example3}.
 
+\begin{figure} [h]
+	\centering
+	\input{../figures/example3.tikz}
+	\caption{The critical points of $h$ in $\con{T}^2$.}
+	\label{figure:example3}
+\end{figure}
+
+It can be checked that it is a Morse function, so it provides the intuition of how to recover the cell decomposition of $\con{T}^2$ from the critical points of the height function $h$, as seen in Theorem \ref{theo:morse_topology}. However, its negative gradient does not satisfy the Smale condition. This can be seen, for instance, because $\text{dim}(W^U(b_1)\cap W^S(b_2)) = 1$, so $W^U(b_1)\not\pitchfork W^S(b_2)$. This prevents us to use it to define the differential of the Morse complex on $\con{T}^2$.
+\end{exmpl}
+
+Nevertheless, this problem can be solved taking a different pseudogradient adapted to $h$. Otherwise, we can choose a different embedding of $\con{T}^2$ in $\R^3$, yielding a tilted torus, and taking the height function the same way, as shown in Figure \ref{figure:example4}.
+
+\begin{exmpl}
+\begin{figure} [h]
+	\centering
+	\input{../figures/example4.tikz}
+	\caption{The critical points of the tilted torus.}
+	\label{figure:example4}
+\end{figure}
+
+In the case of the tilted torus, all the intersections of stable and unstable manifolds are transversal, so we can use the negative gradient of the height function $h'$ as pseudogradient to define the differential on the complex.
+
+In particular, looking at figure \ref{figure:example4}, we see that
+\[C_k(\con{T}^2,h') = \left\{ \begin{array}{lc} a \con{Z}_2 & \text{if } k=2 \\ b_1\con{Z}_2 \oplus b_2 \con{Z}_2 & \text{if } k=1 \\ c\con{Z}_2 & \text{if } k=0 \end{array} \right. .\]
+Moreover, we can compute the differentials of the complex by looking at the picture. From there we deduce that
+\[\partial_2a = 2b_1 + 2b_2 = 0,\]
+\[\partial_1 b_1 = \partial_1 b_2 = 2c = 0 ,\]
+so both $\partial_2$ and $\partial_1$ are $0$. Therefore, we deduce that the Morse homology of the torus is
+\[H_k(\con{T},h') \cong \left\{ \begin{array}{lc} \con{Z}_2 & \text{if } k=0 \text{ or } 2 \\ \con{Z}_2^2 & \text{if } k=1 \end{array} \right. .\]
+\end{exmpl}
+
+\subsection{Projective spaces}
+
+In order to construct the Morse complex over the real projective spaces, we are going to do first the case of the projective plane $\con{P}_{\R}^2$ and then generalize the solution for any projective space $\con{P}_{\R}^n$.
+
+\begin{exmpl}
+Let $\con{P}_{\R}^2 = \quocient{\con{S}^2}{\sim}$, where $\sim$ identifies antipodal points. Let $F : \R^3 \rightarrow \R$ be defined by $F(x,y,z) = y^2+2z^2$, and let $f = \left. F \right|_{\con{S}^2}$. It is clear that, if $z \sim z'$ then $f(z) = f(z')$, so $f$ is well defined as a smooth function from $\con{P}_{\R}^2$ to $\R$. Moreover, we will show that it is a Morse function, and use it to construct the Morse complex, by studying it in an open cover of charts of $\con{P}_{\R}^2$:
+
+\begin{enumerate}
+	\item Consider the chart of points with $x \neq 0$. Then, $x = \sqrt{1-y^2-z^2}$, with $y^2+z^2<1$. In this case, the local form of $f$ in this chart coincides with the original formula,
+	\[\tilde{f}(y,z) = y^2+2z^2,\]
+	so $d\tilde{f}(y,z) = 2ydy+4zdz$. Thus,
+	\[\straightH_{(0,0)}[\tilde{f}] = \begin{pmatrix} 2 & 0 \\ 0 & 4 \end{pmatrix} .\]
+	Thus, the point $a = [1:0:0]$ is a non-degenerate critical point of index $0$.
+	\item Consider the chart of points with $y \neq 0$. As in the last case, in this chart we have that $y = \sqrt{1-x^2-z^2}$, with $x^2+z^2<1$. Therefore, the local form of $f$ in this chart is $\tilde{f}(x,z) = 1-x^2+z^2$, and $d\tilde{f}(x,z) = -2xdx+2zdz$. Then,
+	\[\straightH_{(0,0)}[\tilde{f}] = \begin{pmatrix} -2 & 0 \\ 0 & 2 \end{pmatrix} .\]
+	Therefore, the point $b = [0:1:0]$ is a non-degenerate critical point of index $1$.
+	\item Take the chart of points with $z \neq 0$. As before, in this chart we have that $z = \sqrt{1-x^2-y^2}$, so the local form of $f$ is $\tilde{f}(x,y) = 2-y^2-2x^2$. Thus, $d\tilde{f}(x,y) = -4xdx-2ydy$, so
+	\[\straightH_{(0,0)}[\tilde{f}] = \begin{pmatrix} -4 & 0 \\ 0 & -2 \end{pmatrix} .\]
+	Thus, the point $c=[0:0:1]$ is a non-degenerate critical point of index $2$.
+\end{enumerate}
+
+As we have checked all the charts in an open covering of $\con{P}_{\R}^2$, we deduce that $a,b,c$ are the only critical points of $f$, and therefore it is a Morse function. We can, in fact, sketch the dynamics induced by the negative gradient of $f$ in two dimensions, taking the points of the sphere with $z \geq 0$, as shown in Figure \ref{figure:example5}.
+
+\begin{figure}[h]
+	\centering
+	\input{../figures/example5.tikz}
+	\caption{The dynamics in the projective plane.}
+	\label{figure:example5}
+\end{figure}
+
+From this we deduce that $\partial_2c = 2b = 0$ and $\partial_2b=2a=0$. Thus, $H_k(\con{P}_{\R}^2,f) \cong \con{Z}_2$ for $k=0,1,2$ (and $0$ otherwise).
+
+This process can be generalized to any dimension: let $\con{P}_{\R}^n = \quocient{\con{S}^n}{\sim}$, where $\sim$ denotes the antipodal identification, and consider the function in $\R^{n+1}$ defined by
+\[F(x_0,...,x_n) = \sum_{k=1}^n kx_k^2 ,\]
+and denote by $f$ its restriction to $\con{S}^n$, and, as before, by abuse of notation, let $f$ denote also the induced map in $\con{P}_{\R}^n$.
+Then, we can take $n+1$ charts, where the $k$-th chart is defined by $x_k \neq 0$. The local form of $f$ at this chart is
+\[\tilde{f}(x_0,...,x_{k-1},x_{k+1},...,x_n) = k + \sum_{j=0}^n (j-k)x_j^2 ,\]
+so
+\[d\tilde{f}(x_0,...,x_{k-1},x_{k+1},...,x_n) = 2\sum_{j=0}^n (j-k) x_j dx_j ,\]
+and therefore the only critical point at the chart $k$ is $c_k = [e_k]$ (where $e_k$ denotes the $k$-th vector of the canonical basis of $\R^{n+1}$, starting with $0$). The Hessian at this point is
+\[\straightH_{(0,...,0)}[\tilde{f}] = \begin{pmatrix} -2k & 0 & \cdots & 0 \\ 0 & -2(k-1) & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & -2(k-n) \end{pmatrix}\]
+(omitting the null term).
+
+Therefore, $\ind(c_k) = k$. Moreover, as in the case with $n=2$, it is possible to see that $\partial_kc_k = 0$, so
+\[H_k(\con{P}_{\R}^n,f) \cong \left\{ \begin{array}{lc} \con{Z}_2 & \text{if } 0 \leq k \leq n \\ 0 & \text{otherwise} \end{array} \right. .\]
+\end{exmpl}

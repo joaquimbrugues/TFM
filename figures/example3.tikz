@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+	%Draw the torus
+	\draw [] (0,3) to [out=0,in=90] (2,0) to [out=270,in=0] (0,-3) to [out=180,in=270] (-2,0) to [out=90,in=180] (0,3);
+	\draw [] (-1.01,0.3) to [out=275,in=180] (0,-1.5) to [out=0,in=265] (1.01,0.3);
+	\draw [] (-0.99,0) to [out=85,in=180] (0,1.5) to [out=0,in=95] (0.99,0);
+
+	%Critical point a
+	\draw [fill] (0,3) circle [radius=0.75mm]
+	node [label={[above]$a$}] {};
+	%Critical point b_1
+	\draw [fill] (0,1.5) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$b_1$}] {};
+	%Critical point b_2
+	\draw [fill] (0,-1.5) circle [radius=0.75mm]
+	node [label={[above]$b_2$}] {};
+	%Critical point c
+	\draw [fill] (0,-3) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$c$}] {};
+
+	%Trajectory from a to b_1
+	\draw[-{Latex[length=2mm]}] (0,3) to [out=185,in=90] (-0.5,2.05);
+	\draw[] (-0.5,2.06) to [out=275,in=175] (0,1.5);
+	%Trajectory from a to b_1 (behind)
+	\draw[-{Latex[length=2mm]},dashed] (0,3) to [out=355,in=90] (0.5,2.05);
+	\draw[dashed] (0.5,2.06) to [out=265,in=5] (0,1.5);
+	%Trajectory from b_1 to b_2 (left)
+	\draw[-{Latex[length=2mm]}] (0,1.5) to [out=185,in=90] (-1.1,0);
+	\draw[] (-1.1,0.1) to [out=275,in=175] (0,-1.5);
+	%Trajectory from b_1 to b_2 (right)
+	\draw[-{Latex[length=2mm]},dashed] (0,1.5) to [out=355,in=90] (1.1,0);
+	\draw[dashed] (1.1,0.1) to [out=265,in=5] (0,-1.5);
+	%Trajectory from b_2 to c
+	\draw[-{Latex[length=2mm]}] (0,-1.5) to [out=185,in=90] (-0.5,-2.35);
+	\draw[] (-0.5,-2.36) to [out=275,in=175] (0,-3);
+	%Trajectory from b_2 to c (behind)
+	\draw[-{Latex[length=2mm]},dashed] (0,-1.5) to [out=355,in=90] (0.5,-2.35);
+	\draw[dashed] (0.5,-2.36) to [out=265,in=5] (0,-3);
+\end{tikzpicture}

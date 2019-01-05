@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	%Draw the torus
+	\draw [] (0,3) to [out=0,in=90] (2,0) to [out=270,in=0] (0,-3) to [out=180,in=270] (-2,0) to [out=90,in=180] (0,3);
+	\draw [] (-1.01,0.3) to [out=275,in=180] (0,-1.5) to [out=0,in=265] (1.01,0.3);
+	\draw [] (-0.99,0) to [out=85,in=180] (0,1.5) to [out=0,in=95] (0.99,0);
+
+	%Critical point a
+	\draw [fill] (0,3) circle [radius=0.75mm]
+	node [label={[above]$a$}] {};
+	%Critical point b_1
+	\draw [fill] (0,1.5) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$b_1$}] {};
+	%Critical point b_2
+	\draw [fill] (0,-1.5) circle [radius=0.75mm]
+	node [label={[above]$b_2$}] {};
+	%Critical point c
+	\draw [fill] (0,-3) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$c$}] {};
+\end{tikzpicture}

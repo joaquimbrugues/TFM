@@ -1,6 +1,8 @@
 In Chapter 1 we presented the Morse homology, stressing out how we obtain a connection between Morse functions and the topology of the manifold. In particular, in Section \ref{section:morse_complex} we saw a layout of how to construct this kind of homology. We have tried to keep that layout in mind all the time while doing Morse theory, because in the context of Floer homology we reproduced analogous steps. Then, we moved on to a review on symplectic geometry and the Arnold conjecture. A special case of the Arnold conjecture, when the Hamiltonian does not depend on time (this means, in an autonomous system), came as a corollary of the Morse theory.
 
-To tackle the general case we defined, in Chapter 3, the basic ingredients of Floer homology: the action functional, the Floer equation, the energy of a solution of the Floer equation, and the space $\mathcal{M}$ of solutions of finite energy. Recall that the Floer equation is a perturbed version of the Cauchy-Riemann equation, and so when we studied the space $\mathcal{M}$...
+To tackle the general case we defined, in Chapter 3, the basic ingredients of Floer homology: the action functional, the Floer equation, the energy of a solution of the Floer equation, and the space $\mathcal{M}$ of solutions of finite energy. Recall that the Floer equation is a perturbed version of the Cauchy-Riemann equation, this means, its solutions have a similar behaviour that the one of the pseudoholomorphic curves.
+
+Finally, the properties of $\mathcal{M}$, together with the notion of transversality in the context of infinite dimensions (which corresponds to the notion of regularity, which we talked about in Chapter 4), allow us to connect properly the periodic orbits between them, as how we connected the critical points of a Morse function using the negative gradient (or some other pseudogradient). We sketched the final steps of the definition of Floer homology using this connections, in a way completely analogous to the final steps of the Morse theory.
 
 The first main result derived from the Floer homology is the one it was intended for in the first place:
 
@@ -9,6 +11,14 @@ Let $M$ be a compact, symplectic manifold. Suppose that it is aspherical, this m
 \[\sum_k \mathrm{dim}(H_k(M)) .\]
 \end{rmrk}
 
-Nonetheless, Floer homology is a versatile tool that plays an important role in modern symplectic topology. Its implications are still being studied.
+It would be wrong to assume that Floer's contribution is limited to a particular case of the Arnold conjecture. On one hand, his proof broadened remarkably the class of symplectic manifolds for which the result was known to be true: previously Eliashberg had proven the conjecture in dimension 2, and Conley and Zehnder proved it for the tori. With his homology, Floer was able to prove the conjecture for manifolds with $\pi_2(M) = 0$, and later for monotone manifolds. On the other hand, the tools introduced by Floer paved the way for other mathematicians to extend the proof for weakly monotone manifolds (Hofer, Salamon and Ono), and finally for the general case (Fukaya and Ono, Liu and Tian, Hofer and Salamon).
 
-%TODO: Dir que hem fet.
+Furthermore, Floer theory has proved to be a versatile tool in symplectic topology, and investigation in this field is still going on. There are still many things to be understood about the theory and its implications.
+
+There are several ways in which it is possible to continue the work of this master thesis:
+
+\begin{itemize}
+	\item Find a way to extend the tools of Floer theory to non aspherical manifolds, this means, finding a way to go around the assumptions \ref{assumption1} and \ref{assumption2}. These were important in order to define the action functional $\mathcal{A}_H$ and prove that its critical points are the periodic orbits of $X_H$. We also needed them to guarantee that $\mathcal{M}$ is compact (to prevent the formation of a “bubble” in the proof of Proposition \ref{floer_compact_prop}), and it is necessary once again (although we did not mention it here) to define properly the Banach manifold $\mathcal{P}^{1,p}(x,y)$. Finding a way around these obstacles would allow us to generalize the Floer homology for a broader class of manifolds.
+	\item Extend the action functional to non-contractible loops. We needed the loops to be contractible in order to define $\mathcal{A}_H$ on the first place, but if it were possible to study all the possible loops, we would obtain a more detailed description of the periodic orbits of the system. An introduction to this approach can be found at the section 6.7 of \cite{audin2014morse}.
+	\item Extend the Floer homology to broader classes of manifolds beyond the symplectic case.
+\end{itemize}

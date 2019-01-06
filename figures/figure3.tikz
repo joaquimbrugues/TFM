@@ -1,8 +1,11 @@
 \begin{tikzpicture}
 	%Draw the torus
 	\draw [] (0,3) to [out=0,in=90] (2,0) to [out=270,in=0] (0,-3) to [out=180,in=270] (-2,0) to [out=90,in=180] (0,3);
-	\draw [] (-1.01,0.3) to [out=275,in=180] (0,-1.5) to [out=0,in=265] (1.01,0.3);
-	\draw [] (-0.99,0) to [out=85,in=180] (0,1.5) to [out=0,in=95] (0.99,0);
+	\draw [] (1,0) to [out=270,in=0] (0,-1.5) to [out=180,in=270] (-1,0) to [out=90,in=180] (0,1.5) to [out=0,in=90] (1,0);
+	\draw [] (-2,0) to [out=270,in=270] (-0.99,0);
+	\draw [dashed] (-0.99,0) to [out=90,in=90] (-2,0);
+	\draw [] (2,0) to [out=270,in=270] (0.99,0);
+	\draw [dashed] (0.99,0) to [out=90,in=90] (2,0);
 
 	%Critical point a
 	\draw [fill] (0,3) circle [radius=0.75mm]

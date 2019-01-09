@@ -222,5 +222,5 @@ TSWLatexianTemp*
 # main PDF generated file
 **/main.pdf
 
-#outputs folder
-out/
+# presentation PDF generated file
+**/presentation.pdf

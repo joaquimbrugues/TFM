@@ -1,0 +1,55 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\con}[1]{\mathbb{#1}}
+\newcommand{\R}{\con{R}}
+\newcommand{\C}{\con{C}}
+\newcommand{\Z}{\con{Z}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\de}{\delta}
+\newcommand{\quocient}[2]{{\raisebox{.1em}{$#1$}\left/\raisebox{-.1em}{$#2$}\right.}}
+
+\usetheme{Hannover}
+
+%gets rid of bottom navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\title{Morse theory and Floer homology}
+
+\author{Joaquim Brugués Mora \\ \ \\ {\it advisors } \\ Eva Miranda Galceran \\ Cédric Oms}
+
+\institute{Facultat de Matemàtiques i Estadística\\ UPC}
+
+\date{\today}
+
+\makeatletter
+	\setbeamertemplate{sidebar \beamer@sidebarside}%{sidebar theme}
+	{
+		\beamer@tempdim=\beamer@sidebarwidth%
+		\advance\beamer@tempdim by -6pt%
+		\insertverticalnavigation{\beamer@sidebarwidth}%
+		\vfill
+		\ifx\beamer@sidebarside\beamer@lefttext%
+		\else%
+			\usebeamercolor{normal text}%
+			\llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+			\vskip2pt%
+		\fi%
+	}%
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Contents}
+	\tableofcontents
+\end{frame}
+
+\end{document}

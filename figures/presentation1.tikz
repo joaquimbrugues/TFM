@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+	%Draw the torus
+	\draw [] (0,2) to [out=0,in=90] (1.5,0) to [out=270,in=0] (0,-2) to [out=180,in=270] (-1.5,0) to [out=90,in=180] (0,2);
+	\draw [] (0.75,0) to [out=270,in=0] (0,-1.1) to [out=180,in=270] (-0.75,0) to [out=90,in=180] (0,1.1) to [out=0,in=90] (0.75,0);
+	\draw [] (-1.5,0) to [out=270,in=270] (-0.75,0);
+	\draw [dashed] (-0.75,0) to [out=90,in=90] (-1.5,0);
+	\draw [] (1.5,0) to [out=270,in=270] (0.75,0);
+	\draw [dashed] (0.75,0) to [out=90,in=90] (1.5,0);
+
+	%Critical point c
+	\draw [fill] (0,2) circle [radius=0.75mm]
+	node [label={[above]$c$}] {};
+	%Critical point b_2
+	\draw [fill] (0,1.1) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$b_2$}] {};
+	%Critical point b_1
+	\draw [fill] (0,-1.1) circle [radius=0.75mm]
+	node [label={[above]$b_1$}] {};
+	%Critical point a
+	\draw [fill] (0,-2) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$a$}] {};
+\end{tikzpicture}

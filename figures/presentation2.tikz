@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+	%Figure at the left
+	\draw (-2,0) ellipse (1cm and 3mm);
+	%Connection
+	\draw (-3,0) to [out=290,in=180] (-2,-0.8) to [out=0,in=250] (-1,0);
+	%Critical point a
+	\draw [fill] (-2,-0.8) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$a$}] {};
+	%Label of the region
+	\draw (-2,-2) node [label={$h(a) \leq h(x) \leq h(b_1)$}]{};
+
+	%Figure at the right
+	%End circles of the cilinder
+	\draw (0.5,0.75) ellipse (4mm and 1mm);
+	\draw (3.5,0.75) ellipse (4mm and 1mm);
+	\draw (0.9,0.75) to [out=285,in=180] (2,0) to [out=0,in=255] (3.1,0.75);
+	\draw (0.1,0.75) to [out=280,in=180] (2,-0.8) to [out=0,in=260] (3.9,0.75);
+	%Critical point b_1
+	\draw [fill] (2,0) circle [radius=0.75mm]
+	node [label={[above]$b_1$}] {};
+	%Critical point a
+	\draw [fill] (2,-0.8) circle [radius=0.75mm]
+	node [label={[below,yshift=-1.5mm]$a$}] {};
+	%Label of the region
+	\draw (2,-2) node [label={$h(b_1) \leq h(x) \leq h(b_2)$}]{};
+\end{tikzpicture}

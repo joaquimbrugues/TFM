@@ -4,6 +4,11 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.markings}
 
 \newcommand{\con}[1]{\mathbb{#1}}
 \newcommand{\R}{\con{R}}
@@ -50,6 +55,38 @@
 
 \begin{frame}{Contents}
 	\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Example (I)}
+	
+	Torus embedded in $\R^3$:
+
+	\begin{figure}[h]
+		\input{../figures/presentation1.tikz}
+		\caption{Critical points in the torus}
+		\label{figure:torus1}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Example (II)}
+	Region under the hypersurface $h(x) = K$:
+
+	\begin{figure}[h]
+		\input{../figures/presentation2.tikz}
+		\caption{Formation of the torus}
+		\label{figure:torus2}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Example (III)}
+	Region under the hypersurface $h(x) = K$:
+
+	\begin{figure}[h]
+		\input{../figures/presentation3.tikz}
+		\caption{Completion of the torus}
+		\label{figure:torus3}
+	\end{figure}
 \end{frame}
 
 \end{document}

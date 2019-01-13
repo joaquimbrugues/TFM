@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	%Axis
+	\draw [-{Latex[length=2mm]}] (-1.8,0) to (1.8,0);
+	\draw [-{Latex[length=2mm]}] (0,-1.8) to (0,1.8);
+	\draw (1.8,-0.2) node [label={[below]$x_1$}]{};
+	\draw (0.1,1.6) node [label={[right]$x_2$}]{};
+	%Point p
+	\draw [fill] (0,0) circle [radius=0.5mm]
+	node [label={[below,xshift=2mm,yshift=-1mm]$p$}] {};
+	%Chart U
+	\draw (-0.4,1.4) to (0.4,1.4) to [out=270,in=180] (1.4,0.4) to (1.4,-0.4) to [out=180,in=90] (0.4,-1.4) to (-0.4,-1.4) to [out=90,in=0] (-1.4,-0.4) to (-1.4,-0.4) to (-1.4,0.4) to [out=0,in=270] (-0.4,1.4);
+	\draw (1,-1) node [label={[below]$U$}]{};
+	%Arrows
+	\draw (1.1,0.1) to (1,0) to (1.1,-0.1);
+	\draw (-1.1,0.1) to (-1,0) to (-1.1,-0.1);
+	\draw (-0.1,0.9) to (0,1) to (0.1,0.9);
+	\draw (-0.1,-0.9) to (0,-1) to (0.1,-0.9);
+\end{tikzpicture}

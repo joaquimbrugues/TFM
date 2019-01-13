@@ -9,6 +9,7 @@
 \usepackage{pgfplots}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.markings}
+\usepackage{graphicx}
 
 \newcommand{\con}[1]{\mathbb{#1}}
 \newcommand{\R}{\con{R}}
@@ -73,20 +74,135 @@
 	Region under the hypersurface $h(x) = K$:
 
 	\begin{figure}[h]
-		\input{../figures/presentation2.tikz}
+		\scalebox{.6}{\input{../figures/presentation2.tikz}}
+		\scalebox{.6}{\input{../figures/presentation3.tikz}}
 		\caption{Formation of the torus}
 		\label{figure:torus2}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Example (III)}
-	Region under the hypersurface $h(x) = K$:
+\begin{frame}{Reeb theorem}
+	\begin{block}{Idea}
+		The critical points of the function give information about the topology of the manifold.
+
+		%Conversely, the topology of a manifold restricts the number of critical points.
+	\end{block}
 
 	\begin{figure}[h]
-		\input{../figures/presentation3.tikz}
-		\caption{Completion of the torus}
-		\label{figure:torus3}
+		\input{../figures/presentation4.tikz}
+		\label{figure:reebtheorem}
 	\end{figure}
+
+	\begin{theorem}
+		{\bf (Reeb):} If $M$ is a compact, connected manifold without boundary and $f : M \rightarrow \R$ is smooth and has only 2 critical points, then $M \cong \con{S}^n$.
+	\end{theorem}
+\end{frame}
+
+\section{Morse homology}
+
+\begin{frame}{Morse complex}
+	\begin{block}{Definition}
+		A {\bf complex chain} is a sequence of groups and morphisms
+		\[\cdots \rightarrow C_{k+1} \xrightarrow[]{\partial_{k+1}} C_k \xrightarrow[]{\partial_k} C_{k-1} \rightarrow \cdots\]
+		with $\partial_k \circ \partial_{k+1} = 0$.
+
+		The {\bf homology groups} of a complex are
+		\[H_k = \quocient{\mathrm{Ker} \partial_k}{\mathrm{Im} \partial_{k+1}}\]
+	\end{block}
+
+	There are several ways to define a homology over a manifold, capturing topological information about it.
+\end{frame}
+
+\begin{frame}{Scheme of construction}
+	In both Morse and Floer homology, we take the same steps to define the homology:
+	\begin{itemize}
+		\item Define object of study and its regularity conditions.
+		\item Define an index to classify the objects.
+		\item Provide a way to connect objects of consecutive indices. From this, construct the differential $\partial$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Morse functions}
+	\begin{block}{Definition}
+		A critical point $p$ of a function $f : M \rightarrow \R$ is {\bf non-degenerate} if its Hessian at $p$ is non-degenerate, this means, does not have $0$ as an eigenvalue.
+
+		A function $f$ is a {\bf Morse function} if all its critical points are non-degenerate.
+
+		The {\bf index} of a non-degenerate critical point $p$, $\mathrm{Ind}(p)$ is the number of negative eigenvalues of the Hessian at $p$.
+	\end{block}
+
+	\begin{block}{Morse complex groups}
+		The $k$-th group of the Morse complex is
+		\[CM_k(M,f) = \bigoplus_{\substack{c \in \mathrm{Crit}(f) \\ \mathrm{Ind}(c) = k}} \con{Z}_2 c\]
+	\end{block}
+\end{frame}
+
+\begin{frame}{Morse Lemma}
+	\begin{theorem}
+		If $f : M \rightarrow \R$ is a Morse function, for any critical point $p$ there is a chart $U$ centered at $p$ such that the local expression of $f$ is
+		\[\left. f\right|_U(x_1,...,x_n) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2,\]
+		where $k = \mathrm{Ind}(p)$.
+	\end{theorem}
+
+	\begin{figure}
+		\input{../figures/presentation5.tikz}
+		\label{figure:morse_chart}
+		\caption{A Morse chart for the function $f$}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Differential}
+	To define the differential $\partial$ on the Morse complex, we connect the critical points of $f$ using the flow of the negative gradient:
+	\[\dot{x} = - \mathrm{grad}_x (f)\]
+
+	Then, if $n(a,b)$ is the number of trajectories connecting $a$ and $b$ (modulo 2),
+	\[\partial_k(a) = \sum_{\substack{b \in \mathrm{Crit}(f) \\ \mathrm{Ind}(b) = k-1}} n(a,b) b\]
+
+	\begin{block}{Problem}
+		To guarantee that $n(a,b)$ is well defined, we need to assume that $\mathrm{grad}(f)$ satisfies the {\bf Smale condition}:
+		\[W^S(a) \pitchfork W^U(b)\]
+		A slight perturbation of $\mathrm{grad}(f)$ satisfies this condition.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Results}
+	Even though the complex $CM_{\bullet}(M,f)$ depends on $f$, the homology $HM_{\bullet}(M)$ is a {\bf topological invariant}.
+
+	\begin{theorem}
+		{\bf Morse inequalities:} Let $f : M \rightarrow \R$ a Morse function, $c_k$ the number of critical points of index $k$, and $\beta_k$ the $k$-th Betti number of $M$. Then,
+		\[c_k \geq \beta_k\]
+		In particular,
+		\[\# \mathrm{Crit}(f) \geq \sum_{k=0}^n \beta_k\]
+	\end{theorem}
+\end{frame}
+
+\section{Floer homology}
+
+\begin{frame}{Symplectic manifolds}
+	\begin{block}{Definition}
+		A {\bf symplectic structure} on a $2n$-dimensional manifold $M$ is a 2-form $\omega$ that is
+		\begin{itemize}
+			\item Closed: $d\omega = 0$.
+			\item Non-degenerate $\omega(X,\cdot) \neq 0 \ \forall X$.
+		\end{itemize}
+	\end{block}
+
+	\begin{block}{Motivation}
+		It provides the setting to define Hamiltonian systems in manifolds. If $H : M \rightarrow \R$ is an energy function, then the vector field $X_H$ with
+		\[\omega(X_H,Y) = -dH(Y) \ \forall Y\]
+		generalizes Hamilton's equations for $H$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Arnold conjecture}
+	\begin{theorem}
+		Consider $H_t : \R \times M \rightarrow \R$ a time-dependent Hamiltonian. Then, if $N$ is the number of periodic orbits of $X_{H_t}$,
+		\[N \geq \sum_{k=0}^{2n} \beta_k\]
+	\end{theorem}
+
+	\begin{block}{Remark}
+		In the case of an autonomous Hamiltonian $H$, this is a consequence of the Morse inequalities.
+	\end{block}
 \end{frame}
 
 \end{document}

@@ -19,6 +19,8 @@
 	%Critical point a
 	\draw [fill] (-2,-2) circle [radius=0.75mm]
 	node [label={[below,yshift=-1.5mm]$a$}] {};
+	%Label of the region
+	\draw (-2,-3.5) node [label={$h(b_2) \leq h(x) \leq h(c)$}]{};
 
 	%Figure at the right (Torus)
 	\draw [] (2,2) to [out=0,in=90] (3.5,0) to [out=270,in=0] (2,-2) to [out=180,in=270] (0.5,0) to [out=90,in=180] (2,2);
@@ -40,4 +42,6 @@
 	%Critical point a
 	\draw [fill] (2,-2) circle [radius=0.75mm]
 	node [label={[below,yshift=-1.5mm]$a$}] {};
+	%Label of the region
+	\draw (2,-3.5) node [label={$h(c) \leq h(x)$}]{};
 \end{tikzpicture}

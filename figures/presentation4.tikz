@@ -1,8 +1,8 @@
 \begin{tikzpicture}
 	%Potato-like figure
 	\draw [] (0,0) to [out=180,in=270] (-1.5,1.4) to [out=90,in=180] (-0.5,2.8) to [out=0,in=70] (0,2.4) to [out=250,in=135] (1,1.4) to [out=315,in=0] (0,0);
-	\draw [] (-1.47,1.1) to [out=290,in=250] (1.15,1.1);
-	\draw [dashed] (1.15,1.1) to [out=112,in=68] (-1.47,1.1);
+	\draw [] (-1.47,1.1) to [out=290,in=250] (1.14,1.1);
+	\draw [dashed] (1.14,1.1) to [out=112,in=68] (-1.47,1.1);
 
 	%Critical point a
 	\draw [fill] (0,0) circle [radius=0.75mm]

@@ -19,4 +19,8 @@
 	%Critical point a
 	\draw [fill] (0,-2) circle [radius=0.75mm]
 	node [label={[below,yshift=-1.5mm]$a$}] {};
+
+	%Function h
+	\draw [-{Latex[length=2mm]}] (-2,-2.3) to (-2,2.3);
+	\draw (-2.3,-0.5) node [label={$h$}]{};
 \end{tikzpicture}

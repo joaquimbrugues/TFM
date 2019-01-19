@@ -183,13 +183,13 @@
 		A {\bf symplectic structure} on a $2n$-dimensional manifold $M$ is a 2-form $\omega$ that is
 		\begin{itemize}
 			\item Closed: $d\omega = 0$.
-			\item Non-degenerate $\omega(X,\cdot) \neq 0 \ \forall X$.
+			\item Non-degenerate $\omega(X,\cdot) \neq 0 \ \forall X \in \mathfrak{X}(M)$.
 		\end{itemize}
 	\end{block}
 
 	\begin{block}{Motivation}
 		It provides the setting to define Hamiltonian systems in manifolds. If $H : M \rightarrow \R$ is an energy function, then the vector field $X_H$ with
-		\[\omega(X_H,Y) = -dH(Y) \ \forall Y\]
+		\[\omega(X_H,Y) = -dH(Y) \ \forall Y \in \mathfrak{X}(M)\]
 		generalizes Hamilton's equations for $H$.
 	\end{block}
 \end{frame}
@@ -247,7 +247,7 @@
 
 	Then, the {\bf gradient of} $\mathcal{A}_H$ is
 	\[\mathrm{grad}_x\mathcal{A}_H = J \dot{x} + \mathrm{grad}_{x(t)}H_t\]
-	The negative gradient flow trajectories of $\mathrm{grad}_x\mathcal{A}_H$ are $u : \R \times \con{S}^1 \rightarrow M$ with
+	The flow trajectories of $- \mathrm{grad}_x\mathcal{A}_H$ are $u : \R \times \con{S}^1 \rightarrow M$ with
 	\[\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} + \mathrm{grad}_uH_t = 0\]
 \end{frame}
 
@@ -263,19 +263,19 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{The Floer equation (IV)}
-	To guarantee that the solutions connect critical points of $\mathcal{A}_H$ we need to add the condition that
-	\[E(u) < + \infty\]
+%\begin{frame}{The Floer equation (IV)}
+%	To guarantee that the solutions connect critical points of $\mathcal{A}_H$ we need to add the condition that
+%	\[E(u) < + \infty\]
 
-	\begin{block}{Definition}
-		The {\bf energy} of a solution of the Floer equation is
-		\[E(u) = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 dsdt = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial t} - X_{H_t} \right|^2 dsdt\]
-	\end{block}
-
-	\begin{block}{Remark}
-		We have that $E(u) = 0$ if and only if $u(s,t) = x(t)$ and it is a periodic solution.
-	\end{block}
-\end{frame}
+%	\begin{block}{Definition}
+%		The {\bf energy} of a solution of the Floer equation is
+%		\[E(u) = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 dsdt = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial t} - X_{H_t} \right|^2 dsdt\]
+%	\end{block}
+%
+%	\begin{block}{Remark}
+%		We have that $E(u) = 0$ if and only if $u(s,t) = x(t)$ and it is a periodic solution.
+%	\end{block}
+%\end{frame}
 
 \begin{frame}{Results}
 	\begin{theorem}
@@ -283,8 +283,8 @@
 	\end{theorem}
 
 	\begin{theorem}
-		The Floer homology of a manifold is isomorphic to the Morse homology:
-		\[HF_{\bullet}(M) \cong HM_{\bullet}(M)\]
+		The Floer homology of a manifold is isomorphic to the Morse homology (with an index shifting):
+		\[HF_{\bullet}(M) \cong HM_{\bullet+n}(M)\]
 	\end{theorem}
 \end{frame}
 

@@ -222,5 +222,6 @@ TSWLatexianTemp*
 # main PDF generated file
 **/main.pdf
 
-# presentation PDF generated file
+# presentation PDF generated files
 **/presentation.pdf
+**/cardona.pdf

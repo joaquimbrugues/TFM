@@ -1,0 +1,216 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.markings}
+\usepackage{graphicx}
+
+\newcommand{\con}[1]{\mathbb{#1}}
+\newcommand{\R}{\con{R}}
+\newcommand{\C}{\con{C}}
+\newcommand{\Z}{\con{Z}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\de}{\delta}
+\newcommand{\quocient}[2]{{\raisebox{.1em}{$#1$}\left/\raisebox{-.1em}{$#2$}\right.}}
+
+\newtheorem{teorema}{Teorema}
+
+\usetheme{Hannover}
+
+%gets rid of bottom navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\title{Homologia de Floer}
+
+\author{Joaquim Brugués Mora}
+
+\institute{Facultat de Matemàtiques i Estadística\\ UPC}
+
+\date{\today}
+
+\makeatletter
+	\setbeamertemplate{sidebar \beamer@sidebarside}%{sidebar theme}
+	{
+		\beamer@tempdim=\beamer@sidebarwidth%
+		\advance\beamer@tempdim by -6pt%
+		\insertverticalnavigation{\beamer@sidebarwidth}%
+		\vfill
+		\ifx\beamer@sidebarside\beamer@lefttext%
+		\else%
+			\usebeamercolor{normal text}%
+			\llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+			\vskip2pt%
+		\fi%
+	}%
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Índex}
+	\tableofcontents
+\end{frame}
+
+\section{Introducció}
+
+\begin{frame}{Teoria de Morse}
+	\begin{block}{Idea}
+		L'homologia de Morse relaciona la topologia d'una varietat $M$ amb els punts crítics d'una funció de Morse $f: M \rightarrow \R$.
+	\end{block}
+
+	\begin{block}{Definició}
+		El {\bf complex de Morse} d'una varietat $M$ amb funció de Morse $f$ és el complex amb grup $CM_k(M,f)$ generat (sobre $\con{Z}_2$) pels punts crítics d'índex $k$ de $f$, i tal que
+		\[\partial_k(a) = \sum_{\mathrm{Ind}(b) = k-1} n(a,b) b ,\]
+		on $\mathrm{Ind}(a) = k$, i $n(a,b)$ és el nombre de trajectories de $-\mathrm{grad}f$ que uneixen $a$ amb $b$ (mòdul 2).
+	\end{block}
+\end{frame}
+
+\begin{frame}{Desigualtats de Morse}
+	L'homologia de Morse $HM_{\bullet}(M)$ induïda pel complex de Morse no depén de la funció $f$ ni de la mètrica $g$ utilitzades per definir-la sinó que és un invariant topològic de la varietat $M$.
+
+	\begin{teorema}[Desigualtats de Morse]
+		Sigui $c_k$ el nombre de punts crítics d'índex $k$ d'una funció de Morse, i sigui $\beta_k$ el $k$-èssim nombre de Betti de $M$. Aleshores,
+		\[c_k \geq \beta_k ,\]
+		és a dir,
+		\[\# \mathrm{Crit}(f) \geq \sum_{k=0}^n \beta_k .\]
+	\end{teorema}
+\end{frame}
+
+\section{Motivació}
+
+\begin{frame}{La conjectura d'Arnold}
+	Sigui $(M,\omega)$ una varietat simplèctica
+
+	\begin{teorema}
+		Sigui $H_t : \R \times M \rightarrow \R$ un Hamilonià depenent del temps. Llavors, si $N$ és el nombre d'òrbites periòdiques de $X_{H_t}$,
+		\[N \geq \sum_{k=0}^{2n} \beta_k\]
+	\end{teorema}
+
+	\begin{block}{Observació}
+		En el cas d'un Hamiltonià $H$ no depenent del temps el teorema és cert com a conseqüència de les desigualtats de Morse.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Premisses}
+	\begin{block}{Esquema}
+		La idea és construïr un complex de cadenes com en el cas de Morse, generat per les solucions periòdiques de $X_{H_t}$.
+
+		Però per fer-ho hem de posar condicions sobre el problema.
+	\end{block}
+
+	\begin{itemize}
+		\item {\bf Asfericitat:} Qualsevol esfera dins de $M$ es pot contraure a un punt (malgrat que es poden imposar condicions més febles sobre $M$).
+		\item {\bf Llaços contràctils:} Només considerem els llaços $x : \con{S}^1 \rightarrow M$ que es poden contraure a un punt.
+	\end{itemize}
+\end{frame}
+
+\section{El complex de Floer}
+
+\begin{frame}{El complex de Floer}
+	\begin{itemize}
+		\item El complex està generat per les solucions 1-periòdiques i contràctils de
+		\[\dot{x} = X_{H_t}(x)\]
+		La condició de regularitat, en aquest cas, és que $\mathrm{det}(d_{x(0)}\varphi_{X_t}^1 - \mathrm{Id}) \neq 0$.
+		\item Classifiquem les òrbites periòdiques amb {\bf l'índex de Conley-Zehnder}
+		\[\mu_{CZ} : SP(M) \longrightarrow \con{Z}\]
+		\item La connexió entre òrbites periòdiques es construeix amb les solucions d'energia finita de l'{\bf equació de Floer}
+		\[\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} + \mathrm{grad}_uH_t = 0\]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{L'equació de Floer (I)}
+	El {\bf funcional d'acció} és
+	\[\mathcal{A}_H(x) = \int_0^1 H_t(x(t)) dt - \int_{\con{D}^2} u^{\ast} \omega\]
+
+	\begin{block}{Proposició}
+		Un llaç $x$ és un punt crític de $\mathcal{A}_H$ si i només si $\dot{x} = X_{H_t}(x)$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{L'equació de Floer (II)}
+	\begin{block}{Definició}
+		Una {\bf estructura quasi complexa} $J$ en $M$ és una secció de $TM\otimes TM^{\ast}$ tal que
+		\[J^2 = - \mathrm{Id} .\]
+		Una estructura quasi complexa i ina estructura simplèctica indueixen una mètrica Riemanniana $g$ en $M$.
+	\end{block}
+
+	En aquest cas, el {\bf gradient de} $\mathcal{A}_H$ és
+	\[\mathrm{grad}_x\mathcal{A}_H = J \dot{x} + \mathrm{grad}_{x(t)}H_t .\]
+	Les trajectòries del flux de $- \mathrm{grad}_x\mathcal{A}_H$ són les funcions $u : \R \times \con{S}^1 \rightarrow M$ tals que
+	\[\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} + \mathrm{grad}_uH_t = 0\]
+\end{frame}
+
+\begin{frame}{L'equació de Floer (III)}
+	\begin{itemize}
+		\item Les solucions estacionàries són les òrbites periòdiques de les equacions de Hamilton de $H_t$,
+		\[\dot{x} = X_{H_t}(x) .\]
+		\item Les solucions amb $\frac{\partial u}{\partial t} = 0$ són les trajectòries del gradient negatiu,
+		\[\frac{\partial u}{\partial s} = - \mathrm{grad}_uH_t ,\]
+		i connecten punts crítics (en el cas que $H$ no depengui del temps).
+		\item Si $\mathrm{grad}_uH_t = 0$, llavors l'equació de Floer és l'equació de Cauchy-Riemann
+		\[\frac{\partial u}{\partial s} + J \frac{\partial u}{\partial t} = 0 .\]
+	\end{itemize}
+\end{frame}
+
+%\begin{frame}{The Floer equation (IV)}
+%	To guarantee that the solutions connect critical points of $\mathcal{A}_H$ we need to add the condition that
+%	\[E(u) < + \infty\]
+
+%	\begin{block}{Definition}
+%		The {\bf energy} of a solution of the Floer equation is
+%		\[E(u) = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial s} \right|^2 dsdt = \int_{\R \times \con{S}^1} \left| \frac{\partial u}{\partial t} - X_{H_t} \right|^2 dsdt\]
+%	\end{block}
+%
+%	\begin{block}{Remark}
+%		We have that $E(u) = 0$ if and only if $u(s,t) = x(t)$ and it is a periodic solution.
+%	\end{block}
+%\end{frame}
+
+\begin{frame}{Resultats}
+	\begin{teorema}
+		L'homologia de Floer $HF_{\bullet}(M)$ és un {\bf invariant topològic}: no depén de $H_t$ ni de $J$.
+	\end{teorema}
+
+	\begin{teorema}
+		L'homologia de Floer d'una varietat és isomòrfica a l'homologia de Morse (amb un desplaçament de l'índex):
+		\[HF_{\bullet}(M) \cong HM_{\bullet+n}(M)\]
+	\end{teorema}
+\end{frame}
+
+\section{Conclussions}
+
+\begin{frame}{Conclussions}
+	\begin{itemize}
+		\item La conjectura d'Arnold queda demostrada fent servir l'homologia de Floer en el cas de varietats amb $\pi_2(M) = 1$.
+		\item A més, aquesta tècnica obre el camí per a la demostració en casos més generals.
+		\item L'esquema utilitzat per construir l'homologia de Morse és el mateix que s'utilitza per construir l'homologia de Floer.
+	\end{itemize}
+\end{frame}
+
+\section{Possibles extensions}
+
+\begin{frame}{Extensions}
+	Hi ha diverses vies en les quals es pot estendre la teoria de Floer:
+	\begin{itemize}
+		\item Estendre la definició del complex de Floer a varietats més generals (b-simplèctiques, per començar).
+		\item Estendre la construcció a varitats no asfèriques.
+		\item Estudiar òrbites periòdiques no contràctils.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\huge Gràcies per la vostra atenció!
+	\end{center}
+\end{frame}
+
+\end{document}
